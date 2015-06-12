@@ -6,7 +6,6 @@ CFLAGS=-Wall
 #-----------------------------------------------------------------
 OBJECTS=$(QUELL:.cpp=.o)
 all: $(PROG)
-	rm -f $(PROG) *.o *.toc *.log
 
 $PROG: $(OBJECTS)
 	$(CC) $(CFLAGS) $(QUELL) -o$@
