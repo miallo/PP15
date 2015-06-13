@@ -164,20 +164,117 @@ Praktikanten: &  Michael Lohmann\\
 
 \newpage
 
+\section*{Danksagung}
+Wir danken dem Institut für Geophysik, das uns Teile des technischen Equipments geliehen hat.
+Herrn Prof. Bahr möchten wir für die Betreuung unseres Projektes danken.
+Insbesondere möchten wir auch Herrn Ullrich Einecke danken für viel Unterstützung mit der technischen Umsetzung.
+Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments sehr hilfreich war.
+
+\newpage
+
 \section{Einleitung}
 \label{sec:einleitung}
 \cite{demtroeder}
+Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
+Wir haben in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Wellenlängen gemessen.
+Die Tiefe der Sensoren haben wir mit Hilfe einer Drucksonde gemessen, während wir die Tiefe des Sees mit einem selbstgebauten Echolotes bestimmen wollten.
+Die Position des Bootes auf dem See haben wir mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) aufgezeichnet.
+
+
 \section{Theorie}
 \label{sec:theorie}
+\subsection{Druck}
+In stehendem Wasser steigt der Druck pro Meter Wassertiefe um 0.1 Bar an.
+Möchte man also die Teife des Sensors bestimmen, so berechnet sich diese nach der Formel:
+\begin{align}
+	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}} \label{eq:d}\\
+	\sigma_d &= \frac{\sigma_{p(d)}}{0.1\si{\bar \per\metre}}
+\end{align}
+
+\subsection{Ortsbestimmung}
+Um den Ort des Bootes zu bestimmen, verwendeten wir ein Geodimeter (s. Abb. \ref{fig:geodimeter}).
+Dieses sendet einen Laserstrahl in eine bestimmte Richtung aus und misst, sobald er reflektiert wird die Flugdauer.
+Daraus bestimmt es die Entfernung.
+Die Richtung wird durch die Stellung des beweglichen Kopfes ermittelt.
+Dafür wird beim Einschalten eine Referenzrichtung eingeschtellt, anhand derer die Abweichung bestimmt wird.
+Das Gerät kann nun die relative Position zu dem eigenen Standort in verschiedenen Darstellungsweisen ausgeben: Zylinderkoordinaten und Kartesische Koordinaten.
+
+Der Laser wird von einem Retroreflektor an einer Messstange reflektiert, welche wir an Bord genommen haben.
+Ein Retroreflektor ist eine Anordnung von drei Spiegeln, welche jeweils im $90^\circ$-Winkel zueinander stehen.
+Jeder einfallende Strahl wird so in die Herkunftsrichtung zurückgelenkt.
+
+Es stellte sich bei den Messungen heraus, dass die Genauigkeit des Geodimeters keine Rolle spielte, da das Boot von Wind und Strömung während der Messung sehr stark abgetrieben wurde.
+Daher hätte vermutlich auch unsere erste Idee, die Position über GPS zu erfassen funktioniert, welche wir wegen der vermeitlich schlechten Auflösung von 5-10m verwarfen.
+
+\subsection{Temperatur}
+Die Temperatur haben wir mit einem Pt1000-Widerstand vermessen.
+Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
+Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab:
+\begin{align}
+	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right) \label{eq:Pt1000}
+\end{align}
+Die zugehörigen Konstanten findet man in Tabelle \ref{tab:Pt1000}.
+
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		R$_0$ & $1000 ~ \si{\ohm}$\\
+		A   & $3.9083 \cdot 10^{-3} ~ \si{\celsius^{-1}}$\\
+		B   & $-5.775 \cdot 10^{-7} ~ \si{\celsius^{-2}}$\\
+		\hline
+	\end{tabular}
+	\caption{Kennwerte des Widerstandsthermometers}
+	\label{tab:Pt1000}
+\end{table}
+
+Der Fehler der Temperaturmessung dieses Gerätes liegt bei
+\begin{align}
+	\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)~.
+	\label{eq:Pt1000_fehler}
+\end{align}
+
+Allerdings ist unser Sensor zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschichtet.
+Dieser sollte nur die Reaktionszeit beeinflussen.
+Das größere Hinderniss bei der Temperaturbestimmung lag bei uns am ADC (Analog-Digital-Converter), welcher die verstärkte Spannung in ein digitales Signal umwandelt.
+Dessen Auflösung ist mit 16 Bit zwar schon recht gut, allerdings bedeutet dies, dass nur Spannungsunterschiede von xxxxxxxxxxxxxxxxxxxx V gemessen werden können, was einer Temperaturdifferenz von ca. xxxxxxxxxxxxxxxxxxxxxxxxxx$^\circ$ entspricht.
+
+
+\subsection{Absorption}
+
+\subsection{Echolot}
                                                                                                                                                                       
 \section{Durchführung}
 \label{sec:durchfuehrung}
+Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine grobe Rasterung zu überlegen.
+Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden müssen.
+Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
+Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führen.
 
 \section{Auswertung}
 \label{sec:auswertung}
 
 \section{Diskussion}
 \label{sec:diskussion}
+\subsection{Messprobleme und verworfene Ideen}
+Unsere erste Idee war die, ein ferngesteuertes U-Boot zu bauen, was die Sensoren an Bord hat.
+Dies stellte sich jedoch sehr schnell als nicht durchführbar heraus, da es keine geeigneten Modellbauten gab und da die komplette Technik mit Stromversorgung unter Wasser luftdicht sein müsste.
+Daher kamen wir auf die Idee, eine ferngesteuerte Plattform zu bauen, welche die Sonden mit einer Winde ferngesteuert herunterlässt.
+Dies verwarfen wir jedoch auch sehr schnell, da die Fernsteuertechnik einen großen Teil unserer Arbeit ausgemacht hätte, was wissenschaftlich wenig interessant ist.
+Auch hätten wir Probleme bekommen, falls sich zum Beispiel die Sensoren in Wasserpflanzen verfangen.
+
+So entschieden wir uns für die simplere Umsetzung, ein Ruderboot zu nehmen und die Stromversorgung, sowie die Datenverarbeitung im Boot zu betreiben und nur die Sensoren an den Kabeln herunter zu lassen.
+
+
+Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
+\begin{itemize}
+	\item \textit{el. Leitfähigkeit}: Funktionierte nicht, da wir dafür Wechselspannungen mit 50V benötigt hätten.
+		Dies wäre notwendig, da sich sonst an den Elektroden durch Eletrolyse Salze angelagert hätten, welche für eine höhere gemessene Leitfähigkeit gesorgt hätten.
+		Auch wäre zur Kallibration mindestens eine Pufferlösung notwendig gewesen und die Leitfähigkeit alleine ist kein Maß für den Salzgehalt, der auch noch von anderen Größen maßgeblich beeinflusst wird.
+		So konnten wir den Sensor, welchen Jan bereits besorgt hatte, nicht einsetzen.
+
+\end{itemize}<++>
+
 
 \bibliography{literatur}
 \bibliographystyle{babalpha}
