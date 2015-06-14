@@ -1,0 +1,8 @@
+*.toc
+*.o
+*.log
+*.aux
+*.bbl
+*.blg
+*.swp
+main
