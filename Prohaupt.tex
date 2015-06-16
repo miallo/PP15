@@ -191,6 +191,61 @@ Möchte man also die Teife des Sensors bestimmen, so berechnet sich diese nach d
 	\sigma_d &= \frac{\sigma_{p(d)}}{0.1\si{\bar \per\metre}}
 \end{align}
 
+
+\subsection{Schallausbreitung}
+
+\subsubsection{Abstandsgesetz und Intensität}
+
+%Motivation:
+Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, der Schallwellen mit Frequenzen im Ultraschallbereich abgibt
+ähnlich verhalten, wie die Gesetze einer punktförmigen Schallquelle. 
+
+%Quelle Tipler S.589
+
+Der Grund dafür ist, dass die genutzen Entfernungen zwischen Sender und Empfänger vielfach größer sind als die Größe des schwingenden Kristalls. 
+In einem homogenem Medium verteilt sich dann die ausgesendete Energie der Welle in drei Dimensionen gleichmäßig im Abstand $r$ über eine Kugelfläche $A$. Wird nun mit $<P>$ die mittlere vom Sender abgestrahlte Leistung 
+bezeichnet, dann ist also zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält:
+
+\begin{align}
+ I \propto \frac{<P>}{r^2}
+\end{align}
+Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $<w>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung kann auch geschrieben werden als:
+\begin{align}
+ <P>  = <w> A v
+\end{align}
+Woraus sich direkt für die Intensität ergibt:
+\begin{align}
+ I = <w> v
+\end{align}
+Die nun noch unbekannte Energiedichte von Schallwellen kann man aus der Betrachtung einer harmonischen Welle gewinnen. Dabei ergibt sich ganz allgemein, dass diese 
+proportional ist zum Quadrat der Amplitude $A$ und der Kreisfrequenz $\omega$:
+\begin{align}
+ <\omega> = \frac{1}{2} \rho \omega^2 A^2
+\end{align}
+Mit $\rho$ wurde hier wie üblich die Dichte des Mediums bezeichnet.
+Insgesamt ergibt sich also 
+\begin{align}
+ I = \frac{1}{2} \rho \omega^2 A^2 = \frac{1}{2} \frac{P_{max}^2}{\rho v}  
+\end{align}
+Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zusammenhang zwischen der maximalen Druckamplitude $P_{max}$ und der Amplitude der Schallwelle gegeben ist durch:
+\begin{align}
+ P_{max} = \rho \omega v A
+\end{align}
+Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude.
+
+\subsubsection{Schallgeschwindigkeit}
+Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden:
+\begin{align}
+ v = \sqrt{  \frac{K}{\rho}  }
+\end{align}
+Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderungen:
+\begin{align}
+ K =  \frac{\Delta P}{\Delta V / V }
+\end{align}
+Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit also ganz wesentlich vom Medium abhängt. 
+Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s.
+
+
 \subsection{Ortsbestimmung}
 Um den Ort des Bootes zu bestimmen, verwendeten wir ein Geodimeter (s. Abb. \ref{fig:geodimeter}).
 Dieses sendet einen Laserstrahl in eine bestimmte Richtung aus und misst, sobald er reflektiert wird die Flugdauer.
