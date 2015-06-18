@@ -4,6 +4,10 @@ stats 'alle.dat' u 0:2
 
 set yrange [20:45]
 
+set print 'tempavg.dat'
+print '#Average Temp'
+set print
+
 do for [i=0:int(STATS_blocks-1)] {	
 	stats 'alle.DAT' index i u 0:2
 	

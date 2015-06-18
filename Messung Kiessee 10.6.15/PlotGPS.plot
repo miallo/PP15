@@ -9,4 +9,4 @@ x0 = lo(a,b)
 y0 = la(b)
 c = 15*pi/180
 
-plot 'GPSkomplett_2015_06_16.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0)), 'GPSsingle_2015_06_16.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0))
+plot 'GPSkomplett_2015_06_17.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0))#, 'GPSsingle_2015_06_16.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0))
