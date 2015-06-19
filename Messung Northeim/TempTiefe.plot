@@ -2,8 +2,8 @@ reset
 
 stats 'supermessung.dat' u 1:3
 
-set yrange [15:35]
-set xrange [-0.5:8]
+set yrange [15:25]
+set xrange [-0.5:7]
 
 set print 'tempavg.dat'
 print '#Average Temp'
