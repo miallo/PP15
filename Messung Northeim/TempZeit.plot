@@ -1,20 +1,16 @@
 reset
 
-stats 'supermessung.dat' u 1:3
+stats 'supermessung.dat' u 1:3 nooutput
 
-set yrange [20:45]
+set yrange [10:25]
 
 set print 'tempavg.dat'
 print '#Average Temp'
-set print
 
 do for [i=0:int(STATS_blocks-1)] {	
-	stats 'alle.DAT' index i u 0:2
-	
-	set print 'tempavg.dat' append
+	stats 'supermessung.DAT' index i u 0:3 nooutput
 	print STATS_mean_y
-	set print
 	
-	plot 'alle.DAT' index i u 0:2
-	pause 0.5
+	plot 'supermessung.dat' index i u 0:3
+	pause 1
 }
