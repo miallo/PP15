@@ -267,6 +267,14 @@ Außerdem hat dies den Vorteil, dass das GPS-Modul auch gleich die aktuelle Zeit
 Parallel zu dem direkten Speichern haben wir auch eine Smartphone-App erstellt, die ebenfalls die Position aufzeichet (s. Kapitel \ref{sec:app}).
 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=10cm]{Fotos/Geodimeter}
+	\caption{Kevin beim einstellen des Geodimeters.}
+	\label{fig:geodimeter}
+\end{figure}
+
+
 \subsection{Temperatur}
 Die Temperatur haben wir mit einem Pt1000-Widerstand vermessen.
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
@@ -376,6 +384,36 @@ Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren
 
 \section{Diskussion}
 \label{sec:diskussion}
+\subsection{Druck}
+
+
+\subsection{Echolot}
+
+
+\subsection{Ortsbestimmung}
+
+
+\subsection{Temperatur}
+Bei der zweiten Messung zeigte sich in den Daten, dass die Werte der Temperatur augenscheinlich gleichzeitig drei Werte annehmen.
+Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:tempSprung} zu erkennen, dass jeweils ungefähr 10 Messwerte auf einem niedrigen, dann auf einem mittleren, erneut auf einem niedrigen und dann wieder auf einem hohen Niveau liegen.
+Dies  entspricht genau der Frequenz, mit der wir die LEDs angeschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
+Für beide Messungen benutzten wir den Micro-Controller als Stromquelle.
+Dieser ist für Ströme von bis zu 350mA ausgelegt.
+Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des ADCs so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von biszu $4^\circ $C aufweisen.
+
+\begin{figure}[h]
+	\centering
+	\input{tempSprung}
+	\caption{Vergrößerte Darstellung einer Temperaturkurve.}
+	\label{fig:tempSprung}
+\end{figure}
+
+
+
+\subsection{Absorption}
+
+
+
 \subsection{Messprobleme und verworfene Ideen}
 Unsere erste Idee war die, ein ferngesteuertes U-Boot zu bauen, was die Sensoren an Bord hat.
 Dies stellte sich jedoch sehr schnell als nicht durchführbar heraus, da es keine geeigneten Modellbauten gab und da die komplette Technik mit Stromversorgung unter Wasser luftdicht sein müsste.
@@ -388,7 +426,7 @@ So entschieden wir uns für die simplere Umsetzung, ein Ruderboot zu nehmen und 
 
 Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 \begin{itemize}
-	\item \textit{el. Leitfähigkeit}: Funktionierte nicht, da wir dafür Wechselspannungen mit 50V benötigt hätten.
+	\item \textit{el. Leitfähigkeit}: Funktionierte nicht, da wir dafür Wechselspannungen mit mindestens 50V benötigt hätten.
 		Dies wäre notwendig, da sich sonst an den Elektroden durch Eletrolyse Salze angelagert hätten, welche für eine höhere gemessene Leitfähigkeit gesorgt hätten.
 		Die Leitfähigkeit alleine ist kein Maß für den Salzgehalt, der auch noch von anderen Größen maßgeblich beeinflusst wird.
 		So konnten wir den Sensor, welchen Jan bereits besorgt hatte, nicht einsetzen.
