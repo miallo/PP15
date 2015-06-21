@@ -362,6 +362,17 @@ Dessen Auflösung ist mit 16 Bit zwar schon recht gut, allerdings bedeutet dies,
 Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
 Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
 Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma.\\
+%ADCbeschreiben
+Zur Bestimmung der am Kontroller anliegenden Spannung wird ein integrierter ADC verwendet.
+Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Refferenzspannung vergleicht.
+Die Refferenzdspannung wird bei jedem Schritt halbiert oder um die hälfte erhöt jeh nach dem, ob die zu messende Spannung kleiner oder größer ist.
+Der ADC hat eine Auflösung von 12bit, somit hat das Verfahren auch 12 Schritte.
+Die Refferenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
+Aus diesem Verfahren ergibt sich bei 12bit einen minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
+Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite berechnet werden
+\begin{align}
+	U=\text{ADCWert}\cdot B\label{eq:ADCwert}
+\end{align}
 Für die Sensoren werden verschiedene Schaltungen verwendet, die im Follgenden näher erläutert.
 
 \subsubsection{Temperaturmessung}
@@ -371,6 +382,15 @@ Für die Sensoren werden verschiedene Schaltungen verwendet, die im Follgenden n
 \caption{Beschaltung des PT1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
 \label{fig:PT1000Schaltung}
 \end{figure}
+Für die Messung der Temperatur wird mit einem PT1000 Temperaturwiderstand gearbeitet.
+Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
+Aus diesem Grund wird die am PT1000 abfallende Spannung noch verstärkt werden muss.
+Dies geschieht mithilfe eines nichinvertierenden Verstärkers. %ref aufquelle
+Mit der Formel %ref auf Formel
+ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf 2\si{\volt}, was etwa in der Mitte des Messbereiches des ADC liegt.
+Zur aschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel %ref auf Formel
+verwendet.
 
 \subsubsection{Lichtmessung}
 \begin{figure}[!h]
