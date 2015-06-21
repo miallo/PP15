@@ -376,10 +376,32 @@ Dessen Auflösung ist mit 16 Bit zwar schon recht gut, allerdings bedeutet dies,
 \label{sec:durchfuehrung}
 
 \subsection{Aufbau des Datenloggers}
+Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
+Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
+Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma.\\
+Für die Sensoren werden verschiedene Schaltungen verwendet, die im Follgenden näher erläutert.
 
 \subsubsection{Temperaturmessung}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
+\caption{Beschaltung des PT1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
+\label{fig:PT1000Schaltung}
+\end{figure}
 
 \subsubsection{Lichtmessung}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
+\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung.}
+\label{fig:PhotodiodeSchaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
+\caption{Beschaltung der LEDs für die Messung der Absorbtion.}
+\label{fig:LEDSchaltung}
+\end{figure}
 
 \subsubsection{Druckmessung}
 
