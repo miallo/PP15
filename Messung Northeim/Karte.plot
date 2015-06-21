@@ -22,8 +22,8 @@ set yrange [-1600:200]
 
 set size ratio -1
 
-p 'NortheimGroﬂerSeeKontour.kml' u (1000*(lo($1,$2)-x0)):(1000*(la($2)-y0)) w l lt -1 t 'Seekontur',\
-  'NortheimGroﬂerSeeInsel.kml' u (1000*(lo($1,$2)-x0)):(1000*(la($2)-y0)) w l lt -1 notitle,\
+p 'NortheimGrosserSeeKontour.kml' u (1000*(lo($1,$2)-x0)):(1000*(la($2)-y0)) w l lt -1 t 'Seekontur',\
+  'NortheimGrosserSeeInsel.kml' u (1000*(lo($1,$2)-x0)):(1000*(la($2)-y0)) w l lt -1 notitle,\
   'GPSsingle_2015_06_17.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0))  t 'Messpunkte (IPhone)',\
   #'supermessung.dat' u (1000*(lo($12,$11)-x0)):(1000*(la($11)-y0)) w lp t 'Garmin'
   
