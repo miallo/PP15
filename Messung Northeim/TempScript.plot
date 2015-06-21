@@ -18,6 +18,12 @@ do for [i=0:int(STATS_blocks-1)] {
 	set yrange[*:*]
 	stats 'supermessung.dat' index i u 0:1  nooutput
 	records = STATS_records
+
+	stats 'supermessung.dat' index i u 0:4 name "maxDruck" nooutput
+	DruckMax = maxDruck_max_y
+	set yrange[*:DruckMax-1]
+	stats 'supermessung.dat' index i u 0:4 name "maxDruck" nooutput
+	DruckMax = maxDruck_max_y
 	
 	set yrange[51.71:51.74]	
 	stats 'supermessung.dat' index i u 0:11 name "lat" nooutput
@@ -43,7 +49,7 @@ do for [i=0:int(STATS_blocks-1)] {
 			set yrange [tempmin:tempmax];\
 		
 			stats 'supermessung.dat' index i u 0:3 name "temp2" nooutput
-			print time_mean_y, lat_mean_y, long_mean_y, ADCdruck_mean_y, ADCdruck_stddev_y, temp2_mean_y, temp2_stddev_y, temp2_records
+			print time_mean_y, lat_mean_y, long_mean_y, DruckMax, ADCdruck_mean_y, ADCdruck_stddev_y, temp2_mean_y, temp2_stddev_y, temp2_records
 		
 			#set yrange[16:21]		
 			#plot 'supermessung.dat' index i u 0:3, temp2_mean_y, tempmax
