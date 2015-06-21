@@ -188,6 +188,13 @@ Möchte man also die Teife des Sensors bestimmen, so berechnet sich diese nach d
 \end{align}
 
 
+
+
+
+
+
+
+
 \subsection{Schallausbreitung}
 
 \subsubsection{Abstandsgesetz und Intensität}
@@ -229,6 +236,15 @@ Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zu
 \end{align}
 Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude.
 
+
+
+
+
+
+
+
+
+
 \subsubsection{Schallgeschwindigkeit}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden:
 \begin{align}
@@ -240,6 +256,53 @@ Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompres
 \end{align}
 Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit also ganz wesentlich vom Medium abhängt. 
 Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s.
+
+
+
+
+
+
+\subsection{Absorption von Licht in Materie}
+Setzt man Licht als eine Ebene Welle an so ergibt sich bei Ausbreitung in einem homogenem Medium das Beer'sche Absorptionsgesetz.
+Es beschreibt, dass die Intensität $I$ des Lichts exponentiell abfällt bei zunehmender Stecke.
+Für den Anteil des noch vorhandenen Intensität gilt dann:
+\begin{align}
+ \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)
+\end{align}
+Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium ab als auch von der Wellenlänge $\lambda$ ab.
+\begin{align}
+ \alpha= \frac{4 \pi \kappa}{\lambda}
+\end{align}
+Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
+
+
+
+
+
+\subsection{Nichtinvertierbarer Operationsverstärker}
+
+Dabei handelt es sich von der Grundschaltung her um einen Operationsverstärker.
+Diese finden sehr viel Anwendung in allen möglichen Bereichen, zum Beispiel 
+der Mess-und regelungstechnik. 
+Allgemeine Eigenschaften dieser Bauteile sind, eine verallen eine sehr große Verstärkung
+von Eingangsignalen, ein hoher Eingangs und dazu vergleichsweise geringer Ausgangswiderstand.
+Das allgemeine Verstärkersymbol ist ein Dreieck in es werden darin auch die beiden
+Eingänge mit + und - gekennzeichnet.
+Der - Eingang wird als invertierbarer Eingang und 
+der + Eingang als nicht invertierbarer Eingang bezeichnet.
+Das eigentliche Bauteil des Verstärkters ist sehr komplex und es lohnt sich nicht hier 
+weiter darauf einzugehen.
+Entscheident ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
+Nichtinvertierbaren Verstärkers. Für diese gilt:
+\begin{align}
+ v = 1 + \frac{R_2}{R_1}
+\end{align}
+Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandverhältnisses.
+Eine weitere Eigenschaft des Nichtinvertierbarer Verstärker ist, dass die Phase des Eingangs
+und Ausgangssignals gleich sind. Diese Eigenschaft wäre für das Echolot wichtig gewesen.
+
+
+
 
 
 \subsection{Ortsbestimmung}
@@ -311,6 +374,40 @@ Dessen Auflösung ist mit 16 Bit zwar schon recht gut, allerdings bedeutet dies,
                                                                                                                                                                       
 \section{Durchführung}
 \label{sec:durchfuehrung}
+
+\subsection{Aufbau des Datenloggers}
+Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
+Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
+Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma.\\
+Für die Sensoren werden verschiedene Schaltungen verwendet, die im Follgenden näher erläutert.
+
+\subsubsection{Temperaturmessung}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
+\caption{Beschaltung des PT1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
+\label{fig:PT1000Schaltung}
+\end{figure}
+
+\subsubsection{Lichtmessung}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
+\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung.}
+\label{fig:PhotodiodeSchaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
+\caption{Beschaltung der LEDs für die Messung der Absorbtion.}
+\label{fig:LEDSchaltung}
+\end{figure}
+
+\subsubsection{Druckmessung}
+
+
+\subsection{Messdurchführung}
+
 Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine grobe Rasterung zu überlegen.
 Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden müssen.
 Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
@@ -360,6 +457,7 @@ Diese kann nun bequem mit einem Tippen versandt werden.
   \caption{Screenshots der App.}
   \label{fig:appScreenshots}
 \end{figure}
+
 
 \section{Auswertung}
 \label{sec:auswertung}
