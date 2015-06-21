@@ -407,7 +407,12 @@ Mit der Formel %ref auf Formel
 ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
 Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf 2\si{\volt}, was etwa in der Mitte des Messbereiches des ADC liegt.
 Zur aschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel %ref auf Formel
-verwendet.
+verwendet.\\
+Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
+\begin{align}
+	R_\text{PT1000}=\frac{R_1*U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
+\end{align}
+ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
 
 \subsubsection{Lichtmessung}
 \begin{figure}[!h]
