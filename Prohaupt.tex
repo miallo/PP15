@@ -388,7 +388,20 @@ Dessen Auflösung ist mit 16 Bit zwar schon recht gut, allerdings bedeutet dies,
 Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
 Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
 Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma.\\
+%ADCbeschreiben
+Zur Bestimmung der am Kontroller anliegenden Spannung wird ein integrierter ADC verwendet.
+Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Refferenzspannung vergleicht.
+Die Refferenzdspannung wird bei jedem Schritt halbiert oder um die hälfte erhöt jeh nach dem, ob die zu messende Spannung kleiner oder größer ist.
+Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
+, somit hat das Verfahren auch 12 Schritte.
+Die Refferenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
+Aus diesem Verfahren ergibt sich bei 12bit einen minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
+Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite berechnet werden
+\begin{align}
+	U=\text{ADCWert}\cdot B.\label{eq:ADCwert}
+\end{align}
 Für die Sensoren werden verschiedene Schaltungen verwendet, die im Follgenden näher erläutert.
+Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
 
 \subsubsection{Temperaturmessung}
 \begin{figure}[!h]
@@ -397,6 +410,20 @@ Für die Sensoren werden verschiedene Schaltungen verwendet, die im Follgenden n
 \caption{Beschaltung des PT1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
 \label{fig:PT1000Schaltung}
 \end{figure}
+Für die Messung der Temperatur wird mit einem PT1000 Temperaturwiderstand gearbeitet.
+Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
+Aus diesem Grund muss die am PT1000 abfallende Spannung noch verstärkt werden.
+Dies geschieht mithilfe eines nichinvertierenden Verstärkers. %ref aufquelle
+Mit der Formel %ref auf Formel
+ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf 2\si{\volt}, was etwa in der Mitte des Messbereiches des ADC liegt.\\
+Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
+\begin{align}
+	R_\text{PT1000}=\frac{R_1*U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
+\end{align}
+ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
+Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel %ref auf Formel
+verwendet.
 
 \subsubsection{Lichtmessung}
 \begin{figure}[!h]
@@ -411,9 +438,22 @@ Für die Sensoren werden verschiedene Schaltungen verwendet, die im Follgenden n
 \caption{Beschaltung der LEDs für die Messung der Absorbtion.}
 \label{fig:LEDSchaltung}
 \end{figure}
+Für die Lichtmessung wird eine Photodiode als Intensitätsaphängige Stromquelle verwendet.
+Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
+Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine Messbare Spannung zu wandeln.
+Da in den See nicht viel Licht eintritt wird die sich ergebene Spannung noch über einen nichtinvertierenden Verstärker nach der Gleichung %ref auf Gleichung
+mit einem Faktor 11 Verstärkt.
+Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
+Um die Absorbtion in verschiedenen Spektren zu Messen hat die Messonde eine Blaue und eine Infrarote LED %ref auf die Datenblätter
+mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
+Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit Vorwiderständen beschaltet.\\
+Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LEDbetrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
-
+Der Druck wird durch einen Absolutdrucksensor in einer Messbrücke bestimmt.
+Die Schaltung wurde von der Geophysik bereitgestellt und dierekt an dem Pin 14.2 am Board angeschlossen.
+Zu dem muss die Masse von der externen Schaltung mit der Masse des Boars gekoppelt werden.
+Die Messbrücke ist bei einer Spannung von 1\si{\volt} auf einen Druck von 1000HPa geeicht.
 
 \subsection{Messdurchführung}
 
@@ -494,6 +534,17 @@ Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren
 
 
 \subsection{Ortsbestimmung}
+Bei der ersten Messung haben wir den Ort mit einem Geodimeter bestimmt.
+Problematisch war hierbei, dass das Boot mit dem Spiegel relativ stark geschwankt hat.
+Dies führte gerade bei Messungen, wo das Boot relativ dicht am Geodimeter war dazu, dass die Aufnahme der Position schwer war.
+An einer Stelle konnten wir den Messstab in über 5 min nicht ruhig genug halten, so dass wir schließlich die Position nicht aufnahmen.
+Generell war es ein Problem, dass wir nur zwei Leute auf dem Boot hatten: einen Ruderer, der während der Messung den Stab hochgehalten hat und einen, der sich um die Sonde kümmerte.
+Dies führte dazu, dass häufig der für den Retroreflektor zuständige diesen zu schräg hielt, so dass die Spiegelfläche nicht sichtbar war.
+Da wir bei der Messung die Funkgeräte vergessen hatten, mussten wir uns mit Handzeichen verständigen.
+Dies stellte selbst am Göttinger Kiessee an den entferntesten Messpunkten eine Herausforderung dar, so dass dort das Boot-Team häufig unnötig lange an einem Ort blieb, da sie die Bestätigung nicht sahen.
+
+
+Außerdem behindert am Seeburger See eine Insel ein großteil des Blickfelds.
 
 
 \subsection{Temperatur}
