@@ -341,7 +341,8 @@ Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab:
 \begin{align}
 	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right) \label{eq:Pt1000}
 \end{align}
-Die zugehörigen Konstanten findet man in Tabelle \ref{tab:Pt1000}.
+Diese Formel ist rein empirisch. 
+Die zugehörigen Konstanten die in Eichmessungen ermittelt werden findet man in Tabelle \ref{tab:Pt1000}.
 
 \begin{table}[!htb]
 	\centering
@@ -355,6 +356,14 @@ Die zugehörigen Konstanten findet man in Tabelle \ref{tab:Pt1000}.
 	\caption{Kennwerte des Widerstandsthermometers}
 	\label{tab:Pt1000}
 \end{table}
+
+Durch Umstellen erhält man eine Fomel für die Temperatur in Grad Celsius:
+\begin{align}
+ \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    } 
+\end{align}
+
+
+
 
 Der Fehler der Temperaturmessung dieses Gerätes liegt bei
 \begin{align}
