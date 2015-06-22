@@ -8,7 +8,7 @@ stats 'supermessung.dat' u 0:3 nooutput
 
 points = 40
 
-set print 'superTemp2.dat'
+set print 'superTemp.dat'
 print '#points ',points
 print '#t[s] lat long ADCdruck ADCdruck_stddev temp temp_stdev temp_records'
 
@@ -19,11 +19,9 @@ do for [i=0:int(STATS_blocks-1)] {
 	stats 'supermessung.dat' index i u 0:1  nooutput
 	records = STATS_records
 
-	stats 'supermessung.dat' index i u 0:4 name "maxDruck" nooutput
-	DruckMax = maxDruck_max_y
-	set yrange[*:DruckMax-1]
-	stats 'supermessung.dat' index i u 0:4 name "maxDruck" nooutput
-	DruckMax = maxDruck_max_y
+	stats 'superTemp2.dat' index i u 0:5 name "maxTiefe" nooutput
+	DruckMax = maxTiefe_max_y
+
 	
 	set yrange[51.71:51.74]	
 	stats 'supermessung.dat' index i u 0:11 name "lat" nooutput
