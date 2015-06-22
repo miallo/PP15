@@ -402,7 +402,7 @@ Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite be
 \begin{align}
 	U=\text{ADCWert}\cdot B.\label{eq:ADCwert}
 \end{align}
-Für die Sensoren werden verschiedene Schaltungen verwendet, die im Follgenden näher erläutert.
+Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
 Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
 
 \subsubsection{Temperaturmessung}
@@ -469,6 +469,18 @@ Gleichzeitig drückt die andere Person auf dem Boot den Knopf "`Start"' und läs
 Ist die Sonde auf dem Grund des Sees angekommen, so kann sie wieder hochgezogen werden.
 Dies muss nicht so langsam geschehen, da sich bei Kontakt mit dem Boden teilweise Schlamm um die Sensoren legt, welche die Messung verfälschen.
 Dieser muss gegebenenfalls nach Beendigung der Messung abgespühlt werden.
+
+Wird die Einzelmessung an der App gleichzeitig mit dem Datenlogger gestartet, so wird zu den GPS-Daten der App gleich der Dateiname der Messreihe gespeichert.
+Ist nun die Messung gestartet, so wird die Sonde langsam ins Wasser gelassen.
+Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
+Erreicht die Sonde den Boden, so muss die Messung beendet werden, da sich sonst gegebenenfalls Schlamm um die Sensoren legt.
+Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gezogen werden um die doppelte Anzahl an Messwerten für die jeweilige Tiefe zu bekommen.
+
+Erreicht die Sonde in diesem Fall wieder die Oberfläche, so wird die Messung beendet.
+Dies ist notwendig, da der Lichtsensor an der Oberfläche eine zu hohe Spannung liefert und so den ADC übersteuert.
+
+
+
 
 
 \subsection{Smartohone-App}
