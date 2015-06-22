@@ -139,16 +139,12 @@ Praktikanten: &  Michael Lohmann\\
  &  Felix Kurtz\\
  &  Kevin Lüdemann\\
  &  Jan Weinreich\\
- E-Mail: & m.lohmann@stud.uni-goettingen.de\\
- &  felix.kurtz@stud.uni-goettingen.de\\
- &  kevin.luedemann@stud.uni-goettingen.de\\
- &  jan.weinreich1@stud.uni-goettingen.de\\
  Betreuer: & Prof. Bahr\\
  Versuchsdatum: & xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.2015\\
 \end{tabular}
 \end{Large}
 
-\vspace*{0.8cm}
+\vspace*{3.8cm}
 
 \begin{Large}
 \fbox{
@@ -161,7 +157,7 @@ Praktikanten: &  Michael Lohmann\\
 \end{titlepage}
 
 \tableofcontents
-
+\thispagestyle{empty}
 \newpage
 
 \section*{Danksagung}
@@ -169,9 +165,11 @@ Wir danken dem Institut für Geophysik, das uns Teile des technischen Equipments
 Herrn Prof. Bahr möchten wir für die Betreuung unseres Projektes danken.
 Insbesondere möchten wir auch Herrn Ullrich Einecke danken für viel Unterstützung mit der technischen Umsetzung.
 Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments sehr hilfreich war.
-
+\thispagestyle{empty}
 \newpage
 
+\setcounter{footnote}{0}
+\setcounter{page}{1}
 \section{Einleitung}
 \label{sec:einleitung}
 \cite{demtroeder}
@@ -190,6 +188,13 @@ Möchte man also die Teife des Sensors bestimmen, so berechnet sich diese nach d
 	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}} \label{eq:d}\\
 	\sigma_d &= \frac{\sigma_{p(d)}}{0.1\si{\bar \per\metre}}
 \end{align}
+
+
+
+
+
+
+
 
 
 \subsection{Schallausbreitung}
@@ -233,6 +238,15 @@ Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zu
 \end{align}
 Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude.
 
+
+
+
+
+
+
+
+
+
 \subsubsection{Schallgeschwindigkeit}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden:
 \begin{align}
@@ -244,6 +258,53 @@ Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompres
 \end{align}
 Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit also ganz wesentlich vom Medium abhängt. 
 Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s.
+
+
+
+
+
+
+\subsection{Absorption von Licht in Materie}
+Setzt man Licht als eine Ebene Welle an so ergibt sich bei Ausbreitung in einem homogenem Medium das Beer'sche Absorptionsgesetz.
+Es beschreibt, dass die Intensität $I$ des Lichts exponentiell abfällt bei zunehmender Stecke.
+Für den Anteil des noch vorhandenen Intensität gilt dann:
+\begin{align}
+ \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)
+\end{align}
+Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium ab als auch von der Wellenlänge $\lambda$ ab.
+\begin{align}
+ \alpha= \frac{4 \pi \kappa}{\lambda}
+\end{align}
+Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
+
+
+
+
+
+\subsection{Nichtinvertierbarer Operationsverstärker}
+
+Dabei handelt es sich von der Grundschaltung her um einen Operationsverstärker.
+Diese finden sehr viel Anwendung in allen möglichen Bereichen, zum Beispiel 
+der Mess-und regelungstechnik. 
+Allgemeine Eigenschaften dieser Bauteile sind, eine verallen eine sehr große Verstärkung
+von Eingangsignalen, ein hoher Eingangs und dazu vergleichsweise geringer Ausgangswiderstand.
+Das allgemeine Verstärkersymbol ist ein Dreieck in es werden darin auch die beiden
+Eingänge mit + und - gekennzeichnet.
+Der - Eingang wird als invertierbarer Eingang und 
+der + Eingang als nicht invertierbarer Eingang bezeichnet.
+Das eigentliche Bauteil des Verstärkters ist sehr komplex und es lohnt sich nicht hier 
+weiter darauf einzugehen.
+Entscheident ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
+Nichtinvertierbaren Verstärkers. Für diese gilt:
+\begin{align}
+ v = 1 + \frac{R_2}{R_1}
+\end{align}
+Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandverhältnisses.
+Eine weitere Eigenschaft des Nichtinvertierbarer Verstärker ist, dass die Phase des Eingangs
+und Ausgangssignals gleich sind. Diese Eigenschaft wäre für das Echolot wichtig gewesen.
+
+
+
 
 
 \subsection{Ortsbestimmung}
@@ -267,6 +328,14 @@ Außerdem hat dies den Vorteil, dass das GPS-Modul auch gleich die aktuelle Zeit
 Parallel zu dem direkten Speichern haben wir auch eine Smartphone-App erstellt, die ebenfalls die Position aufzeichet (s. Kapitel \ref{sec:app}).
 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=10cm]{Fotos/Geodimeter}
+	\caption{Kevin beim Einstellen des Geodimeters.}
+	\label{fig:geodimeter}
+\end{figure}
+
+
 \subsection{Temperatur}
 Die Temperatur haben wir mit einem Pt1000-Widerstand vermessen.
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
@@ -274,7 +343,8 @@ Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab:
 \begin{align}
 	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right) \label{eq:Pt1000}
 \end{align}
-Die zugehörigen Konstanten findet man in Tabelle \ref{tab:Pt1000}.
+Diese Formel ist rein empirisch. 
+Die zugehörigen Konstanten die in Eichmessungen ermittelt werden findet man in Tabelle \ref{tab:Pt1000}.
 
 \begin{table}[!htb]
 	\centering
@@ -288,6 +358,14 @@ Die zugehörigen Konstanten findet man in Tabelle \ref{tab:Pt1000}.
 	\caption{Kennwerte des Widerstandsthermometers}
 	\label{tab:Pt1000}
 \end{table}
+
+Durch Umstellen erhält man eine Fomel für die Temperatur in Grad Celsius:
+\begin{align}
+ \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    } 
+\end{align}
+
+
+
 
 Der Fehler der Temperaturmessung dieses Gerätes liegt bei
 \begin{align}
@@ -307,6 +385,80 @@ Dessen Auflösung ist mit 16 Bit zwar schon recht gut, allerdings bedeutet dies,
                                                                                                                                                                       
 \section{Durchführung}
 \label{sec:durchfuehrung}
+
+\subsection{Aufbau des Datenloggers}
+Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
+Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
+Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma.\\
+%ADCbeschreiben
+Zur Bestimmung der am Kontroller anliegenden Spannung wird ein integrierter ADC verwendet.
+Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Refferenzspannung vergleicht.
+Die Refferenzdspannung wird bei jedem Schritt halbiert oder um die hälfte erhöt jeh nach dem, ob die zu messende Spannung kleiner oder größer ist.
+Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
+, somit hat das Verfahren auch 12 Schritte.
+Die Refferenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
+Aus diesem Verfahren ergibt sich bei 12bit einen minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
+Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite berechnet werden
+\begin{align}
+	U=\text{ADCWert}\cdot B.\label{eq:ADCwert}
+\end{align}
+Für die Sensoren werden verschiedene Schaltungen verwendet, die im Follgenden näher erläutert.
+Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
+
+\subsubsection{Temperaturmessung}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
+\caption{Beschaltung des PT1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
+\label{fig:PT1000Schaltung}
+\end{figure}
+Für die Messung der Temperatur wird mit einem PT1000 Temperaturwiderstand gearbeitet.
+Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
+Aus diesem Grund muss die am PT1000 abfallende Spannung noch verstärkt werden.
+Dies geschieht mithilfe eines nichinvertierenden Verstärkers. %ref aufquelle
+Mit der Formel %ref auf Formel
+ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf 2\si{\volt}, was etwa in der Mitte des Messbereiches des ADC liegt.\\
+Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
+\begin{align}
+	R_\text{PT1000}=\frac{R_1*U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
+\end{align}
+ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
+Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel %ref auf Formel
+verwendet.
+
+\subsubsection{Lichtmessung}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
+\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung.}
+\label{fig:PhotodiodeSchaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
+\caption{Beschaltung der LEDs für die Messung der Absorbtion.}
+\label{fig:LEDSchaltung}
+\end{figure}
+Für die Lichtmessung wird eine Photodiode als Intensitätsaphängige Stromquelle verwendet.
+Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
+Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine Messbare Spannung zu wandeln.
+Da in den See nicht viel Licht eintritt wird die sich ergebene Spannung noch über einen nichtinvertierenden Verstärker nach der Gleichung %ref auf Gleichung
+mit einem Faktor 11 Verstärkt.
+Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
+Um die Absorbtion in verschiedenen Spektren zu Messen hat die Messonde eine Blaue und eine Infrarote LED %ref auf die Datenblätter
+mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
+Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit Vorwiderständen beschaltet.\\
+Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LEDbetrieb getrennt gespeichert.
+
+\subsubsection{Druckmessung}
+Der Druck wird durch einen Absolutdrucksensor in einer Messbrücke bestimmt.
+Die Schaltung wurde von der Geophysik bereitgestellt und dierekt an dem Pin 14.2 am Board angeschlossen.
+Zu dem muss die Masse von der externen Schaltung mit der Masse des Boars gekoppelt werden.
+Die Messbrücke ist bei einer Spannung von 1\si{\volt} auf einen Druck von 1000HPa geeicht.
+
+\subsection{Messdurchführung}
+
 Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine grobe Rasterung zu überlegen.
 Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden müssen.
 Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
@@ -333,15 +485,29 @@ Nun gibt es zwei Möglichkeiten:
 		Dies hat den Vorteil, dass man variabel die Rasterung anpassen kann.
 \end{itemize}
 
-Die App zeigt auch die Anzahl der aufgenommenen Datenpunkte an und die beiden Dateien, welche bei den Messungen angelegt werden.
+Die App zeigt (wie in Abb. \ref{fig:appDetail} zu sehen) auch die Anzahl der aufgenommenen Datenpunkte an und die beiden Dateien, welche bei den Messungen angelegt werden.
 
 Wurde die Messung an einem Ort nun beendet, kann man einfach so lange in eine Richtung fahren, bis man den roten Kreis um den letzten Datenpunkt erreicht hat.
 Im Verlauf der Messung wird nun der ganze See systematisch mit den Kreisen überdeckt.
 
-Am Ende des Messtages kann mit dem Knopf "`Senden"' nun eine Tabelle geöffnet werden, welche die vorhandenen Dateien anzeigt.
+Am Ende des Messtages kann mit dem Knopf "`Senden"' nun eine Tabelle (s. Abb. \ref{fig:appTabelle}) geöffnet werden, welche die vorhandenen Dateien anzeigt.
 Tippt man nun auf eine der Zeilen, so wird eine Mail erstellt, die schon voreingestellt die Mailadressen, Betreff und Inhalt, sowie die angehängte Datei besitzt.
 Diese kann nun bequem mit einem Tippen versandt werden.
 
+
+\begin{figure}[h]
+  \centering
+  \subfigure[Einzelne Datenpunkte an einer Stelle des Sees.\label{fig:appDetail}]
+  {\includegraphics[width=0.32\textwidth]{Fotos/AppSeeDetail}}
+  \hfill
+  \subfigure[Übersicht über alle aufgenommenen Messpunkte in der App.\label{fig:appGesamt}]
+  {\includegraphics[width=0.32\textwidth]{Fotos/AppSeeKomplett}}
+  \hfill
+  \subfigure[Auswahl der zu versendenden Datei.\label{fig:appTabelle}]
+  {\includegraphics[width=0.32\textwidth]{Fotos/AppVersenden}}
+  \caption{Screenshots der App.}
+  \label{fig:appScreenshots}
+\end{figure}
 
 
 \section{Auswertung}
@@ -363,6 +529,47 @@ Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren
 
 \section{Diskussion}
 \label{sec:diskussion}
+\subsection{Druck}
+
+
+\subsection{Echolot}
+
+
+\subsection{Ortsbestimmung}
+Bei der ersten Messung haben wir den Ort mit einem Geodimeter bestimmt.
+Problematisch war hierbei, dass das Boot mit dem Spiegel relativ stark geschwankt hat.
+Dies führte gerade bei Messungen, wo das Boot relativ dicht am Geodimeter war dazu, dass die Aufnahme der Position schwer war.
+An einer Stelle konnten wir den Messstab in über 5 min nicht ruhig genug halten, so dass wir schließlich die Position nicht aufnahmen.
+Generell war es ein Problem, dass wir nur zwei Leute auf dem Boot hatten: einen Ruderer, der während der Messung den Stab hochgehalten hat und einen, der sich um die Sonde kümmerte.
+Dies führte dazu, dass häufig der für den Retroreflektor zuständige diesen zu schräg hielt, so dass die Spiegelfläche nicht sichtbar war.
+Da wir bei der Messung die Funkgeräte vergessen hatten, mussten wir uns mit Handzeichen verständigen.
+Dies stellte selbst am Göttinger Kiessee an den entferntesten Messpunkten eine Herausforderung dar, so dass dort das Boot-Team häufig unnötig lange an einem Ort blieb, da sie die Bestätigung nicht sahen.
+
+
+Außerdem behindert am Seeburger See eine Insel ein großteil des Blickfelds.
+
+
+\subsection{Temperatur}
+Bei der zweiten Messung zeigte sich in den Daten, dass die Werte der Temperatur augenscheinlich gleichzeitig drei Werte annehmen.
+Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:tempSprung} zu erkennen, dass jeweils ungefähr 10 Messwerte auf einem niedrigen, dann auf einem mittleren, erneut auf einem niedrigen und dann wieder auf einem hohen Niveau liegen.
+Dies  entspricht genau der Frequenz, mit der wir die LEDs angeschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
+Für beide Messungen benutzten wir den Micro-Controller als Stromquelle.
+Dieser ist für Ströme von bis zu 350mA ausgelegt.
+Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des ADCs so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von biszu $4^\circ $C aufweisen.
+
+\begin{figure}[h]
+	\centering
+	\input{tempSprung}
+	\caption{Vergrößerte Darstellung einer Temperaturkurve.}
+	\label{fig:tempSprung}
+\end{figure}
+
+
+
+\subsection{Absorption}
+
+
+
 \subsection{Messprobleme und verworfene Ideen}
 Unsere erste Idee war die, ein ferngesteuertes U-Boot zu bauen, was die Sensoren an Bord hat.
 Dies stellte sich jedoch sehr schnell als nicht durchführbar heraus, da es keine geeigneten Modellbauten gab und da die komplette Technik mit Stromversorgung unter Wasser luftdicht sein müsste.
@@ -375,7 +582,7 @@ So entschieden wir uns für die simplere Umsetzung, ein Ruderboot zu nehmen und 
 
 Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 \begin{itemize}
-	\item \textit{el. Leitfähigkeit}: Funktionierte nicht, da wir dafür Wechselspannungen mit 50V benötigt hätten.
+	\item \textit{el. Leitfähigkeit}: Funktionierte nicht, da wir dafür Wechselspannungen mit mindestens 50V benötigt hätten.
 		Dies wäre notwendig, da sich sonst an den Elektroden durch Eletrolyse Salze angelagert hätten, welche für eine höhere gemessene Leitfähigkeit gesorgt hätten.
 		Die Leitfähigkeit alleine ist kein Maß für den Salzgehalt, der auch noch von anderen Größen maßgeblich beeinflusst wird.
 		So konnten wir den Sensor, welchen Jan bereits besorgt hatte, nicht einsetzen.
