@@ -16,3 +16,4 @@ set yrange [-500:1000]
 set size ratio -1
 
 plot 'GPSkomplett_2015_06_17.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0)) w lp, 'GPSsingle_2015_06_17.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0)) w lp
+#plot 'GPSsingle_2015_06_17.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0)) w lp

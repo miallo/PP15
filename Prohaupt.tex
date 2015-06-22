@@ -183,12 +183,11 @@ Die Position des Bootes auf dem See haben wir mit einem Geodimeter (die Geräte,
 \label{sec:theorie}
 \subsection{Druck}
 In stehendem Wasser steigt der Druck pro Meter Wassertiefe um 0.1 Bar an.
-Möchte man also die Teife des Sensors bestimmen, so berechnet sich diese nach der Formel:
+Möchte man also die Tiefe des Sensors bestimmen, so berechnet sich diese nach der Formel:
 \begin{align}
 	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}} \label{eq:d}\\
 	\sigma_d &= \frac{\sigma_{p(d)}}{0.1\si{\bar \per\metre}}
 \end{align}
-
 
 
 
@@ -464,13 +463,8 @@ Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden 
 Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
 Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führen.
 
-Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält und den Messstab für das Geodimeter hochhält.
-Gleichzeitig drückt die andere Person auf dem Boot den Knopf "`Start"' und lässt die Sonde langsam herunter.
-Ist die Sonde auf dem Grund des Sees angekommen, so kann sie wieder hochgezogen werden.
-Dies muss nicht so langsam geschehen, da sich bei Kontakt mit dem Boden teilweise Schlamm um die Sensoren legt, welche die Messung verfälschen.
-Dieser muss gegebenenfalls nach Beendigung der Messung abgespühlt werden.
-
-Wird die Einzelmessung an der App gleichzeitig mit dem Datenlogger gestartet, so wird zu den GPS-Daten der App gleich der Dateiname der Messreihe gespeichert.
+Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält und gegebenenfalls den Messstab für das Geodimeter hochhält.
+Wird die Einzelmessung der App gleichzeitig mit dem Datenlogger gestartet, so wird zu den GPS-Daten der App gleich der Dateiname der Messreihe gespeichert.
 Ist nun die Messung gestartet, so wird die Sonde langsam ins Wasser gelassen.
 Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
 Erreicht die Sonde den Boden, so muss die Messung beendet werden, da sich sonst gegebenenfalls Schlamm um die Sensoren legt.
@@ -537,6 +531,9 @@ Diese hohe Genauigkeit, welche sich unter "`Normalbedingungen"' nur selten errei
 Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren konnte.
 
 
+\subsection{Druck}
+Da der erste Drucksensor, den wir gekauft haben, nicht wasserdicht war, nutzten wir einen, den das Institut für Geophysik in der Zwischenzeit angeschafft hat.
+Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei einem Druck von  wird direkt an eine Batterie angeschlossen
 
 
 \section{Diskussion}
