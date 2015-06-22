@@ -396,6 +396,7 @@ Die Refferenzdspannung wird bei jedem Schritt halbiert oder um die hälfte erhö
 Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
 , somit hat das Verfahren auch 12 Schritte.
 Die Refferenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
+Diese Spannung ist auch die Maximalspannung, die an einen Pin des Mikrocontrollers angelegt werden darf, ohne ihn zu zerstören.
 Aus diesem Verfahren ergibt sich bei 12bit einen minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
 Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite berechnet werden
 \begin{align}
@@ -453,8 +454,12 @@ Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LEDbet
 \subsubsection{Druckmessung}
 Der Druck wird durch einen Absolutdrucksensor in einer Messbrücke bestimmt.
 Die Schaltung wurde von der Geophysik bereitgestellt und dierekt an dem Pin 14.2 am Board angeschlossen.
-Zu dem muss die Masse von der externen Schaltung mit der Masse des Boars gekoppelt werden.
-Die Messbrücke ist bei einer Spannung von 1\si{\volt} auf einen Druck von 1000HPa geeicht.
+Zu dem muss die Masse von der externen Schaltung mit der Masse des Boards gekoppelt werden.
+Die Messbrücke ist mit einem Potentiometer bei einer Spannung von 1\si{\volt} auf einen Druck von 1000HPa geeicht.
+Bei der Messbrücke haldelt es sich um  eine Wienschebrücke, die bereits vom Werk aus geeicht ist.
+Die ausgebene Spannung ist somit proportional zum angewanten Druck.
+Der Luftdruck liegt bei etwa 1024HPa und in einer Tiefe von 10\si{\meter} hat sich der Druck um 1000HPa erhöt, und damit auch die Spannung um 1\si{\volt}.
+Somit liegt der Spannungsbereicht in dem akzeptablen Bereich des ADC.
 
 \subsection{Messdurchführung}
 
