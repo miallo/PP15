@@ -390,7 +390,7 @@ Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
 Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
 Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma.\\
 %ADCbeschreiben
-Zur Bestimmung der am Kontroller anliegenden Spannung wird ein integrierter ADC verwendet.
+Zur Bestimmung der am Kontroller anliegenden Spannung wird ein integrierter ADC (Analog Digital Converter) verwendet.
 Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Refferenzspannung vergleicht.
 Die Refferenzdspannung wird bei jedem Schritt halbiert oder um die hälfte erhöt jeh nach dem, ob die zu messende Spannung kleiner oder größer ist.
 Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
@@ -460,6 +460,10 @@ Bei der Messbrücke haldelt es sich um  eine Wienschebrücke, die bereits vom We
 Die ausgebene Spannung ist somit proportional zum angewanten Druck.
 Der Luftdruck liegt bei etwa 1024HPa und in einer Tiefe von 10\si{\meter} hat sich der Druck um 1000HPa erhöt, und damit auch die Spannung um 1\si{\volt}.
 Somit liegt der Spannungsbereicht in dem akzeptablen Bereich des ADC.
+
+\subsubsection{Echolotmessung}
+Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
+Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschall bereich.
 
 \subsection{Positionsbestimmung via GPS und Geodimeter}
 Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
