@@ -8,9 +8,9 @@ stats 'supermessung.dat' u 0:3 nooutput
 
 points = 40
 
-set print 'superTemp.dat'
+set print 'superTemp3.dat'
 print '#points ',points
-print '#t[s] lat long ADCdruck ADCdruck_stddev temp temp_stdev temp_records'
+print '#t[s] lat long tiefe tiefe_stddev temp temp_stdev temp_records'
 
 
 do for [i=0:int(STATS_blocks-1)] {	
@@ -20,7 +20,7 @@ do for [i=0:int(STATS_blocks-1)] {
 	records = STATS_records
 
 	stats 'superTemp2.dat' index i u 0:5 name "maxTiefe" nooutput
-	DruckMax = maxTiefe_max_y
+	TiefeMax = (maxTiefe_max_y*3.3/4095*1001-1024)/100*1.1
 
 	
 	set yrange[51.71:51.74]	
@@ -36,10 +36,10 @@ do for [i=0:int(STATS_blocks-1)] {
 		stats 'supermessung.dat' index i u 0:($1/1000) name "time" nooutput
 		
 		#set yrange[1240:2150]
-		stats 'supermessung.dat' index i u 0:4 name "ADCdruck" nooutput
+		stats 'supermessung.dat' index i u 0:($6*1.1) name "tiefe" nooutput
 		#set yrange[*:*]
 
-		if(ADCdruck_mean_y >= 1240){		
+		if(tiefe_mean_y >= -0.25){		
 			stats 'supermessung.dat' index i u 0:3 name "temp" nooutput
 		
 			tempmin = temp_lo_quartile_y - 3
@@ -47,7 +47,7 @@ do for [i=0:int(STATS_blocks-1)] {
 			set yrange [tempmin:tempmax];\
 		
 			stats 'supermessung.dat' index i u 0:3 name "temp2" nooutput
-			print time_mean_y, lat_mean_y, long_mean_y, DruckMax, ADCdruck_mean_y, ADCdruck_stddev_y, temp2_mean_y, temp2_stddev_y, temp2_records
+			print time_mean_y, lat_mean_y, long_mean_y, TiefeMax, tiefe_mean_y, tiefe_stddev_y, temp2_mean_y, temp2_stddev_y, temp2_records
 		
 			#set yrange[16:21]		
 			#plot 'supermessung.dat' index i u 0:3, temp2_mean_y, tempmax
