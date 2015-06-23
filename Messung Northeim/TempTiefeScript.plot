@@ -18,9 +18,9 @@ do for [i=0:int(STATS_blocks-1)] {
 	set xrange[*:*]
 	set yrange[*:*]
 
-	stats 'superTemp3.dat' index i u 5 name "maxTiefe" nooutput
-	TiefeMax = maxTiefe_max
-	TiefeMin = -0.1	
+	stats 'superTemp3.dat' index i u 5 name "minmaxTiefe" nooutput
+	TiefeMax = minmaxTiefe_max
+	TiefeMin = minmaxTiefe_min	
 
 	
 	set yrange[51.71:51.74]	
