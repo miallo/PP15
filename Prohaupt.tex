@@ -461,6 +461,21 @@ Die ausgebene Spannung ist somit proportional zum angewanten Druck.
 Der Luftdruck liegt bei etwa 1024HPa und in einer Tiefe von 10\si{\meter} hat sich der Druck um 1000HPa erhöt, und damit auch die Spannung um 1\si{\volt}.
 Somit liegt der Spannungsbereicht in dem akzeptablen Bereich des ADC.
 
+\subsection{Positionsbestimmung via GPS und Geodimeter}
+Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
+Dieses Berechnet die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
+Die Ausgabe besteht aus den kathesischen Koordinaten bezüglich des Standpunktes des Geodimeters.
+Ist der Standpunkt global bekannt, kann aus den so gewonnen Koordinaten die globale Koordinaten errechnet werden.\\
+Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positionier.
+Als alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die Messdatei schreibt.
+Hierzu wird ein GPS von %Name der Firma und Produktbezeichnung hinzufügen
+verwendet, welches in der Geophysik vorhanden war genutzt.
+Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTl Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
+Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
+Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
+Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomzeit als ASCII Text jede Sekunde an den Logger.
+Mithilfe der Zeit kann die RTC (Realtimeclock) einmalig auf Atomuhrzeit eingestellt werden.
+
 \subsection{Messdurchführung}
 
 Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine grobe Rasterung zu überlegen.
