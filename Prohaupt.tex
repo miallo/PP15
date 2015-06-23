@@ -174,9 +174,9 @@ Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments 
 \label{sec:einleitung}
 \cite{demtroeder}
 Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
-Wir haben in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Wellenlängen gemessen.
+Wir haben in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Licht-Wellenlängen gemessen.
 Die Tiefe der Sensoren haben wir mit Hilfe einer Drucksonde gemessen, während wir die Tiefe des Sees mit einem selbstgebauten Echolotes bestimmen wollten.
-Die Position des Bootes auf dem See haben wir mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) aufgezeichnet.
+Die Position des Bootes auf dem See haben wir mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.
 
 
 \section{Theorie}
@@ -188,6 +188,9 @@ Möchte man also die Tiefe des Sensors bestimmen, so berechnet sich diese nach d
 	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}} \label{eq:d}\\
 	\sigma_d &= \frac{\sigma_{p(d)}}{0.1\si{\bar \per\metre}}
 \end{align}
+Der von uns verwendete Drucksensor liefert eine Spannung, die linear mit steigendem Druck ansteigen soll.
+Die im Datenblatt angegebene Steigung soll 1V/Bar betragen.
+Damit würde sich die Tiefe durch
 
 
 
@@ -487,7 +490,7 @@ Mithilfe der Zeit kann die RTC (Realtimeclock) einmalig auf Atomuhrzeit eingeste
 
 \subsection{Messdurchführung}
 
-Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine grobe Rasterung zu überlegen.
+Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine Rasterung zu überlegen.
 Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden müssen.
 Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
 Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führen.
@@ -500,7 +503,7 @@ Erreicht die Sonde den Boden, so muss die Messung beendet werden, da sich sonst 
 Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gezogen werden um die doppelte Anzahl an Messwerten für die jeweilige Tiefe zu bekommen.
 
 Erreicht die Sonde in diesem Fall wieder die Oberfläche, so wird die Messung beendet.
-Dies ist notwendig, da der Lichtsensor an der Oberfläche eine zu hohe Spannung liefert und so den ADC übersteuert.
+Dies ist notwendig, da der Lichtsensor an der Oberfläche durch die Sonneneinstrahlung eine zu hohe Spannung liefert und so den ADC übersteuert.
 
 
 
@@ -508,8 +511,8 @@ Dies ist notwendig, da der Lichtsensor an der Oberfläche eine zu hohe Spannung 
 
 \subsection{Smartohone-App}
 \label{sec:app}
-Da bei der ersten Messung schon das Abfahren des relativ kleinen Göttinger Kiessees in einem Raster nicht leicht war, haben wir eine App für das Smartphone erstellt.
-Mit das GPS-Modul des Smartphones liefert die aktuelle Position und stellt sie auf einer Karte dar.
+Da bei der ersten Messung schon das Abfahren des relativ kleinen Göttinger Kiessees in einem regelmäßigen Raster nicht leicht war, haben wir eine App für das Smartphone erstellt.
+Das GPS-Modul des Smartphones liefert die aktuelle Position und stellt sie auf einer Karte dar.
 Nun gibt es zwei Möglichkeiten:
 \begin{itemize}
 	\item Multi-Messung: Die Position wird ständig getrackt.
@@ -562,7 +565,15 @@ Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren
 
 \subsection{Druck}
 Da der erste Drucksensor, den wir gekauft haben, nicht wasserdicht war, nutzten wir einen, den das Institut für Geophysik in der Zwischenzeit angeschafft hat.
-Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei einem Druck von  wird direkt an eine Batterie angeschlossen
+Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei einem Druck von $1013\si{\hecto\pascal}$ eine Spannung von 1V ausgegeben wird.
+Laut Datenblatt sollte der Spannungsverlauf linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
+Allerdings bemerkten wir schon während der Messung, dass die vom Datenlogger angezeigten Werte nicht ganz mit den von uns vorgenommenen Markierungen im 1m Abstand übereinzustimmen schienen.
+So ließen wir die Sensoren laut Kabel bis in eine Tiefe von ca. 7.5m hinab.
+Allerdings ging die tiefste Messung laut aufgezeichneten Werten unter dieser Voraussetzung nur bis in eine Tiefe von ca. 6.8m.
+Da jedoch eine 8m Wassersäule schon einen beachtlichen Druck ausübt, konnten wir keine Referenzmessung zur Eichung machen, so dass wir uns entschlossen haben, einen linearen Korrekturfaktor von 1.1 einzuführen, um dem jede vermeitliche Tiefe gestreckt wird.
+Unter dieser Annahme erhielten wir annehmbare Werte.
+Die Linearität der Korrektur scheint in sofern angebracht, als dass wir uns bei vielen Messungen Mühe gegeben haben, die Sonde von Hand möglichst gleichmäßig herabzulassen.
+Die aufgenommenen Druchkurven waren auch annähernd linear.
 
 
 \section{Diskussion}
