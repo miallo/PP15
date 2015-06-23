@@ -463,7 +463,12 @@ Somit liegt der Spannungsbereicht in dem akzeptablen Bereich des ADC.
 
 \subsubsection{Echolotmessung}
 Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
-Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschall bereich.
+Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschall Bereich.
+Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maxiamlspannung zu erhöhen wird das Kristall über ein MosFettransistor an +24\si{\volt} betrieben.%Schaltung hinzufeugen
+Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf das Senderkristall gegeben.\\
+Das Empfängerkristall wird über einen Verstärker dierekt an den ADC angeschlossen.
+Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
+Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal aufgezeichnet und anschließend analysiert.
 
 \subsection{Positionsbestimmung via GPS und Geodimeter}
 Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
