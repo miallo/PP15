@@ -293,7 +293,7 @@ Und noch einmal im Infraroten Bereich....
 
 \begin{figure}[h]
 	\centering
-	\input{abswater/abs}
+	\input[height=10cm]{abswater/abs}
 	\caption{'Absorptionsspektrum (380-700nm) von reinem
 		  Wasser. (1997). http://omlc.org/spectra/water/abs/}
 	\label{fig:abs}
