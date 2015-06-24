@@ -456,7 +456,7 @@ Der Fehler der Temperaturmessung dieses Gerätes liegt bei
 Allerdings ist unser Sensor zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschichtet.
 Dieser sollte nur die Reaktionszeit beeinflussen.
 Das größere Hinderniss bei der Temperaturbestimmung lag bei uns am ADC (Analog-Digital-Converter), welcher die verstärkte Spannung in ein digitales Signal umwandelt.
-Dessen Auflösung ist mit 16 Bit zwar schon recht gut, allerdings bedeutet dies, dass nur Spannungsunterschiede von xxxxxxxxxxxxxxxxxxxx V gemessen werden können, was einer Temperaturdifferenz von ca. xxxxxxxxxxxxxxxxxxxxxxxxxx$^\circ$ entspricht.
+Dessen Auflösung ist mit 12 Bit zwar schon recht gut, allerdings bedeutet dies, dass nur Spannungsunterschiede von etwa 800\si{\micro\volt} gemessen werden können, was einer Temperaturdifferenz von ca. xx$^\circ$ entspricht.
 
 
 \subsection{Absorption}
@@ -484,7 +484,12 @@ Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite be
 	U=\text{ADCWert}\cdot B.\label{eq:ADCwert}
 \end{align}
 Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
-Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
+Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.\\
+Die Daten werden in Form einer ASCII Datei gespeichert, um sie am Computer später leichter in einem Plotprogramm bearbeiten kann.
+Dies sorgt aber für ein größeres Datenvolumen.
+Jede Datei trägt, zur besseren Identifikation, den Aktuellen Monat, Tag, Stunde und Minute als Namen (MMDDHHMM.dat).
+In der Datei wird die Zeit in Millisekunden, die ADCWerte von Temperatur, Photodiode und Druck, sowie die Berechneten Werte der Temperatur, Intensität, Druck und Tiefe berechnet aus dem aktuellen Luftdruck.
+
 
 \subsubsection{Temperaturmessung}
 \begin{figure}[!h]
@@ -558,9 +563,8 @@ Die Ausgabe besteht aus den kathesischen Koordinaten bezüglich des Standpunktes
 Ist der Standpunkt global bekannt, kann aus den so gewonnen Koordinaten die globale Koordinaten errechnet werden.\\
 Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positionier.
 Als alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die Messdatei schreibt.
-Hierzu wird ein GPS von %Name der Firma und Produktbezeichnung hinzufügen
-verwendet, welches in der Geophysik vorhanden war genutzt.
-Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTl Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
+Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war genutzt.
+Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTL Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
 Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
 Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
 Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomzeit als ASCII Text jede Sekunde an den Logger.
@@ -568,12 +572,12 @@ Mithilfe der Zeit kann die RTC (Realtimeclock) einmalig auf Atomuhrzeit eingeste
 
 \subsection{Messdurchführung}
 
-Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine Rasterung zu überlegen.
+Zur Vermessung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine Rasterung zu überlegen.
 Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden müssen.
 Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
-Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führen.
+Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führe.
 
-Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält und gegebenenfalls den Messstab für das Geodimeter hochhält.
+Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält und den Messstab für das Geodimeter hochhält und ausrichtet.
 Wird die Einzelmessung der App gleichzeitig mit dem Datenlogger gestartet, so wird zu den GPS-Daten der App gleich der Dateiname der Messreihe gespeichert.
 Ist nun die Messung gestartet, so wird die Sonde langsam ins Wasser gelassen.
 Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
@@ -582,10 +586,6 @@ Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gez
 
 Erreicht die Sonde in diesem Fall wieder die Oberfläche, so wird die Messung beendet.
 Dies ist notwendig, da der Lichtsensor an der Oberfläche durch die Sonneneinstrahlung eine zu hohe Spannung liefert und so den ADC übersteuert.
-
-
-
-
 
 \subsection{Smartohone-App}
 \label{sec:app}
@@ -665,7 +665,7 @@ Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erk
 
 \subsection{Druck}
 Da der erste Drucksensor, den wir gekauft haben, nicht wasserdicht war, nutzten wir einen, den das Institut für Geophysik in der Zwischenzeit angeschafft hat.
-Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei einem Druck von $1013\si{\hecto\pascal}$ eine Spannung von 1V ausgegeben wird.
+Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei einem Druck von $1001\si{\hecto\pascal}$ eine Spannung von 1V ausgegeben wird.
 Laut Datenblatt sollte der Spannungsverlauf linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
 Allerdings bemerkten wir schon während der Messung, dass die vom Datenlogger angezeigten Werte nicht ganz mit den von uns vorgenommenen Markierungen im 1m Abstand übereinzustimmen schienen.
 So ließen wir die Sensoren laut Kabel bis in eine Tiefe von ca. 7.5m hinab.
@@ -677,12 +677,23 @@ Die aufgenommenen Druchkurven waren auch annähernd linear.
 
 
 \subsection{Temperatur}
-Die gemessene Temperatur stieg im Verlauf des Tages an der Oberfläche um ca. $xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx^\circ$ an.
+Die gemessene Temperatur stieg im Verlauf des Tages an der Oberfläche um ca. $xx^\circ$ an.
 Dies bezieht sich auf eine Tiefe von  
 
 
 \section{Diskussion}
 \label{sec:diskussion}
+
+\subsection{Refferenzspsnnung des ADC}
+Für den ADC wurde die Interne Refferenzspannung des Controllers verwendet.
+Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht und verrauscht somit auch die ADC Werte.
+Dies hat eine Größenordnung von etwa 5\si{\milli\volt} und ist in allen Datensätzen zu sehen.
+Um diesen Fehler zu beheben bzw. zu verringern ist es nötig eine konstante Refferenzspannung zu verwenden.
+Das Board hat einen nach außen geführten Pin für die Refferenzspannung.
+Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen, oder eine eigene Spannungsquelle zu bauen.
+An egal welcher der beiden Quellen darf dann auch keine weitere Last liegen, um die Spannung so konstant wie möglich zu halten.
+Zu den muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte Rauschen zu unterdrücken.
+
 \subsection{Druck}
 
 
