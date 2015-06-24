@@ -666,7 +666,11 @@ Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr 
 
 
 \subsection{Absorption}
-
+Bei der Messung der Absorbtion stellte sich sehr schnell heraus, dass die Daten stark verrauscht sind, besonders an der Oberfläche des Wassers.
+Dies liegt wahrscheinlich daran, dass durch die Bewegung der Wasseroberfläche das Sonnenlicht besser und schlechter Reflektiert wird.
+Um dieses hochfrequente Rauschen zu unterdrücken kann der Strom der Photodiode zusätzlich noch durch einen Tiefpassfilter geleitet werden.
+Hierzu müsste nur eine Drosselspule in Reihe mit der Photodiode und dem ADC geschaltet werden.
+Somit werden nur die niederfrequenten Änderungen des Photostroms aufgezeichnet.
 
 
 \subsection{Messprobleme und verworfene Ideen}
