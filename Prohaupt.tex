@@ -181,7 +181,7 @@ Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
 Wir wollen in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Licht-Wellenlängen messen.
 Die Tiefe der Sensoren bestimmen wir mit Hilfe einer Drucksonde, während wir die Tiefe des Sees mit einem selbstgebauten Echolote bestimmen wollen.
 Die Position des Bootes auf dem See wird mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.
-Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Absorbtion von Wasser konstannt für alle Tiefen ist.
+Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Absorption von Wasser konstant für alle Tiefen ist.
 
 
 \section{Theorie}
@@ -263,13 +263,13 @@ wichtig. Die Schallgeschwindigkeit kann dann sogar um mehrere Prozente schwanken
 
 
 \subsection{Absorption von Licht in Materie}
-Setzt man Licht als eine Ebene Welle an so ergibt sich bei Ausbreitung in einem homogenem Medium das Beer'sche Absorptionsgesetz.
+Setzt man Licht als eine ebene Welle an so ergibt sich bei Ausbreitung in einem homogenem Medium das Beer'sche Absorptionsgesetz.
 Es beschreibt, dass die Intensität $I$ des Lichts exponentiell abfällt bei zunehmender Stecke.
-Für den Anteil des noch vorhandenen Intensität gilt dann:
+Für den Anteil der noch vorhandenen Intensität $\frac{I}{I_0}$ gilt dann:
 \begin{align}
  \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)
 \end{align}
-Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium ab als auch von der Wellenlänge $\lambda$ ab.
+Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab.
 \begin{align}
  \alpha= \frac{4 \pi \kappa}{\lambda}
 \end{align}
@@ -290,7 +290,7 @@ Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen
 Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor.
 Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorbtionspektren zu untersuchen.
 
-In \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
+In Grafik \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
 Dies entspricht gerade dem sichtbaren Bereich.
 Und noch einmal im infraroten Bereich....
 
@@ -331,50 +331,40 @@ und Ausgangssignals gleich sind. Diese Eigenschaft wäre für das Echolot wichti
 \subsection{Schichtung eines Sees}
 
 Man unterscheidet drei Tiefenschichten eines Sees.
-Diese unterscheiden sich alle sowohl in physikalischen, chemischen, sowie biologischen Eigenschaften. Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden für untiefe Seen.
-
-Grundsätzlich unterscheidet man aber im Sommer grundsätzlich die folgenden Schichten:
-
-Die oberste Schicht, auch Epilimnion genannt. 
-Im Sommer lagert sich das warme Wasser mit geringer Dichte im Epilimnion ab.
-
-Während des Sommers kommt es daher nur zu einem geringen Austausch des Wassers
-mit tieferen Schichten, sodass dort immer weniger Sauerstoff zu finden ist.
-Zudem findet effektiver Wärmeaustausch mit tieferen Schichten findet dann noch Aufgrund vom vergleichsweise
-kleinen Strömungen statt, die durch Wind erzeugt werden. 
-Der Wind ist damit ein entscheidender Faktor für die Dicke dieser Schicht.
+Diese haben alle verschiedene physikalische, chemische, sowie biologische Eigenschaften. Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden, insbesondere bei flachen Seen.
+Die oberste Schicht wird auch Epilimnion genannt. 
+Im Sommer lagert sich dort warme Wasser mit geringer Dichte ab.
+Während dieser Zeit kommt es daher nur zu einem geringen Austausch des Wassers
+mit tieferen Schichten, sodass in diesen immer weniger Sauerstoff zu finden ist.
+Zudem findet effektiver Wärmeaustausch mit tieferen Schichten dann nur noch Aufgrund von vergleichsweise
+kleinen Strömungen statt. Diese werden durch Wind oder im geringen Maße durch Sonneneinstrahlung erzeugt. 
+Das Klima ist daher ein entscheidender Faktor für die Dicke dieser Schicht.
 Diffusiver Wärmetransport hingegen ist ein sehr langsamer
-Prozess, so vergeht zum Beispiel etwa ein Monat für das Bilden einer Schicht wärmeren Wassers.
-Ab einer Tiefe von circa 10 m führt dies insgesamt zur Bildung eines größeren Temperaturgradienten im Sommer und 
-zur Entstehung der mittleren Schicht (Thermonokline). Dabei handelt es sich um eine recht dünne  Übergangschicht, welche die obere Schicht von größeren Tiefen trennt. 
+Prozess, so vergeht zum Beispiel etwa ein Monat für das Bilden einer etwa 1 m dicken Schicht vergleichsweise wärmeren Wassers.
+Ab einer Tiefe von circa 10 m führt dies insgesamt zur Entstehung eines größeren Temperaturgradienten im Sommer und 
+zur Entstehung der mittleren Schicht (Thermonokline). Dabei handelt es sich um eine recht dünne  Übergangschicht. Diese trennt die obere Schicht von größeren Tiefen. 
 \cite{schicht}
 %http://www.wiley-vch.de/books/sample/3527321314_c01.pdf
-
-Das Epilimnion  ist klarerweise die wärmste und besitzt den größten pH wert, da es hier zu Kontakt mit der Atmosphäre kommt, es lösen sich Gase wie Kohlenstoffdioxid sodass beispielsweise Kohlensäure entsteht. Außerdem besitzt diese Schicht auch den größten Sauerstoffgehalt. Hier sind auch die meißten phototrophen Planktonarten zu finden, denn es ist der hellste Bereich des Sees. Abgestorbenes Plankton lagert sich dann auf den Grund des Sees ab und steht anderen Lebewesen als Nahrung zur Verfügung.
-
-Unterste Schicht (hypolimnion):
+\newline
+Das Epilimnion  ist klarerweise die wärmste und besitzt den größten pH wert, da es hier zu Kontakt mit der Atmosphäre kommt. In Folge dessen lösen sich Gase wie Kohlenstoffdioxid, sodass beispielsweise Kohlensäure entsteht. Außerdem besitzt diese Schicht auch den größten Sauerstoffgehalt. Hier sind auch die meisten phototrophen Planktonarten zu finden, denn es ist der hellste Bereich des Sees. Abgestorbenes Plankton lagert sich dann auf den Grund des Sees ab und steht anderen Lebewesen als Nahrung zur Verfügung.
+\newline
+Die unterste Schicht wird auch Hypolimnion genannt.
 Im Sommer ist dies die kälteste Schicht und auch die mit dem geringsten Sauerstoffgehalt. 
-
-
-
-Ganz Grundsätzlich unterliegen diese Schichten jahreszeitlichen Schwankung in ihrer Dicke.
-Im Winter wechselt, wenn die Außentemperatur längere Zeit unter Null Grad gewesen sind, ist dies (hypolimnion) die wärmste Schicht, da Wasser mit einer Temperatur von 4 Grad am dichtesten ist. 
-Es kommt dann im Herbst zu einer teilweisen Durchmischung zwischen hypolimnion und dem Epilimnion, da sich das Wasser an der Oberfläche abkühlt und absinkt.
-
-Im Extremfall liegt dann eine vollständige Durchmischung vor.
-
-
+Ganz grundsätzlich unterliegen diese Schichten jahreszeitlichen Schwankung in ihrer Dicke.
+Es kommt dann im Herbst zu einer teilweisen Durchmischung zwischen Hypolimnion und dem Epilimnion, da sich das Wasser an der Oberfläche abkühlt und absinkt.
+Im Winter, wenn die Außentemperaturen längere Zeit unter Null Grad gewesen sind, ist das Hypolimnion die wärmste Schicht, da Wasser mit einer Temperatur von 4 Grad am dichtesten ist. 
+Im Extremfall liegt dann eine vollständige Durchmischung aller Schichten vor.
+Aus diesem Grund ist eine (Temperatur-) Schichtung bei permanent gefrohrenen Gewässern nicht vorzufinden.
+\newline
 In Grafik \ref{fig:schichtung} sind zur Veranschaulichung der Leitwert C, die Temperatur T und der Sauerstoffgehaltprofil des Arendsee (Sachsen Anhalt, Messung im September) dargestellt. 
 Aufgrund der beinahe konstanten Temperatur im oberste sowie untersten Bereich kann man hier die drei oben geschilderten Schichten gut von einander trennen. Insbesondere erkennt man den starken Temperaturgradienten im Metalimnion, das hier zwischen 8 und 15 m liegt. 
-Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine länge von circa 8 m. Es ist also zu erwarten, dass wir beim vermessenen See grade an die Grenze des Epilimnions stoßen.
-
-
+Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine länge von circa 8 m. Es ist also zu erwarten, dass wir beim Vermessenen des Sees grade an die Grenze des Epilimnions stoßen.
 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=10cm]{schicht.png}
-	\caption{Schichtung}
+	\caption{Leitwert $C$, Temperatur $T$ und Sauerstoff $O_2$ des Arendsees im September. Grafik entnommen aus \url{http://www.wiley-vch.de/books/sample/3527321314_c01.pdf}.}
 	\label{fig:schichtung}
 \end{figure}
 
