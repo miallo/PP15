@@ -5,10 +5,10 @@ set output 'led.tex'
 
 set key top right
 
-set xlabel '$x$ [m]'
+set xlabel '$z$ [m]'
 set ylabel '$\ln(\Delta I)$'
 
-set xrange[-0.2:*]
+set xrange[-0.2:7.5]
 
 p 'supermessung.dat' u ($6*1.1):(log($9-$8)) w d t 'blaue LED',\
   'supermessung.dat' u ($6*1.1):(log($10-$8)) w d t 'IR-LED'

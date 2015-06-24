@@ -7,6 +7,9 @@ set key top right
 
 set xrange [-0.2:7.5]
 
+set xlabel '$z$ [m]'
+set ylabel '$\ln{I}$'
+
 set fit quiet
 set fit logfile '/dev/null'
 set fit errorvariables
@@ -39,6 +42,9 @@ set output 'l2.tex'
 set key top right
 
 set xrange [-0.2:7.5]
+
+set xlabel '$z$ [m]'
+set ylabel '$\ln{I}$'
 
 p 'supermessung.dat' index 26 u ($6*1.1):(log($8)) w d t "$r=-0.05$",\
   'supermessung.dat' index 38 u ($6*1.1):(log($8)) w d t "$r=-0.59$",\
