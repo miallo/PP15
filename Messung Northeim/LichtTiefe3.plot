@@ -2,14 +2,14 @@ reset
 
 stats 'supermessung.dat' u 0 nooutput
 
-set xrange [-0.2:*]
+set xrange [1.0:7.5]
 
 set fit quiet
 set fit logfile '/dev/null'
 set fit errorvariables
 f(x)=a*x+b
 
-set print 'Licht.dat'
+set print 'Licht3.dat'
 
 
 do for [i=0:int(STATS_blocks-1)] {		
