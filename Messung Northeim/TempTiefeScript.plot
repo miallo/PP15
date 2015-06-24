@@ -11,18 +11,20 @@ minPoints = 30
 
 set print 'superTempTiefe.dat'
 print '#bin size ',binsize
-print '#lat long maxTiefe tiefe temp temp_stdev temp_records'
+print '#time lat long maxTiefe tiefe temp temp_stdev temp_records'
 
 
 do for [i=0:int(STATS_blocks-1)] {	
 	set xrange[*:*]
 	set yrange[*:*]
 
-	stats 'superTemp3.dat' index i u 5 name "maxTiefe" nooutput
-	TiefeMax = maxTiefe_max
-	TiefeMin = -0.1	
+	stats 'superTemp3.dat' index i u 5 name "minmaxTiefe" nooutput
+	TiefeMax = minmaxTiefe_max
+	TiefeMin = minmaxTiefe_min	
 
-	
+	stats 'supermessung.dat' index i u 1 name "time" nooutput
+	time = time_min/1000.0
+
 	set yrange[51.71:51.74]	
 	stats 'supermessung.dat' index i u 11 name "lat" nooutput
 	
@@ -45,7 +47,7 @@ do for [i=0:int(STATS_blocks-1)] {
 			set yrange [tempmin:tempmax]
 			
 			stats 'supermessung.dat' index i u ($6*1.1):3 name "temp2" nooutput
-			print lat_mean, long_mean, TiefeMax, tiefe, temp2_mean_y, temp2_stddev_y, temp_records, temp2_records
+			print time, lat_mean, long_mean, TiefeMax, tiefe, temp2_mean_y, temp2_stddev_y, temp_records, temp2_records
 			
 			#set yrange[16:21]		
 			#plot 'supermessung.dat' index i u ($6*1.1):3, temp2_mean_y, tempmax
