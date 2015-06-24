@@ -622,6 +622,17 @@ Die aufgenommenen Druchkurven waren auch annähernd linear.
 
 \section{Diskussion}
 \label{sec:diskussion}
+
+\subsection{Refferenzspsnnung des ADC}
+Für den ADC wurde die Interne Refferenzspannung des Controllers verwendet.
+Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht und verrauscht somit auch die ADC Werte.
+Dies hat eine Größenordnung von etwa 5\si{\milli\volt} und ist in allen Datensätzen zu sehen.
+Um diesen Fehler zu beheben bzw. zu verringern ist es nötig eine konstante Refferenzspannung zu verwenden.
+Das Board hat einen nach außen geführten Pin für die Refferenzspannung.
+Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen, oder eine eigene Spannungsquelle zu bauen.
+An egal welcher der beiden Quellen darf dann auch keine weitere Last liegen, um die Spannung so konstant wie möglich zu halten.
+Zu den muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte Rauschen zu unterdrücken.
+
 \subsection{Druck}
 
 
