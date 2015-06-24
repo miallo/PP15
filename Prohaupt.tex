@@ -627,7 +627,11 @@ Die aufgenommenen Druchkurven waren auch annähernd linear.
 
 \subsection{Echolot}
 Die Idee des Echolots konnte nicht vollständig umgesetzt werden, da das Signal nicht stark genug war, um bis in eine Tiefe von etwa 6\si{\meter} einzudringen und reflektiert zu werden.
-Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und dazu ist eine größere physische Ausdehnung des Kristalles Nötig.
+Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und dazu ist eine größere physische Ausdehnung des Kristalles nötig.
+Dies kann entweder durch das Verwenden von einer höheren Spannung am Sender oder durch das Verwenden einer H-Brücke getan werden.
+Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls sorgt.
+Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werden.
+Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schlatung kurzgeschlossen wird, was unterbunden werden muss, da die MosFet Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden.
 Wir haben dennoch ein paar Testdaten aufnehmen und Auswerten können.
 
 \subsection{Ortsbestimmung}
