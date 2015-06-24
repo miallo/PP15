@@ -116,6 +116,9 @@
 \usepackage{babelbib}
 \selectbiblanguage{ngerman}
 
+
+\usepackage{hyperref}
+
 \begin{document}
 
 \begin{titlepage}
@@ -285,17 +288,18 @@ Der Rotationsfreiheitsgrad kann etwa durch Mirkowellen Strahlung bis far Infraro
 Wichtig ist nun, dass bei flüssigem Wasser der Rotationsfreiheitsgrad ausscheidet, da die Moleküle durch die Wasserstoffbrückenbindunng zu stark gebunden sind.
 Es verbleiben dann noch drei mögliche anregbare Vibrationsmoden, die sich ihrerseits wieder durch ihre Energie unterscheiden.
 
-Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen an. Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor. Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorbtionspektren zu untersuchen.
+Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen an.
+Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor.
+Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorbtionspektren zu untersuchen.
 
-In \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt. Dies entspricht gerade dem
-sichtbaren Bereich.
-Und noch einmal im Infraroten Bereich....
+In \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
+Dies entspricht gerade dem sichtbaren Bereich.
+Und noch einmal im infraroten Bereich....
 
 \begin{figure}[h]
 	\centering
-	\input{abswater/abs}
-	\caption{'Absorptionsspektrum (380-700nm) von reinem
-		  Wasser. (1997). http://omlc.org/spectra/water/abs/}
+	\input{abs}
+	\caption{Absorptionsspektrum (380-700nm) von reinem Wasser. (1997). \url{http://omlc.org/spectra/water/abs/}}
 	\label{fig:abs}
 \end{figure}
 
@@ -609,20 +613,20 @@ Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren
 
 In Abb. \ref{fig:einzelGPSGoe} sind alle Messpunkte am Göttinger Kiessee aufgetragen.
 Diese wurden mit dem Geodimeter bestimmt.
-Als Vergleich sind die Daten, die wir mit einer anderen App aus dem App-Store\registerd aufgenommen haben in Abb. \ref{fig:GPSGoe} aufgetragen.
+Als Vergleich sind die Daten, die wir mit einer anderen App aus dem App-Store\textsuperscript{\textregistered}  aufgenommen haben in Abb. \ref{fig:GPSGoe} aufgetragen.
 Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
 
 
 \begin{figure}[h]
 \centering
-\input{Messung\ Kiessee/karteGoe}
+\input{karteGoe}
 \caption{Positionen der Messungen am 10.6.2015 auf dem Göttinger Kiessee gemessen mit dem Geodimeter.}
 \label{fig:einzelGPSGoe}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\input{Messung\ Kiessee/GPSvsGeo}
+\input{GPSvsGeo}
 \caption{Position des Bootes laut GPS-Signal verglichen mit den Messorten in Göttingen.}
 \label{fig:GPSGoe}
 \end{figure}
