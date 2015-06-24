@@ -450,7 +450,11 @@ Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite be
 	U=\text{ADCWert}\cdot B.\label{eq:ADCwert}
 \end{align}
 Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
-Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
+Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.\\
+Die Daten werden in Form einer ASCII Datei gespeichert, um sie am Computer später leichter in einem Plotprogramm bearbeiten kann.
+Dies sorgt aber für ein größeres Datenvolumen.
+Jede Datei trägt den Aktuellen Monat, Tag, Stunde und Minute als Namen (MMDDHHMM.dat).
+
 
 \subsubsection{Temperaturmessung}
 \begin{figure}[!h]
@@ -534,12 +538,12 @@ Mithilfe der Zeit kann die RTC (Realtimeclock) einmalig auf Atomuhrzeit eingeste
 
 \subsection{Messdurchführung}
 
-Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine Rasterung zu überlegen.
+Zur Vermessung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine Rasterung zu überlegen.
 Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden müssen.
 Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
-Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führen.
+Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führe.
 
-Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält und gegebenenfalls den Messstab für das Geodimeter hochhält.
+Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält und den Messstab für das Geodimeter hochhält und ausrichtet.
 Wird die Einzelmessung der App gleichzeitig mit dem Datenlogger gestartet, so wird zu den GPS-Daten der App gleich der Dateiname der Messreihe gespeichert.
 Ist nun die Messung gestartet, so wird die Sonde langsam ins Wasser gelassen.
 Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
@@ -548,10 +552,6 @@ Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gez
 
 Erreicht die Sonde in diesem Fall wieder die Oberfläche, so wird die Messung beendet.
 Dies ist notwendig, da der Lichtsensor an der Oberfläche durch die Sonneneinstrahlung eine zu hohe Spannung liefert und so den ADC übersteuert.
-
-
-
-
 
 \subsection{Smartohone-App}
 \label{sec:app}
