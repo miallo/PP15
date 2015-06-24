@@ -1,0 +1,70 @@
+# -*- coding: utf-8 -*-
+
+import numpy as np
+import scipy as sp
+import sympy as sym
+import matplotlib as mpl    
+import matplotlib.pyplot as plt
+from pylab import *
+
+import uncertainties as uc
+import StringIO
+
+from scipy.optimize import curve_fit,leastsq
+from scipy import signal
+from scipy.special import erf
+from uncertainties import ufloat,unumpy
+from uncertainties.unumpy import exp, log, sqrt
+
+
+#Funktionen
+def B_hom(N,I,L):
+    return mu0*N*I/L
+
+def B_Spule(a,N,I,L,R):
+    b = L-a
+    g1 = 1/np.sqrt(R**2 + a**2)
+    g2 = 1/np.sqrt(R**2 + b**2)
+    return 0.5*mu0*N*I*(g1*a + g2*b)/L
+    
+def B_Helmholtz(N,I,R):
+    faktor = 0.8**1.5
+    return mu0*I*(N/R)*faktor
+
+def B_kurz(a,N,I,R):
+    return (0.5*mu0*N*I*R*R)/((R**2+a**2)**1.5)
+
+def B_Helmholtz2(a,N,I,R):
+    #return B_Spule(a+R/2, N,I,L,R) + B_Spule(a-R/2, N,I,L,R)
+    return B_kurz(a+R/2, N,I,R) + B_kurz(a-R/2, N,I,R)
+  
+#Plots speichern
+
+########################### Kalibrierung ########################
+fig = plt.figure (6, figsize=(12,6.5))
+ax = fig.add_subplot(111)
+
+plt.xticks(fontsize=16)
+plt.yticks(fontsize=16)
+
+plt.xlabel(r"$x\; [\mathrm{Skt}]$", fontsize=18)
+plt.ylabel(r"$Q\; [\mathrm{\mu C}]$", fontsize=18)
+
+plt.grid(True) 
+
+Q_plt = unumpy.nominal_values(Q)
+
+reg, = myplot(s, (kappa*s)*1e9, label="Regressionsgerade")
+mess = uplot(s, Q*1e9, label="Messwerte")
+
+plt.legend(fontsize=16, loc=0, framealpha=None)
+#plt.legend([reg,mess],["Regressionsgerade","Messwerte"], fontsize=16, loc=0)
+plt.text(0.68,0.048,u"$Q = \\kappa\\cdot x$\n"\
+                     u"$\\kappa = ( %.4f \pm %.4f )\,\\mathrm{\mu C}/\\mathrm{Skt}$"\
+                     % (uc.nominal_value(kappa)*1e9,uc.std_dev(kappa)*1e9), fontsize = 16, 
+                     bbox=dict(fc='white',ec=None, pad=8), transform=ax.transAxes, 
+                    verticalalignment='bottom', horizontalalignment='left', linespacing=0.9)
+
+mysavefig("eichung", save=speichern)
+
+
