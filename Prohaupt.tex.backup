@@ -116,9 +116,6 @@
 \usepackage{babelbib}
 \selectbiblanguage{ngerman}
 
-
-\usepackage{hyperref}
-
 \begin{document}
 
 \begin{titlepage}
@@ -293,19 +290,18 @@ Der Rotationsfreiheitsgrad kann etwa durch Mirkowellen Strahlung bis far Infraro
 Wichtig ist nun, dass bei flüssigem Wasser der Rotationsfreiheitsgrad ausscheidet, da die Moleküle durch die Wasserstoffbrückenbindunng zu stark gebunden sind.
 Es verbleiben dann noch drei mögliche anregbare Vibrationsmoden, die sich ihrerseits wieder durch ihre Energie unterscheiden.
 
-Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen an.
-Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor.
-Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorbtionspektren zu untersuchen.
+Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen an. Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor. Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorbtionspektren zu untersuchen.
 
-In \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
-Dies entspricht gerade dem sichtbaren Bereich.
-Und noch einmal im infraroten Bereich....
+In \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt. Dies entspricht gerade dem
+sichtbaren Bereich.
+Und noch einmal im Infraroten Bereich....
 
 %https://www.osapublishing.org/ao/abstract.cfm?uri=ao-36-33-8710#articleTables
 \begin{figure}[h]
 	\centering
-	\input{abs}
-	\caption{Absorptionsspektrum (380-700nm) von reinem Wasser. (1997). \url{http://omlc.org/spectra/water/abs/}}
+	\input{abswater/abs}
+	\caption{'Absorptionsspektrum (380-700nm) von reinem
+		  Wasser. (1997). http://omlc.org/spectra/water/abs/}
 	\label{fig:abs}
 \end{figure}
 
@@ -339,7 +335,6 @@ und Ausgangssignals gleich sind. Diese Eigenschaft wäre für das Echolot wichti
 
 Man unterscheidet drei Tiefenschichten eines Sees.
 Diese unterscheiden sich alle sowohl in physikalischen, chemischen, sowie biologischen Eigenschaften. Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden für untiefe Seen.
-
 Grundsätzlich unterscheidet man aber im Sommer grundsätzlich die folgenden Schichten:
 
 Die oberste Schicht, auch Epilimnion genannt. 
@@ -359,29 +354,14 @@ zur Entstehung der mittleren Schicht (Thermonokline). Dabei handelt es sich um e
 
 Das Epilimnion  ist klarerweise die wärmste und besitzt den größten pH wert, da es hier zu Kontakt mit der Atmosphäre kommt, es lösen sich Gase wie Kohlenstoffdioxid sodass beispielsweise Kohlensäure entsteht. Außerdem besitzt diese Schicht auch den größten Sauerstoffgehalt. Hier sind auch die meißten phototrophen Planktonarten zu finden, denn es ist der hellste Bereich des Sees. Abgestorbenes Plankton lagert sich dann auf den Grund des Sees ab und steht anderen Lebewesen als Nahrung zur Verfügung.
 
+
+
+
 Unterste Schicht (hypolimnion):
 Im Sommer ist dies die kälteste Schicht und auch die mit dem geringsten Sauerstoffgehalt. 
 
 
-
-Ganz Grundsätzlich unterliegen diese Schichten jahreszeitlichen Schwankung in ihrer Dicke.
-Im Winter wechselt, wenn die Außentemperatur längere Zeit unter Null Grad gewesen sind, ist dies (hypolimnion) die wärmste Schicht, da Wasser mit einer Temperatur von 4 Grad am dichtesten ist. 
-Es kommt dann im Herbst zu einer teilweisen Durchmischung zwischen hypolimnion und dem Epilimnion, da sich das Wasser an der Oberfläche abkühlt und absinkt.
-
-Im Extremfall liegt dann eine vollständige Durchmischung vor.
-
-
-
-In grafik \ref{fig:schichtung} sieht man bla 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[height=10cm]{schicht.png}
-	\caption{Schichtung}
-	\label{fig:schichtung}
-\end{figure}
-
-
+Im Winter wechselt sich das Bild, nun wenn die Außentemperatur längere Zeit unter Null Grad gewesen sind, nun ist dies die wärmste Schicht, da Wasser mit einer Temperatur von 4 Grad am dichtesten ist.
 
 \subsection{Ortsbestimmung}
 Um den Ort des Bootes zu bestimmen, verwendeten wir ein Geodimeter (s. Abb. \ref{fig:geodimeter}).
@@ -637,28 +617,6 @@ Diese hohe Genauigkeit, welche sich unter "`Normalbedingungen"' nur selten errei
 Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren konnte.
 
 
-In Abb. \ref{fig:einzelGPSGoe} sind alle Messpunkte am Göttinger Kiessee aufgetragen.
-Diese wurden mit dem Geodimeter bestimmt.
-Als Vergleich sind die Daten, die wir mit einer anderen App aus dem App-Store\textsuperscript{\textregistered}  aufgenommen haben in Abb. \ref{fig:GPSGoe} aufgetragen.
-Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
-
-
-\begin{figure}[h]
-\centering
-\input{karteGoe}
-\caption{Positionen der Messungen am 10.6.2015 auf dem Göttinger Kiessee gemessen mit dem Geodimeter.}
-\label{fig:einzelGPSGoe}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{GPSvsGeo}
-\caption{Position des Bootes laut GPS-Signal verglichen mit den Messorten in Göttingen.}
-\label{fig:GPSGoe}
-\end{figure}
-
-
-
 \subsection{Druck}
 Da der erste Drucksensor, den wir gekauft haben, nicht wasserdicht war, nutzten wir einen, den das Institut für Geophysik in der Zwischenzeit angeschafft hat.
 Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei einem Druck von $1013\si{\hecto\pascal}$ eine Spannung von 1V ausgegeben wird.
@@ -672,11 +630,6 @@ Die Linearität der Korrektur scheint in sofern angebracht, als dass wir uns bei
 Die aufgenommenen Druchkurven waren auch annähernd linear.
 
 
-\subsection{Temperatur}
-Die gemessene Temperatur stieg im Verlauf des Tages an der Oberfläche um ca. $xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx^\circ$ an.
-Dies bezieht sich auf eine Tiefe von  
-
-
 \section{Diskussion}
 \label{sec:diskussion}
 \subsection{Druck}
@@ -684,11 +637,7 @@ Dies bezieht sich auf eine Tiefe von
 
 \subsection{Echolot}
 Die Idee des Echolots konnte nicht vollständig umgesetzt werden, da das Signal nicht stark genug war, um bis in eine Tiefe von etwa 6\si{\meter} einzudringen und reflektiert zu werden.
-Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und dazu ist eine größere physische Ausdehnung des Kristalles nötig.
-Dies kann entweder durch das Verwenden von einer höheren Spannung am Sender oder durch das Verwenden einer H-Brücke getan werden.
-Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls sorgt.
-Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werden.
-Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schlatung kurzgeschlossen wird, was unterbunden werden muss, da die MosFet Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden.
+Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und dazu ist eine größere physische Ausdehnung des Kristalles Nötig.
 Wir haben dennoch ein paar Testdaten aufnehmen und Auswerten können.
 
 \subsection{Ortsbestimmung}
@@ -711,7 +660,7 @@ Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:
 Dies  entspricht genau der Frequenz, mit der wir die LEDs angeschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
 Für beide Messungen benutzten wir den Micro-Controller als Stromquelle.
 Dieser ist für Ströme von bis zu 350mA ausgelegt.
-Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des PT1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von biszu $4^\circ $C aufweisen.
+Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des ADCs so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von biszu $4^\circ $C aufweisen.
 
 \begin{figure}[h]
 	\centering
@@ -723,11 +672,7 @@ Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr 
 
 
 \subsection{Absorption}
-Bei der Messung der Absorbtion stellte sich sehr schnell heraus, dass die Daten stark verrauscht sind, besonders an der Oberfläche des Wassers.
-Dies liegt wahrscheinlich daran, dass durch die Bewegung der Wasseroberfläche das Sonnenlicht besser und schlechter Reflektiert wird.
-Um dieses hochfrequente Rauschen zu unterdrücken kann der Strom der Photodiode zusätzlich noch durch einen Tiefpassfilter geleitet werden.
-Hierzu müsste nur eine Drosselspule in Reihe mit der Photodiode und dem ADC geschaltet werden.
-Somit werden nur die niederfrequenten Änderungen des Photostroms aufgezeichnet.
+
 
 
 \subsection{Messprobleme und verworfene Ideen}

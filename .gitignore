@@ -1,9 +1,11 @@
 *.toc
 *.o
+*.out
 *.log
 *.aux
 *.bbl
 *.blg
 *.swp
 Prohaupt.pdf
+*.backup
 main
