@@ -3,6 +3,7 @@
 % Näheres zu "scrartcl" bzw. "scrreprt" und "scrbook" siehe KOMA-Skript Doku
 \documentclass[12pt,a4paper,titlepage,headinclude,bibtotoc]{scrartcl}
 
+\usepackage{rotating}
 
 %---- Allgemeine Layout Einstellungen ------------------------------------------
 
@@ -190,11 +191,9 @@ In stehendem Wasser steigt der Druck pro Meter Wassertiefe um 0.1 Bar an.
 Möchte man also die Tiefe des Sensors bestimmen, so berechnet sich diese nach der Formel:
 \begin{align}
 	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}} \label{eq:d}\\
-	\sigma_d &= \frac{\sigma_{p(d)}}{0.1\si{\bar \per\metre}}
 \end{align}
 Der von uns verwendete Drucksensor liefert eine Spannung, die linear mit steigendem Druck ansteigen soll.
-Die im Datenblatt angegebene Steigung soll 1V/Bar betragen.
-Damit würde sich die Tiefe durch
+Die im Datenblatt angegebene Spannungssteigung soll 1V/Bar betragen.
 
 
 
@@ -646,14 +645,12 @@ Diese wurden mit dem Geodimeter bestimmt.
 Als Vergleich sind die Daten, die wir mit einer anderen App aus dem App-Store\textsuperscript{\textregistered}  aufgenommen haben in Abb. \ref{fig:GPSGoe} aufgetragen.
 Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
 
-
 \begin{figure}[h]
 \centering
 \input{karteGoe}
 \caption{Positionen der Messungen am 10.6.2015 auf dem Göttinger Kiessee gemessen mit dem Geodimeter.}
 \label{fig:einzelGPSGoe}
 \end{figure}
-
 \begin{figure}[h]
 \centering
 \input{GPSvsGeo}
