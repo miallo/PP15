@@ -174,9 +174,9 @@ Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments 
 \label{sec:einleitung}
 \cite{demtroeder}
 Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
-Wir haben in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Wellenlängen gemessen.
+Wir haben in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Licht-Wellenlängen gemessen.
 Die Tiefe der Sensoren haben wir mit Hilfe einer Drucksonde gemessen, während wir die Tiefe des Sees mit einem selbstgebauten Echolotes bestimmen wollten.
-Die Position des Bootes auf dem See haben wir mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) aufgezeichnet.
+Die Position des Bootes auf dem See haben wir mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.
 
 
 \section{Theorie}
@@ -188,6 +188,9 @@ Möchte man also die Tiefe des Sensors bestimmen, so berechnet sich diese nach d
 	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}} \label{eq:d}\\
 	\sigma_d &= \frac{\sigma_{p(d)}}{0.1\si{\bar \per\metre}}
 \end{align}
+Der von uns verwendete Drucksensor liefert eine Spannung, die linear mit steigendem Druck ansteigen soll.
+Die im Datenblatt angegebene Steigung soll 1V/Bar betragen.
+Damit würde sich die Tiefe durch
 
 
 
@@ -257,6 +260,11 @@ Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompres
 \end{align}
 Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit also ganz wesentlich vom Medium abhängt. 
 Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s.
+Bei einer Echolotmessung in Seen ist dann vorallem die unterschiedliche Temperatur in verschiedenen Schichten 
+wichtig. Die Schallgeschwindigkeit kann dann sogar um mehrere Prozente schwanken innerhalb eines Sees.
+%http://www.wiley-vch.de/books/sample/3527321314_c01.pdf schwanken um prozent
+
+
 
 \subsection{Absorption von Licht in Materie}
 Setzt man Licht als eine Ebene Welle an so ergibt sich bei Ausbreitung in einem homogenem Medium das Beer'sche Absorptionsgesetz.
@@ -275,11 +283,11 @@ Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
 %https://en.wikipedia.org/wiki/Electromagnetic_absorption_by_water
 Das Absorptionsspektrum von Molekülen hängt wesentlich von ihren möglichen 
 quantenmechanischen Zuständen ab, denen (entarte) Energieniveaus zugeordnet sind. Dabei muss zwischen verschiedenen Freiheitsgraden
-unterschieden werden. Für das Wassermolekül sind dabei etwa der Rotationsfreiheitsgrad und Vibrationsfreiheitsgrad entscheidend. 
+unterschieden werden. Für das Wassermolekül sind dabei etwa der Rotationsfreiheitsgrad und Vibrationsfreiheitsgrad entscheidend.
 Der Rotationsfreiheitsgrad kann etwa durch Mirkowellen Strahlung bis far Infrarote Strahlung angeregt werden, wohingegen Vibrationszustände für das restliche Absorptionsspektrum verantwortlich sind.
 
 
-Wichtig ist nun, dass bei flüssigem Wasser der Rotationsfreiheitsgrad ausscheidet, da die Moleküle durch die O-H Brücken zu stark gebunden sind.
+Wichtig ist nun, dass bei flüssigem Wasser der Rotationsfreiheitsgrad ausscheidet, da die Moleküle durch die Wasserstoffbrückenbindunng zu stark gebunden sind.
 Es verbleiben dann noch drei mögliche anregbare Vibrationsmoden, die sich ihrerseits wieder durch ihre Energie unterscheiden.
 
 Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen an. Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor. Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorbtionspektren zu untersuchen.
@@ -288,9 +296,10 @@ In \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in eine
 sichtbaren Bereich.
 Und noch einmal im Infraroten Bereich....
 
+%https://www.osapublishing.org/ao/abstract.cfm?uri=ao-36-33-8710#articleTables
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=10cm]{abswater/abs}
+	\input{abswater/abs}
 	\caption{'Absorptionsspektrum (380-700nm) von reinem
 		  Wasser. (1997). http://omlc.org/spectra/water/abs/}
 	\label{fig:abs}
@@ -324,23 +333,35 @@ und Ausgangssignals gleich sind. Diese Eigenschaft wäre für das Echolot wichti
 
 \subsection{Schichtung eines Sees}
 
-
-
-
-
 Man unterscheidet drei Tiefenschichten eines Sees.
 Diese unterscheiden sich alle sowohl in physikalischen, chemischen, sowie biologischen Eigenschaften. Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden für untiefe Seen.
-Grundsätzlich unterscheidet man aber grundsätzlich die folgenden:
+Grundsätzlich unterscheidet man aber im Sommer grundsätzlich die folgenden Schichten:
 
-Die oberste Schicht, auch Epilimnion genannt. Diese Schicht ist klarerweise
-die wärmste und besitzt den größten pH wert, da es hier zu Kontakt mit der Atmosphäre kommt, es lösen sich Gase wie Kohlenstoffdioxid sodass beispielsweise Kohlensäure entsteht. Außerdem besitzt diese Schicht auch den größten Sauerstoffgehalt. Hier sind auch die meißten phototrophen Planktonarten zu finden, denn es ist der hellste Bereich des Sees. Abgestorbenes Plankton lagert sich dann auf den Grund des Sees ab und steht anderen Lebewesen als Nahrung zur Verfügung.
+Die oberste Schicht, auch Epilimnion genannt. 
+Im Sommer lagert sich das warme Wasser mit geringer Dichte im Epilimnion ab.
 
-Mittlere Schicht (metalimnion). Dabei handelt es sich um eine recht dünne  Übergangschicht, welche die Obere Schicht von größeren Tiefen trennt. Daher weißt diese einen vergleichsweise starken Temperaturgradienten auf.
+Während des Sommers kommt es daher nur zu einem geringen Austausch des Wassers
+mit tieferen Schichten, sodass dort immer weniger Sauerstoff zu finden ist.
+Zudem findet effektiver Wärmeaustausch mit tieferen Schichten findet dann noch Aufgrund vom vergleichsweise
+kleinen Strömungen statt, die durch Wind erzeugt werden. 
+Der Wind ist damit ein entscheidender Faktor für die Dicke dieser Schicht.
+Diffusiver Wärmetransport hingegen ist ein sehr langsamer
+Prozess, so vergeht zum Beispiel etwa ein Monat für das Bilden einer Schicht wärmeren Wassers.
+Ab einer Tiefe von circa 10 m führt dies insgesamt zur Bildung eines größeren Temperaturgradienten im Sommer und 
+zur Entstehung der mittleren Schicht (Thermonokline). Dabei handelt es sich um eine recht dünne  Übergangschicht, welche die obere Schicht von größeren Tiefen trennt. 
+
+%http://www.wiley-vch.de/books/sample/3527321314_c01.pdf
+
+Das Epilimnion  ist klarerweise die wärmste und besitzt den größten pH wert, da es hier zu Kontakt mit der Atmosphäre kommt, es lösen sich Gase wie Kohlenstoffdioxid sodass beispielsweise Kohlensäure entsteht. Außerdem besitzt diese Schicht auch den größten Sauerstoffgehalt. Hier sind auch die meißten phototrophen Planktonarten zu finden, denn es ist der hellste Bereich des Sees. Abgestorbenes Plankton lagert sich dann auf den Grund des Sees ab und steht anderen Lebewesen als Nahrung zur Verfügung.
 
 
 
 
+Unterste Schicht (hypolimnion):
+Im Sommer ist dies die kälteste Schicht und auch die mit dem geringsten Sauerstoffgehalt. 
 
+
+Im Winter wechselt sich das Bild, nun wenn die Außentemperatur längere Zeit unter Null Grad gewesen sind, nun ist dies die wärmste Schicht, da Wasser mit einer Temperatur von 4 Grad am dichtesten ist.
 
 \subsection{Ortsbestimmung}
 Um den Ort des Bootes zu bestimmen, verwendeten wir ein Geodimeter (s. Abb. \ref{fig:geodimeter}).
@@ -426,7 +447,7 @@ Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
 Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
 Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma.\\
 %ADCbeschreiben
-Zur Bestimmung der am Kontroller anliegenden Spannung wird ein integrierter ADC verwendet.
+Zur Bestimmung der am Kontroller anliegenden Spannung wird ein integrierter ADC (Analog Digital Converter) verwendet.
 Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Refferenzspannung vergleicht.
 Die Refferenzdspannung wird bei jedem Schritt halbiert oder um die hälfte erhöt jeh nach dem, ob die zu messende Spannung kleiner oder größer ist.
 Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
@@ -497,9 +518,33 @@ Die ausgebene Spannung ist somit proportional zum angewanten Druck.
 Der Luftdruck liegt bei etwa 1024HPa und in einer Tiefe von 10\si{\meter} hat sich der Druck um 1000HPa erhöt, und damit auch die Spannung um 1\si{\volt}.
 Somit liegt der Spannungsbereicht in dem akzeptablen Bereich des ADC.
 
+\subsubsection{Echolotmessung}
+Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
+Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschall Bereich.
+Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maxiamlspannung zu erhöhen wird das Kristall über ein MosFettransistor an +24\si{\volt} betrieben.%Schaltung hinzufeugen
+Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf das Senderkristall gegeben.\\
+Das Empfängerkristall wird über einen Verstärker dierekt an den ADC angeschlossen.
+Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
+Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal aufgezeichnet und anschließend analysiert.
+
+\subsection{Positionsbestimmung via GPS und Geodimeter}
+Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
+Dieses Berechnet die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
+Die Ausgabe besteht aus den kathesischen Koordinaten bezüglich des Standpunktes des Geodimeters.
+Ist der Standpunkt global bekannt, kann aus den so gewonnen Koordinaten die globale Koordinaten errechnet werden.\\
+Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positionier.
+Als alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die Messdatei schreibt.
+Hierzu wird ein GPS von %Name der Firma und Produktbezeichnung hinzufügen
+verwendet, welches in der Geophysik vorhanden war genutzt.
+Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTl Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
+Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
+Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
+Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomzeit als ASCII Text jede Sekunde an den Logger.
+Mithilfe der Zeit kann die RTC (Realtimeclock) einmalig auf Atomuhrzeit eingestellt werden.
+
 \subsection{Messdurchführung}
 
-Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine grobe Rasterung zu überlegen.
+Zur Messung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine Rasterung zu überlegen.
 Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden müssen.
 Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
 Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führen.
@@ -512,7 +557,7 @@ Erreicht die Sonde den Boden, so muss die Messung beendet werden, da sich sonst 
 Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gezogen werden um die doppelte Anzahl an Messwerten für die jeweilige Tiefe zu bekommen.
 
 Erreicht die Sonde in diesem Fall wieder die Oberfläche, so wird die Messung beendet.
-Dies ist notwendig, da der Lichtsensor an der Oberfläche eine zu hohe Spannung liefert und so den ADC übersteuert.
+Dies ist notwendig, da der Lichtsensor an der Oberfläche durch die Sonneneinstrahlung eine zu hohe Spannung liefert und so den ADC übersteuert.
 
 
 
@@ -520,8 +565,8 @@ Dies ist notwendig, da der Lichtsensor an der Oberfläche eine zu hohe Spannung 
 
 \subsection{Smartohone-App}
 \label{sec:app}
-Da bei der ersten Messung schon das Abfahren des relativ kleinen Göttinger Kiessees in einem Raster nicht leicht war, haben wir eine App für das Smartphone erstellt.
-Mit das GPS-Modul des Smartphones liefert die aktuelle Position und stellt sie auf einer Karte dar.
+Da bei der ersten Messung schon das Abfahren des relativ kleinen Göttinger Kiessees in einem regelmäßigen Raster nicht leicht war, haben wir eine App für das Smartphone erstellt.
+Das GPS-Modul des Smartphones liefert die aktuelle Position und stellt sie auf einer Karte dar.
 Nun gibt es zwei Möglichkeiten:
 \begin{itemize}
 	\item Multi-Messung: Die Position wird ständig getrackt.
@@ -574,7 +619,15 @@ Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren
 
 \subsection{Druck}
 Da der erste Drucksensor, den wir gekauft haben, nicht wasserdicht war, nutzten wir einen, den das Institut für Geophysik in der Zwischenzeit angeschafft hat.
-Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei einem Druck von  wird direkt an eine Batterie angeschlossen
+Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei einem Druck von $1013\si{\hecto\pascal}$ eine Spannung von 1V ausgegeben wird.
+Laut Datenblatt sollte der Spannungsverlauf linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
+Allerdings bemerkten wir schon während der Messung, dass die vom Datenlogger angezeigten Werte nicht ganz mit den von uns vorgenommenen Markierungen im 1m Abstand übereinzustimmen schienen.
+So ließen wir die Sensoren laut Kabel bis in eine Tiefe von ca. 7.5m hinab.
+Allerdings ging die tiefste Messung laut aufgezeichneten Werten unter dieser Voraussetzung nur bis in eine Tiefe von ca. 6.8m.
+Da jedoch eine 8m Wassersäule schon einen beachtlichen Druck ausübt, konnten wir keine Referenzmessung zur Eichung machen, so dass wir uns entschlossen haben, einen linearen Korrekturfaktor von 1.1 einzuführen, um dem jede vermeitliche Tiefe gestreckt wird.
+Unter dieser Annahme erhielten wir annehmbare Werte.
+Die Linearität der Korrektur scheint in sofern angebracht, als dass wir uns bei vielen Messungen Mühe gegeben haben, die Sonde von Hand möglichst gleichmäßig herabzulassen.
+Die aufgenommenen Druchkurven waren auch annähernd linear.
 
 
 \section{Diskussion}
@@ -583,7 +636,9 @@ Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei eine
 
 
 \subsection{Echolot}
-
+Die Idee des Echolots konnte nicht vollständig umgesetzt werden, da das Signal nicht stark genug war, um bis in eine Tiefe von etwa 6\si{\meter} einzudringen und reflektiert zu werden.
+Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und dazu ist eine größere physische Ausdehnung des Kristalles Nötig.
+Wir haben dennoch ein paar Testdaten aufnehmen und Auswerten können.
 
 \subsection{Ortsbestimmung}
 Bei der ersten Messung haben wir den Ort mit einem Geodimeter bestimmt.
