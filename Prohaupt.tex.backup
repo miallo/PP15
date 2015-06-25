@@ -181,26 +181,19 @@ Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
 Wir wollen in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Licht-Wellenlängen messen.
 Die Tiefe der Sensoren bestimmen wir mit Hilfe einer Drucksonde, während wir die Tiefe des Sees mit einem selbstgebauten Echolote bestimmen wollen.
 Die Position des Bootes auf dem See wird mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.
-Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Absorbtion von Wasser konstannt für alle Tiefen ist.
+Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Absorption von Wasser konstant für alle Tiefen ist.
 
 
 \section{Theorie}
 \label{sec:theorie}
 \subsection{Druck}
-In stehendem Wasser steigt der Druck pro Meter Wassertiefe um 0.1 Bar an.
-Möchte man also die Tiefe des Sensors bestimmen, so berechnet sich diese nach der Formel:
+In stehendem Wasser steigt der Druck pro Meter Wassertiefe um 0.1 Bar an. %Quelle
+Möchte man also die Tiefe des Sensors bestimmen, so berechnet sich diese nach der Formel
 \begin{align}
-	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}} \label{eq:d}\\
+	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}}. \label{eq:d}
 \end{align}
-Der von uns verwendete Drucksensor liefert eine Spannung, die linear mit steigendem Druck ansteigen soll.
-Die im Datenblatt angegebene Spannungssteigung soll 1V/Bar betragen.
-
-
-
-
-
-
-
+%Der von uns verwendete Drucksensor liefert eine Spannung, die linear mit steigendem Druck ansteigen soll.
+%Die im Datenblatt angegebene Spannungssteigung soll 1V/Bar betragen.
 
 \subsection{Schallausbreitung}
 
@@ -248,10 +241,6 @@ Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle propor
 
 
 
-
-
-
-
 \subsubsection{Schallgeschwindigkeit}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden:
 \begin{align}
@@ -276,7 +265,7 @@ Für den Anteil der noch vorhandenen Intensität $\frac{I}{I_0}$ gilt dann:
 \begin{align}
  \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)
 \end{align}
-Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium ab als auch von der Wellenlänge $\lambda$ ab.
+Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab.
 \begin{align}
  \alpha= \frac{4 \pi \kappa}{\lambda}
 \end{align}
@@ -297,7 +286,7 @@ Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen
 Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor.
 Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorbtionspektren zu untersuchen.
 
-In \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
+In Grafik \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
 Dies entspricht gerade dem sichtbaren Bereich.
 Und noch einmal im infraroten Bereich....
 
@@ -666,6 +655,13 @@ Die aufgenommenen Druchkurven waren auch annähernd linear.
 \subsection{Temperatur}
 Die gemessene Temperatur stieg im Verlauf des Tages an der Oberfläche um ca. $xx^\circ$ an.
 Dies bezieht sich auf eine Tiefe von  
+
+
+\subsection{Gemessenes Abstandsgesetz}
+Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir die Abstandsabhängigkeit der Schallintensität näher untersucht. 
+Dies wurde zunächst mit der Motivation durchgeführt eine mit der vorgegebenen Sendeleistung maximale Reichweite zu ermitteln
+
+
 
 
 \section{Diskussion}
