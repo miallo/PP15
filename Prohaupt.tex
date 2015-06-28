@@ -186,12 +186,18 @@ Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Ab
 
 \section{Theorie}
 \label{sec:theorie}
-\subsection{Druck}
-In stehendem Wasser steigt der Druck pro Meter Wassertiefe um 0.1 Bar an. %Quelle
-Möchte man also die Tiefe des Sensors bestimmen, so berechnet sich diese nach der Formel
+\subsection{Schweredruck}
+
+Für eine Flüssigkeitssäule mit einer Höhe $h$ gilt das Pascalsche Gesetz für den Druck:
+\begin{align}
+ p= g \rho h
+\end{align}
+Hier bezeichnet $\rho$ die Dichte des Mediums, also in unserem Fall Wasser mit $\rho = 10^3 \frac{kg}{m^3}$. Daraus ergibt sich nun, dass in stehendem Wasser der Druck pro Meter Wassertiefe um 0.1 Bar ansteigt.
+Möchte man also die Tiefe $d$ des Drucksensors bestimmen, so berechnet sich diese aus der Druckdifferenz relativ zur Oberfläche mit Druck $p_0$ nach der Formel (siehe \cite[S.118]{gerthsen})
 \begin{align}
 	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}}. \label{eq:d}
 \end{align}
+
 %Der von uns verwendete Drucksensor liefert eine Spannung, die linear mit steigendem Druck ansteigen soll.
 %Die im Datenblatt angegebene Spannungssteigung soll 1V/Bar betragen.
 
