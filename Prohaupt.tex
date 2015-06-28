@@ -365,6 +365,7 @@ Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat 
 
 
 \subsection{Ortsbestimmung}
+\label{sec:theoort}
 Um den Ort des Bootes zu bestimmen, verwendeten wir ein Geodimeter (s. Abb. \ref{fig:geodimeter}).
 Dieses sendet einen Laserstrahl in eine bestimmte Richtung aus und misst, sobald er reflektiert wird die Flugdauer.
 Daraus bestimmt es die Entfernung.
@@ -534,10 +535,10 @@ Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal 
 
 \subsection{Positionsbestimmung via GPS und Geodimeter}
 Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
-Dieses berechnet die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
+Dieses berechnet, wie im Kapitel\ref{sec:theoort} beschrieben, die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
 Die Ausgabe besteht aus den kathesischen Koordinaten bezüglich des Standpunktes des Geodimeters.
 Ist der Standpunkt global bekannt, kann aus den so gewonnen Koordinaten die globale Koordinaten errechnet werden.\\
-Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positionier.
+Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positioniert.
 Als alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die Messdatei schreibt.
 Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war genutzt.
 Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTL Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
