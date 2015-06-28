@@ -202,16 +202,20 @@ Möchte man also die Tiefe des Sensors bestimmen, so berechnet sich diese nach d
 %Motivation:
 Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, der Schallwellen mit Frequenzen im Ultraschallbereich abgibt
 ähnlich verhalten, wie die Gesetze einer punktförmigen Schallquelle.
-\cite[S.589]{tipler}
-
 
 Der Grund dafür ist, dass die genutzen Entfernungen zwischen Sender und Empfänger vielfach größer sind als die Größe des schwingenden Kristalls. 
 In einem homogenem Medium verteilt sich dann die ausgesendete Energie der Welle in drei Dimensionen gleichmäßig im Abstand $r$ über eine Kugelfläche $A$. Wird nun mit $<P>$ die mittlere vom Sender abgestrahlte Leistung 
 bezeichnet, dann ist also zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält:
 
 \begin{align}
- I \propto \frac{<P>}{r^2}
+ I \propto \frac{1}{r^2}
 \end{align}
+Der Schalldruck hingegen nimmt antiproportional zur Entfernung ab: 
+\begin{align}
+ I \propto \frac{1}{r}
+\end{align}
+
+
 Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $<w>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung kann auch geschrieben werden als:
 \begin{align}
  <P>  = <w> A v
@@ -234,19 +238,15 @@ Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zu
 \begin{align}
  P_{max} = \rho \omega v A
 \end{align}
-Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude.
-
-
-
-
-
+Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude. Genaueres zu diesen Themen 
+in Tipler \cite[S.598]{tipler}.
 
 \subsubsection{Schallgeschwindigkeit}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden:
 \begin{align}
  v = \sqrt{  \frac{K}{\rho}  }
 \end{align}
-Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderungen:
+Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderungen \cite{tipler}:
 \begin{align}
  K =  \frac{\Delta P}{\Delta V / V }
 \end{align}
@@ -254,6 +254,7 @@ Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit also ganz wesentli
 Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s.
 Bei einer Echolotmessung in Seen ist dann vorallem die unterschiedliche Temperatur in verschiedenen Schichten 
 wichtig. Die Schallgeschwindigkeit kann dann sogar um mehrere Prozente schwanken innerhalb eines Sees.
+\ref{schicht}
 %http://www.wiley-vch.de/books/sample/3527321314_c01.pdf schwanken um prozent
 
 
@@ -270,6 +271,8 @@ Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizie
  \alpha= \frac{4 \pi \kappa}{\lambda}
 \end{align}
 Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
+\cite[S.229]{meschede}
+
 
 \subsection{Lichtabsorbtion von Wasser-Betrachtung auf Mikroskopischer Ebene}
 %https://en.wikipedia.org/wiki/Electromagnetic_absorption_by_water
@@ -288,7 +291,12 @@ Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf 
 
 In Grafik \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
 Dies entspricht gerade dem sichtbaren Bereich.
-Und noch einmal im infraroten Bereich....
+
+\cite{abs}
+
+
+
+
 
 %https://www.osapublishing.org/ao/abstract.cfm?uri=ao-36-33-8710#articleTables
 \begin{figure}[h]
@@ -658,23 +666,28 @@ Dies bezieht sich auf eine Tiefe von
 \subsection{Gemessenes Abstandsgesetz}
 Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir die Abstandsabhängigkeit der Schallintensität näher untersucht. 
 Dies wurde zunächst mit der Motivation durchgeführt eine mit der vorgegebenen Sendeleistung maximale Reichweite zu ermitteln. Als klar wurde, dass diese nicht ausreichen wird haben wir
-die Abnahme der Intensität weiter untersucht.
+die Abnahme der Amplitude weiter untersucht.
 
-Zu diesem Zweck haben wir die Sender parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Intensität bei einer bestimmten Entfernung abzulesen, haben wir ein
+Zu diesem Zweck haben wir die Sender parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
 ein Oszilloskop verwendet.
 
-Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Intensität $\frac{I}{I_0}$ berechnet haben.
+Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{I}{I_0}$ berechnet haben.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{schall.pdf}
-	\caption{Relative Intensität wurde aufgetragen gegen den Abstand $d$.}
+	\caption{Relative Amplitude wurde aufgetragen gegen den Abstand $d$. Zudem wurde eine $\chi^2$ Anpassung an die Messdaten durchgeführt.}
 	\label{fig:schall}
 \end{figure}
 
 Zudem wurde eine $\chi^2$ Anpassung an die berechneten Mittelwerte durchgeführt, wobei hier die in der Theorie vorgestelle $\frac{1}{d}$ - Abhängigkeit angenommen wurde.
-Die Theorie...
-Man kann gut erkennen, dass die Intensität nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann gut 5 $\%$ vorhanden. 
+Es wurde hier also angenommen, dass die mit dem Oszilloskop gemessene Amplitude sich wie die Abstandsabhängigkeit des Schalldrucks verhält.
+Dies erscheint sinnvoll, denn entscheidend für die angezeigte Amplitude ist, welche Beschleunigungen auf den Empfänger wirken.
+
+
+Da die eingezeichneten Fehlerbalken sich nur aus der statistischen Standardabweichung berechnen muss davon ausgegen werden, dass die Messung eigentlich noch ungenauer waren. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
+Man kann gut erkennen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (vgl. Theorie). 
+
 
 \section{Diskussion}
 \label{sec:diskussion}

@@ -48,7 +48,7 @@ def function2(x, B):
 
 
 mod1 = Model(function1)
-result1 = result = mod1.fit(wert/wert[-1], x=d, A=1)
+result1 =  mod1.fit(wert/wert[-1], x=d, A=1)
 print(result1.fit_report())
 
 
@@ -91,9 +91,9 @@ plt.figure(1)
 plt.ylim(0,1)
 plt.grid(True)
 plt.xlabel(u'Abstand $d$ [cm]', fontsize=14)
-plt.ylabel(u'rel. Intensität $I/I0$', fontsize=14)
-uplot(d, wert, label=u'Intensität')
-plt.plot(x, (1.09804531/(x)), 'r-' ,label=u'Theorie:$\\frac{I}{I_0} =\\frac{k}{d}$')
+plt.ylabel(u'rel. Amplitue $A/A0$', fontsize=14)
+uplot(d, wert, label=u'Amplitude')
+plt.plot(x, (1.09804531/(x)), 'r-' ,label=u'Theorie:$\\frac{A}{A_0} =\\frac{k}{d}$')
 #plt.plot(x, np.exp(-0.22432962*x), 'b-')
 #uplot(d, I1, label='test')
 #uplot(d, I2, label='test')
