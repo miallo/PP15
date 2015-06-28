@@ -247,7 +247,6 @@ Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zu
 Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude. Genaueres zu diesen Themen ist im Tipler \cite[S.598]{tipler} zu finden.
 
 \subsubsection{Schallgeschwindigkeit}
-\label{sec:theschallgeschw}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden
 \begin{align}
  v = \sqrt{  \frac{K}{\rho}  }.
@@ -316,7 +315,7 @@ Dies entspricht gerade dem sichtbaren Bereich.
 
 
 \subsection{Nichtinvertierbarer Operationsverstärker}
-\label{sec:teoverstaerker}
+
 Dabei handelt es sich von der Grundschaltung her um einen Operationsverstärker.
 Diese finden sehr viel Anwendung in allen möglichen Bereichen, zum Beispiel der Mess-und Regelungstechnik. 
 Allgemeine Eigenschaften dieser Bauteile sind, eine sehr große Verstärkung von Eingangsignalen, sowie ein hoher Eingangs und dazu vergleichsweise geringer Ausgangswiderstand.
@@ -329,7 +328,7 @@ weiter darauf einzugehen.
 Entscheident ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
 Nichtinvertierbaren Verstärkers. Für diese gilt:
 \begin{align}
- v = 1 + \frac{R_2}{R_1}\label{eq:verst}
+ v = 1 + \frac{R_2}{R_1}
 \end{align}
 Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandverhältnisses.
 Eine weitere Eigenschaft des Nichtinvertierbarer Verstärker ist, dass die Phase des Eingangs
@@ -430,7 +429,7 @@ Die zugehörigen Konstanten die in Eichmessungen ermittelt werden findet man in 
 
 Durch Umstellen erhält man eine Fomel für die Temperatur in Grad Celsius
 \begin{align}
- \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    }.\label{eq:temperapt1000}
+ \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    } .
 \end{align}
 
 Der Fehler der Temperaturmessung dieses Gerätes liegt bei
@@ -446,9 +445,7 @@ Der Fehler der Temperaturmessung dieses Gerätes liegt bei
 \subsection{Aufbau des Datenloggers}
 Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
 Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
-Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma programmiert.
-Die Bedienung erfolgt über ein Interface aus drei Tastern und eine LCD Display.
-Das Display dient nicht nur der Steuerung, sondern zeigt auch im Sekundentakt die Momentanen Messwerte an.
+Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma programmiert.\\
 Zur Bestimmung der am Controller anliegenden Spannung wird ein integrierter Analog Digital Converter (ADC) verwendet.
 Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Refferenzspannung vergleicht.
 Die Refferenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht jeh nach dem, ob die zu messende Spannung kleiner oder größer ist.
@@ -456,23 +453,18 @@ Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
 , somit hat das Verfahren auch 12 Schritte.
 Die Refferenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
 Diese Spannung ist auch die Maximalspannung, die an einen Pin des Mikrocontrollers angelegt werden darf, ohne ihn zu zerstören.
-Aus diesem Verfahren ergibt sich bei 12bit eine minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
+Aus diesem Verfahren ergibt sich bei 12bit einen minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
 Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite berechnet werden
 \begin{align}
 	U=\text{ADCWert}\cdot B.\label{eq:ADCwert}
 \end{align}
-Die Daten werden in Form einer ASCII Datei auf einer SD-Karte gespeichert um sie später am Computer leichter in einem Plotprogramm bearbeiten zu können.
-Dies sorgt aber für ein größeres Datenaufkommen.
+Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
+Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.\\
+Die Daten werden in Form einer ASCII Datei auf einer SD-Karte gespeichert, um sie am Computer später leichter in einem Plotprogramm bearbeiten kann.
+Dies sorgt aber für ein größeres Datenvolumen.
 Jede Datei trägt, zur besseren Identifikation, den aktuellen Monat, Tag, Stunde und Minute als Namen (MMDDHHMM.dat).
 In der Datei wird die Zeit in Millisekunden, die ADCWerte von Temperatur, Photodiode und Druck, sowie die Berechneten Werte der Temperatur, Intensität, Druck und Tiefe berechnet aus dem aktuellen Luftdruck eingetragen.
-Der aktuelle Luftdruck kann über das Einstellungsmenue dierekt am Logger geändert werden.\\
-Die Zeit wird anhand der Aktuellen Zeit und jedem weiteren zeitschritt bestimmt.
-Das Programm kann von 10 bis zu maximal 500 Werten pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden können.
-Der Zeitschritt wird abhängig von der Wertfrequenz berechnet und eingetragen.\\
-Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
-Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
-Die Spannungen werden von jedem Sensor über ein geschirmtes Kabel übertragen.
-In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt.
+
 
 \subsubsection{Temperaturmessung}
 \begin{figure}[!h]
@@ -484,15 +476,17 @@ In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt
 Für die Messung der Temperatur wird mit einem PT1000 Temperaturwiderstand gearbeitet.
 Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
 Aus diesem Grund muss die am PT1000 abfallende Spannung noch verstärkt werden.
-Dies geschieht mithilfe eines nichtinvertierenden Verstärkers wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
-Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
-Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereiche des ADCs liegt.\\
+Dies geschieht mithilfe eines nichtinvertierenden Verstärkers. %ref aufquelle
+Mit der Formel %ref auf Formel
+ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf 2\si{\volt}, was etwa in der Mitte des Messbereiches des ADC liegt.\\
 Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
 	R_\text{PT1000}=\frac{R_1*U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
 \end{align}
 ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
-Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel \eqref{eq:temperapt1000} verwendet.\\
+Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel %ref auf Formel
+verwendet.\\
 Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschichtet.
 Dieser sollte nur die Reaktionszeit beeinflussen.
 
@@ -512,7 +506,8 @@ Dieser sollte nur die Reaktionszeit beeinflussen.
 Für die Lichtmessung wird eine Photodiode als Intensitätsabhängige Stromquelle verwendet.
 Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
 Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine Messbare Spannung zu wandeln.
-Da in den See nicht viel Licht eintritt, wird die sich ergebene Spannung noch über einen nichtinvertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 Verstärkt.
+Da in den See nicht viel Licht eintritt wird die sich ergebene Spannung noch über einen nichtinvertierenden Verstärker nach der Gleichung %ref auf Gleichung
+mit einem Faktor 11 Verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
 Um die Absorbtion in verschiedenen Spektren zu Messen hat die Messonde eine Blaue und eine Infrarote LED %ref auf die Datenblätter
 mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
@@ -527,9 +522,7 @@ Die Messbrücke ist mit einem Potentiometer bei einer Spannung von 1\si{\volt} a
 Bei der Messbrücke haldelt es sich um  eine Wiedstonbrücke, die bereits vom Werk aus geeicht ist.
 Die ausgebene Spannung ist somit proportional zum angewanten Druck.
 Der Luftdruck liegt bei etwa 1024HPa und in einer Tiefe von 10\si{\meter} hat sich der Druck um 1000HPa erhöht, und damit auch die Spannung um 1\si{\volt}.
-Somit liegt der Spannungsbereicht in dem akzeptablen Bereich des ADC.\\
-Die Messbrücke ist ein ein wasserdichtes Gehäuse genaut und wird über ein externes Kabel mit einer eigenen Platine und eigener Spannungsversorgung geführt.
-Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wird nicht von diesen beeinflusst.
+Somit liegt der Spannungsbereicht in dem akzeptablen Bereich des ADC.
 
 \subsubsection{Echolotmessung}
 Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
@@ -538,22 +531,20 @@ Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signa
 Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf das Senderkristall gegeben.\\
 Das Empfängerkristall wird über einen Verstärker dierekt an den ADC angeschlossen.
 Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
-Die Entfernung wird nach dem Gesetzen aus dem Kapitel \ref{sec:theschallgeschw} berechnet.
 Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal aufgezeichnet und anschließend analysiert.
 
 \subsection{Positionsbestimmung via GPS und Geodimeter}
 \label{sec:durchpos}
 Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
-Dieses berechnet, wie im Kapitel\ref{sec:theoort} beschrieben, die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
-Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positioniert.\\
+Dieses berechnet, wie im Kapitel\ref{sec:theoort} beschrieben, die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.\\
+Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positioniert.
 Als alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die Messdatei schreibt.
-Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war, genutzt.
+Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war genutzt.
 Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTL Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
 Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
 Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
 Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomzeit als ASCII Text jede Sekunde an den Logger.
 Mithilfe der Zeit kann die RTC (Realtimeclock) einmalig auf Atomuhrzeit eingestellt werden.
-Dies ist über das Einstellungsmenue bei einmaligem Empfangen der Daten möglich.
 
 \subsection{Messdurchführung}
 
@@ -663,6 +654,11 @@ Die aufgenommenen Druchkurven waren auch annähernd linear.
 Die gemessene Temperatur stieg im Verlauf des Tages an der Oberfläche um ca. $xx^\circ$ an.
 Dies bezieht sich auf eine Tiefe von  
 
+\subsubsection{Göttingen}
+In Abb. \ref{fig:temp_goe} sind alle von uns aufgenommenen Temperaturen bis $40^\circ$ aufgetragen.
+Darüberhinaus waren noch einige Werte bis zu $140^\circ$C, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
+Ebenfalls ist dort ein linearer Fit über die Werte, welche im Wasser aufgenommen wurden und sich unterhalb von $24^\circ$ befinden.
+Dabei ist zu erkennen, dass
 
 \begin{figure}[h]
 \centering
@@ -670,6 +666,31 @@ Dies bezieht sich auf eine Tiefe von
 \caption{Temperaturverlauf am Göttinger Kiessee mit fast allen aufgenommenen Werten. Einige Werte, welche offensichtlich durch Wackelkontakte zu stande kommen (bis zu $140^\circ$C) wurden zwecks Übersichtlichkeit ausgeblendet.}
 \label{fig:temp_goe}
 \end{figure}
+
+
+
+\subsubsection{Northeim}
+In Grafik \ref{fig:temp_nor} sind alle Temperaturmessungen der Messung in Northeim aufgetragen.
+Dabei werden immer von 40 Werten nach dem Algotithmus \eqref{fig:tempAlgorithmus} der Mittelwert genommen.
+Die gefittete Kurve besteht aus drei linearen Fits, welche bis zu Schnittpunkten durchgeführt werden.
+Diese sind in den erkennbaren Bereichen von 0.2-1.5m, 1.5-5.9m und 5.9-7.5m unterteilt.
+
+Es ergeben sich die Werte aus Tabelle \ref{tab:tempTabNor}
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c||c|c|}
+\hline
+Tiefe [m] & Temperaturabnahme [$\frac{^\circ C}{\text m}$] & Temperaturintervall [$^\circ$C]\\\hline\hline
+0.2 - 1.5 & $-0.71\pm  0.03$	& 19.4 - 18.5 \\
+1.5 - 5.9 & $-0.132\pm 0.005$	& 18.5 - 17.9 \\
+5.9 - 7.5 & $-1.65\pm 0.04$	& 18.0 - 15.3 \\\hline
+\end{tabular}
+\caption{Temperaturkoeffizienten aus dem Fit von Abb. \ref{fig:temp_nor}.}
+\label{tab:tempTabNor}
+\end{table}
+
 
 \begin{figure}[h]
 \centering
