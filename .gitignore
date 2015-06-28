@@ -8,6 +8,7 @@
 *.swp
 *.bak
 *.eps
+*.synctex.gz
 Prohaupt.pdf
 *.backup
 main
