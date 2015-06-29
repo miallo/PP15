@@ -304,7 +304,7 @@ Dies entspricht gerade dem sichtbaren Bereich.
 \begin{figure}[h]
 	\centering
 	\input{abs}
-	\caption{Absorptionsspektrum (380-700nm) von reinem Wasser. (1997). \url{http://omlc.org/spectra/water/abs/}}
+	\caption{Absorptionsspektrum (380-700nm) von reinem Wasser. Daten aus einer spektroskopischen Untersuchung (1997). Siehe: \cite{speck}}
 	\label{fig:abs}
 \end{figure}
 
@@ -327,7 +327,7 @@ Nichtinvertierbaren Verstärkers. Für diese gilt:
 Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandverhältnisses.
 Eine weitere Eigenschaft des Nichtinvertierbarer Verstärker ist, dass die Phase des Eingangs
 und Ausgangssignals gleich sind. Diese Eigenschaft ist für das Echolot wichtig.
-
+\cite{op}
 
 \subsection{Schichtung eines Sees}
 
@@ -344,7 +344,7 @@ Diffusiver Wärmetransport hingegen ist ein sehr langsamer
 Prozess, so vergeht zum Beispiel etwa ein Monat für das Bilden einer etwa 1 m dicken Schicht vergleichsweise wärmeren Wassers.
 Ab einer Tiefe von circa 10 m führt dies insgesamt zur Entstehung eines größeren Temperaturgradienten im Sommer und 
 zur Entstehung der mittleren Schicht (Thermonokline). Dabei handelt es sich um eine recht dünne  Übergangschicht. Diese trennt die obere Schicht von größeren Tiefen. 
-\cite{schicht}
+
 %http://www.wiley-vch.de/books/sample/3527321314_c01.pdf
 \newline
 Das Epilimnion  ist klarerweise die wärmste und besitzt den größten pH wert, da es hier zu Kontakt mit der Atmosphäre kommt. In Folge dessen lösen sich Gase wie Kohlenstoffdioxid, sodass beispielsweise Kohlensäure entsteht. Außerdem besitzt diese Schicht auch den größten Sauerstoffgehalt. Hier sind auch die meisten phototrophen Planktonarten zu finden, denn es ist der hellste Bereich des Sees. Abgestorbenes Plankton lagert sich dann auf den Grund des Sees ab und steht anderen Lebewesen als Nahrung zur Verfügung.
@@ -360,7 +360,7 @@ Aus diesem Grund ist eine (Temperatur-) Schichtung bei permanent gefrohrenen Gew
 In Grafik \ref{fig:schichtung} sind zur Veranschaulichung der Leitwert C, die Temperatur T und der Sauerstoffgehaltprofil des Arendsee (Sachsen Anhalt, Messung im September) dargestellt. 
 Aufgrund der beinahe konstanten Temperatur im oberste sowie untersten Bereich kann man hier die drei oben geschilderten Schichten gut von einander trennen. Insbesondere erkennt man den starken Temperaturgradienten im Metalimnion, das hier zwischen 8 und 15 m liegt. 
 Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine länge von circa 8 m. Es ist also zu erwarten, dass wir beim Vermessenen des Sees grade an die Grenze des Epilimnions stoßen.
-
+\cite{schicht}
 
 \begin{figure}[h]
 	\centering
@@ -712,7 +712,7 @@ die Abnahme der Amplitude weiter untersucht.
 Zu diesem Zweck haben wir die Sender parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
 ein Oszilloskop verwendet.
 
-Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{I}{I_0}$ berechnet haben.
+Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
 
 \begin{figure}[h]
 	\centering
@@ -724,16 +724,17 @@ Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernun
 Zudem wurde eine $\chi^2$ Anpassung an die berechneten Mittelwerte durchgeführt, wobei hier die in der Theorie vorgestelle $\frac{1}{d}$ - Abhängigkeit angenommen wurde.
 Es wurde hier also angenommen, dass die mit dem Oszilloskop gemessene Amplitude sich wie die Abstandsabhängigkeit des Schalldrucks verhält.
 Dies erscheint sinnvoll, denn entscheidend für die angezeigte Amplitude ist, welche Beschleunigungen auf den Empfänger wirken.
+Diese wiederum entsprechen Druckschwankungen.
 
 
-Da die eingezeichneten Fehlerbalken sich nur aus der statistischen Standardabweichung berechnen muss davon ausgegen werden, dass die Messung eigentlich noch ungenauer waren. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
-Man kann gut erkennen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (vgl. Theorie). 
+Da die eingezeichneten Fehlerbalken sich nur aus der statistischen Standardabweichung berechnen muss davon ausgegen werden, dass die Messung eigentlich noch ungenauer bezüglich der Amplitude waren. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
+Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (vgl. Theorie). 
 
 
 \section{Diskussion}
 \label{sec:diskussion}
 
-\subsection{Refferenzspsnnung des ADC}
+\subsection{Refferenzspannung des ADC}
 Für den ADC wurde die Interne Refferenzspannung des Controllers verwendet.
 Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht und verrauscht somit auch die ADC Werte.
 Dies hat eine Größenordnung von etwa 5\si{\milli\volt} und ist in allen Datensätzen zu sehen.
