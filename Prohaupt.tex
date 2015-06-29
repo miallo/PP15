@@ -247,6 +247,7 @@ Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zu
 Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude. Genaueres zu diesen Themen ist im Tipler \cite[S.598]{tipler} zu finden.
 
 \subsubsection{Schallgeschwindigkeit}
+\label{sec:theschallgeschw}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden
 \begin{align}
  v = \sqrt{  \frac{K}{\rho}  }.
@@ -308,7 +309,7 @@ Dies entspricht gerade dem sichtbaren Bereich.
 \end{figure}
 
 \subsection{Nichtinvertierbarer Operationsverstärker}
-
+\label{sec:teoverstaerker}
 Dabei handelt es sich von der Grundschaltung her um einen Operationsverstärker.
 Diese finden sehr viel Anwendung in allen möglichen Bereichen, zum Beispiel der Mess-und Regelungstechnik. 
 Allgemeine Eigenschaften dieser Bauteile sind, eine sehr große Verstärkung von Eingangsignalen, sowie ein hoher Eingangs und dazu vergleichsweise geringer Ausgangswiderstand.
@@ -321,7 +322,7 @@ weiter darauf einzugehen.
 Entscheident ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
 Nichtinvertierbaren Verstärkers. Für diese gilt:
 \begin{align}
- v = 1 + \frac{R_2}{R_1}
+ v = 1 + \frac{R_2}{R_1}\label{eq:verst}
 \end{align}
 Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandverhältnisses.
 Eine weitere Eigenschaft des Nichtinvertierbarer Verstärker ist, dass die Phase des Eingangs
@@ -422,7 +423,7 @@ Die zugehörigen Konstanten die in Eichmessungen ermittelt werden findet man in 
 
 Durch Umstellen erhält man eine Fomel für die Temperatur in Grad Celsius
 \begin{align}
- \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    } .
+ \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    }\label{eq:temperapt1000} .
 \end{align}
 
 Der Fehler der Temperaturmessung dieses Gerätes liegt bei
@@ -490,7 +491,7 @@ Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschic
 Dieser sollte nur die Reaktionszeit beeinflussen.
 
 \subsubsection{Lichtmessung}
-begin{figure}[!h]
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
 \caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung.}
