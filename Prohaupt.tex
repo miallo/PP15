@@ -46,6 +46,7 @@
 % Zur Graphikausgabe
 %Beipiel: \includegraphics[width=\textwidth]{grafik.png}
 \usepackage{graphicx}
+\graphicspath{{GoeKiessee/}{Northeim/}{Theorie/}{Schall-Abstand/}}
 
 % Text umfließt Graphiken und Tabellen
 % Beispiel:
@@ -225,7 +226,7 @@ Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $<w>$ die m
 \begin{align}
  <P>  = <w> A v.
 \end{align}
-Hierraus ergibt sich direkt für die Intensität
+Hieraus ergibt sich direkt für die Intensität
 \begin{align}
  I = <w> v.
 \end{align}
@@ -302,7 +303,7 @@ Dies entspricht gerade dem sichtbaren Bereich.
 %https://www.osapublishing.org/ao/abstract.cfm?uri=ao-36-33-8710#articleTables
 \begin{figure}[h]
 	\centering
-	\input{abs}
+	\input{Theorie/abs.tex}
 	\caption{Absorptionsspektrum (380-700nm) von reinem Wasser. Daten aus einer spektroskopischen Untersuchung (1997). Siehe: \cite{speck}}
 	\label{fig:abs}
 \end{figure}
@@ -626,13 +627,13 @@ Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erk
 
 \begin{figure}[h]
 \centering
-\input{Messung_Kiessee/karteGoe}
+\input{GoeKiessee/karteGoe.tex}
 \caption{Positionen der Messungen am 10.6.2015 auf dem Göttinger Kiessee gemessen mit dem Geodimeter.}
 \label{fig:einzelGPSGoe}
 \end{figure}
 \begin{figure}[h]
 \centering
-\input{GPSvsGeo}
+\input{GoeKiessee/GPSvsGeo.tex}
 \caption{Position des Bootes laut GPS-Signal verglichen mit den Messorten in Göttingen.}
 \label{fig:GPSGoe}
 \end{figure}
@@ -666,7 +667,7 @@ Dabei ist zu erkennen, dass
 
 \begin{figure}[h]
 \centering
-\input{temp_goe}
+\input{GoeKiessee/temp_goe.tex}
 \caption{Temperaturverlauf am Göttinger Kiessee mit fast allen aufgenommenen Werten. Einige Werte, welche offensichtlich durch Wackelkontakte zu Stande kommen (bis zu $140^\circ$C) wurden zwecks Übersichtlichkeit ausgeblendet.}
 \label{fig:temp_goe}
 \end{figure}
@@ -698,7 +699,7 @@ Tiefe [m] & Temperaturabnahme [$\frac{^\circ C}{\text m}$] & Temperaturintervall
 
 \begin{figure}[h]
 \centering
-\input{temp}
+\input{Northeim/temp.tex}
 \caption{Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit.}
 \label{fig:temp_nor}
 \end{figure}
@@ -781,7 +782,7 @@ Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr 
 
 \begin{figure}[h]
 	\centering
-	\input{tempSprung}
+	\input{Northeim/tempSprung.tex}
 	\caption{Vergrößerte Darstellung einer Temperaturkurve.}
 	\label{fig:tempSprung}
 \end{figure}
