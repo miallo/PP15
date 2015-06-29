@@ -188,9 +188,9 @@ Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Ab
 \label{sec:theorie}
 \subsection{Schweredruck}
 
-Für eine Flüssigkeitssäule mit einer Höhe $h$ gilt das Pascalsche Gesetz für den Druck:
+Für eine Flüssigkeitssäule mit einer Höhe $h$ gilt das Pascalsche Gesetz für den Druck
 \begin{align}
- p= g \rho h
+ p= g \rho h.
 \end{align}
 Hier bezeichnet $\rho$ die Dichte des Mediums, also in unserem Fall Wasser mit $\rho = 10^3 \frac{kg}{m^3}$. Daraus ergibt sich nun, dass in stehendem Wasser der Druck pro Meter Wassertiefe um 0.1 Bar ansteigt.
 Möchte man also die Tiefe $d$ des Drucksensors bestimmen, so berechnet sich diese aus der Druckdifferenz relativ zur Oberfläche mit Druck $p_0$ nach der Formel (siehe \cite[S.118]{gerthsen})
@@ -247,6 +247,7 @@ Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zu
 Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude. Genaueres zu diesen Themen ist im Tipler \cite[S.598]{tipler} zu finden.
 
 \subsubsection{Schallgeschwindigkeit}
+\label{sec:theschallgeschw}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden
 \begin{align}
  v = \sqrt{  \frac{K}{\rho}  }.
@@ -299,10 +300,6 @@ Dies entspricht gerade dem sichtbaren Bereich.
 
 \cite{abs}
 
-
-
-
-
 %https://www.osapublishing.org/ao/abstract.cfm?uri=ao-36-33-8710#articleTables
 \begin{figure}[h]
 	\centering
@@ -311,11 +308,8 @@ Dies entspricht gerade dem sichtbaren Bereich.
 	\label{fig:abs}
 \end{figure}
 
-
-
-
 \subsection{Nichtinvertierbarer Operationsverstärker}
-
+\label{sec:teoverstaerker}
 Dabei handelt es sich von der Grundschaltung her um einen Operationsverstärker.
 Diese finden sehr viel Anwendung in allen möglichen Bereichen, zum Beispiel der Mess-und Regelungstechnik. 
 Allgemeine Eigenschaften dieser Bauteile sind, eine sehr große Verstärkung von Eingangsignalen, sowie ein hoher Eingangs und dazu vergleichsweise geringer Ausgangswiderstand.
@@ -328,7 +322,7 @@ weiter darauf einzugehen.
 Entscheident ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
 Nichtinvertierbaren Verstärkers. Für diese gilt:
 \begin{align}
- v = 1 + \frac{R_2}{R_1}
+ v = 1 + \frac{R_2}{R_1}\label{eq:verst}
 \end{align}
 Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandverhältnisses.
 Eine weitere Eigenschaft des Nichtinvertierbarer Verstärker ist, dass die Phase des Eingangs
@@ -429,7 +423,7 @@ Die zugehörigen Konstanten die in Eichmessungen ermittelt werden findet man in 
 
 Durch Umstellen erhält man eine Fomel für die Temperatur in Grad Celsius
 \begin{align}
- \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    } .
+ \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    }\label{eq:temperapt1000} .
 \end{align}
 
 Der Fehler der Temperaturmessung dieses Gerätes liegt bei
@@ -445,7 +439,9 @@ Der Fehler der Temperaturmessung dieses Gerätes liegt bei
 \subsection{Aufbau des Datenloggers}
 Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
 Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
-Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma programmiert.\\
+Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma programmiert.
+Die Bedienung erfolgt über ein Interface aus drei Tastern und eine LCD Display.
+Das Display dient nicht nur der Steuerung, sondern zeigt auch im Sekundentakt die Momentanen Messwerte an.
 Zur Bestimmung der am Controller anliegenden Spannung wird ein integrierter Analog Digital Converter (ADC) verwendet.
 Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Refferenzspannung vergleicht.
 Die Refferenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht jeh nach dem, ob die zu messende Spannung kleiner oder größer ist.
@@ -453,17 +449,23 @@ Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
 , somit hat das Verfahren auch 12 Schritte.
 Die Refferenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
 Diese Spannung ist auch die Maximalspannung, die an einen Pin des Mikrocontrollers angelegt werden darf, ohne ihn zu zerstören.
-Aus diesem Verfahren ergibt sich bei 12bit einen minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
+Aus diesem Verfahren ergibt sich bei 12bit eine minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
 Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite berechnet werden
 \begin{align}
 	U=\text{ADCWert}\cdot B.\label{eq:ADCwert}
 \end{align}
-Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
-Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.\\
-Die Daten werden in Form einer ASCII Datei auf einer SD-Karte gespeichert, um sie am Computer später leichter in einem Plotprogramm bearbeiten kann.
-Dies sorgt aber für ein größeres Datenvolumen.
+Die Daten werden in Form einer ASCII Datei auf einer SD-Karte gespeichert um sie später am Computer leichter in einem Plotprogramm bearbeiten zu können.
+Dies sorgt aber für ein größeres Datenaufkommen.
 Jede Datei trägt, zur besseren Identifikation, den aktuellen Monat, Tag, Stunde und Minute als Namen (MMDDHHMM.dat).
 In der Datei wird die Zeit in Millisekunden, die ADCWerte von Temperatur, Photodiode und Druck, sowie die Berechneten Werte der Temperatur, Intensität, Druck und Tiefe berechnet aus dem aktuellen Luftdruck eingetragen.
+Der aktuelle Luftdruck kann über das Einstellungsmenue dierekt am Logger geändert werden.\\
+Die Zeit wird anhand der Aktuellen Zeit und jedem weiteren zeitschritt bestimmt.
+Das Programm kann von 10 bis zu maximal 500 Werten pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden können.
+Der Zeitschritt wird abhängig von der Wertfrequenz berechnet und eingetragen.\\
+Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
+Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
+Die Spannungen werden von jedem Sensor über ein geschirmtes Kabel übertragen.
+In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt.
 
 
 \subsubsection{Temperaturmessung}
@@ -476,17 +478,15 @@ In der Datei wird die Zeit in Millisekunden, die ADCWerte von Temperatur, Photod
 Für die Messung der Temperatur wird mit einem PT1000 Temperaturwiderstand gearbeitet.
 Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
 Aus diesem Grund muss die am PT1000 abfallende Spannung noch verstärkt werden.
-Dies geschieht mithilfe eines nichtinvertierenden Verstärkers. %ref aufquelle
-Mit der Formel %ref auf Formel
-ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
-Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf 2\si{\volt}, was etwa in der Mitte des Messbereiches des ADC liegt.\\
+Dies geschieht mithilfe eines nichtinvertierenden Verstärkers wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
+Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereiche des ADCs liegt.\\
 Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
 	R_\text{PT1000}=\frac{R_1*U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
 \end{align}
 ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
-Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel %ref auf Formel
-verwendet.\\
+Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel \eqref{eq:temperapt1000} verwendet.\\
 Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschichtet.
 Dieser sollte nur die Reaktionszeit beeinflussen.
 
@@ -506,8 +506,7 @@ Dieser sollte nur die Reaktionszeit beeinflussen.
 Für die Lichtmessung wird eine Photodiode als Intensitätsabhängige Stromquelle verwendet.
 Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
 Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine Messbare Spannung zu wandeln.
-Da in den See nicht viel Licht eintritt wird die sich ergebene Spannung noch über einen nichtinvertierenden Verstärker nach der Gleichung %ref auf Gleichung
-mit einem Faktor 11 Verstärkt.
+Da in den See nicht viel Licht eintritt, wird die sich ergebene Spannung noch über einen nichtinvertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 Verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
 Um die Absorbtion in verschiedenen Spektren zu Messen hat die Messonde eine Blaue und eine Infrarote LED %ref auf die Datenblätter
 mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
@@ -522,7 +521,9 @@ Die Messbrücke ist mit einem Potentiometer bei einer Spannung von 1\si{\volt} a
 Bei der Messbrücke haldelt es sich um  eine Wiedstonbrücke, die bereits vom Werk aus geeicht ist.
 Die ausgebene Spannung ist somit proportional zum angewanten Druck.
 Der Luftdruck liegt bei etwa 1024HPa und in einer Tiefe von 10\si{\meter} hat sich der Druck um 1000HPa erhöht, und damit auch die Spannung um 1\si{\volt}.
-Somit liegt der Spannungsbereicht in dem akzeptablen Bereich des ADC.
+Somit liegt der Spannungsbereicht in dem akzeptablen Bereich des ADC.\\
+Die Messbrücke ist ein ein wasserdichtes Gehäuse genaut und wird über ein externes Kabel mit einer eigenen Platine und eigener Spannungsversorgung geführt.
+Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wird nicht von diesen beeinflusst.
 
 \subsubsection{Echolotmessung}
 Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
@@ -531,20 +532,22 @@ Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signa
 Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf das Senderkristall gegeben.\\
 Das Empfängerkristall wird über einen Verstärker dierekt an den ADC angeschlossen.
 Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
+Die Entfernung wird nach dem Gesetzen aus dem Kapitel \ref{sec:theschallgeschw} berechnet.
 Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal aufgezeichnet und anschließend analysiert.
 
 \subsection{Positionsbestimmung via GPS und Geodimeter}
 \label{sec:durchpos}
 Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
-Dieses berechnet, wie im Kapitel\ref{sec:theoort} beschrieben, die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.\\
-Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positioniert.
+Dieses berechnet, wie im Kapitel\ref{sec:theoort} beschrieben, die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
+Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positioniert.\\
 Als alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die Messdatei schreibt.
-Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war genutzt.
+Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war, genutzt.
 Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTL Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
 Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
 Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
 Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomzeit als ASCII Text jede Sekunde an den Logger.
 Mithilfe der Zeit kann die RTC (Realtimeclock) einmalig auf Atomuhrzeit eingestellt werden.
+Dies ist über das Einstellungsmenue bei einmaligem Empfangen der Daten möglich.
 
 \subsection{Messdurchführung}
 
@@ -563,7 +566,7 @@ Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gez
 Erreicht die Sonde in diesem Fall wieder die Oberfläche, so wird die Messung beendet.
 Dies ist notwendig, da der Lichtsensor an der Oberfläche durch die Sonneneinstrahlung eine zu hohe Spannung liefert und so den ADC übersteuert.
 
-\subsection{Smartohone-App}
+\subsection{Smartphone-App}
 \label{sec:app}
 Da bei der ersten Messung schon das Abfahren des relativ kleinen Göttinger Kiessees in einem regelmäßigen Raster nicht leicht war, haben wir eine App für das Smartphone erstellt.
 Das GPS-Modul des Smartphones liefert die aktuelle Position und stellt sie auf einer Karte dar.
@@ -638,16 +641,14 @@ Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erk
 
 
 \subsection{Druck}
-Da der erste Drucksensor, den wir gekauft haben, nicht wasserdicht war, nutzten wir einen, den das Institut für Geophysik in der Zwischenzeit angeschafft hat.
-Er besitzt eine Schaltung, welche das Signal direkt so verstärkt, dass bei einem Druck von $1001\si{\hecto\pascal}$ eine Spannung von 1V ausgegeben wird.
-Laut Datenblatt sollte der Spannungsverlauf linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
-Allerdings bemerkten wir schon während der Messung, dass die vom Datenlogger angezeigten Werte nicht ganz mit den von uns vorgenommenen Markierungen im 1m Abstand übereinzustimmen schienen.
+Laut Datenblatt sollte der Spannungsverlauf der Druckmessbrücke linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
+Allerdings bemerkten wir schon während der Messung, dass die vom Datenlogger angezeigten Werte nicht ganz mit den von uns vorgenommenen Markierungen am Kabel im 1m Abstand übereinzustimmen schienen.
 So ließen wir die Sensoren laut Kabel bis in eine Tiefe von ca. 7.5m hinab.
 Allerdings ging die tiefste Messung laut aufgezeichneten Werten unter dieser Voraussetzung nur bis in eine Tiefe von ca. 6.8m.
 Da jedoch eine 8m Wassersäule schon einen beachtlichen Druck ausübt, konnten wir keine Referenzmessung zur Eichung machen, so dass wir uns entschlossen haben, einen linearen Korrekturfaktor von 1.1 einzuführen, um dem jede vermeitliche Tiefe gestreckt wird.
-Unter dieser Annahme erhielten wir annehmbare Werte.
+Unter dieser Annahme erhielten wir Werte, die mit den Beobachtungen übereinstimmten.
 Die Linearität der Korrektur scheint in sofern angebracht, als dass wir uns bei vielen Messungen Mühe gegeben haben, die Sonde von Hand möglichst gleichmäßig herabzulassen.
-Die aufgenommenen Druchkurven waren auch annähernd linear.
+Die aufgenommenen Druckkurven waren auch annähernd linear.
 
 Die Druckkurven besaßen eine Breite (und in sofern ein Fehlerintervall) von ca. 15cm.
 Da wir jedoch d
