@@ -71,41 +71,68 @@
       \expandafter\def\csname LT8\endcsname{\color{black}}%
     \fi
   \fi
-  \setlength{\unitlength}{0.0500bp}%
-  \begin{picture}(7200.00,5040.00)%
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+\begin{picture}(7200.00,5040.00)%
     \gplgaddtomacro\gplbacktext{%
     }%
     \gplgaddtomacro\gplfronttext{%
       \csname LTb\endcsname%
-      \put(3853,724){\makebox(0,0)[r]{\strut{}max. Tiefe}}%
+      \put(5346,1619){\makebox(0,0)[r]{\strut{}max. Tiefe}}%
       \csname LTb\endcsname%
-      \put(2426,1140){\makebox(0,0){\strut{}-100}}%
-      \put(2555,1103){\makebox(0,0){\strut{}-50}}%
-      \put(2683,1066){\makebox(0,0){\strut{} 0}}%
-      \put(2812,1029){\makebox(0,0){\strut{} 50}}%
-      \put(2941,992){\makebox(0,0){\strut{} 100}}%
-      \put(3069,955){\makebox(0,0){\strut{} 150}}%
-      \put(3198,918){\makebox(0,0){\strut{} 200}}%
-      \put(3326,881){\makebox(0,0){\strut{} 250}}%
-      \put(3455,843){\makebox(0,0){\strut{} 300}}%
-      \put(2710,830){\makebox(0,0){\strut{}x [m]}}%
-      \put(3578,911){\makebox(0,0){\strut{}-700}}%
-      \put(3726,1040){\makebox(0,0){\strut{}-600}}%
-      \put(3874,1168){\makebox(0,0){\strut{}-500}}%
-      \put(4023,1297){\makebox(0,0){\strut{}-400}}%
-      \put(4171,1426){\makebox(0,0){\strut{}-300}}%
-      \put(4320,1554){\makebox(0,0){\strut{}-200}}%
-      \put(4468,1683){\makebox(0,0){\strut{}-100}}%
-      \put(4617,1811){\makebox(0,0){\strut{} 0}}%
-      \put(4765,1940){\makebox(0,0){\strut{} 100}}%
-      \put(4371,1379){\makebox(0,0){\strut{}y [m]}}%
-      \put(2366,1922){\makebox(0,0)[r]{\strut{}-2.5}}%
-      \put(2366,2196){\makebox(0,0)[r]{\strut{}-2}}%
-      \put(2366,2470){\makebox(0,0)[r]{\strut{}-1.5}}%
-      \put(2366,2744){\makebox(0,0)[r]{\strut{}-1}}%
-      \put(2366,3018){\makebox(0,0)[r]{\strut{}-0.5}}%
-      \put(2366,3292){\makebox(0,0)[r]{\strut{} 0}}%
-      \put(1568,2608){\makebox(0,0){\strut{}z [m]}}%
+      \put(936,1133){\makebox(0,0){\strut{}$-200$}}%
+      \csname LTb\endcsname%
+      \put(1528,1133){\makebox(0,0){\strut{}$-100$}}%
+      \csname LTb\endcsname%
+      \put(2120,1133){\makebox(0,0){\strut{}$0$}}%
+      \csname LTb\endcsname%
+      \put(2712,1133){\makebox(0,0){\strut{}$100$}}%
+      \csname LTb\endcsname%
+      \put(3304,1133){\makebox(0,0){\strut{}$200$}}%
+      \csname LTb\endcsname%
+      \put(3896,1133){\makebox(0,0){\strut{}$300$}}%
+      \csname LTb\endcsname%
+      \put(4488,1133){\makebox(0,0){\strut{}$400$}}%
+      \csname LTb\endcsname%
+      \put(5080,1133){\makebox(0,0){\strut{}$500$}}%
+      \csname LTb\endcsname%
+      \put(5672,1133){\makebox(0,0){\strut{}$600$}}%
+      \csname LTb\endcsname%
+      \put(6264,1133){\makebox(0,0){\strut{}$700$}}%
+      \put(3600,803){\makebox(0,0){\strut{}x [m]}}%
+      \csname LTb\endcsname%
+      \put(748,1446){\makebox(0,0)[r]{\strut{}$-100$}}%
+      \csname LTb\endcsname%
+      \put(748,1742){\makebox(0,0)[r]{\strut{}$-50$}}%
+      \csname LTb\endcsname%
+      \put(748,2038){\makebox(0,0)[r]{\strut{}$0$}}%
+      \csname LTb\endcsname%
+      \put(748,2334){\makebox(0,0)[r]{\strut{}$50$}}%
+      \csname LTb\endcsname%
+      \put(748,2630){\makebox(0,0)[r]{\strut{}$100$}}%
+      \csname LTb\endcsname%
+      \put(748,2926){\makebox(0,0)[r]{\strut{}$150$}}%
+      \csname LTb\endcsname%
+      \put(748,3222){\makebox(0,0)[r]{\strut{}$200$}}%
+      \csname LTb\endcsname%
+      \put(748,3518){\makebox(0,0)[r]{\strut{}$250$}}%
+      \csname LTb\endcsname%
+      \put(748,3814){\makebox(0,0)[r]{\strut{}$300$}}%
+      \put(154,2630){\rotatebox{-270}{\makebox(0,0){\strut{}y [m]}}}%
+      \put(6796,1446){\makebox(0,0)[l]{\strut{}$-2.2$}}%
+      \put(6796,1784){\makebox(0,0)[l]{\strut{}$-2$}}%
+      \put(6796,2122){\makebox(0,0)[l]{\strut{}$-1.8$}}%
+      \put(6796,2460){\makebox(0,0)[l]{\strut{}$-1.6$}}%
+      \put(6796,2799){\makebox(0,0)[l]{\strut{}$-1.4$}}%
+      \put(6796,3137){\makebox(0,0)[l]{\strut{}$-1.2$}}%
+      \put(6796,3475){\makebox(0,0)[l]{\strut{}$-1$}}%
+      \put(6796,3813){\makebox(0,0)[l]{\strut{}$-0.8$}}%
     }%
     \gplbacktext
     \put(0,0){\includegraphics{tiefeGoe}}%
