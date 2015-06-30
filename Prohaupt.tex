@@ -610,7 +610,7 @@ Diese kann nun bequem mit einem Tippen versandt werden.
 \label{sec:auswertung}
 
 \subsection{Ortsbestimmung}
-
+\label{sec:ausort}
 Unsere Befürchtung, dass das GPS-Signal zu ungenau ist, stellte sich als ungenau heraus.
 Wir nutzten bei der zweiten Messung gleichzeitig einen GPS-Logger und die selbstgeschriebene Handy-App.
 Durch Vergleich der beiden Messdaten erkennt man, dass sie sehr gut miteinander übereinstimmen.
@@ -764,14 +764,16 @@ Mit diesem Faktor sind die Tiefenwerte, wie im Kapitel \ref{sec:ausdruck} beschr
 Die Idee des Echolots konnte nicht vollständig umgesetzt werden, da das Signal nicht stark genug war, um bis in eine Tiefe von etwa 6\si{\meter} einzudringen und reflektiert zu werden.
 Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und dazu ist eine größere physische Ausdehnung des Kristalls nötig.
 Dies kann entweder durch das Verwenden von einer höheren Spannung am Sender oder durch das Verwenden einer H-Brücke getan werden.
-Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls sorgt.
+Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls führt.
 Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werden.
 Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden.
+Desweiteren erhitzen sich die Bautele bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
 Wir haben dennoch ein paar Testdaten aufnehmen und Auswerten können.
+%hie noch das Ergebnis der Auswertung diskutieren.
 
 \subsection{Ortsbestimmung}
 Bei der ersten Messung haben wir den Ort mit einem Geodimeter bestimmt.
-Problematisch war hierbei, dass das Boot mit dem Spiegel relativ stark geschwankt hat.
+Problematisch war hierbei, dass das Boot mit dem Reflektor relativ stark geschwankt hat.
 Dies führte gerade bei Messungen, wo das Boot relativ dicht am Geodimeter war dazu, dass die Aufnahme der Position schwer war.
 An einer Stelle konnten wir den Messstab in über 5 min nicht ruhig genug halten, so dass wir schließlich die Position nicht aufnahmen.
 Generell war es ein Problem, dass wir nur zwei Leute auf dem Boot hatten: einen Ruderer, der während der Messung den Stab hochgehalten hat und einen, der sich um die Sonde kümmerte.
@@ -779,11 +781,14 @@ Dies führte dazu, dass häufig der für den Retroreflektor zuständige diesen z
 Da wir bei der Messung die Funkgeräte vergessen hatten, mussten wir uns mit Handzeichen verständigen.
 Dies stellte selbst am Göttinger Kiessee an den entferntesten Messpunkten eine Herausforderung dar, so dass dort das Boot-Team häufig unnötig lange an einem Ort blieb, da sie die Bestätigung nicht sahen.
 
-
 Außerdem behindert am Northeimer See eine Insel ein Großteil des Blickfelds.
 
-Es stellte sich bei den Messungen heraus, dass die Genauigkeit des Geodimeters keine Rolle spielte, da das Boot von Wind und Strömung während der Messung sehr stark abgetrieben wurde.
-Daher setzten wir bei der zweiten Messung unsere erste Idee um, die Position über GPS zu erfassen funktioniert, welche wir wegen der vermeintlich schlechten Auflösung von 5-10m verwarfen.
+Es stellte sich bei den Messungen heraus, dass die Genauigkeit des Geodimeters keine Rolle spielte, da das Boot von Wind und Strömung während der Messung sehr stark abgetrieben wurde und somit mit einem Fehler von etwa $\pm5\si{\meter}$ gerechnet werden muss.
+Daher setzten wir bei der zweiten Messung unsere erste Idee um, die Position über GPS zu erfassen, welche wir wegen der vermeintlich schlechten Auflösung von 5-10m verwarfen.
+Somit sind beide Methoden gleich gut und bei der Messung, wie im Kapitel \ref{sec:ausort} bereits dargestellt, stellte sich zu dem heraus, dass das GPS von Garmin$^\copyright$ eine Genauigkeit von bis zu $\pm3\si{\meter}$ hatte.
+Die ist eine Verbesserung von 40\% in Bezug auf die vorher Möglichen $\pm5\si{\meter}$.
+Zu dem waren nun die Position in der selben Datei gespeichert, wie die Messdaten auch.
+Dies machte ein sonnst notwendiges Sortieren der Datein nach Ort und Zeit unnötig.
 
 \subsection{Temperatur}
 Bei der zweiten Messung zeigte sich in den Daten, dass die Werte der Temperatur augenscheinlich gleichzeitig drei Werte annehmen.
