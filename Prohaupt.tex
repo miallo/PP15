@@ -813,7 +813,10 @@ Bei der Messung der Absorption stellte sich sehr schnell heraus, dass die Daten 
 Dies liegt wahrscheinlich daran, dass durch die Bewegung der Wasseroberfläche das Sonnenlicht besser und schlechter Reflektiert wird.
 Um dieses hochfrequente Rauschen zu unterdrücken kann der Strom der Photodiode zusätzlich noch durch einen Tiefpassfilter geleitet werden.
 Hierzu müsste nur eine Drosselspule in Reihe mit der Photodiode und dem ADC geschaltet werden.
-Somit werden nur die niederfrequenten Änderungen des Photostroms aufgezeichnet.
+Somit werden nur die niederfrequenten Änderungen des Photostroms aufgezeichnet.\\
+Desweiteren ware die beide LEDs zur Messung der Absorbtion in verschiedenen Spektren nicht nah genug an der Photodiode, um eine signifikate Änderung an den Werten zu führen, die nicht im Rauschen untergehen.
+Ebenfalls wurde bei der Wahl der Diode nicht darauf geachtet, dass diese eine unterschiedliche Aufnahmecharakteristik für die verwendeten Wellenlängen hat.
+Laut Datenblatt liegt der unterschied in der Intensität zwischen den beiden Wellenlängen bei 40\%, was sich auch in der Auswertung bemerkbar machte. %refferez auf Datenblatt
 
 
 \subsection{Messprobleme und verworfene Ideen}
