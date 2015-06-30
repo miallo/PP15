@@ -791,21 +791,22 @@ Zu dem waren nun die Position in der selben Datei gespeichert, wie die Messdaten
 Dies machte ein sonnst notwendiges Sortieren der Datein nach Ort und Zeit unnötig.
 
 \subsection{Temperatur}
-Bei der zweiten Messung zeigte sich in den Daten, dass die Werte der Temperatur augenscheinlich gleichzeitig drei Werte annehmen.
+Bei der zweiten Messung zeigte sich in den Daten, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
 Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:tempSprung} zu erkennen, dass jeweils ungefähr 10 Messwerte auf einem niedrigen, dann auf einem mittleren, erneut auf einem niedrigen und dann wieder auf einem hohen Niveau liegen.
-Dies  entspricht genau der Frequenz, mit der wir die LEDs angeschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
-Für beide Messungen benutzten wir den Micro-Controller als Stromquelle.
+Dies  entspricht in etwa der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
+Für beide Messungen benutzten wir den Micro-Controller als Spannungsquelle.
 Dieser ist für Ströme von bis zu 350mA ausgelegt.
-Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des PT1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von biszu $4^\circ $C aufweisen.
+Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des PT1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
+Dies liegt vermutlich daran, dass der Boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen noch zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
+Somit lagen verschiedene Spannungen am Vorwiderstand des PT1000 an und trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am PT1000.\\
+Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefilter werden mussten.
 
 \begin{figure}[h]
 	\centering
 	\input{Northeim/tempSprung.tex}
-	\caption{Vergrößerte Darstellung einer Temperaturkurve.}
+	\caption{Vergrößerte Darstellung einer Temperaturkurve. Es ist gut das Rippling in den einzelnen Blöcken und die Verschiebung der Blöcke zu sehen.}
 	\label{fig:tempSprung}
 \end{figure}
-
-
 
 \subsection{Absorption}
 Bei der Messung der Absorption stellte sich sehr schnell heraus, dass die Daten stark verrauscht sind, besonders an der Oberfläche des Wassers.
