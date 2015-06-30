@@ -514,6 +514,7 @@ Die LEDs werden ebenfalls von der board-internen Spannungsquelle versorgt und wi
 Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
+\label{sec:durchdruck}
 Der Druck wird durch einen Absolutdrucksensor in einer Messbrücke bestimmt.
 Die Schaltung wurde von der Geophysik bereitgestellt und direkt an dem Pin 14.2 am Board angeschlossen.
 Zu dem muss die Masse von der externen Schaltung mit der Masse des Boards gekoppelt werden.
@@ -641,6 +642,7 @@ Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erk
 
 
 \subsection{Druck}
+\label{sec:ausdruck}
 Laut Datenblatt sollte der Spannungsverlauf der Druckmessbrücke linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
 Allerdings bemerkten wir schon während der Messung, dass die vom Datenlogger angezeigten Werte nicht ganz mit den von uns vorgenommenen Markierungen am Kabel im 1m Abstand übereinzustimmen schienen.
 So ließen wir die Sensoren laut Kabel bis in eine Tiefe von ca. 7.5m hinab.
@@ -735,6 +737,7 @@ Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter
 \label{sec:diskussion}
 
 \subsection{Referenzspannung des ADC}
+\label{sec:diskreffADC}
 Für den ADC wurde die Interne Referenzspannung des Controllers verwendet.
 Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht, das sogenannte rippling, somit auch die ADC Werte.
 Dies hat eine Größenordnung von etwa 5\si{\milli\volt}, sprich 1\% der Maximalspannung und ist in allen Datensätzen zu sehen.\\
@@ -745,7 +748,17 @@ Zu den muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet w
 Mit dieses Methoden könnte das Rippling auf etwa 0.1\% der Maximalspannung gedrückt werden.
 
 \subsection{Druck}
-
+Die Druckmessung wird über die externe Schaltung betrieben und wurde deshalb nicht von den Spannungsschwankungen des Boards dierekt beeinflusst.
+Der größte Fehler bei der Kopplung von Druckplatine und Datenlogger bestand noch in der Testphase daran, dass nicht, wie im Kapitel \ref{sec:durchdruck} aufgeführt, die Massen der beiden Platinen gekoppelt waren, obwohl eine eigenständige Leitung für das Massesignal verwendet wurde.
+Fehlerhaft war hier nicht die Verbindung der Platinen, sondern die Boardinterne Masseverteilung.
+Anscheinend waren die veschiedenen Massepin nicht alle miteinander verbunden.
+Dies kann an einer fehlerhaften Lötstelle oder einer fehlerhaften Leitung liegen.
+In unserem Fall wurde des Problem behoben, in dem wir alle Masse zudem extern noch ein weiteres Mal gekoppelt haben.\\
+Allerdings wirkte das rippling der ADCwerte, wie in Kapittel \ref{sec:diskreffADC} beschrieben, sich auch auf die Auswertung des Drucks aus.
+Desweiteren zeigte sich in der Auswertung, dass die Steigung des Druck unterschätzt wurde.
+Die Tiefe war um fast 10\% zu klein.
+Aus diesem Grund haben wir den Korrekturfaktor von 1.1 verwendet.
+Mit diesem Faktor sind die Tiefenwerte, wie im Kapitel \ref{sec:ausdruck} beschrieben, mit den über die Markierungen am Kabel vergleichbar gewesen.
 
 \subsection{Echolot}
 Die Idee des Echolots konnte nicht vollständig umgesetzt werden, da das Signal nicht stark genug war, um bis in eine Tiefe von etwa 6\si{\meter} einzudringen und reflektiert zu werden.
