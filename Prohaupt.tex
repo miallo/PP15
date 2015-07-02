@@ -18,6 +18,8 @@
 \setkomafont{captionlabel}{\sffamily\bfseries}
 \setcapindent{0em}
 
+\usepackage{amsmath}
+\numberwithin{equation}{subsection}
 
 %---- Weitere Pakete -----------------------------------------------------------
 % Die Pakete sind alle in der TeX Live Distribution enthalten. Wichtige Adressen
@@ -46,7 +48,7 @@
 % Zur Graphikausgabe
 %Beipiel: \includegraphics[width=\textwidth]{grafik.png}
 \usepackage{graphicx}
-\graphicspath{{GoeKiessee/}{Northeim/}{Theorie/}{Schall-Abstand/}}
+\graphicspath{{GoeKiessee/}{Northeim/}{Theorie/}{Schall-Abstand/}{Fotos/}}
 
 % Text umfließt Graphiken und Tabellen
 % Beispiel:
@@ -115,8 +117,11 @@
 
 %Bibliography \bibliography{literatur} und \cite{gerthsen}
 %\usepackage{cite}
-\usepackage{babelbib}
-\selectbiblanguage{ngerman}
+%\usepackage{babelbib}
+%\selectbiblanguage{ngerman}
+\usepackage[backend=bibtex,natbib=true,sorting=nyt,style=numeric-comp]{biblatex}
+\usepackage[babel,german=quotes]{csquotes}
+\bibliography{literatur}
 
 
 \usepackage{hyperref}
@@ -181,6 +186,9 @@ Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
 Wir wollen in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Licht-Wellenlängen messen.
 Die Tiefe der Sensoren bestimmen wir mit Hilfe einer Drucksonde, während wir die Tiefe des Sees mit einem selbstgebauten Echolote bestimmen wollen.
 Die Position des Bootes auf dem See wird mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.
+
+In zwei Messungen haben wir einmal den Göttinger Kiessee und einmal in Northeim den Großen See vermessen.
+
 Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Absorption von Wasser konstant für alle Tiefen ist.
 
 
@@ -322,7 +330,7 @@ nichtinvertierenden Verstärkers.
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=10cm]{nicht.png}
-	\caption{https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Noninverting_Amplifier.svg/2000px-Noninverting_Amplifier.svg.png}
+	\caption{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Noninverting_Amplifier.svg/2000px-Noninverting_Amplifier.svg.png}}
 	\label{fig:nicht}
 \end{figure}
 
@@ -852,7 +860,7 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 		Ausschlaggebend war, dass wir zu den preislich akzeptablen Sensoren keine vernünftigen Datenkurven finden konnten, da diese augenscheinlich nur für fertige Geräte ausgelegt sind.
 \end{itemize}
 
-
-\bibliography{literatur}
-\bibliographystyle{babalpha}
+\printbibliography[heading=bibintoc]
+%\bibliography{literatur}
+%\bibliographystyle{babalpha}
 \end{document}
