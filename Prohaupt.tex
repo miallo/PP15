@@ -196,7 +196,7 @@ Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Ab
 \label{sec:theorie}
 \subsection{Schweredruck}
 
-Für eine Flüssigkeitssäule mit einer Höhe $h$ gilt das Pascalsche Gesetz für den Druck
+Für eine Flüssigkeitssäule mit einer Höhe $h$ gilt das Pascal'sche Gesetz für den Druck
 \begin{align}
  p= g \rho h.
 \end{align}
@@ -214,32 +214,33 @@ Möchte man also die Tiefe $d$ des Drucksensors bestimmen, so berechnet sich die
 \subsubsection{Abstandsgesetz und Intensität}
 
 %Motivation:
-Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, der Schallwellen mit Frequenzen im Ultraschallbereich abgibt
+Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, der Schallwellen mit Frequenzen im Ultraschallbereich abgibt,
 ähnlich verhalten, wie die Gesetze einer punktförmigen Schallquelle.
 
 Der Grund dafür ist, dass die genutzten Entfernungen zwischen Sender und Empfänger vielfach größer sind als die Größe des schwingenden Kristalls. 
-In einem homogenem Medium verteilt sich dann die ausgesendete Energie der Welle in drei Dimensionen gleichmäßig im Abstand $r$ über eine Kugelfläche $A$. Wird nun mit $<P>$ die mittlere vom Sender abgestrahlte Leistung 
+In einem homogenem Medium verteilt sich dann die ausgesendete Energie der Welle in drei Dimensionen gleichmäßig im Abstand $r$ über eine Kugelfläche $A$.
+Wird nun mit $\left<P\right>$ die mittlere vom Sender abgestrahlte Leistung 
 bezeichnet, dann ist also zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält
 
 \begin{align}
- I \propto \frac{1}{r^2}.
+ I \propto \frac{1}{r^2}\quad .
 \end{align}
 Der Schalldruck $P$ hingegen nimmt antiproportional zur Entfernung ab
 \begin{align}
- P \propto \frac{1}{r}.
+ P \propto \frac{1}{r}\quad .
 \end{align}
-Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $<w>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung auch geschrieben werden als
+Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $\left<w\right>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung auch geschrieben werden als
 \begin{align}
- <P>  = <w> A v.
+ \left<P\right>  = \left<w\right> A v\quad .
 \end{align}
 Hieraus ergibt sich direkt für die Intensität
 \begin{align}
- I = <w> v.
+ I = \left<w\right> v\quad.
 \end{align}
 Die nun noch unbekannte Energiedichte von Schallwellen kann man aus der Betrachtung einer harmonischen Welle gewinnen. Dabei ergibt sich ganz allgemein, dass diese 
 proportional zum Quadrat der Amplitude $A$ und der Kreisfrequenz $\omega$ ist
 \begin{align}
- <\omega> = \frac{1}{2} \rho \omega^2 A^2.
+ \left<\omega\right> = \frac{1}{2} \rho \omega^2 A^2\quad .
 \end{align}
 Mit $\rho$ wurde hier wie üblich die Dichte des Mediums bezeichnet.
 Insgesamt ergibt sich also 
@@ -266,7 +267,7 @@ Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit also ganz wesentli
 Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s.
 Bei einer Echolotmessung in Seen ist dann vor allem die unterschiedliche Temperatur in verschiedenen Schichten 
 wichtig. Die Schallgeschwindigkeit kann dann sogar um mehrere Prozente innerhalb eines Sees schwanken.
-\ref{schicht} %was ist das fuer eine Quelle
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX \ref{schicht} %was ist das fuer eine Quelle
 %http://www.wiley-vch.de/books/sample/3527321314_c01.pdf schwanken um prozent
 
 
@@ -291,7 +292,7 @@ Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
 Das Absorptionsspektrum von Molekülen hängt wesentlich von ihren möglichen 
 quantenmechanischen Zuständen ab, denen (entarte) Energieniveaus zugeordnet sind. Dabei muss zwischen verschiedenen Freiheitsgraden
 unterschieden werden. Für das Wassermolekül sind dabei etwa der Rotationsfreiheitsgrad und Vibrationsfreiheitsgrad entscheidend.
-Der Rotationsfreiheitsgrad kann etwa von Mikrowellen Strahlung bis zur infraroten Strahlung angeregt werden, wohingegen Vibrationszustände für das restliche Absorptionsspektrum verantwortlich sind.
+Der Rotationsfreiheitsgrad kann etwa von Mikrowellenstrahlung bis zur infraroten Strahlung angeregt werden, wohingegen Vibrationszustände für das restliche Absorptionsspektrum verantwortlich sind.
 
 
 Wichtig ist nun, dass bei flüssigem Wasser der Rotationsfreiheitsgrad ausscheidet, da die Moleküle durch die Wasserstoffbrückenbindung zu stark gebunden sind.
@@ -327,12 +328,6 @@ Das eigentliche Bauteil des Verstärkers ist sehr komplex und es lohnt sich nich
 weiter darauf einzugehen.
 Entscheidend ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
 nichtinvertierenden Verstärkers. 
-\begin{figure}[h]
-	\centering
-	\includegraphics[height=10cm]{nicht.png}
-	\caption{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Noninverting_Amplifier.svg/2000px-Noninverting_Amplifier.svg.png}}
-	\label{fig:nicht}
-\end{figure}
 
 
 
@@ -341,29 +336,33 @@ Für diese gilt:
  v = 1 + \frac{R_2}{R_1}\label{eq:verst}
 \end{align}
 Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandsverhältnisses.
-Eine weitere Eigenschaft des Nichtinvertierbarer Verstärker ist, dass die Phase des Eingangs
-und Ausgangssignals gleich sind. Diese Eigenschaft ist für das Echolot wichtig.
+Eine weitere Eigenschaft des Nichtinvertierenden Verstärkers ist, dass die Phase des Eingangs und Ausgangssignals gleich sind.
+Diese Eigenschaft ist für das Echolot wichtig.
 \cite{op}
 
 \subsection{Schichtung eines Sees}
 
 Man unterscheidet drei Tiefenschichten eines Sees.
-Diese haben alle verschiedene physikalische, chemische, sowie biologische Eigenschaften. Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden, insbesondere bei flachen Seen.
+Diese haben alle verschiedene physikalische, chemische, sowie biologische Eigenschaften.
+Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden, insbesondere bei flachen Seen.
 Die oberste Schicht wird auch Epilimnion genannt. 
 Im Sommer lagert sich dort warmes Wasser mit geringer Dichte ab.
-Während dieser Zeit kommt es daher nur zu einem geringen Austausch des Wassers
-mit tieferen Schichten, sodass in diesen immer weniger Sauerstoff zu finden ist.
-Zudem findet effektiver Wärmeaustausch mit tieferen Schichten dann nur noch Aufgrund von vergleichsweise
-kleinen Strömungen statt. Diese werden durch Wind oder im geringen Maße durch Sonneneinstrahlung erzeugt. 
+Während dieser Zeit kommt es daher nur zu einem geringen Austausch des Wassers mit tieferen Schichten, sodass in diesen immer weniger Sauerstoff zu finden ist.
+Zudem findet effektiver Wärmeaustausch mit tieferen Schichten dann nur noch Aufgrund von vergleichsweise kleinen Strömungen statt.
+Diese werden durch Wind oder im geringen Maße durch Sonneneinstrahlung erzeugt. 
 Das Klima ist daher ein entscheidender Faktor für die Dicke dieser Schicht.
-Diffusiver Wärmetransport hingegen ist ein sehr langsamer
-Prozess, so vergeht zum Beispiel etwa ein Monat für das Bilden einer etwa 1 m dicken Schicht vergleichsweise wärmeren Wassers.
-Ab einer Tiefe von circa 10 m führt dies insgesamt zur Entstehung eines größeren Temperaturgradienten im Sommer und 
-zur Entstehung der mittleren Schicht (Thermonokline). Dabei handelt es sich um eine recht dünne  Übergangschicht. Diese trennt die obere Schicht von größeren Tiefen. 
+Diffusiver Wärmetransport hingegen ist ein sehr langsamer Prozess, so vergeht zum Beispiel etwa ein Monat für das Bilden einer etwa 1 m dicken Schicht vergleichsweise wärmeren Wassers.
+Ab einer Tiefe von circa 10 m führt dies insgesamt zur Entstehung eines größeren Temperaturgradienten im Sommer und zur Entstehung der mittleren Schicht (Thermonokline).
+Dabei handelt es sich um eine recht dünne Übergangschicht.
+Diese trennt die obere Schicht von größeren Tiefen. 
 \newline
 
 %http://www.wiley-vch.de/books/sample/3527321314_c01.pdf
-Das Epilimnion  ist klarerweise die wärmste und besitzt den größten pH wert, da es hier zu Kontakt mit der Atmosphäre kommt. In Folge dessen lösen sich Gase wie Kohlenstoffdioxid, sodass beispielsweise Kohlensäure entsteht. Außerdem besitzt diese Schicht auch den größten Sauerstoffgehalt. Hier sind auch die meisten phototrophen Planktonarten zu finden, denn es ist der hellste Bereich des Sees. Abgestorbenes Plankton lagert sich dann auf den Grund des Sees ab und steht anderen Lebewesen als Nahrung zur Verfügung.
+Das Epilimnion ist klarerweise im Sommer die wärmste und besitzt den größten pH wert, da es hier zu Kontakt mit der Atmosphäre kommt.
+In Folge dessen lösen sich Gase wie Kohlenstoffdioxid, sodass beispielsweise Kohlensäure entsteht.
+Außerdem besitzt diese Schicht auch den größten Sauerstoffgehalt.
+Hier sind auch die meisten phototrophen Planktonarten zu finden, denn es ist der hellste Bereich des Sees.
+Abgestorbenes Plankton lagert sich dann auf den Grund des Sees ab und steht anderen Lebewesen als Nahrung zur Verfügung.
 \newline
 Die unterste Schicht wird auch Hypolimnion genannt.
 Im Sommer ist dies die kälteste Schicht und auch die mit dem geringsten Sauerstoffgehalt. 
@@ -374,8 +373,10 @@ Im Extremfall liegt dann eine vollständige Durchmischung aller Schichten vor.
 Aus diesem Grund ist eine (Temperatur-) Schichtung bei permanent gefrorenen Gewässern nicht vorzufinden.
 \newline
 In Grafik \ref{fig:schichtung} sind zur Veranschaulichung der Leitwert C, die Temperatur T und das Sauerstoffgehaltsprofil des Arendsee (Sachsen Anhalt, Messung im September) dargestellt. 
-Aufgrund der beinahe konstanten Temperatur im oberste sowie untersten Bereich kann man hier die drei oben geschilderten Schichten gut von einander trennen. Insbesondere erkennt man den starken Temperaturgradienten im Metalimnion, das hier zwischen 8 und 15 m liegt. 
-Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine Länge von circa 8 m. Es ist also zu erwarten, dass wir beim Vermessenen des Sees grade an die Grenze des Epilimnions stoßen.
+Aufgrund der beinahe konstanten Temperatur im oberste sowie untersten Bereich kann man hier die drei oben geschilderten Schichten gut von einander trennen.
+Insbesondere erkennt man den starken Temperaturgradienten im Metalimnion, das hier zwischen 8 und 15 m liegt. 
+Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine Länge von circa 8 m.
+Es ist also zu erwarten, dass wir beim Vermessenen des Sees grade an die Grenze des Epilimnions stoßen.
 \cite{schicht}
 
 \begin{figure}[h]
@@ -406,14 +407,6 @@ Die Implementierung dieser Methode wird im Kapitel \ref{sec:durchpos} weiter bes
 Parallel zu dem direkten Speichern haben wir auch eine Smartphone-App erstellt, die ebenfalls die Position aufzeichnet (s. Kapitel \ref{sec:app}).
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[height=10cm]{Fotos/Geodimeter}
-	\caption{Kevin beim Einstellen des Geodimeters.}
-	\label{fig:geodimeter}
-\end{figure}
-
-
 \subsection{Temperatur}
 Die Temperatur wird mit einem Pt1000-Widerstand vermessen.
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
@@ -442,11 +435,6 @@ Durch Umstellen erhält man eine Formel für die Temperatur in Grad Celsius
  \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    }\label{eq:temperapt1000} .
 \end{align}
 
-Der Fehler der Temperaturmessung dieses Gerätes liegt bei
-\begin{align}
-	\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)~.
-	\label{eq:Pt1000_fehler}
-\end{align}
 
 
 \section{Durchführung}
@@ -766,7 +754,7 @@ Mit dieses Methoden könnte das Rippling auf etwa 0.1\% der Maximalspannung gedr
 \subsection{Druck}
 Die Druckmessung wird über die externe Schaltung betrieben und wurde deshalb nicht von den Spannungsschwankungen des Boards dierekt beeinflusst.
 Der größte Fehler bei der Kopplung von Druckplatine und Datenlogger bestand noch in der Testphase daran, dass nicht, wie im Kapitel \ref{sec:durchdruck} aufgeführt, die Massen der beiden Platinen gekoppelt waren, obwohl eine eigenständige Leitung für das Massesignal verwendet wurde.
-Fehlerhaft war hier nicht die Verbindung der Platinen, sondern die Boardinterne Masseverteilung.
+Fehlerhaft war hier nicht die Verbindung der Platinen, sondern die boardinterne Masseverteilung.
 Anscheinend waren die veschiedenen Massepin nicht alle miteinander verbunden.
 Dies kann an einer fehlerhaften Lötstelle oder einer fehlerhaften Leitung liegen.
 In unserem Fall wurde des Problem behoben, in dem wir alle Masse zudem extern noch ein weiteres Mal gekoppelt haben.\\
@@ -783,8 +771,8 @@ Dies kann entweder durch das Verwenden von einer höheren Spannung am Sender ode
 Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls führt.
 Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werden.
 Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden.
-Desweiteren erhitzen sich die Bautele bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
-Wir haben dennoch ein paar Testdaten aufnehmen und Auswerten können.
+Desweiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
+Wir haben dennoch ein paar Testdaten aufnehmen und auswerten können.
 %hie noch das Ergebnis der Auswertung diskutieren.
 
 \subsection{Ortsbestimmung}
@@ -797,25 +785,25 @@ Dies führte dazu, dass häufig der für den Retroreflektor zuständige diesen z
 Da wir bei der Messung die Funkgeräte vergessen hatten, mussten wir uns mit Handzeichen verständigen.
 Dies stellte selbst am Göttinger Kiessee an den entferntesten Messpunkten eine Herausforderung dar, so dass dort das Boot-Team häufig unnötig lange an einem Ort blieb, da sie die Bestätigung nicht sahen.
 
-Außerdem behindert am Northeimer See eine Insel ein Großteil des Blickfelds.
+Außerdem behindert am Northeimer See eine Insel ein Großteil des Blickfelds, so dass das Geodimeter keinen guten Standpunkt gehabt hätte.
 
 Es stellte sich bei den Messungen heraus, dass die Genauigkeit des Geodimeters keine Rolle spielte, da das Boot von Wind und Strömung während der Messung sehr stark abgetrieben wurde und somit mit einem Fehler von etwa $\pm5\si{\meter}$ gerechnet werden muss.
 Daher setzten wir bei der zweiten Messung unsere erste Idee um, die Position über GPS zu erfassen, welche wir wegen der vermeintlich schlechten Auflösung von 5-10m verwarfen.
 Somit sind beide Methoden gleich gut und bei der Messung, wie im Kapitel \ref{sec:ausort} bereits dargestellt, stellte sich zu dem heraus, dass das GPS von Garmin$^\copyright$ eine Genauigkeit von bis zu $\pm3\si{\meter}$ hatte.
 Die ist eine Verbesserung von 40\% in Bezug auf die vorher Möglichen $\pm5\si{\meter}$.
 Zu dem waren nun die Position in der selben Datei gespeichert, wie die Messdaten auch.
-Dies machte ein sonnst notwendiges Sortieren der Datein nach Ort und Zeit unnötig.
+Dies machte ein sonnst notwendiges Sortieren der Dateien nach Ort und Zeit unnötig.
 
 \subsection{Temperatur}
 Bei der zweiten Messung zeigte sich in den Daten, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
 Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:tempSprung} zu erkennen, dass jeweils ungefähr 10 Messwerte auf einem niedrigen, dann auf einem mittleren, erneut auf einem niedrigen und dann wieder auf einem hohen Niveau liegen.
-Dies  entspricht in etwa der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
+Dies entspricht der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
 Für beide Messungen benutzten wir den Micro-Controller als Spannungsquelle.
 Dieser ist für Ströme von bis zu 350mA ausgelegt.
 Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des PT1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
-Dies liegt vermutlich daran, dass der Boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen noch zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
+Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen noch zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
 Somit lagen verschiedene Spannungen am Vorwiderstand des PT1000 an und trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am PT1000.\\
-Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefilter werden mussten.
+Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
 
 \begin{figure}[h]
 	\centering
@@ -830,9 +818,9 @@ Dies liegt wahrscheinlich daran, dass durch die Bewegung der Wasseroberfläche d
 Um dieses hochfrequente Rauschen zu unterdrücken kann der Strom der Photodiode zusätzlich noch durch einen Tiefpassfilter geleitet werden.
 Hierzu müsste nur eine Drosselspule in Reihe mit der Photodiode und dem ADC geschaltet werden.
 Somit werden nur die niederfrequenten Änderungen des Photostroms aufgezeichnet.\\
-Desweiteren ware die beide LEDs zur Messung der Absorbtion in verschiedenen Spektren nicht nah genug an der Photodiode, um eine signifikate Änderung an den Werten zu führen, die nicht im Rauschen untergehen.
+Desweiteren waren die beide LEDs zur Messung der Absorbtion in verschiedenen Spektren nicht nah genug an der Photodiode, um eine signifikate Änderung an den Werten zu führen, die nicht im Rauschen untergeht.
 Ebenfalls wurde bei der Wahl der Diode nicht darauf geachtet, dass diese eine unterschiedliche Aufnahmecharakteristik für die verwendeten Wellenlängen hat.
-Laut Datenblatt liegt der unterschied in der Intensität zwischen den beiden Wellenlängen bei 40\%, was sich auch in der Auswertung bemerkbar machte. %refferez auf Datenblatt
+Laut Datenblatt liegt der Unterschied in der Effizienz zwischen den beiden Wellenlängen bei 40\%, was sich auch in der Auswertung bemerkbar machte. %refferez auf Datenblatt
 
 
 \subsection{Messprobleme und verworfene Ideen}
@@ -860,7 +848,28 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 		Ausschlaggebend war, dass wir zu den preislich akzeptablen Sensoren keine vernünftigen Datenkurven finden konnten, da diese augenscheinlich nur für fertige Geräte ausgelegt sind.
 \end{itemize}
 
+\newpage
 \printbibliography[heading=bibintoc]
 %\bibliography{literatur}
 %\bibliographystyle{babalpha}
+\newpage
+\section{Anhang}
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=10cm]{Fotos/Geodimeter}
+	\caption{Kevin beim Einstellen des Geodimeters.}
+	\label{fig:geodimeter}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=10cm]{nicht.png}
+	\caption{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Noninverting_Amplifier.svg/2000px-Noninverting_Amplifier.svg.png}}
+	\label{fig:nicht}
+\end{figure}
+
 \end{document}
