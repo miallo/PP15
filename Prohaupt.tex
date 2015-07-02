@@ -408,7 +408,7 @@ Parallel zu dem direkten Speichern haben wir auch eine Smartphone-App erstellt, 
 
 
 \subsection{Temperatur}
-Die Temperatur wird mit einem Pt1000-Widerstand vermessen.
+Die Temperatur wird mit einem PT1000-Widerstand vermessen.
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
 Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab
 \begin{align}
@@ -460,10 +460,10 @@ Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite be
 \end{align}
 Die Daten werden in Form einer ASCII Datei auf einer SD-Karte gespeichert um sie später am Computer leichter in einem Plotprogramm bearbeiten zu können.
 Dies sorgt aber für ein größeres Datenaufkommen.
-Jede Datei trägt, zur besseren Identifikation, den aktuellen Monat, Tag, Stunde und Minute als Namen (MMDDHHMM.dat).
-In der Datei wird die Zeit in Millisekunden, die ADCWerte von Temperatur, Photodiode und Druck, sowie die Berechneten Werte der Temperatur, Intensität, Druck und Tiefe berechnet aus dem aktuellen Luftdruck eingetragen.
+Jede Datei trägt, zur besseren Identifikation, den aktuellen Monat, Tag, Stunde und Minute als Namen (MMDDhhmm.dat).
+In der Datei wird die Zeit in Millisekunden, die ADCWerte von Temperatur, Photodiode und Druck, sowie die berechneten Werte der Temperatur, Intensität, Druck und Tiefe berechnet aus dem aktuellen Luftdruck eingetragen.
 Der aktuelle Luftdruck kann über das Einstellungsmenü direkt am Logger geändert werden.\\
-Die Zeit wird anhand der Aktuellen Zeit und jedem weiteren Zeitschritt bestimmt.
+Die Zeit wird anhand der aktuellen Zeit und jedem weiteren Zeitschritt bestimmt.
 Das Programm kann von 10 bis zu maximal 500 Werten pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden können.
 Der Zeitschritt wird abhängig von der Wertfrequenz berechnet und eingetragen.\\
 Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
@@ -487,7 +487,7 @@ Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT
 Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereiche des ADCs liegt.\\
 Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
-	R_\text{PT1000}=\frac{R_1*U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
+	R_\text{PT1000}=\frac{R_1\cdot U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
 \end{align}
 ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
 Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel \eqref{eq:temperapt1000} verwendet.\\
@@ -514,7 +514,9 @@ Da in den See nicht viel Licht eintritt, wird die sich ergebene Spannung noch ü
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
 Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED %ref auf die Datenblätter
 mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
-Die LEDs werden ebenfalls von der board-internen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.\\
+Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
+
+
 Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
@@ -523,7 +525,7 @@ Der Druck wird durch einen Absolutdrucksensor in einer Messbrücke bestimmt.
 Die Schaltung wurde von der Geophysik bereitgestellt und direkt an dem Pin 14.2 am Board angeschlossen.
 Zu dem muss die Masse von der externen Schaltung mit der Masse des Boards gekoppelt werden.
 Die Messbrücke ist mit einem Potentiometer bei einer Spannung von 1\si{\volt} auf einen Druck von 1001hPa geeicht.
-Bei der Messbrücke handelt es sich um  eine Weathstonesche Brücke, die bereits vom Werk aus geeicht ist.
+Bei der Messbrücke handelt es sich um  eine Wheatstone'sche Brücke, die bereits vom Werk aus geeicht ist.
 Die ausgegebene Spannung ist somit proportional zum angewandten Druck.
 Der Luftdruck liegt bei etwa 1024hPa und in einer Tiefe von 10\si{\meter} hat sich der Druck um 1000hPa erhöht, und damit auch die Spannung um 1\si{\volt}.
 Somit liegt der Spannungsbereich in dem akzeptablen Bereich des ADC.\\
@@ -550,8 +552,8 @@ Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysi
 Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTL Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
 Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
 Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
-Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomzeit als ASCII Text jede Sekunde an den Logger.
-Mithilfe der Zeit kann die RTC (Realtimeclock) einmalig auf Atomuhrzeit eingestellt werden.
+Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomuhrzeit als ASCII Text jede Sekunde an den Logger.
+Mithilfe der Zeit kann die RTC (Realtimeclock) des Boardes einmalig auf die GPS-Zeit eingestellt werden.
 Dies ist über das Einstellungsmenü bei einmaligem Empfangen der Daten möglich.
 
 \subsection{Messdurchführung}
