@@ -71,34 +71,70 @@
       \expandafter\def\csname LT8\endcsname{\color{black}}%
     \fi
   \fi
-  \setlength{\unitlength}{0.0500bp}%
-  \begin{picture}(7200.00,5040.00)%
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+\begin{picture}(7200.00,5040.00)%
     \gplgaddtomacro\gplbacktext{%
       \csname LTb\endcsname%
-      \put(2791,704){\makebox(0,0)[r]{\strut{}-700}}%
-      \put(2791,1213){\makebox(0,0)[r]{\strut{}-600}}%
-      \put(2791,1722){\makebox(0,0)[r]{\strut{}-500}}%
-      \put(2791,2231){\makebox(0,0)[r]{\strut{}-400}}%
-      \put(2791,2740){\makebox(0,0)[r]{\strut{}-300}}%
-      \put(2791,3248){\makebox(0,0)[r]{\strut{}-200}}%
-      \put(2791,3757){\makebox(0,0)[r]{\strut{}-100}}%
-      \put(2791,4266){\makebox(0,0)[r]{\strut{} 0}}%
-      \put(2791,4775){\makebox(0,0)[r]{\strut{} 100}}%
-      \put(2923,484){\makebox(0,0){\strut{}-100}}%
-      \put(3177,484){\makebox(0,0){\strut{}-50}}%
-      \put(3432,484){\makebox(0,0){\strut{} 0}}%
-      \put(3686,484){\makebox(0,0){\strut{} 50}}%
-      \put(3941,484){\makebox(0,0){\strut{} 100}}%
-      \put(4195,484){\makebox(0,0){\strut{} 150}}%
-      \put(4449,484){\makebox(0,0){\strut{} 200}}%
-      \put(4704,484){\makebox(0,0){\strut{} 250}}%
-      \put(4958,484){\makebox(0,0){\strut{} 300}}%
-      \put(2021,2739){\rotatebox{-270}{\makebox(0,0){\strut{}y [m]}}}%
-      \put(3940,154){\makebox(0,0){\strut{}x [m]}}%
+      \put(946,1308){\makebox(0,0)[r]{\strut{}$-300$}}%
+      \put(946,1666){\makebox(0,0)[r]{\strut{}$-250$}}%
+      \put(946,2024){\makebox(0,0)[r]{\strut{}$-200$}}%
+      \put(946,2382){\makebox(0,0)[r]{\strut{}$-150$}}%
+      \put(946,2740){\makebox(0,0)[r]{\strut{}$-100$}}%
+      \put(946,3097){\makebox(0,0)[r]{\strut{}$-50$}}%
+      \put(946,3455){\makebox(0,0)[r]{\strut{}$0$}}%
+      \put(946,3813){\makebox(0,0)[r]{\strut{}$50$}}%
+      \put(946,4171){\makebox(0,0)[r]{\strut{}$100$}}%
+      \put(1078,1088){\makebox(0,0){\strut{}$-700$}}%
+      \put(1794,1088){\makebox(0,0){\strut{}$-600$}}%
+      \put(2509,1088){\makebox(0,0){\strut{}$-500$}}%
+      \put(3225,1088){\makebox(0,0){\strut{}$-400$}}%
+      \put(3941,1088){\makebox(0,0){\strut{}$-300$}}%
+      \put(4656,1088){\makebox(0,0){\strut{}$-200$}}%
+      \put(5372,1088){\makebox(0,0){\strut{}$-100$}}%
+      \put(6087,1088){\makebox(0,0){\strut{}$0$}}%
+      \put(6803,1088){\makebox(0,0){\strut{}$100$}}%
     }%
     \gplgaddtomacro\gplfronttext{%
       \csname LTb\endcsname%
-      \put(3971,877){\makebox(0,0)[r]{\strut{}Messpunkte}}%
+      \put(176,2739){\rotatebox{-270}{\makebox(0,0){\strut{}y [m]}}}%
+      \put(3940,758){\makebox(0,0){\strut{}x [m]}}%
+      \csname LTb\endcsname%
+      \put(5816,1481){\makebox(0,0)[r]{\strut{}Messpunkte}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \csname LTb\endcsname%
+      \put(946,1308){\makebox(0,0)[r]{\strut{}$-300$}}%
+      \put(946,1666){\makebox(0,0)[r]{\strut{}$-250$}}%
+      \put(946,2024){\makebox(0,0)[r]{\strut{}$-200$}}%
+      \put(946,2382){\makebox(0,0)[r]{\strut{}$-150$}}%
+      \put(946,2740){\makebox(0,0)[r]{\strut{}$-100$}}%
+      \put(946,3097){\makebox(0,0)[r]{\strut{}$-50$}}%
+      \put(946,3455){\makebox(0,0)[r]{\strut{}$0$}}%
+      \put(946,3813){\makebox(0,0)[r]{\strut{}$50$}}%
+      \put(946,4171){\makebox(0,0)[r]{\strut{}$100$}}%
+      \put(1078,1088){\makebox(0,0){\strut{}$-700$}}%
+      \put(1794,1088){\makebox(0,0){\strut{}$-600$}}%
+      \put(2509,1088){\makebox(0,0){\strut{}$-500$}}%
+      \put(3225,1088){\makebox(0,0){\strut{}$-400$}}%
+      \put(3941,1088){\makebox(0,0){\strut{}$-300$}}%
+      \put(4656,1088){\makebox(0,0){\strut{}$-200$}}%
+      \put(5372,1088){\makebox(0,0){\strut{}$-100$}}%
+      \put(6087,1088){\makebox(0,0){\strut{}$0$}}%
+      \put(6803,1088){\makebox(0,0){\strut{}$100$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(176,2739){\rotatebox{-270}{\makebox(0,0){\strut{}y [m]}}}%
+      \put(3940,758){\makebox(0,0){\strut{}x [m]}}%
+      \csname LTb\endcsname%
+      \put(5816,1481){\makebox(0,0)[r]{\strut{}Messpunkte}}%
     }%
     \gplbacktext
     \put(0,0){\includegraphics{karteGoe}}%
