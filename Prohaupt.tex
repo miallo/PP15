@@ -256,11 +256,11 @@ Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle propor
 \label{sec:theschallgeschw}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden
 \begin{align}
- v = \sqrt{  \frac{K}{\rho}  }.
+ v = \sqrt{  \frac{K}{\rho}  }\quad.
 \end{align}
 Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderungen
 \begin{align}
- K =  \frac{\Delta P}{\Delta V / V }.
+ K =  \frac{\Delta P}{\Delta V / V }\quad.
 \end{align}
 Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit wesentlich vom Medium abhängt. 
 Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s  \cite{tipler}.
@@ -277,17 +277,17 @@ Setzt man Licht als eine ebene Welle an so ergibt sich bei Ausbreitung in einem 
 Es beschreibt, dass die Intensität $I$ des Lichts exponentiell bei zunehmender Stecke abfällt.
 Für den Anteil der noch vorhandenen Intensität $\frac{I}{I_0}$ gilt dann
 \begin{align}
- \frac{I}{I_0}  =  \exp(- \alpha  \Delta z).
+ \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)\quad.
 \end{align}
 Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab
 \begin{align}
- \alpha= \frac{4 \pi \kappa}{\lambda}.
+ \alpha= \frac{4 \pi \kappa}{\lambda}\quad.
 \end{align}
 Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
 \cite[S.229]{meschede}
 
 
-\subsection{Lichtabsorbtion von Wasser-Betrachtung auf Mikroskopischer Ebene}
+\subsection{Lichtabsorption von Wasser-Betrachtung auf Mikroskopischer Ebene}
 %https://en.wikipedia.org/wiki/Electromagnetic_absorption_by_water
 Das Absorptionsspektrum von Molekülen hängt wesentlich von ihren möglichen 
 quantenmechanischen Zuständen ab, denen (entarte) Energieniveaus zugeordnet sind. Dabei muss zwischen verschiedenen Freiheitsgraden
@@ -334,7 +334,7 @@ Für diese gilt:
  v = 1 + \frac{R_2}{R_1}\label{eq:verst}
 \end{align}
 Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandsverhältnisses.
-Eine weitere Eigenschaft des Nichtinvertierenden Verstärkers ist, dass die Phase des Eingangs und Ausgangssignals gleich sind.
+Eine weitere Eigenschaft des nichtinvertierenden Verstärkers ist, dass die Phase des Eingangs und Ausgangssignals gleich sind.
 Diese Eigenschaft ist für das Echolot wichtig.
 \cite{op}
 
@@ -407,7 +407,7 @@ Parallel zu dem direkten Speichern haben wir auch eine Smartphone-App erstellt, 
 
 
 \subsection{Temperatur}
-Die Temperatur wird mit einem PT1000-Widerstand vermessen.
+Die Temperatur wird mit einem Pt1000-Widerstand vermessen.
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
 Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab
 \begin{align}
@@ -474,19 +474,19 @@ In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt
 \subsubsection{Temperaturmessung}
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
-\caption{Beschaltung des PT1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
-\label{fig:PT1000Schaltung}
+\includegraphics[width=0.5\textwidth]{Fotos/Pt1000Schaltung.png}
+\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
+\label{fig:Pt1000Schaltung}
 \end{figure}
-Für die Messung der Temperatur wird mit einem PT1000 Temperaturwiderstand gearbeitet.
+Für die Messung der Temperatur wird mit einem Pt1000 Temperaturwiderstand gearbeitet.
 Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
-Aus diesem Grund muss die am PT1000 abfallende Spannung noch verstärkt werden.
+Aus diesem Grund muss die am Pt1000 abfallende Spannung noch verstärkt werden.
 Dies geschieht mithilfe eines nicht-invertierenden Verstärkers wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
-Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:Pt1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
 Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereiche des ADCs liegt.\\
-Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
+Aus dem in der Abbildung \ref{fig:Pt1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
-	R_\text{PT1000}=\frac{R_1\cdot U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
+	R_\text{Pt1000}=\frac{R_1\cdot U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
 \end{align}
 ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
 Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel \eqref{eq:temperapt1000} verwendet.\\
@@ -628,7 +628,7 @@ Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren
 
 In Abb. \ref{fig:einzelGPSGoe} sind alle Messpunkte am Göttinger Kiessee aufgetragen.
 Diese wurden mit dem Geodimeter bestimmt.
-Als Vergleich sind die Daten, die wir mit einer anderen App aus dem App-Store\textsuperscript{\textregistered}  aufgenommen haben in Abb. \ref{fig:GPSGoe} aufgetragen.
+Als Vergleich sind die Daten, die wir mit einer kommerziellen App aufgenommen haben, in Abb. \ref{fig:GPSGoe} aufgetragen.
 Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
 
 \begin{figure}[h]
@@ -801,9 +801,9 @@ Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:
 Dies entspricht der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
 Für beide Messungen benutzten wir den Micro-Controller als Spannungsquelle.
 Dieser ist für Ströme von bis zu 350mA ausgelegt.
-Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des PT1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
+Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
 Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen noch zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
-Somit lagen verschiedene Spannungen am Vorwiderstand des PT1000 an und trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am PT1000.\\
+Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
 Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
 
 \begin{figure}[h]
