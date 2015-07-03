@@ -126,6 +126,8 @@
 
 \usepackage{hyperref}
 
+\newenvironment{bottom}{\par\vspace*{\fill}}{\clearpage}
+
 \begin{document}
 
 \begin{titlepage}
@@ -168,13 +170,13 @@ Praktikanten: &  Michael Lohmann\\
 
 \tableofcontents
 \thispagestyle{empty}
-\newpage
-
+\begin{bottom}
 \section*{Danksagung}
 Wir danken dem Institut für Geophysik, das uns Teile des technischen Equipments geliehen hat.
 Herrn Prof. Bahr möchten wir für die Betreuung unseres Projektes danken.
 Insbesondere möchten wir auch Herrn Ulrich Einecke danken für viel Unterstützung mit der technischen Umsetzung.
 Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments sehr hilfreich war.
+\end{bottom}
 \thispagestyle{empty}
 \newpage
 
