@@ -262,8 +262,11 @@ Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung f
 \end{align}
 Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderungen
 \begin{align}
- K =  \frac{\Delta P}{\Delta V / V }\quad.
+ K := - V \frac{d p}{d V}  = - \frac{d P}{d V / V }\quad.
 \end{align}
+Das negative Vorzeichen entsteht dadurch, dass bei einem Zuwachs des Drucks das Volumen abnimmt. Damit wäre also $dV$ negativ, jedoch muss K größer soll bleiben, damit die Wurzel reell bleibt.
+
+
 Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit wesentlich vom Medium abhängt. 
 Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s  \cite{tipler}.
 Bei einer Echolotmessung in Seen ist dann vor allem die unterschiedliche Temperatur in verschiedenen Schichten 
@@ -286,6 +289,7 @@ Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizie
  \alpha= \frac{4 \pi \kappa}{\lambda}\quad.
 \end{align}
 Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
+Die Relevanz des Absorptionskoeffizienten für uns ist, dass über diesen Rückschlüsse auf Schwebstoffe im Wasser von Seen gezogen werden können, wenn Messdaten über die Intensität bekannt sind.
 \cite[S.229]{meschede}
 
 
@@ -749,7 +753,7 @@ Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle t
 Dies wurde zunächst mit der Motivation durchgeführt eine mit der vorgegebenen Sendeleistung maximale Reichweite zu ermitteln. Als klar wurde, dass diese nicht ausreichen wird haben wir
 die Abnahme der Amplitude weiter untersucht.
 
-Zu diesem Zweck haben wir die Sender parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
+Zu diesem Zweck haben wir Sender und Empfänger parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
 ein Oszilloskop verwendet.
 
 Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
