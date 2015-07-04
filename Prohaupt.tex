@@ -477,9 +477,9 @@ Für die Messung der Temperatur wird mit einem Pt1000 Temperaturwiderstand gearb
 Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
 Aus diesem Grund muss die am Pt1000 abfallende Spannung noch verstärkt werden.
 Dies geschieht mithilfe eines nicht-invertierenden Verstärkers wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
-Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:Pt1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:nicht} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
 Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereiche des ADCs liegt.\\
-Aus dem in der Abbildung \ref{fig:Pt1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
+Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
 	R_\text{Pt1000}=\frac{R_1\cdot U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
 \end{align}
@@ -495,8 +495,10 @@ Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, 
 Da in den See nicht viel Licht eintritt, wird die sich ergebene Spannung noch über einen nicht-invertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 Verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
 Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED
-mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ \cite[25]{IRDatenblatt} und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
+mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
 Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
+Um die LEDs von dem Umgebungslicht zu unterscheiden werden diese gepulst, sie werden im bestimmten Zyklen ein und aus geschaltet.
+Die Frequenz mit der die LEDs nacheinander ein und aus geschaltet werden heißt Umschaltfrequenz und ist von 0\si{\hertz} bis 20\si{\hertz} durchschaltbar.
 Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
