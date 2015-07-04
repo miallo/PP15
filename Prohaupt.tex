@@ -449,7 +449,7 @@ Die Bedienung erfolgt über ein Interface aus drei Tastern und eine LCD Display.
 Das Display dient nicht nur der Steuerung, sondern zeigt auch im Sekundentakt die Momentanen Messwerte an.
 Zur Bestimmung der am Controller anliegenden Spannung wird ein integrierter Analog Digital Converter (ADC) verwendet.
 Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Referenzspannung vergleicht.
-Die Referenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht jeh nach dem, ob die zu messende Spannung kleiner oder größer ist.
+Die Referenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht je nachdem, ob die zu messende Spannung kleiner oder größer ist.
 Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
 , somit hat das Verfahren auch 12 Schritte.
 Die Referenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
@@ -640,6 +640,15 @@ In Abb. \ref{fig:einzelGPSGoe} sind alle Messpunkte am Göttinger Kiessee aufget
 Diese wurden mit dem Geodimeter bestimmt.
 Als Vergleich sind die Daten, die wir mit einer kommerziellen App aufgenommen haben, in Abb. \ref{fig:GPSGoe} aufgetragen.
 Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
+Es ist zu erkennen, dass wir kein regelmäßges Raster abgefahren sind.
+
+In Abb. \ref{fig:GPSNort} kann man erkennen, dass wir in Northeim mit der Unterstützung der Smartphone-App wesentlich besser gefahren sind.
+Dass wir die östliche Seite des Sees nicht befahren sind, liegt daran, dass dort noch aktiv Kies abgebaut wird.
+Daher ist das Befahren dort verboten.
+
+Da wir auf der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht.
+Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.
+
 
 \begin{figure}[h]
 \centering
@@ -653,6 +662,20 @@ Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erk
 \caption{Position des Bootes laut GPS-Signal verglichen mit den Messorten in Göttingen.}
 \label{fig:GPSGoe}
 \end{figure}
+
+\begin{figure}[h]
+	\centering
+	\input{Northeim/karte}
+	\caption{Messpunkte auf dem Northeimer See.}
+	\label{fig:GPSNort}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\input{Northeim/karte2}
+	\caption{Messpunkte, die wir zweimal besucht haben.}
+	\label{fig:GPSNortZweimal}
+\end{figure}
+
 
 
 

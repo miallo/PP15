@@ -22,9 +22,12 @@ set yrange [-1600:200]
 
 set size ratio -1
 
+set label "N" at -340,-1300
+set arrow 3 from -300,-1500 to -300,-1350
+
 p 'NortheimGrosserSeeKontour.kml' u (1000*(lo($1,$2)-x0)):(1000*(la($2)-y0)) w l lt -1 t 'Seekontur',\
   'NortheimGrosserSeeInsel.kml' u (1000*(lo($1,$2)-x0)):(1000*(la($2)-y0)) w l lt -1 notitle,\
-  'GPSsingle_2015_06_17.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0))  t 'Messpunkte (IPhone)',\
+  'GPSsingle_2015_06_17.txt' u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0))  t 'Messpunkte (iPhone)',\
   #'supermessung.dat' u (1000*(lo($12,$11)-x0)):(1000*(la($11)-y0)) w lp t 'Garmin'
   
 set output
