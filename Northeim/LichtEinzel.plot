@@ -11,7 +11,7 @@ set xlabel '$z$ [m]'
 set ylabel '$\ln{I}$'
 
 set fit quiet
-set fit logfile '/dev/null'
+#set fit logfile '/dev/null'
 set fit errorvariables
 
 f1(x)=a1*x+b1
@@ -22,9 +22,9 @@ fit f1(x) 'supermessung.dat' index 6 u ($6*1.1):(log($8)) via a1,b1
 fit f2(x) 'supermessung.dat' index 52 u ($6*1.1):(log($8)) via a2,b2
 fit f3(x) 'supermessung.dat' index 60 u ($6*1.1):(log($8)) via a3,b3
 
-p 'supermessung.dat' index 6 u ($6*1.1):(log($8)) w p pt 7 ps 0.1 lc 1 notitle, 1/0 w p pt 7 ps 1.5 lc 1 t "$r=-0.96$, $a=-0.773	\pm 0.004$",\
-  'supermessung.dat' index 52 u ($6*1.1):(log($8)) w p pt 7 ps 0.1 lc 2 notitle, 1/0 w p pt 7 ps 1.5 lc 2  t "$r=-0.96$, $a=-0.501	\pm 0.003$",\
-  'supermessung.dat' index 60 u ($6*1.1):(log($8)) w p pt 7 ps 0.1 lc 3 notitle, 1/0 w p pt 7 ps 1.5 lc 3  t "$r=-0.93$, $a=-0.524	\pm 0.004$",\
+p 'supermessung.dat' index 6 u ($6*1.1):(log($8)) w p pt 7 ps 0.1 lc 1 notitle, 1/0 w p pt 7 ps 1.5 lc 1 t "$r=-0.96$, $a=-0.773	\\pm 0.004$",\
+  'supermessung.dat' index 52 u ($6*1.1):(log($8)) w p pt 7 ps 0.1 lc 2 notitle, 1/0 w p pt 7 ps 1.5 lc 2  t "$r=-0.96$, $a=-0.501	\\pm 0.003$",\
+  'supermessung.dat' index 60 u ($6*1.1):(log($8)) w p pt 7 ps 0.1 lc 3 notitle, 1/0 w p pt 7 ps 1.5 lc 3  t "$r=-0.93$, $a=-0.524	\\pm 0.004$",\
   f1(x) notitle, f2(x) notitle, f3(x) notitle
   
 set output

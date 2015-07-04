@@ -654,10 +654,6 @@ In Abb. \ref{fig:GPSNort} kann man erkennen, dass wir in Northeim mit der Unters
 Dass wir die östliche Seite des Sees nicht befahren haben, liegt daran, dass dort noch aktiv Kies abgebaut wird.
 Daher ist das Befahren dort verboten.
 
-Da wir auf der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht.
-Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.
-
-
 \begin{figure}[!h]
 \centering
 \input{GoeKiessee/karteGoe.tex}
@@ -677,17 +673,8 @@ Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.
 	\caption{Messpunkte auf dem Northeimer See.}
 	\label{fig:GPSNort}
 \end{figure}
-\begin{figure}[!h]
-	\centering
-	\input{Northeim/karte2}
-	\caption{Messpunkte, die wir zweimal besucht haben.}
-	\label{fig:GPSNortZweimal}
-\end{figure}
 
-
-
-
-\subsection{Druck}
+\subsection{Druck \& Tiefe}
 \label{sec:ausdruck}
 Laut Datenblatt sollte der Spannungsverlauf der Druckmessbrücke linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
 Allerdings bemerkten wir schon während der Messung, dass die vom Datenlogger angezeigten Werte nicht ganz mit den von uns vorgenommenen Markierungen am Kabel im 1m Abstand übereinzustimmen schienen.
@@ -698,8 +685,20 @@ Unter dieser Annahme erhielten wir Werte, die mit den Beobachtungen übereinstim
 Die Linearität der Korrektur scheint in sofern angebracht, als dass wir uns bei vielen Messungen Mühe gegeben haben, die Sonde von Hand möglichst gleichmäßig herabzulassen.
 Die aufgenommenen Druckkurven waren auch annähernd linear.
 
+In Abbildung \ref{fig:tiefeGoe} ist die maximale Tiefe der einzelnen Messdaten an den jeweiligen Messpunkten dargestellt.
+Man erkennt, dass der See am nördlichen Ende scheinbar mit etwa 2.2 Meter am tiefsten ist und nach Süden leicht flacher wird.
+Für den Northeimer See ist es nicht sinnvoll, eine solche Karte zu erstellen, da die Sonde nur in Ufernähe Bodenkontakt hatte.
+An den anderen Punkten war es tiefer als unser Kabel hergab, also tiefer als 7 Meter.
+
+\begin{figure}[!htb]
+	\centering
+	\input{GoeKiessee/tiefeGoe.tex}
+	\caption{Göttinger Kiessee: Tiefe}
+	\label{fig:tiefeGoe}
+\end{figure}
+
 Die Druckkurven besaßen eine Breite (und in sofern ein Fehlerintervall) von ca. 15cm.
-Für die Temperaturwerte mussten wir die Daten bearbeiten.
+Für die Temperaturwerte der Northeimer Messung mussten wir die Daten bearbeiten.
 Da wir aufgrund der springenden Temperatur die Daten in 40er Blöcke unterteilt haben, nahmen wir von den Tiefendaten den Mittelwert.
 
 
@@ -731,15 +730,40 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 
 \subsubsection{Northeim}
 
-In Grafik \ref{fig:temp_nor} sind alle Temperaturmessungen der Messung in Northeim aufgetragen.
-Dabei werden immer von 40 Werten nach dem Algorithmus \eqref{fig:tempAlgorithmus} der Mittelwert genommen.
-Die gefittete Kurve besteht aus drei linearen Fits, welche bis zu Schnittpunkten durchgeführt werden.
-Diese sind in den erkennbaren Bereichen von 0.2-1.5m, 1.5-5.9m und 5.9-7.5m unterteilt.
+\begin{figure}[!htb]
+	\centering
+	\input{Northeim/temp_roh.tex}
+	\caption{Rohdaten der Temperaturmessung}
+	\label{fig:temp_nor_Roh}
+\end{figure}
 
+In Grafik \ref{fig:temp_nor_Roh} sind alle Temperaturmessungen der Messung in Northeim aufgetragen.
+Man erkennt deutlich mehrere Linien.
+Um dies zu beheben und die richtigen Daten zu verwenden, müssen sie gefiltert werden.
+Dabei werden immer von 40 Werten nach dem folgenden Algorithmus zu einem Temperaturwert zusammengefasst: 
+Zuerst wird der Median bestimmt; nun werden nur noch Werte unterhalb dessen betrachtet, der Median ist also $T_\text{max}$. 
+Außerdem schließt man Ausreißer nach unten aus, indem der untere Quartilwert$-3\si{\celsius}$ als $T_\text{min}$ verwendet wird.
+Von den verbleibenden Werten wird der Mittelwert genommen.
+Dieses Verfahren wird in Abb. \ref{fig:tempAlg} verdeutlicht.
+
+\begin{figure}[!h]
+	\centering
+	\subfigure[Beispiel 1 \label{fig:tempAlg1l}]
+   {\resizebox{0.49\linewidth}{!}{\input{Northeim/tempAlg1.tex}}}
+   \hfill
+   \subfigure[Beispiel 2\label{fig:tempV1}]
+   {\resizebox{.49\linewidth}{!}{\input{Northeim/tempAlg2.tex}}}
+	\caption{Algorithmus zum Filtern der Temperaturdaten.}
+	\label{fig:tempAlg}
+\end{figure}
+
+Das Resultat des Filtervorgangs ist in Abb. \ref{fig:temp_nor} zu sehen.
+Wieder wurden alle Daten in einen Plot eingezeichnet, denn der See schien  im Rahmen der Messfehler homogen.
+Man erkennt drei verschiedene Bereiche: $0.2-1.5\,$m, $1.5-5.9\,$m und $5.9-7.5\,$m.
+Die gefittete Kurve besteht aus drei linearen Fits, welche in den einzelnen Bereichen durchgeführt werden.
 Es ergeben sich die Werte aus Tabelle \ref{tab:tempTabNor}
 
-
-\begin{table}
+\begin{table}[!htb]
 \centering
 \begin{tabular}{|c||c|c|}
 \hline
@@ -753,18 +777,60 @@ Tiefe [m] & Temperaturabnahme [$\frac{^\circ C}{\text m}$] & Temperaturintervall
 \end{table}
 
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
 \input{Northeim/temp.tex}
 \caption{Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit.}
 \label{fig:temp_nor}
 \end{figure}
 
+
+Da wir auf der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
+Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.
+Vergleicht man jeweils die beiden Temperaturkurven in Abb. \ref{fig:tempV1} und \ref{fig:tempV3}, erkennt am keine großen Temperaturdifferenzen.
+Die Messfehler scheinen zu überwiegen.
+In Abb. \ref{fig:tempV2} ist jedoch die später aufgenommene Kurve deutlich unter der anderen.
+Dies kann verschiedene Gründe haben: Zum einen kann dies ein Fehler des obigen Filteralgorithmus sein, zum anderen könnte es auf Messfehler zurückzuführen sein, denn eine so starke Abkühlung scheint nicht plausibel.
+Wir erwarten nämlich eine Erwärmung, da an diesem Tag die Sonne gut gescheint hat.
+Auffällig ist auch, dass die zweite Messreihe etwa 1.5 Meter kürzer ist, der See in dieser Region also steil abzufallen scheint.
+Diese Veränderung zu messen, wäre sicherlich auch interessant.
+
 \begin{figure}[!htb]
 	\centering
-	\input{Northeim/temp_roh.tex}
-	\caption{Rohdaten der Temperaturmessung}
+	\subfigure[Karte \label{fig:GPSNortZweimal}]
+   {\resizebox{0.49\linewidth}{!}{\input{Northeim/karte2.tex}}}
+   \hfill
+   \subfigure[Verlauf 1\label{fig:tempV1}]
+   {\resizebox{.49\linewidth}{!}{\input{Northeim/tempV1.tex}}}
+   \hfill
+   \subfigure[Verlauf 2\label{fig:tempV2}]
+   {\resizebox{.49\linewidth}{!}{\input{Northeim/tempV2.tex}}}
+   \hfill
+   \subfigure[Verlauf 3\label{fig:tempV3}]
+   {\resizebox{.49\linewidth}{!}{\input{Northeim/tempV3.tex}}}
+	\caption{Messpunkte, die wir zweimal besucht haben, und deren Temperaturkurven.}
+	\label{fig:tempNort2}
 \end{figure}
+
+\subsection{Licht}
+
+\begin{figure}[!h]
+	\centering
+	\subfigure[Northeim Lichtabsorbtion: alle Messdaten (logarithmisch) \label{fig:lichtabs}]
+   {\resizebox{0.49\linewidth}{!}{\input{Northeim/licht.tex}}}
+   \hfill
+   \subfigure[gute Korrelation\label{fig:l1}]
+   {\resizebox{.49\linewidth}{!}{\input{Northeim/l1.tex}}}
+   \hfill
+   \subfigure[schlechte Korrelation\label{fig:l2}]
+   {\resizebox{.49\linewidth}{!}{\input{Northeim/l2.tex}}}
+   \hfill
+   \subfigure[Unterschied Sonnenlicht+LED zu Sonnenlicht (logarithmisch) \label{fig:led}]
+   {\resizebox{.49\linewidth}{!}{\input{Northeim/led.tex}}}
+	\caption{Northeim: Lichtabsorption und Streuung}
+	\label{fig:lichtNort}
+\end{figure}
+
 
 \subsection{Gemessenes Abstandsgesetz}
 Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir die Abstandsabhängigkeit der Schallintensität näher untersucht. 
