@@ -10,3 +10,6 @@ Bootsverleih Northeimer See (Messung 17.6.):
 weitere Bilder bei Kevin, es sind nur die Besten im Fotos Ordner gelandet, aufgrund der groeße von etwa 6MB pro (22.06.2015)
 
 Präsentation angefangen. Weil wegen schön leider nur für mich lesbar...
+
+Link zur Präsentation:
+https://www.icloud.com/keynote/AwBWCAESECf2-Xpyn0hi0V1Eu7McZNAaKuTIFgWI8RYoOoIN00-yGZqvpI8DzV-LclHDMsRckwzKkCA3dY6HRenfdQMCUCAQEEILeil1nP-Kq82yx2AiEOzkJkqGL-5dYLFjPu6jkdjR89#Projektpraktikum
