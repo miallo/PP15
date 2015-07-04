@@ -220,19 +220,12 @@ Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden,
 Der Grund dafür ist, dass die genutzten Entfernungen zwischen Sender und Empfänger vielfach größer sind als die Größe des schwingenden Kristalls. 
 In einem homogenem Medium verteilt sich dann die ausgesendete Energie der Welle in drei Dimensionen gleichmäßig im Abstand $r$ über eine Kugelfläche $A$.
 Wird nun mit $\left<P\right>$ die mittlere vom Sender abgestrahlte Leistung 
-bezeichnet, dann ist zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält
-
-\begin{align}
- I \propto \frac{1}{r^2}~.
-\end{align}
+bezeichnet, dann ist zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält, also $I \propto \frac{1}{r^2}~. $
 Der Schalldruck $P$ hingegen nimmt antiproportional zur Entfernung ab
 \begin{align}
  P \propto \frac{1}{r}~.
 \end{align}
-Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $\left<w\right>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung auch geschrieben werden als
-\begin{align}
- \left<P\right>  = \left<w\right> A v~.
-\end{align}
+Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $\left<w\right>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung auch geschrieben werden als $\left<P\right>  = \left<w\right> A v~.$
 Hieraus ergibt sich direkt für die Intensität
 \begin{align}
  I = \left<w\right> v~.
@@ -247,10 +240,7 @@ Insgesamt erhält man also
 \begin{align}
  I = \frac{1}{2} \rho \omega^2 A^2 = \frac{1}{2} \frac{P_{max}^2}{\rho v}~.
 \end{align}
-Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zusammenhang zwischen der maximalen Druckamplitude $P_{max}$ und der Amplitude der Schallwelle gegeben ist durch
-\begin{align}
- P_{max} = \rho \omega v A~.
-\end{align}
+Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zusammenhang zwischen der maximalen Druckamplitude $P_{max}$ und der Amplitude der Schallwelle gegeben ist durch $P_{max} = \rho \omega v A~. $
 Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude. Genaueres zu diesen Themen ist im Tipler \cite[S.598]{tipler} zu finden.
 
 \subsubsection{Schallgeschwindigkeit}
@@ -267,7 +257,7 @@ Das negative Vorzeichen entsteht dadurch, dass bei einem Zuwachs des Drucks das 
 
 
 Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit wesentlich vom Medium abhängt. 
-Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s  \cite{tipler}.
+Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s, siehe \cite[S.467]{tipler}.
 Bei einer Echolotmessung in Seen ist dann vor allem die unterschiedliche Temperatur in verschiedenen Schichten 
 von Relevanz. Die Schallgeschwindigkeit kann dann sogar um mehrere Prozente innerhalb eines Sees schwanken  
 \footnote{Dies wird ausführlicher beschrieben in \cite{schicht}}.
@@ -281,13 +271,13 @@ Für den Anteil der noch vorhandenen Intensität $\frac{I}{I_0}$ gilt dann
 \begin{align}
  \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)~.
 \end{align}
-Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab
+Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Dieser hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab
 \begin{align}
  \alpha= \frac{4 \pi \kappa}{\lambda}~.
 \end{align}
 Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
-Die Relevanz des Absorptionskoeffizienten für uns ist, dass über diesen Rückschlüsse auf Schwebstoffe im Wasser von Seen gezogen werden können, wenn Messdaten über die Intensität bekannt sind.
-\cite[S.229]{meschede}
+Die Relevanz des Absorptionskoeffizienten für uns ist, dass über diesen Rückschlüsse auf Schwebstoffe im Wasser von Seen gezogen werden können, wenn Messdaten über die Intensität bekannt sind. Näheres dazu in 
+\cite[S.229]{meschede}.
 
 
 \subsection{Lichtabsorption von Wasser-Betrachtung auf Mikroskopischer Ebene}
@@ -325,21 +315,21 @@ Diese finden sehr viel Anwendung in allen möglichen Bereichen, zum Beispiel der
 Allgemeine Eigenschaften dieser Bauteile sind, eine sehr große Verstärkung von Eingangsignalen, sowie ein hoher Eingangs und dazu vergleichsweise geringer Ausgangswiderstand.
 Das allgemeine Verstärkersymbol ist ein Dreieck in es werden darin auch die beiden
 Eingänge mit + und - gekennzeichnet.
-Der - Eingang wird als invertierbarer Eingang und 
+Der - Eingang wird als invertierender Eingang und 
 der + Eingang als nicht invertierender Eingang bezeichnet.
 Das eigentliche Bauteil des Verstärkers ist sehr komplex und es lohnt sich nicht hier 
 weiter darauf einzugehen.
 Entscheidend ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
 nichtinvertierenden Verstärkers. 
-
 Für diese gilt
 \begin{align}
  v = 1 + \frac{R_2}{R_1}~.\label{eq:verst}
 \end{align}
+Die Skizze zur Herleitung ist im Anhang zu finden (Abbildung \ref{fig:nicht}).
 Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandsverhältnisses.
 Eine weitere Eigenschaft des nichtinvertierenden Verstärkers ist, dass die Phase des Eingangs und Ausgangssignals gleich sind.
-Diese Eigenschaft ist für das Echolot wichtig.
-\cite{op}
+Diese Eigenschaft ist für das Echolot wichtig. Eine gute Einführung in das Thema Operationsverstärker findet man zum Beispiel in \cite{op}.
+
 
 \subsection{Schichtung eines Sees}
 
@@ -624,7 +614,7 @@ Als Vergleich sind die Daten, die wir mit einer kommerziellen App aufgenommen ha
 Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
 Es ist zu erkennen, dass wir kein regelmäßges Raster abgefahren sind.
 
-In Abb. \ref{fig:GPSNort} kann man erkennen, dass wir in Northeim mit der Unterstützung der Smartphone-App wesentlich besser gefahren sind.
+In Abb. \ref{fig:GPSNort} kann man erkennen, dass wir in NorthPA293eim mit der Unterstützung der Smartphone-App wesentlich besser gefahren sind.
 Dass wir die östliche Seite des Sees nicht befahren sind, liegt daran, dass dort noch aktiv Kies abgebaut wird.
 Daher ist das Befahren dort verboten.
 
