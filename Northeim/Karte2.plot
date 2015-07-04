@@ -23,6 +23,10 @@ set yrange [-800:-250]
 
 set size ratio -1
 
+set label "Insel" at 100,-270
+set label "N" at 340,-475
+set arrow 3 from 350,-550 to 350,-500
+
 p 'superTemp.dat' index 26 u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0)) t'12:59 Uhr',\
   'superTemp.dat' index 52 u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0)) t'14:46 Uhr',\
   'superTemp.dat' index 31 u (1000*(lo($3,$2)-x0)):(1000*(la($2)-y0)) t'13:16 Uhr',\

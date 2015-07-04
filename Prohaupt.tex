@@ -126,6 +126,8 @@
 
 \usepackage{hyperref}
 
+\newenvironment{bottom}{\par\vspace*{\fill}}{\clearpage}
+
 \begin{document}
 
 \begin{titlepage}
@@ -168,13 +170,13 @@ Praktikanten: &  Michael Lohmann\\
 
 \tableofcontents
 \thispagestyle{empty}
-\newpage
-
+\begin{bottom}
 \section*{Danksagung}
 Wir danken dem Institut für Geophysik, das uns Teile des technischen Equipments geliehen hat.
 Herrn Prof. Bahr möchten wir für die Betreuung unseres Projektes danken.
 Insbesondere möchten wir auch Herrn Ulrich Einecke danken für viel Unterstützung mit der technischen Umsetzung.
 Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments sehr hilfreich war.
+\end{bottom}
 \thispagestyle{empty}
 \newpage
 
@@ -214,13 +216,12 @@ Möchte man also die Tiefe $d$ des Drucksensors bestimmen, so berechnet sich die
 \subsubsection{Abstandsgesetz und Intensität}
 
 %Motivation:
-Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, der Schallwellen mit Frequenzen im Ultraschallbereich abgibt,
-ähnlich verhalten, wie die Gesetze einer punktförmigen Schallquelle.
+Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, dann sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, ähnlich verhalten wie die Gesetze einer punktförmigen Schallquelle.
 
 Der Grund dafür ist, dass die genutzten Entfernungen zwischen Sender und Empfänger vielfach größer sind als die Größe des schwingenden Kristalls. 
 In einem homogenem Medium verteilt sich dann die ausgesendete Energie der Welle in drei Dimensionen gleichmäßig im Abstand $r$ über eine Kugelfläche $A$.
 Wird nun mit $\left<P\right>$ die mittlere vom Sender abgestrahlte Leistung 
-bezeichnet, dann ist also zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält
+bezeichnet, dann ist zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält
 
 \begin{align}
  I \propto \frac{1}{r^2}\quad .
@@ -243,7 +244,7 @@ proportional zum Quadrat der Amplitude $A$ und der Kreisfrequenz $\omega$ ist
  \left<\omega\right> = \frac{1}{2} \rho \omega^2 A^2\quad .
 \end{align}
 Mit $\rho$ wurde hier wie üblich die Dichte des Mediums bezeichnet.
-Insgesamt ergibt sich also 
+Insgesamt erhält man also
 \begin{align}
  I = \frac{1}{2} \rho \omega^2 A^2 = \frac{1}{2} \frac{P_{max}^2}{\rho v}.
 \end{align}
@@ -257,17 +258,18 @@ Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle propor
 \label{sec:theschallgeschw}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden
 \begin{align}
- v = \sqrt{  \frac{K}{\rho}  }.
+ v = \sqrt{  \frac{K}{\rho}  }\quad.
 \end{align}
-Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderungen \cite{tipler}
+Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderungen
 \begin{align}
- K =  \frac{\Delta P}{\Delta V / V }.
+ K =  \frac{\Delta P}{\Delta V / V }\quad.
 \end{align}
-Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit also ganz wesentlich vom Medium abhängt. 
-Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s.
+Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit wesentlich vom Medium abhängt. 
+Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s  \cite{tipler}.
 Bei einer Echolotmessung in Seen ist dann vor allem die unterschiedliche Temperatur in verschiedenen Schichten 
-wichtig. Die Schallgeschwindigkeit kann dann sogar um mehrere Prozente innerhalb eines Sees schwanken.
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX \ref{schicht} %was ist das fuer eine Quelle
+von Relevanz. Die Schallgeschwindigkeit kann dann sogar um mehrere Prozente innerhalb eines Sees schwanken  
+\footnote{Dies wird ausführlicher beschrieben in \cite{schicht}}.
+ %was ist das fuer eine Quelle
 %http://www.wiley-vch.de/books/sample/3527321314_c01.pdf schwanken um prozent
 
 
@@ -277,17 +279,17 @@ Setzt man Licht als eine ebene Welle an so ergibt sich bei Ausbreitung in einem 
 Es beschreibt, dass die Intensität $I$ des Lichts exponentiell bei zunehmender Stecke abfällt.
 Für den Anteil der noch vorhandenen Intensität $\frac{I}{I_0}$ gilt dann
 \begin{align}
- \frac{I}{I_0}  =  \exp(- \alpha  \Delta z).
+ \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)\quad.
 \end{align}
 Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab
 \begin{align}
- \alpha= \frac{4 \pi \kappa}{\lambda}.
+ \alpha= \frac{4 \pi \kappa}{\lambda}\quad.
 \end{align}
 Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
 \cite[S.229]{meschede}
 
 
-\subsection{Lichtabsorbtion von Wasser-Betrachtung auf Mikroskopischer Ebene}
+\subsection{Lichtabsorption von Wasser-Betrachtung auf Mikroskopischer Ebene}
 %https://en.wikipedia.org/wiki/Electromagnetic_absorption_by_water
 Das Absorptionsspektrum von Molekülen hängt wesentlich von ihren möglichen 
 quantenmechanischen Zuständen ab, denen (entarte) Energieniveaus zugeordnet sind. Dabei muss zwischen verschiedenen Freiheitsgraden
@@ -329,14 +331,12 @@ weiter darauf einzugehen.
 Entscheidend ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
 nichtinvertierenden Verstärkers. 
 
-
-
 Für diese gilt:
 \begin{align}
  v = 1 + \frac{R_2}{R_1}\label{eq:verst}
 \end{align}
 Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandsverhältnisses.
-Eine weitere Eigenschaft des Nichtinvertierenden Verstärkers ist, dass die Phase des Eingangs und Ausgangssignals gleich sind.
+Eine weitere Eigenschaft des nichtinvertierenden Verstärkers ist, dass die Phase des Eingangs und Ausgangssignals gleich sind.
 Diese Eigenschaft ist für das Echolot wichtig.
 \cite{op}
 
@@ -344,10 +344,11 @@ Diese Eigenschaft ist für das Echolot wichtig.
 
 Man unterscheidet drei Tiefenschichten eines Sees.
 Diese haben alle verschiedene physikalische, chemische, sowie biologische Eigenschaften.
-Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden, insbesondere bei flachen Seen.
+Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden. 
+Dies gilt insbesondere für flache Seen.
 Die oberste Schicht wird auch Epilimnion genannt. 
 Im Sommer lagert sich dort warmes Wasser mit geringer Dichte ab.
-Während dieser Zeit kommt es daher nur zu einem geringen Austausch des Wassers mit tieferen Schichten, sodass in diesen immer weniger Sauerstoff zu finden ist.
+Während dieser Zeit kommt es daher nur zu einem geringen Wasseraustausch mit tieferen Schichten, sodass in diesen immer weniger Sauerstoff zu finden ist.
 Zudem findet effektiver Wärmeaustausch mit tieferen Schichten dann nur noch Aufgrund von vergleichsweise kleinen Strömungen statt.
 Diese werden durch Wind oder im geringen Maße durch Sonneneinstrahlung erzeugt. 
 Das Klima ist daher ein entscheidender Faktor für die Dicke dieser Schicht.
@@ -373,7 +374,7 @@ Im Extremfall liegt dann eine vollständige Durchmischung aller Schichten vor.
 Aus diesem Grund ist eine (Temperatur-) Schichtung bei permanent gefrorenen Gewässern nicht vorzufinden.
 \newline
 In Grafik \ref{fig:schichtung} sind zur Veranschaulichung der Leitwert C, die Temperatur T und das Sauerstoffgehaltsprofil des Arendsee (Sachsen Anhalt, Messung im September) dargestellt. 
-Aufgrund der beinahe konstanten Temperatur im oberste sowie untersten Bereich kann man hier die drei oben geschilderten Schichten gut von einander trennen.
+Aufgrund der beinahe konstanten Temperatur im obersten sowie untersten Bereich kann man hier die drei oben geschilderten Schichten gut von einander trennen.
 Insbesondere erkennt man den starken Temperaturgradienten im Metalimnion, das hier zwischen 8 und 15 m liegt. 
 Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine Länge von circa 8 m.
 Es ist also zu erwarten, dass wir beim Vermessenen des Sees grade an die Grenze des Epilimnions stoßen.
@@ -382,7 +383,7 @@ Es ist also zu erwarten, dass wir beim Vermessenen des Sees grade an die Grenze 
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=10cm]{schicht.png}
-	\caption{Leitwert $C$, Temperatur $T$ und Sauerstoff $O_2$ des Arendsees im September. Grafik entnommen aus \url{http://www.wiley-vch.de/books/sample/3527321314_c01.pdf}.}
+	\caption{Leitwert $C$, Temperatur $T$ und Sauerstoff $O_2$ des Arendsees im September. Grafik entnommen aus \cite{schicht} }
 	\label{fig:schichtung}
 \end{figure}
 
@@ -408,7 +409,7 @@ Parallel zu dem direkten Speichern haben wir auch eine Smartphone-App erstellt, 
 
 
 \subsection{Temperatur}
-Die Temperatur wird mit einem PT1000-Widerstand vermessen.
+Die Temperatur wird mit einem Pt1000-Widerstand vermessen.
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
 Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab
 \begin{align}
@@ -448,9 +449,8 @@ Die Bedienung erfolgt über ein Interface aus drei Tastern und eine LCD Display.
 Das Display dient nicht nur der Steuerung, sondern zeigt auch im Sekundentakt die Momentanen Messwerte an.
 Zur Bestimmung der am Controller anliegenden Spannung wird ein integrierter Analog Digital Converter (ADC) verwendet.
 Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Referenzspannung vergleicht.
-Die Referenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht jeh nach dem, ob die zu messende Spannung kleiner oder größer ist.
-Der ADC hat, wie im Datenblatt \cite[7]{XMCRelaxkit} zu lesen, eine Auflösung von 12Bit
-, somit hat das Verfahren auch 12 Schritte.
+Die Referenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht je nachdem, ob die zu messende Spannung kleiner oder größer ist.
+Der ADC hat, wie im Datenblatt \cite[7]{XMCRelaxkit} zu lesen, eine Auflösung von 12Bit, somit hat das Verfahren auch 12 Schritte.
 Die Referenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
 Diese Spannung ist auch die Maximalspannung, die an einen Pin des Mikrocontrollers angelegt werden darf, ohne ihn zu zerstören.
 Aus diesem Verfahren ergibt sich bei 12bit eine minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
@@ -473,15 +473,15 @@ In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt
 
 
 \subsubsection{Temperaturmessung}
-Für die Messung der Temperatur wird mit einem PT1000 Temperaturwiderstand gearbeitet.
+Für die Messung der Temperatur wird mit einem Pt1000 Temperaturwiderstand gearbeitet.
 Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
-Aus diesem Grund muss die am PT1000 abfallende Spannung noch verstärkt werden.
+Aus diesem Grund muss die am Pt1000 abfallende Spannung noch verstärkt werden.
 Dies geschieht mithilfe eines nicht-invertierenden Verstärkers wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
-Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:Pt1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
 Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereiche des ADCs liegt.\\
-Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
+Aus dem in der Abbildung \ref{fig:Pt1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
-	R_\text{PT1000}=\frac{R_1\cdot U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
+	R_\text{Pt1000}=\frac{R_1\cdot U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
 \end{align}
 ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
 Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel \eqref{eq:temperapt1000} verwendet.\\
@@ -595,9 +595,17 @@ Diese kann nun bequem mit einem Tippen versandt werden.
 \section{Auswertung}
 \label{sec:auswertung}
 
+Unser eigentlicher Plan sah vor, den Seeburger See zu vermessen.
+Dieser ist bis zu 4.2 Meter tief \footnote{\url{www.nlwkn.niedersachsen.de/download/58239/Seeburger\_See.pdf}, S.7}.
+Dementsprechend wählten wir unsere Kabellängen.
+Da dieser See jedoch auf Grund von Granatenfunden aus dem 2. Weltkrieg vom 25.05. bis zum 26.06.15 gesperrt war, mussten wir auf andere Seen in der Region ausweichen.
+So haben wir am 10. Juni am Göttinger Kiessee unsere ersten Messdaten aufgenommen.
+Da dieser viel kleiner ist und nur maximal 2.2 Meter tief ist, erwarteten wir nicht, dort auf interessante Phänomene zu stoßen.
+Jedoch konnten wir so die Sonde testen und wir haben viele Probleme während des Messprozesses entdeckt, wie die Effekte, welche von Schlamm an den Sensoren herrühren.
+
 \subsection{Ortsbestimmung}
 \label{sec:ausort}
-Unsere Befürchtung, dass das GPS-Signal zu ungenau ist, stellte sich als ungenau heraus.
+Unsere Befürchtung, dass das GPS-Signal zu ungenau ist, stellte sich als falsch heraus.
 Wir nutzten bei der zweiten Messung gleichzeitig einen GPS-Logger und die selbstgeschriebene Handy-App.
 Durch Vergleich der beiden Messdaten erkennt man, dass sie sehr gut miteinander übereinstimmen.
 Dies ist vielleicht auch zu erwarten, da beide ähnliche Signale bekamen.
@@ -609,8 +617,17 @@ Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren
 
 In Abb. \ref{fig:einzelGPSGoe} sind alle Messpunkte am Göttinger Kiessee aufgetragen.
 Diese wurden mit dem Geodimeter bestimmt.
-Als Vergleich sind die Daten, die wir mit einer anderen App aus dem App-Store\textsuperscript{\textregistered}  aufgenommen haben in Abb. \ref{fig:GPSGoe} aufgetragen.
+Als Vergleich sind die Daten, die wir mit einer kommerziellen App aufgenommen haben, in Abb. \ref{fig:GPSGoe} aufgetragen.
 Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
+Es ist zu erkennen, dass wir kein regelmäßges Raster abgefahren sind.
+
+In Abb. \ref{fig:GPSNort} kann man erkennen, dass wir in Northeim mit der Unterstützung der Smartphone-App wesentlich besser gefahren sind.
+Dass wir die östliche Seite des Sees nicht befahren sind, liegt daran, dass dort noch aktiv Kies abgebaut wird.
+Daher ist das Befahren dort verboten.
+
+Da wir auf der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht.
+Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.
+
 
 \begin{figure}[h]
 \centering
@@ -624,6 +641,20 @@ Diese wurden Durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erk
 \caption{Position des Bootes laut GPS-Signal verglichen mit den Messorten in Göttingen.}
 \label{fig:GPSGoe}
 \end{figure}
+
+\begin{figure}[h]
+	\centering
+	\input{Northeim/karte}
+	\caption{Messpunkte auf dem Northeimer See.}
+	\label{fig:GPSNort}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\input{Northeim/karte2}
+	\caption{Messpunkte, die wir zweimal besucht haben.}
+	\label{fig:GPSNortZweimal}
+\end{figure}
+
 
 
 
@@ -782,9 +813,9 @@ Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:
 Dies entspricht der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
 Für beide Messungen benutzten wir den Micro-Controller als Spannungsquelle.
 Dieser ist für Ströme von bis zu 350mA ausgelegt.
-Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des PT1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
+Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
 Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen noch zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
-Somit lagen verschiedene Spannungen am Vorwiderstand des PT1000 an und trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am PT1000.\\
+Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
 Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
 
 \begin{figure}[h]
@@ -841,7 +872,7 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
-\caption{Beschaltung des PT1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
+\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
 \label{fig:PT1000Schaltung}
 \end{figure}
 \begin{figure}[!h]
