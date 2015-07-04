@@ -475,12 +475,12 @@ In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt
 
 
 \subsubsection{Temperaturmessung}
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
-\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
-\label{fig:Pt1000Schaltung}
-\end{figure}
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
+%\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
+%\label{fig:Pt1000Schaltung}
+%\end{figure}
 Für die Messung der Temperatur wird mit einem Pt1000 Temperaturwiderstand gearbeitet.
 Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
 Aus diesem Grund muss die am Pt1000 abfallende Spannung noch verstärkt werden.
@@ -497,36 +497,28 @@ Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschic
 Dieser sollte nur die Reaktionszeit beeinflussen.
 
 \subsubsection{Lichtmessung}
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
-\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung.}
-\label{fig:PhotodiodeSchaltung}
-\end{figure}
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
-\caption{Beschaltung der LEDs für die Messung der Absorbtion.}
-\label{fig:LEDSchaltung}
-\end{figure}
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
+%\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung.}
+%\label{fig:PhotodiodeSchaltung}
+%\end{figure}
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
+%\caption{Beschaltung der LEDs für die Messung der Absorbtion.}
+%\label{fig:LEDSchaltung}
+%\end{figure}
 Für die Lichtmessung wird eine Photodiode als intensitätsabhängige Stromquelle verwendet.
 Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
 Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine Messbare Spannung zu wandeln.
 Da in den See nicht viel Licht eintritt, wird die sich ergebene Spannung noch über einen nicht-invertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 Verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
-<<<<<<< HEAD
-Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED %ref auf die Datenblätter
-mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
-Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
-
-
-=======
 Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED
 mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
 Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
 Um die LEDs von dem Umgebungslicht zu unterscheiden werden diese gepulst, sie werden im bestimmten Zyklen ein und aus geschaltet.
 Die Frequenz mit der die LEDs nacheinander ein und aus geschaltet werden heißt Umschaltfrequenz und ist von 0\si{\hertz} bis 20\si{\hertz} durchschaltbar.
->>>>>>> a9f9485247db64ad2fbd12f8860f83a45b607e20
 Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
@@ -731,7 +723,7 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 \end{figure}
 \begin{figure}[h]
 	\centering
-	\includegraphics{TempSchlamm}
+	\includegraphics[width=0.8\linewidth]{TempSchlamm}
 	\caption{Einfluss von Schlamm auf dem Temperatursensor. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen.}
 	\label{fig:tempSchlamm}
 \end{figure}
@@ -918,10 +910,7 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 %\bibliography{literatur}
 %\bibliographystyle{babalpha}
 \newpage
-<<<<<<< HEAD
-\section{Anhang}
 
-=======
 
 \appendix
 \pagenumbering{Roman}
@@ -955,7 +944,6 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 \label{fig:Echoverstaerker}
 \end{figure}
 
->>>>>>> a9f9485247db64ad2fbd12f8860f83a45b607e20
 
 
 %\begin{figure}[h]
