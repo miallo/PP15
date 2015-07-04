@@ -454,8 +454,7 @@ Das Display dient nicht nur der Steuerung, sondern zeigt auch im Sekundentakt di
 Zur Bestimmung der am Controller anliegenden Spannung wird ein integrierter Analog Digital Converter (ADC) verwendet.
 Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Referenzspannung vergleicht.
 Die Referenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht je nachdem, ob die zu messende Spannung kleiner oder größer ist.
-Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
-, somit hat das Verfahren auch 12 Schritte.
+Der ADC hat, wie im Datenblatt \cite[7]{XMCRelaxkit} zu lesen, eine Auflösung von 12Bit, somit hat das Verfahren auch 12 Schritte.
 Die Referenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
 Diese Spannung ist auch die Maximalspannung, die an einen Pin des Mikrocontrollers angelegt werden darf, ohne ihn zu zerstören.
 Aus diesem Verfahren ergibt sich bei 12bit eine minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
@@ -471,26 +470,20 @@ Der aktuelle Luftdruck kann über das Einstellungsmenü direkt am Logger geände
 Die Zeit wird anhand der aktuellen Zeit und jedem weiteren Zeitschritt bestimmt.
 Das Programm kann von 10 bis zu maximal 500 Werten pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden können.
 Der Zeitschritt wird abhängig von der Wertfrequenz berechnet und eingetragen.\\
-Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
+Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert werden.
 Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
 Die Spannungen werden von jedem Sensor über ein geschirmtes Kabel übertragen.
 In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt.
 
 
 \subsubsection{Temperaturmessung}
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
-\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
-\label{fig:Pt1000Schaltung}
-\end{figure}
 Für die Messung der Temperatur wird mit einem Pt1000 Temperaturwiderstand gearbeitet.
 Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
 Aus diesem Grund muss die am Pt1000 abfallende Spannung noch verstärkt werden.
 Dies geschieht mithilfe eines nicht-invertierenden Verstärkers wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
-Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:Pt1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
 Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereiche des ADCs liegt.\\
-Aus dem in der Abbildung \ref{fig:Pt1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
+Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
 	R_\text{Pt1000}=\frac{R_1\cdot U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
 \end{align}
@@ -500,28 +493,16 @@ Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschic
 Dieser sollte nur die Reaktionszeit beeinflussen.
 
 \subsubsection{Lichtmessung}
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
-\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung.}
-\label{fig:PhotodiodeSchaltung}
-\end{figure}
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
-\caption{Beschaltung der LEDs für die Messung der Absorbtion.}
-\label{fig:LEDSchaltung}
-\end{figure}
 Für die Lichtmessung wird eine Photodiode als intensitätsabhängige Stromquelle verwendet.
 Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
 Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine Messbare Spannung zu wandeln.
 Da in den See nicht viel Licht eintritt, wird die sich ergebene Spannung noch über einen nicht-invertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 Verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
-Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED %ref auf die Datenblätter
-mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
+Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED
+mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
 Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
-
-
+Um die LEDs von dem Umgebungslicht zu unterscheiden werden diese gepulst, sie werden im bestimmten Zyklen ein und aus geschaltet.
+Die Frequenz mit der die LEDs nacheinander ein und aus geschaltet werden heißt Umschaltfrequenz und ist von 0\si{\hertz} bis 20\si{\hertz} durchschaltbar.
 Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
@@ -532,7 +513,7 @@ Zu dem muss die Masse von der externen Schaltung mit der Masse des Boards gekopp
 Die Messbrücke ist mit einem Potentiometer bei einer Spannung von 1\si{\volt} auf einen Druck von 1001hPa geeicht.
 Bei der Messbrücke handelt es sich um  eine Wheatstone'sche Brücke, die bereits vom Werk aus geeicht ist.
 Die ausgegebene Spannung ist somit proportional zum angewandten Druck.
-Der Luftdruck liegt bei etwa 1024hPa und in einer Tiefe von 10\si{\meter} hat sich der Druck um 1000hPa erhöht, und damit auch die Spannung um 1\si{\volt}.
+Der Luftdruck liegt bei etwa 1000hPa und in einer Tiefe von 10\si{\meter} hat sich der Druck nach der Gleichung \eqref{eq:d} um 1000hPa erhöht, und damit auch die Spannung um 1\si{\volt}.
 Somit liegt der Spannungsbereich in dem akzeptablen Bereich des ADC.\\
 Die Messbrücke ist in ein wasserdichtes Gehäuse gebaut und wird über ein externes Kabel mit einer eigenen Platine und eigener Spannungsversorgung geführt.
 Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wird nicht von diesen beeinflusst.
@@ -540,9 +521,9 @@ Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wir
 \subsubsection{Echolotmessung}
 Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
 Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschallbereich.
-Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maximalspannung zu erhöhen wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.%Schaltung hinzufeugen
+Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maximalspannung zu erhöhen wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.
 Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf das Senderkristall gegeben.\\
-Das Empfängerkristall wird über einen Verstärker direkt an den ADC angeschlossen.
+Das Empfängerkristall wird über einen Verstärker direkt an den ADC angeschlossen, dieser ist in der Abbildung \ref{fig:Echoverstaerker} dargestellt.
 Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
 Die Entfernung wird nach dem Gesetzen aus dem Kapitel \ref{sec:theschallgeschw} berechnet.
 Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal aufgezeichnet und anschließend analysiert.
@@ -552,14 +533,13 @@ Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal 
 Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
 Dieses berechnet, wie im Kapitel\ref{sec:theoort} beschrieben, die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
 Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positioniert.\\
-Als alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die Messdatei schreibt.
-Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war, genutzt.
+Als Alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten an die letzte Stelle der Messdatei schreibt.
+Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war.
 Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTL Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
 Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
 Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
 Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomuhrzeit als ASCII Text jede Sekunde an den Logger.
 Mithilfe der Zeit kann die RTC (Realtimeclock) des Boardes einmalig auf die GPS-Zeit eingestellt werden.
-Dies ist über das Einstellungsmenü bei einmaligem Empfangen der Daten möglich.
 
 \subsection{Messdurchführung}
 
@@ -568,10 +548,10 @@ Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden 
 Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
 Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führe.
 
-Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält und den Messstab für das Geodimeter hochhält und ausrichtet.
+Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält, den Messstab für das Geodimeter hochhält und ausrichtet.
 Wird die Einzelmessung der App gleichzeitig mit dem Datenlogger gestartet, so wird zu den GPS-Daten der App gleich der Dateiname der Messreihe gespeichert.
 Ist nun die Messung gestartet, so wird die Sonde langsam ins Wasser gelassen.
-Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
+Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde nur mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
 Erreicht die Sonde den Boden, so muss die Messung beendet werden, da sich sonst gegebenenfalls Schlamm um die Sensoren legt.
 Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gezogen werden um die doppelte Anzahl an Messwerten für die jeweilige Tiefe zu bekommen.
 
@@ -626,7 +606,8 @@ Dementsprechend wählten wir unsere Kabellängen.
 Da dieser See jedoch auf Grund von Granatenfunden aus dem 2. Weltkrieg vom 25.05. bis zum 26.06.15 gesperrt war, mussten wir auf andere Seen in der Region ausweichen.
 So haben wir am 10. Juni am Göttinger Kiessee unsere ersten Messdaten aufgenommen.
 Da dieser viel kleiner ist und nur maximal 2.2 Meter tief ist, erwarteten wir nicht, dort auf interessante Phänomene zu stoßen.
-Jedoch konnten wir so die Sonde testen und wir haben viele Probleme während des Messprozesses entdeckt, wie die Effekte, welche von Schlamm an den Sensoren herrühren.
+Jedoch konnten wir so die Sonde testen und wir haben viele Probleme während des Messprozesses entdeckt, wie die Effekte, welche von Schlamm an den Sensoren herrühren, oder wie schnell man die Sonde herunterlassen darf, um eine hinreichende Menge an Daten zu bekommen.
+
 
 \subsection{Ortsbestimmung}
 \label{sec:ausort}
@@ -715,7 +696,12 @@ Dabei ist zu erkennen, dass
 \caption{Temperaturverlauf am Göttinger Kiessee mit fast allen aufgenommenen Werten. Einige Werte, welche offensichtlich durch Wackelkontakte zu Stande kommen (bis zu $140^\circ$C) wurden zwecks Übersichtlichkeit ausgeblendet.}
 \label{fig:temp_goe}
 \end{figure}
-
+\begin{figure}[h]
+	\centering
+	\includegraphics{TempSchlamm}
+	\caption{Einfluss von Schlamm auf dem Temperatursensor. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen.}
+	\label{fig:tempSchlamm}
+\end{figure}
 
 
 \subsubsection{Northeim}
@@ -887,11 +873,41 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 \end{itemize}
 
 \newpage
+\thispagestyle{empty}
 \printbibliography[heading=bibintoc]
 %\bibliography{literatur}
 %\bibliographystyle{babalpha}
 \newpage
+\setcounter{footnote}{0}
+\setcounter{page}{1}
+
 \section{Anhang}
+
+\subsection{Schaltpläne}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
+\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung. Die Spannungsversorgung, genau wie die Masseanbindung wird vom Board geregelt.}
+\label{fig:PT1000Schaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
+\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung. Die Photodiode dient als Stromquelle und der Widerstand dient als Übersetzung in eine Spannung. Um die wenigen Millivolt detektierbar zu machen, wird ein Verstärker, wie beim Temperaturwiderstand verwerdet.}
+\label{fig:PhotodiodeSchaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
+\caption{Ersatzschaltbild der LEDs für die Messung der Absorbtion. Die Spannung wird vom Board bereitgestellt. Auf dem Board werden die LEDs durch bipolare Transistoren geschaltet und über den selben Widerstand versorgt, da sie nie zur selben Zeit eingeschaltet sind.}
+\label{fig:LEDSchaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Fotos/Echoverstaerker.png}
+\caption{Schaltung für den Empfängerpiezo, mit eigener Spannungsquelle und zwei Verstärkern zur Rauschverminderung. Die Spannung wird durch externe Akkus gewährleistet und der Piezo wird als Spannungsquelle geschaltet.}
+\label{fig:Echoverstaerker}
+\end{figure}
 
 
 
