@@ -11,14 +11,14 @@ using namespace std;
 int main()
 {
     int i = 0;
-    ifstream in ("Datenpunkte.txt");
+    ifstream in ("../Datenpunkte.txt");
     while(!in.eof()){
 	   string dateiname, a;
 	   stringstream ass;
 	   in >> a;
 	   ass << a;
 	   dateiname = ass.str();
-	   
+	   dateiname = "../OriginalMessdaten/" + dateiname;
 	   //Automatisches erstellen einer Rahmendatei für Gnuplot und anschließendes plotten
 	   ofstream plot ("plot.gp");
 	   plot << "reset" << endl;
@@ -31,7 +31,7 @@ int main()
 // Tiefe Range:
 	   //plot << "set yrange [1200:1500]" << endl;
 //	   plot << "p '" << dateiname.c_str() << "' u 0:(log($5)), '" << dateiname.c_str() << "' u 0:(($4-1013)/20), '" << dateiname.c_str() << "' u 0:(log($6))" << endl;
-	   plot << "p '" << dateiname.c_str() << "' u 0:($2), '"<< dateiname.c_str() << "' u 0:($10*10)" << endl;//, '" << dateiname.c_str() << "' u 0:
+	   plot << "p '"<< dateiname.c_str() << "' u ($10*1.1):2" << endl;//, '" << dateiname.c_str() << "' u 0:
  	   plot << "set output" << endl;
 	 //  plot << "pause 0.5"; //Wenn das Fenster immer geöffnet bleiben soll, ist die 10 zu ersetzen mit -1
 	   plot.close();

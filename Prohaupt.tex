@@ -187,10 +187,9 @@ Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments 
 Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
 Wir wollen in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Licht-Wellenlängen messen.
 Die Tiefe der Sensoren bestimmen wir mit Hilfe einer Drucksonde, während wir die Tiefe des Sees mit einem selbstgebauten Echolote bestimmen wollen.
-Die Position des Bootes auf dem See wird mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.
-
-In zwei Messungen haben wir einmal den Göttinger Kiessee und einmal in Northeim den Großen See vermessen.
-
+Die Position des Bootes auf dem See wird mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.\\
+Die Messung soll am Seeburger See durchgeführt werden, da dieser ein natürlicher See ist und somit verschiedene Tiefen besitzt.
+Als Alternative haben wir einmal den Göttinger Kiessee und einmal in Northeim den Großen See, diese sind aber von Menschen erstellte Seen.\\
 Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Absorption von Wasser konstant für alle Tiefen ist.
 
 
@@ -224,33 +223,33 @@ Wird nun mit $\left<P\right>$ die mittlere vom Sender abgestrahlte Leistung
 bezeichnet, dann ist zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält
 
 \begin{align}
- I \propto \frac{1}{r^2}\quad .
+ I \propto \frac{1}{r^2}~.
 \end{align}
 Der Schalldruck $P$ hingegen nimmt antiproportional zur Entfernung ab
 \begin{align}
- P \propto \frac{1}{r}\quad .
+ P \propto \frac{1}{r}~.
 \end{align}
 Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $\left<w\right>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung auch geschrieben werden als
 \begin{align}
- \left<P\right>  = \left<w\right> A v\quad .
+ \left<P\right>  = \left<w\right> A v~.
 \end{align}
 Hieraus ergibt sich direkt für die Intensität
 \begin{align}
- I = \left<w\right> v\quad.
+ I = \left<w\right> v~.
 \end{align}
 Die nun noch unbekannte Energiedichte von Schallwellen kann man aus der Betrachtung einer harmonischen Welle gewinnen. Dabei ergibt sich ganz allgemein, dass diese 
 proportional zum Quadrat der Amplitude $A$ und der Kreisfrequenz $\omega$ ist
 \begin{align}
- \left<\omega\right> = \frac{1}{2} \rho \omega^2 A^2\quad .
+ \left<\omega\right> = \frac{1}{2} \rho \omega^2 A^2~.
 \end{align}
 Mit $\rho$ wurde hier wie üblich die Dichte des Mediums bezeichnet.
 Insgesamt erhält man also
 \begin{align}
- I = \frac{1}{2} \rho \omega^2 A^2 = \frac{1}{2} \frac{P_{max}^2}{\rho v}.
+ I = \frac{1}{2} \rho \omega^2 A^2 = \frac{1}{2} \frac{P_{max}^2}{\rho v}~.
 \end{align}
 Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zusammenhang zwischen der maximalen Druckamplitude $P_{max}$ und der Amplitude der Schallwelle gegeben ist durch
 \begin{align}
- P_{max} = \rho \omega v A.
+ P_{max} = \rho \omega v A~.
 \end{align}
 Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude. Genaueres zu diesen Themen ist im Tipler \cite[S.598]{tipler} zu finden.
 
@@ -258,19 +257,20 @@ Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle propor
 \label{sec:theschallgeschw}
 Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung für die Schallgeschwindigkeit finden
 \begin{align}
- v = \sqrt{  \frac{K}{\rho}  }\quad.
+ v = \sqrt{  \frac{K}{\rho}  }~.
 \end{align}
 Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderungen
 \begin{align}
- K =  \frac{\Delta P}{\Delta V / V }\quad.
+ K := - V \frac{d p}{d V}  = - \frac{d P}{d V / V }~.
 \end{align}
+Das negative Vorzeichen entsteht dadurch, dass bei einem Zuwachs des Drucks das Volumen abnimmt. Damit wäre also $dV$ negativ, jedoch muss K größer null bleiben, damit die Wurzel reell bleibt.
+
+
 Es wird hierdurch ersichtlich, dass die Schallgeschwindigkeit wesentlich vom Medium abhängt. 
 Sie beträgt beispielsweise für Wasser je nach Salzgehalt und Temperatur circa 1500 m/s  und für Luft 340 m/s  \cite{tipler}.
 Bei einer Echolotmessung in Seen ist dann vor allem die unterschiedliche Temperatur in verschiedenen Schichten 
 von Relevanz. Die Schallgeschwindigkeit kann dann sogar um mehrere Prozente innerhalb eines Sees schwanken  
 \footnote{Dies wird ausführlicher beschrieben in \cite{schicht}}.
- %was ist das fuer eine Quelle
-%http://www.wiley-vch.de/books/sample/3527321314_c01.pdf schwanken um prozent
 
 
 
@@ -279,13 +279,14 @@ Setzt man Licht als eine ebene Welle an so ergibt sich bei Ausbreitung in einem 
 Es beschreibt, dass die Intensität $I$ des Lichts exponentiell bei zunehmender Stecke abfällt.
 Für den Anteil der noch vorhandenen Intensität $\frac{I}{I_0}$ gilt dann
 \begin{align}
- \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)\quad.
+ \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)~.
 \end{align}
 Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Er hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab
 \begin{align}
- \alpha= \frac{4 \pi \kappa}{\lambda}\quad.
+ \alpha= \frac{4 \pi \kappa}{\lambda}~.
 \end{align}
 Hier ist mit $\kappa$ der Imaginärteil des Brechungsindex gekennzeichnet.
+Die Relevanz des Absorptionskoeffizienten für uns ist, dass über diesen Rückschlüsse auf Schwebstoffe im Wasser von Seen gezogen werden können, wenn Messdaten über die Intensität bekannt sind.
 \cite[S.229]{meschede}
 
 
@@ -331,9 +332,9 @@ weiter darauf einzugehen.
 Entscheidend ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
 nichtinvertierenden Verstärkers. 
 
-Für diese gilt:
+Für diese gilt
 \begin{align}
- v = 1 + \frac{R_2}{R_1}\label{eq:verst}
+ v = 1 + \frac{R_2}{R_1}~.\label{eq:verst}
 \end{align}
 Wichtig ist also nur die für den jeweiligen Bedarf richtige Wahl des Widerstandsverhältnisses.
 Eine weitere Eigenschaft des nichtinvertierenden Verstärkers ist, dass die Phase des Eingangs und Ausgangssignals gleich sind.
@@ -413,7 +414,7 @@ Die Temperatur wird mit einem Pt1000-Widerstand vermessen.
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
 Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab
 \begin{align}
-	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right). \label{eq:Pt1000}
+	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right)~. \label{eq:Pt1000}
 \end{align}
 Diese Formel ist rein empirisch. 
 Die zugehörigen Konstanten die in Eichmessungen ermittelt werden findet man in Tabelle \ref{tab:Pt1000}.
@@ -433,7 +434,7 @@ Die zugehörigen Konstanten die in Eichmessungen ermittelt werden findet man in 
 
 Durch Umstellen erhält man eine Formel für die Temperatur in Grad Celsius
 \begin{align}
- \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    }\label{eq:temperapt1000} .
+ \vartheta = -\frac{A}{2 B} - \frac{1}{2 B \sqrt{R_0}} \sqrt{A^2 R_0  - 4 B R_0 + 4 B R    }\label{eq:temperapt1000}~.
 \end{align}
 
 
@@ -457,7 +458,7 @@ Diese Spannung ist auch die Maximalspannung, die an einen Pin des Mikrocontrolle
 Aus diesem Verfahren ergibt sich bei 12bit eine minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
 Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite berechnet werden
 \begin{align}
-	U=\text{ADCWert}\cdot B.\label{eq:ADCwert}
+	U=\text{ADCWert}\cdot B~.\label{eq:ADCwert}
 \end{align}
 Die Daten werden in Form einer ASCII Datei auf einer SD-Karte gespeichert um sie später am Computer leichter in einem Plotprogramm bearbeiten zu können.
 Dies sorgt aber für ein größeres Datenaufkommen.
@@ -467,7 +468,7 @@ Der aktuelle Luftdruck kann über das Einstellungsmenü direkt am Logger geände
 Die Zeit wird anhand der aktuellen Zeit und jedem weiteren Zeitschritt bestimmt.
 Das Programm kann von 10 bis zu maximal 500 Werten pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden können.
 Der Zeitschritt wird abhängig von der Wertfrequenz berechnet und eingetragen.\\
-Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert.
+Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert werden.
 Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
 Die Spannungen werden von jedem Sensor über ein geschirmtes Kabel übertragen.
 In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt.
@@ -484,9 +485,9 @@ Für die Messung der Temperatur wird mit einem Pt1000 Temperaturwiderstand gearb
 Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
 Aus diesem Grund muss die am Pt1000 abfallende Spannung noch verstärkt werden.
 Dies geschieht mithilfe eines nicht-invertierenden Verstärkers wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
-Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:Pt1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
+Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
 Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereiche des ADCs liegt.\\
-Aus dem in der Abbildung \ref{fig:Pt1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
+Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
 	R_\text{Pt1000}=\frac{R_1\cdot U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
 \end{align}
@@ -513,11 +514,19 @@ Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
 Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine Messbare Spannung zu wandeln.
 Da in den See nicht viel Licht eintritt, wird die sich ergebene Spannung noch über einen nicht-invertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 Verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
+<<<<<<< HEAD
 Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED %ref auf die Datenblätter
 mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
 Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
 
 
+=======
+Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED
+mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
+Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
+Um die LEDs von dem Umgebungslicht zu unterscheiden werden diese gepulst, sie werden im bestimmten Zyklen ein und aus geschaltet.
+Die Frequenz mit der die LEDs nacheinander ein und aus geschaltet werden heißt Umschaltfrequenz und ist von 0\si{\hertz} bis 20\si{\hertz} durchschaltbar.
+>>>>>>> a9f9485247db64ad2fbd12f8860f83a45b607e20
 Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
@@ -528,7 +537,7 @@ Zu dem muss die Masse von der externen Schaltung mit der Masse des Boards gekopp
 Die Messbrücke ist mit einem Potentiometer bei einer Spannung von 1\si{\volt} auf einen Druck von 1001hPa geeicht.
 Bei der Messbrücke handelt es sich um  eine Wheatstone'sche Brücke, die bereits vom Werk aus geeicht ist.
 Die ausgegebene Spannung ist somit proportional zum angewandten Druck.
-Der Luftdruck liegt bei etwa 1024hPa und in einer Tiefe von 10\si{\meter} hat sich der Druck um 1000hPa erhöht, und damit auch die Spannung um 1\si{\volt}.
+Der Luftdruck liegt bei etwa 1000hPa und in einer Tiefe von 10\si{\meter} hat sich der Druck nach der Gleichung \eqref{eq:d} um 1000hPa erhöht, und damit auch die Spannung um 1\si{\volt}.
 Somit liegt der Spannungsbereich in dem akzeptablen Bereich des ADC.\\
 Die Messbrücke ist in ein wasserdichtes Gehäuse gebaut und wird über ein externes Kabel mit einer eigenen Platine und eigener Spannungsversorgung geführt.
 Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wird nicht von diesen beeinflusst.
@@ -548,14 +557,13 @@ Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal 
 Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
 Dieses berechnet, wie im Kapitel\ref{sec:theoort} beschrieben, die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
 Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positioniert.\\
-Als alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die Messdatei schreibt.
-Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war, genutzt.
+Als Alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten an die letzte Stelle der Messdatei schreibt.
+Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war.
 Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTL Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
 Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
 Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
 Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomuhrzeit als ASCII Text jede Sekunde an den Logger.
 Mithilfe der Zeit kann die RTC (Realtimeclock) des Boardes einmalig auf die GPS-Zeit eingestellt werden.
-Dies ist über das Einstellungsmenü bei einmaligem Empfangen der Daten möglich.
 
 \subsection{Messdurchführung}
 
@@ -564,10 +572,10 @@ Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden 
 Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
 Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führe.
 
-Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält und den Messstab für das Geodimeter hochhält und ausrichtet.
+Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält, den Messstab für das Geodimeter hochhält und ausrichtet.
 Wird die Einzelmessung der App gleichzeitig mit dem Datenlogger gestartet, so wird zu den GPS-Daten der App gleich der Dateiname der Messreihe gespeichert.
 Ist nun die Messung gestartet, so wird die Sonde langsam ins Wasser gelassen.
-Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
+Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde nur mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
 Erreicht die Sonde den Boden, so muss die Messung beendet werden, da sich sonst gegebenenfalls Schlamm um die Sensoren legt.
 Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gezogen werden um die doppelte Anzahl an Messwerten für die jeweilige Tiefe zu bekommen.
 
@@ -721,7 +729,12 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 \caption{Temperaturverlauf am Göttinger Kiessee mit fast allen aufgenommenen Werten. Einige Werte, welche offensichtlich durch Wackelkontakte zu Stande kommen (bis zu $140^\circ$C) wurden zwecks Übersichtlichkeit ausgeblendet.}
 \label{fig:temp_goe}
 \end{figure}
-
+\begin{figure}[h]
+	\centering
+	\includegraphics{TempSchlamm}
+	\caption{Einfluss von Schlamm auf dem Temperatursensor. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen.}
+	\label{fig:tempSchlamm}
+\end{figure}
 
 
 \subsubsection{Northeim}
@@ -766,7 +779,7 @@ Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle t
 Dies wurde zunächst mit der Motivation durchgeführt eine mit der vorgegebenen Sendeleistung maximale Reichweite zu ermitteln. Als klar wurde, dass diese nicht ausreichen wird haben wir
 die Abnahme der Amplitude weiter untersucht.
 
-Zu diesem Zweck haben wir die Sender parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
+Zu diesem Zweck haben wir Sender und Empfänger parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
 ein Oszilloskop verwendet.
 
 Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
@@ -905,16 +918,52 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 %\bibliography{literatur}
 %\bibliographystyle{babalpha}
 \newpage
+<<<<<<< HEAD
 \section{Anhang}
 
+=======
 
+\appendix
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\setcounter{footnote}{0}
+\section{Anhang}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[height=10cm]{Fotos/Geodimeter}
-	\caption{Kevin beim Einstellen des Geodimeters.}
-	\label{fig:geodimeter}
+\subsection{Schaltpläne}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
+\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung. Die Spannungsversorgung, genau wie die Masseanbindung wird vom Board geregelt.}
+\label{fig:PT1000Schaltung}
 \end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
+\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung. Die Photodiode dient als Stromquelle und der Widerstand dient als Übersetzung in eine Spannung. Um die wenigen Millivolt detektierbar zu machen, wird ein Verstärker, wie beim Temperaturwiderstand verwerdet.}
+\label{fig:PhotodiodeSchaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
+\caption{Ersatzschaltbild der LEDs für die Messung der Absorbtion. Die Spannung wird vom Board bereitgestellt. Auf dem Board werden die LEDs durch bipolare Transistoren geschaltet und über den selben Widerstand versorgt, da sie nie zur selben Zeit eingeschaltet sind.}
+\label{fig:LEDSchaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Fotos/Echoverstaerker.png}
+\caption{Schaltung für den Empfängerpiezo, mit eigener Spannungsquelle und zwei Verstärkern zur Rauschverminderung. Die Spannung wird durch externe Akkus gewährleistet und der Piezo wird als Spannungsquelle geschaltet.}
+\label{fig:Echoverstaerker}
+\end{figure}
+
+>>>>>>> a9f9485247db64ad2fbd12f8860f83a45b607e20
+
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[height=10cm]{Fotos/Geodimeter}
+%	\caption{Kevin beim Einstellen des Geodimeters.}
+%	\label{fig:geodimeter}
+%\end{figure}
 
 
 \begin{figure}[h]
