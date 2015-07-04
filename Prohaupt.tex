@@ -450,8 +450,7 @@ Das Display dient nicht nur der Steuerung, sondern zeigt auch im Sekundentakt di
 Zur Bestimmung der am Controller anliegenden Spannung wird ein integrierter Analog Digital Converter (ADC) verwendet.
 Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Referenzspannung vergleicht.
 Die Referenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht je nachdem, ob die zu messende Spannung kleiner oder größer ist.
-Der ADC hat eine Auflösung von 12bit %ref auf Datenblatt
-, somit hat das Verfahren auch 12 Schritte.
+Der ADC hat, wie im Datenblatt \cite[7]{XMCRelaxkit} zu lesen, eine Auflösung von 12Bit, somit hat das Verfahren auch 12 Schritte.
 Die Referenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
 Diese Spannung ist auch die Maximalspannung, die an einen Pin des Mikrocontrollers angelegt werden darf, ohne ihn zu zerstören.
 Aus diesem Verfahren ergibt sich bei 12bit eine minimal von Null verschiedene Spannung von $B=\frac{3.3\si{\volt}}{2^{12}}=8.06\times10^{-4}\si{\volt}$, welche als Bereichsbreite $B$ bezeichnet wird.
@@ -495,11 +494,9 @@ Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
 Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine Messbare Spannung zu wandeln.
 Da in den See nicht viel Licht eintritt, wird die sich ergebene Spannung noch über einen nicht-invertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 Verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
-Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED %ref auf die Datenblätter
-mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
+Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED
+mit mittleren Wellenlängen von $\lambda_\text{Blau}=\si{\nano\meter}$ \cite[25]{IRDatenblatt} und $\lambda_\text{IR}=\si{\nano\meter}$. %ref auf Datenblatt
 Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
-
-
 Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
@@ -518,9 +515,9 @@ Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wir
 \subsubsection{Echolotmessung}
 Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
 Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschallbereich.
-Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maximalspannung zu erhöhen wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.%Schaltung hinzufeugen
+Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maximalspannung zu erhöhen wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.
 Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf das Senderkristall gegeben.\\
-Das Empfängerkristall wird über einen Verstärker direkt an den ADC angeschlossen.
+Das Empfängerkristall wird über einen Verstärker direkt an den ADC angeschlossen, dieser ist in der Abbildung \ref{fig:Echoverstaerker} dargestellt.
 Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
 Die Entfernung wird nach dem Gesetzen aus dem Kapitel \ref{sec:theschallgeschw} berechnet.
 Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal aufgezeichnet und anschließend analysiert.
@@ -875,6 +872,32 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 \setcounter{page}{1}
 
 \section{Anhang}
+
+\subsection{Schaltpläne}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
+\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung.}
+\label{fig:PT1000Schaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
+\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung.}
+\label{fig:PhotodiodeSchaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
+\caption{Beschaltung der LEDs für die Messung der Absorbtion.}
+\label{fig:LEDSchaltung}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Fotos/Echoverstaerker.png}
+\caption{Schaltung für den Empfängerpiezo, mit eigener Spannungsquelle und zwei Verstärkern zurRauschverminderung.}
+\label{fig:Echoverstaerker}
+\end{figure}
 
 
 
