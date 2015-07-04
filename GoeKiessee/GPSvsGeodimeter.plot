@@ -23,6 +23,10 @@ x0 = lo(a,b)
 y0 = la(b)
 c = 12*pi/180
 
+
+#set label "N" at -75,75
+#set arrow 3 from -75,0 to -75,50
+
 plot 'test.txt' u (1000*(lo($1,$2)-x0)):(1000*(la($2)-y0)) t 'GPS',\
 	 'Geodimeter10-6.txt' index 0 u (cos(c)*$2-sin(c)*$3):(-sin(c)*$2-cos(c)*$3) w lp t 'Geodimeter',\
 	 'Kiessee.kml' u (1000*(lo($1,$2)-x0)):(1000*(la($2)-y0)) w l lt -1 notitle
