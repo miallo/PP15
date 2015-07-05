@@ -5,9 +5,9 @@ set output 'tiefeGoe.tex'
 
 set size ratio -1
 
-set xlabel 'x [m]'
-set ylabel 'y [m]'
-set zlabel 'z [m]'
+set xlabel '$x$ [m]'
+set ylabel '$y$ [m]'
+set cblabel '$z$ [m]'
 
 
 set key bottom right
@@ -31,7 +31,7 @@ c = 10*pi/180
 
 set pm3d map
 
-set label "N" at -70,-50
+set label "N" at -90,-56
 set arrow 3 from 30,-50 to -50,-50
 
 set parametric
