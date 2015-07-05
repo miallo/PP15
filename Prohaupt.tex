@@ -296,8 +296,7 @@ Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf 
 
 In Grafik \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
 Dies entspricht gerade dem sichtbaren Bereich.
-
-\cite{abs}
+Näheres ist unter dieser Qelle zu finden \cite{abs}.
 
 %https://www.osapublishing.org/ao/abstract.cfm?uri=ao-36-33-8710#articleTables
 \begin{figure}[h]
@@ -367,11 +366,11 @@ Aufgrund der beinahe konstanten Temperatur im obersten sowie untersten Bereich k
 Insbesondere erkennt man den starken Temperaturgradienten im Metalimnion, das hier zwischen 8 und 15 m liegt. 
 Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine Länge von circa 8 m.
 Es ist also zu erwarten, dass wir beim Vermessenen eines tiefen Sees grade an die Grenze des Epilimnions stoßen.
-\cite{schicht}
+Nähers unter dieser Quelle \cite{schicht} zu finden.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=10cm]{schicht.png}
+	\includegraphics[width=0.6\textwidth]{schicht.png}%[height=10cm]
 	\caption{Leitwert $C$, Temperatur $T$ und Sauerstoff $O_2$ des Arendsees im September. Grafik entnommen aus \cite{schicht} }
 	\label{fig:schichtung}
 \end{figure}
@@ -400,7 +399,7 @@ Parallel zu dem direkten Speichern haben wir auch eine Smartphone-App erstellt, 
 \subsection{Temperatur}
 Die Temperatur wird mit einem Pt1000-Widerstand vermessen.
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
-Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab
+Der Widerstand hängt nach \cite{Pt1000} so von der Temperatur $\vartheta>0\si{\celsius}$ ab
 \begin{align}
 	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right)~. \label{eq:Pt1000}
 \end{align}
