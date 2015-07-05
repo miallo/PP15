@@ -167,7 +167,7 @@ Praktikanten: &  Michael Lohmann\\
 \end{Large}
 
 \end{titlepage}
-
+\thispagestyle{empty}
 \tableofcontents
 \thispagestyle{empty}
 \begin{bottom}
@@ -177,11 +177,11 @@ Herrn Prof. Bahr möchten wir für die Betreuung unseres Projektes danken.
 Insbesondere möchten wir auch Herrn Ulrich Einecke danken für viel Unterstützung mit der technischen Umsetzung.
 Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments sehr hilfreich war.
 \end{bottom}
-\thispagestyle{empty}
 \newpage
 
 \setcounter{footnote}{0}
 \setcounter{page}{1}
+
 \section{Einleitung}
 \label{sec:einleitung}
 Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
@@ -199,16 +199,13 @@ Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Ab
 
 Für eine Flüssigkeitssäule mit einer Höhe $h$ gilt das Pascal'sche Gesetz für den Druck
 \begin{align}
- p= g \rho h.
+ p= g \rho h~.
 \end{align}
 Hier bezeichnet $\rho$ die Dichte des Mediums, also in unserem Fall Wasser mit $\rho = 10^3 \frac{kg}{m^3}$. Daraus ergibt sich nun, dass in stehendem Wasser der Druck pro Meter Wassertiefe um 0.1 Bar ansteigt.
 Möchte man also die Tiefe $d$ des Drucksensors bestimmen, so berechnet sich diese aus der Druckdifferenz relativ zur Oberfläche mit Druck $p_0$ nach der Formel (siehe \cite[S.118]{gerthsen})
 \begin{align}
-	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}}. \label{eq:d}
+	d&=\frac{(p(d)-p_0)}{0.1\si{\bar \per\metre}}~. \label{eq:d}
 \end{align}
-
-%Der von uns verwendete Drucksensor liefert eine Spannung, die linear mit steigendem Druck ansteigen soll.
-%Die im Datenblatt angegebene Spannungssteigung soll 1V/Bar betragen.
 
 \subsection{Schallausbreitung}
 
@@ -220,21 +217,15 @@ Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden,
 Der Grund dafür ist, dass die genutzten Entfernungen zwischen Sender und Empfänger vielfach größer sind als die Größe des schwingenden Kristalls. 
 In einem homogenem Medium verteilt sich dann die ausgesendete Energie der Welle in drei Dimensionen gleichmäßig im Abstand $r$ über eine Kugelfläche $A$.
 Wird nun mit $\left<P\right>$ die mittlere vom Sender abgestrahlte Leistung 
-bezeichnet, dann ist zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält, also $I \propto \frac{1}{r^2}~. $
+bezeichnet, dann ist zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält, also $I \propto \frac{1}{r^2}$.
 Der Schalldruck $P$ hingegen nimmt antiproportional zur Entfernung ab
 \begin{align}
  P \propto \frac{1}{r}~.
 \end{align}
-Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $\left<w\right>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung auch geschrieben werden als $\left<P\right>  = \left<w\right> A v~.$
-Hieraus ergibt sich direkt für die Intensität
-\begin{align}
- I = \left<w\right> v~.
-\end{align}
+Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $\left<w\right>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung auch geschrieben werden als $\left<P\right>  = \left<w\right> A v$.
+Hieraus ergibt sich direkt für die Intensität $I = \left<w\right> v$.
 Die nun noch unbekannte Energiedichte von Schallwellen kann man aus der Betrachtung einer harmonischen Welle gewinnen. Dabei ergibt sich ganz allgemein, dass diese 
-proportional zum Quadrat der Amplitude $A$ und der Kreisfrequenz $\omega$ ist
-\begin{align}
- \left<\omega\right> = \frac{1}{2} \rho \omega^2 A^2~.
-\end{align}
+proportional zum Quadrat der Amplitude $A$ und der Kreisfrequenz $\omega$ ist $\left<\omega\right> = \frac{1}{2} \rho \omega^2 A^2$.
 Mit $\rho$ wurde hier wie üblich die Dichte des Mediums bezeichnet.
 Insgesamt erhält man also
 \begin{align}
@@ -296,8 +287,7 @@ Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf 
 
 In Grafik \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
 Dies entspricht gerade dem sichtbaren Bereich.
-
-\cite{abs}
+Näheres ist unter dieser Qelle zu finden \cite{abs}.
 
 %https://www.osapublishing.org/ao/abstract.cfm?uri=ao-36-33-8710#articleTables
 \begin{figure}[h]
@@ -368,11 +358,11 @@ Aufgrund der beinahe konstanten Temperatur im obersten sowie untersten Bereich k
 Insbesondere erkennt man den starken Temperaturgradienten im Metalimnion, das hier zwischen 8 und 15 m liegt. 
 Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine Länge von circa 8 m.
 Es ist also zu erwarten, dass wir beim Vermessenen eines tiefen Sees grade an die Grenze des Epilimnions stoßen.
-\cite{schicht}
+Nähers unter dieser Quelle \cite{schicht} zu finden.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=10cm]{schicht.png}
+	\includegraphics[width=0.6\textwidth]{schicht.png}
 	\caption{Leitwert $C$, Temperatur $T$ und Sauerstoff $O_2$ des Arendsees im September. Grafik entnommen aus \cite{schicht} }
 	\label{fig:schichtung}
 \end{figure}
@@ -401,7 +391,7 @@ Parallel zu dem direkten Speichern haben wir auch eine Smartphone-App erstellt, 
 \subsection{Temperatur}
 Die Temperatur wird mit einem Pt1000-Widerstand vermessen.
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
-Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab
+Der Widerstand hängt nach \cite{Pt1000} so von der Temperatur $\vartheta>0\si{\celsius}$ ab
 \begin{align}
 	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right)~. \label{eq:Pt1000}
 \end{align}
@@ -507,7 +497,7 @@ Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wir
 \subsubsection{Echolotmessung}
 Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
 Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschallbereich.
-Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maximalspannung zu erhöhen wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.%Schaltung hinzufeugen
+Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maximalspannung zu erhöhen wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.
 Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf das Senderkristall gegeben.\\
 Das Empfängerkristall wird über einen Verstärker direkt an den ADC angeschlossen.
 Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
@@ -591,12 +581,12 @@ Dieser ist bis zu 4.2 Meter tief \footnote{\url{www.nlwkn.niedersachsen.de/downl
 Dementsprechend wählten wir unsere Kabellängen.
 Da dieser See jedoch auf Grund von Granatenfunden aus dem 2. Weltkrieg vom 25.05. bis zum 26.06.15 gesperrt war, mussten wir auf andere Seen in der Region ausweichen.\\
 So haben wir am 10. Juni am Göttinger Kiessee unsere ersten Messdaten aufgenommen.
-Da dieser viel kleiner ist und nur maximal 2.2 Meter tief ist, erwarteten wir nicht, dort auf interessante Phänomene zu stoßen.
+Da dieser viel kleiner und nur maximal 2.2 Meter tief ist, erwarteten wir nicht, dort auf interessante Phänomene zu stoßen.
 Jedoch konnten wir so die Sonde testen und wir haben viele Probleme während des Messprozesses entdeckt, wie die Effekte, welche von Schlamm an den Sensoren herrühren.\\
 Eine Woche später, also am 17.06., haben wir dann auf dem Großen See bei Northeim gemessen.
 Um mehr Messdaten über die Lichtstreuung zu bekommen, setzten wir bei dieser Messung die Umschaltfrequenz der LEDs von $2\,$Hz auf $10\,$Hz.
-Beim Testen unseres Messgeräts am Morgen stellten wir jedoch fest, dass man drei verschiedene \"Temperaturkurven\" sieht, also immer wieder Sprünge in den berechneten Temperaturdaten.
-Dies liegt an dem An-/Ausschalten der beiden LEDs
+Beim Testen unseres Messgeräts am Morgen stellten wir jedoch fest, dass man drei verschiedene "`Temperaturkurven"' sieht, also immer wieder Sprünge in den berechneten Temperaturdaten.
+Dies liegt an dem An-/Ausschalten der beiden LEDs.
 Eine genauere Erklärung findet sich im Abschnitt \ref{sec:DiskTemp}.
 Diesen Effekt sieht man jedoch nicht bei  den ersten Messdaten, da dort die Frequenz geringer war.
 Allerdings springen die Temperaturwerte von Messreihe zu Messreihe.
