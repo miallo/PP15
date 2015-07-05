@@ -70,6 +70,7 @@ set output 'temp_roh.tex'
 set key top right
 
 set xrange [-0.2:7.5]
+set yrange [10:35]
 
 set xlabel '$z$ [m]'
 set ylabel '$T$ [$\si{\celsius}$]'
