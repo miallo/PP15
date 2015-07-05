@@ -668,10 +668,10 @@ Da wir aufgrund der springenden Temperatur die Daten in 40er Blöcke unterteilt 
 \subsection{Temperatur}
 \subsubsection{Göttingen}
 In Abb. \ref{fig:temp_goe} sind alle von uns aufgenommenen Temperaturen bis $40\,\si{\celsius}$ aufgetragen.
-Darüberhinaus waren noch einige Werte bei bis zu $140\,\si{\celsius}$, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
+Darüber\-hinaus waren noch einige Werte bei bis zu $140\,\si{\celsius}$, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
 Ebenfalls ist dort ein linearer Fit über die Werte, welche im Wasser aufgenommen wurden und sich unterhalb von $24\,\si{\celsius}$ befinden.
 Von diesen nehmen wir nämlich an, dass sie richtig sind und dort der Temperaturwiderstand mit der richtigen Spannung von $3.3\,$V betrieben wird.
-Die Gerade hat die Form $T(z)=21.185\si{\celsius}-0.430\si{\celsius\per\meter}\cdot z$.
+Die Gerade hat die Form $T(z)=(21.185\pm)\si{\celsius}-(0.430\pm)\si{\celsius\per\meter}\cdot z$.
 An ihr kann man den allgemeinen Trend erkennen, dass es pro Meter etwa $0.43\si{\celsius}$ kälter wird.
 Die Messwerte schwanken jedoch um diese Gerade um bis zu $2\si{\celsius}$.
 Sie stammen jedoch auch von mehreren Messreihen, also von unterschiedlichen Orten und zu verschiedenen Zeiten.
@@ -703,7 +703,7 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 In Grafik \ref{fig:temp_nor_Roh} sind alle Temperaturmessungen der Messung in Northeim aufgetragen.
 Man erkennt deutlich mehrere Linien.
 Um dies zu beheben und die richtigen Daten zu verwenden, müssen sie gefiltert werden.
-Dabei werden immer von 40 Werten nach dem folgenden Algorithmus zu einem Temperaturwert zusammengefasst: 
+Dabei werden immer 40 Werte nach dem folgenden Algorithmus zu einem Temperaturwert zusammengefasst: 
 Zuerst wird der Median bestimmt; nun werden nur noch Werte unterhalb dessen betrachtet, der Median ist also $T_\text{max}$. 
 Außerdem schließt man Ausreißer nach unten aus, indem der untere Quartilwert$-3\si{\celsius}$ als $T_\text{min}$ verwendet wird.
 Von den verbleibenden Werten wird der Mittelwert genommen.
@@ -716,7 +716,7 @@ Dieses Verfahren wird in Abb. \ref{fig:tempAlg} verdeutlicht.
    \hfill
    \subfigure[Beispiel 2\label{fig:tempV1}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/tempAlg2.tex}}}
-	\caption{Algorithmus zum Filtern der Temperaturdaten.}
+	\caption{Algorithmus zum Filtern der Temperaturdaten. Es sind in beiden Plots die Sprünge, sowie die Korrekturen in der Temperatur gut zu erkennen.}
 	\label{fig:tempAlg}
 \end{figure}
 
@@ -743,14 +743,14 @@ Tiefe [m] & Temperaturabnahme [$\frac{^\circ C}{\text m}$] & Temperaturintervall
 \begin{figure}[!h]
 \centering
 \input{Northeim/temp.tex}
-\caption{Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit.}
+\caption{Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit. Die ersten Messwerte bei 0\si{\meter} ergeben sich beim Eintauchen der Sonde und sind deswegen nicht beachtet.}
 \label{fig:temp_nor}
 \end{figure}
 
 
-Da wir auf der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
+Da wir in der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
 Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.
-Vergleicht man jeweils die beiden Temperaturkurven in Abb. \ref{fig:tempV1} und \ref{fig:tempV3}, erkennt am keine großen Temperaturdifferenzen.
+Vergleicht man jeweils die beiden Temperaturkurven in Abb. \ref{fig:tempV1} und \ref{fig:tempV3}, erkennt man keine großen Temperaturdifferenzen.
 Die Messfehler scheinen zu überwiegen.
 In Abb. \ref{fig:tempV2} ist jedoch die später aufgenommene Kurve deutlich unter der anderen.
 Dies kann verschiedene Gründe haben: Zum einen kann dies ein Fehler des obigen Filteralgorithmus sein, zum anderen könnte es auf Messfehler zurückzuführen sein, denn eine so starke Abkühlung scheint nicht plausibel.
@@ -771,9 +771,10 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
    \hfill
    \subfigure[Verlauf 3\label{fig:tempV3}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/tempV3.tex}}}
-	\caption{Messpunkte, die wir zweimal besucht haben, und deren Temperaturkurven.}
+	\caption{Messpunkte (in a), die wir zweimal besucht haben, und deren Temperaturkurven.}
 	\label{fig:tempNort2}
 \end{figure}
+
 
 \subsection{Licht}
 
@@ -796,14 +797,14 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 
 
 \subsection{Gemessenes Abstandsgesetz}
-Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir die Abstandsabhängigkeit der Schallintensität näher untersucht. 
+Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir nur die Abstandsabhängigkeit der Schallintensität näher untersucht. 
 Dies wurde zunächst mit der Motivation durchgeführt eine mit der vorgegebenen Sendeleistung maximale Reichweite zu ermitteln. Als klar wurde, dass diese nicht ausreichen wird haben wir
 die Abnahme der Amplitude weiter untersucht.
 
 Zu diesem Zweck haben wir Sender und Empfänger parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
-ein Oszilloskop verwendet.
+ein Oszilloskop als Empfänger verwendet.
 
-Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
+Wir haben hierfür drei Messreihen durchgeführt und anschließend wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
 
 \begin{figure}[h]
 	\centering
@@ -812,13 +813,11 @@ Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernun
 	\label{fig:schall}
 \end{figure}
 
-Zudem wurde eine $\chi^2$ Anpassung an die berechneten Mittelwerte durchgeführt, wobei hier die in der Theorie vorgestellte $\frac{1}{d}$ - Abhängigkeit angenommen wurde.
-Es wurde hier also angenommen, dass die mit dem Oszilloskop gemessene Amplitude sich wie die Abstandsabhängigkeit des Schalldrucks verhält.
+Zudem wurde eine $\chi^2$ Anpassung an die berechneten Mittelwerte durchgeführt, wobei hier die in der Theorie vorgestellte $\frac{1}{d}$ - Abhängigkeit angenommen wurde, sprich die mit dem Oszilloskop gemessene Amplitude sich wie die Abstandsabhängigkeit des Schalldrucks verhält.
 Dies erscheint sinnvoll, denn entscheidend für die angezeigte Amplitude ist, welche Beschleunigungen auf den Empfänger wirken.
 Diese wiederum entsprechen Druckschwankungen.
 
-
-Da die eingezeichneten Fehlerbalken sich nur aus der statistischen Standardabweichung berechnen muss davon ausgehen werden, dass die Messung eigentlich noch ungenauer bezüglich der Amplitude waren. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
+Die eingezeichneten Fehlerbalken ergeben sich nur aus der statistischen Standardabweichung da diese die abgeschätzten Fehler von 0.1\% Amplitude zu klein sind. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
 Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (vgl. Theorie). 
 
 
