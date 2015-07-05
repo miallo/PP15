@@ -1,6 +1,6 @@
 reset
 
-stats 'alle.dat' u 0:2
+stats 'alle.DAT' u 0:2
 
 #set yrange [20:45]
 
