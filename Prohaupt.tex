@@ -613,7 +613,7 @@ Es ist zu erkennen, dass wir kein regelmäßiges Raster abgefahren sind.
 \begin{figure}[!h]
 	\centering
 	\input{Northeim/tiefe}
-	\caption{Messpunkte auf dem Northeimer See.}
+	\caption{Die Messpunkte auf dem Northeimer See mit den Tiefen als Farbkarte.}
 	\label{fig:GPSNort}
 \end{figure}
 
@@ -636,7 +636,7 @@ Daher ist das Befahren dort verboten.
 \begin{figure}[!htb]
 	\centering
 	\input{GoeKiessee/tiefeGoe.tex}
-	\caption{Göttinger Kiessee: Tiefe.}
+	\caption{Ortsmesspunkte in Göttingen gegen die Tiefe als Farbkarte aufgetragen.}
 	\label{fig:tiefeGoe}
 \end{figure}
 Laut Datenblatt und, wie im Kapitel \ref{sec:durchdruck} beschrieben, sollte der Spannungsverlauf der Druckmessbrücke linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
@@ -651,7 +651,7 @@ Die aufgenommenen Druckkurven waren auch annähernd linear.
 
 In Abbildung \ref{fig:tiefeGoe} ist die maximale Tiefe der einzelnen Messdaten an den jeweiligen Messpunkten dargestellt.
 Man erkennt, dass der See am nördlichen Ende scheinbar mit etwa 2.2 Meter am tiefsten ist und nach Süden leicht flacher wird.
-Für den Northeimer See ist es nicht sinnvoll, eine solche Karte zu erstellen, da die Sonde nur in Ufernähe Bodenkontakt hatte.
+Für den Northeimer See ist eine solche Karte in der Abbildung \ref{fig:GPSNort} zu sehen, allerdings wurde nur an einigen Punkten der Boden erreicht.
 An den anderen Punkten war es tiefer als unser Kabel hergab, also tiefer als 7 Meter.
 Die Druckkurven besaßen eine Breite (und in sofern ein Fehlerintervall) von ca. 15cm.
 Für die Temperaturwerte der Northeimer Messung mussten wir die Daten bearbeiten.
@@ -712,7 +712,6 @@ In diesem Plot ergeben sich zwei Linien, die einen stetigen Übergang in einer b
 Bei dieser Messung traf die Sonden auf dem Boden auf und sammelte Schlamm an, welcher wieder nach oben befördert wurde.
 Die Temperatur verläuft von oben nach unten, da der Schlamm unten im See deutlich kühler ist, als das umgebene Wasser.
 Auch diese Daten sind nicht auszuwerten, da die Schlammtemperatur aus fast allen Datensätzen gefiltert werden muss.
-
 
 \subsubsection{Northeim}
 \label{sec:austempnortheim}
@@ -976,10 +975,8 @@ Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werde
 Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden und dies zu einem hohen Leckstrom führt, der die Bauteile beschädigen kann.
 Desweiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
 Wir haben dennoch ein paar Testdaten aufnehmen und auswerten können.
-%hie noch das Ergebnis der Auswertung diskutieren.
 Dieser Teil des Projektes ist auch für weitere Praktika interessant, da diese Methode kommerziell häufig eingesetzt wird und auch in der Wissenschaft zur Bodenanalyse verwendet werden kann.
 Die Probleme, die gelöst werden müssen, sind die Spannungsverorgung und ein funktionsfähiger Filteralgorythmuss zur Rauschreduktion.
-
 
 \subsection{Messprobleme und verworfene Ideen}
 Unsere erste Idee war die, ein ferngesteuertes U-Boot zu bauen, was die Sensoren an Bord hat und ansatzweise autonom den See abrastert.
