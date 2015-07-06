@@ -855,6 +855,12 @@ Die Fehler bilden sich jeweils aus der Standardabweichung.
 Die infrarote LED hat somit eine etwa doppelt so hohe Intensität, wie die blaue LED.
 
 \subsection{Gemessenes Abstandsgesetz}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{schall.pdf}
+	\caption{Relative Amplitude des Echolotes wurde aufgetragen gegen den Abstand $d$. Zudem wurde eine $\chi^2$ Anpassung an die Messdaten durchgeführt.}
+	\label{fig:schall}
+\end{figure}
 Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir nur die Abstandsabhängigkeit der Schallintensität näher untersucht. 
 Dies wurde zunächst mit der Motivation durchgeführt eine mit der vorgegebenen Sendeleistung maximale Reichweite zu ermitteln. Als klar wurde, dass diese nicht ausreichen wird haben wir
 die Abnahme der Amplitude weiter untersucht.
@@ -864,20 +870,12 @@ ein Oszilloskop als Empfänger verwendet.
 
 Wir haben hierfür drei Messreihen durchgeführt und anschließend wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{schall.pdf}
-	\caption{Relative Amplitude des Echolotes wurde aufgetragen gegen den Abstand $d$. Zudem wurde eine $\chi^2$ Anpassung an die Messdaten durchgeführt.}
-	\label{fig:schall}
-\end{figure}
-
 Zudem wurde eine $\chi^2$ Anpassung an die berechneten Mittelwerte durchgeführt, wobei hier die in der Theorie vorgestellte $\frac{1}{d}$ - Abhängigkeit angenommen wurde, sprich die mit dem Oszilloskop gemessene Amplitude sich wie die Abstandsabhängigkeit des Schalldrucks verhält.
 Dies erscheint sinnvoll, denn entscheidend für die angezeigte Amplitude ist, welche Beschleunigungen auf den Empfänger wirken.
 Diese wiederum entsprechen Druckschwankungen.
 
 Die eingezeichneten Fehlerbalken ergeben sich nur aus der statistischen Standardabweichung da diese die abgeschätzten Fehler von 0.1\% Amplitude zu klein sind. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
 Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2.5\si{\centi\meter} auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40\si{\centi\meter} ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (siehe Abschnitt \ref{sec:abs}). 
-
 
 
 \section{Diskussion}
