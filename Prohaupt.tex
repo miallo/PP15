@@ -1024,46 +1024,47 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 \section{Anhang}
 
 \subsection{Schaltpläne}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{nicht.png}
+	\caption{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Noninverting_Amplifier.svg/2000px-Noninverting_Amplifier.svg.png}}
+	\label{fig:nicht}
+\end{figure}
+
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
+\includegraphics[width=0.7\textwidth]{Fotos/Echoverstaerker.png}
+\caption{Schaltung für den Empfängerpiezo, mit eigener Spannungsquelle und zwei Verstärkern zur Rauschverminderung. Die Spannung wird durch externe Akkus gewährleistet und der Piezo wird als Spannungsquelle geschaltet.}
+\label{fig:Echoverstaerker}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\textwidth]{Fotos/PT1000Schaltung.png}
 \caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschaltung. Die Spannungsversorgung, genau wie die Masseanbindung wird vom Board geregelt.}
 \label{fig:PT1000Schaltung}
 \end{figure}
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
+\includegraphics[width=0.7\textwidth]{Fotos/PhotodiodeSchaltung.png}
 \caption{Beschaltung der Photodiode mit Widerstand und Verstärkerschaltung. Die Photodiode dient als Stromquelle und der Widerstand dient als Übersetzung in eine Spannung. Um die wenigen Millivolt detektierbar zu machen, wird ein Verstärker, wie beim Temperaturwiderstand verwendet.}
 \label{fig:PhotodiodeSchaltung}
 \end{figure}
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
+\includegraphics[width=0.4\textwidth]{Fotos/LEDSchaltung.png}
 \caption{Ersatzschaltbild der LEDs für die Messung der Absorption. Die Spannung wird vom Board bereitgestellt. Auf dem Board werden die LEDs durch bipolare Transistoren geschaltet und über den selben Widerstand versorgt, da sie nie zur selben Zeit eingeschaltet sind.}
 \label{fig:LEDSchaltung}
 \end{figure}
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.6\textwidth]{Fotos/Echoverstaerker.png}
-\caption{Schaltung für den Empfängerpiezo, mit eigener Spannungsquelle und zwei Verstärkern zur Rauschverminderung. Die Spannung wird durch externe Akkus gewährleistet und der Piezo wird als Spannungsquelle geschaltet.}
-\label{fig:Echoverstaerker}
-\end{figure}
 
-
+\subsection{Fotos}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=10cm]{Geodimeter.jpg}
-	\caption{Kevin beim Einstellen des Geodimeters.}
+	\includegraphics[trim=200 50 200 200 ,width=0.75\textwidth]{P1050168.JPG}
+	\caption{Gruppenfoto (v.l.n.r.): Felix, Kevin, Michael, Jan.}
 	\label{fig:geodimeter}
-\end{figure}
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.6\textwidth]{nicht.png}
-	\caption{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Noninverting_Amplifier.svg/2000px-Noninverting_Amplifier.svg.png}}
-	\label{fig:nicht}
 \end{figure}
 
 \end{document}
