@@ -472,30 +472,31 @@ Da das Licht nicht tief in den See eintreten kann, wird die sich ergebende Spann
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
 Um die Absorption in verschiedenen Spektren zu messen, hat die Messsonde eine blaue und eine infrarote LED mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
 Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
-Um die LEDs von dem Umgebungslicht zu unterscheiden, werden diese gepulst, sie werden in einem bestimmten Zyklen ein und aus geschaltet.
-Die Frequenz, mit der die LEDs nacheinander ein und aus geschaltet werden, die sogenannte Umschaltfrequenz, ist von 0\si{\hertz} bis 20\si{\hertz} durchschaltbar.
+Um die LEDs von dem Umgebungslicht zu unterscheiden, werden diese gepulst -- sie werden in einem bestimmten Zyklus ein- und ausgeschaltet.
+Die Frequenz, mit der die LEDs nacheinander geschaltet werden (die sogenannte Umschaltfrequenz), ist von 0\si{\hertz} bis 20\si{\hertz} wählbar.
 Im Programm werden die Daten mit der jeweils angeschalteten LED und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
 \label{sec:durchdruck}
 Der Druck wird durch einen Absolutdrucksensor in einer Messbrücke bestimmt.
 Die Schaltung wurde von der Geophysik bereitgestellt und direkt an dem Pin 14.2 am Board angeschlossen.
-Zu dem muss die Masse von der externen Schaltung mit der Masse des Boards gekoppelt werden.
-Die Messbrücke ist mit einem Potentiometer bei einer Spannung von 1\si{\volt} auf einen Druck von 1001hPa geeicht.
+Zudem muss die Masse von der externen Schaltung mit der Masse des Boards gekoppelt werden.
+Die Messbrücke ist mit einem Potentiometer bei einem Druck von 1001hPa auf eine Spannung von 1\si{\volt} geeicht.
 Bei der Messbrücke handelt es sich um  eine Wheatstone'sche Brücke, die bereits vom Werk aus geeicht ist.
-Die ausgegebene Spannung ist somit proportional zum angewandten Druck.
+Die ausgegebene Spannung ist somit proportional zum wirkenden Druck.
 Der Luftdruck liegt bei etwa 1000hPa und in einer Tiefe von 10\si{\meter} hat sich der Druck nach der Gleichung \eqref{eq:d} um 1000hPa erhöht, und damit auch die Spannung um 1\si{\volt}.
 Somit liegt der Spannungsbereich in dem akzeptablen Bereich des ADC.\\
-Die Messbrücke ist in ein wasserdichtes Gehäuse gebaut und wird über ein externes Kabel mit einer eigenen Platine und eigener Spannungsversorgung geführt.
+Die Messbrücke ist in ein wasserdichtes Gehäuse gebaut und wird über ein Kabel mit einer Platine und der Spannungsversorgung verbunden.
 Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wird nicht von diesen beeinflusst.
 
 \subsubsection{Echolotmessung}
 Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
 Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschallbereich.
-Der Sendekristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt. Um diese Maximalspannung zu erhöhen, wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.
+Der Sendekristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} geschaltet.
+Um diese Maximalspannung zu erhöhen, wird der Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.
 Um die Tiefe zu messen, muss ein klar definiertes Signal ausgesendet werden.
-Hierzu werden 20 Schwingungen auf den Senderkristall gegeben.\\
-Das Empfängerkristall wird über einen Verstärker direkt an den ADC angeschlossen.
+Hierzu werden 20 Schwingungen auf den Sendekristall gegeben.\\
+Der Empfängerkristall wird über einen Verstärker an den ADC angeschlossen.
 Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
 Die Entfernung wird nach dem Gesetzen aus dem Kapitel \ref{sec:theschallgeschw} berechnet.
 Zur Bestimmung der Bodenbeschaffenheit soll zudem das ganze ausgesendete Signal aufgezeichnet und anschließend analysiert werden.
@@ -506,11 +507,11 @@ Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgefü
 Dieses berechnet, wie im Kapitel\ref{sec:theoort} beschrieben, die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
 Diese Messmethode ist sehr genau, benötigt aber zwei Teams: Eines, das an Land das Geodimeter bedient, sowie die Koordinaten notiert und Eines, das auf dem Boot den Retroreflektor positioniert.\\
 Als Alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die letzte Stelle der Messdatei schreibt.
-Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war.
+Hierzu wird ein GPS-Gerät von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war.
 Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die ausgegebenen $\pm6\si{\volt}$ auf TTL-Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
 Dies geschieht über 5 Dioden und einen Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
 Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
-Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomuhrzeit als ASCII Text jede Sekunde an den Logger.
+Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomuhrzeit als ASCII-Text jede Sekunde an den Logger.
 Mithilfe der Zeit kann die RTC (RealTimeClock) des Boards einmalig auf die GPS-Zeit eingestellt werden.
 
 \subsection{Smartphone-App}
@@ -530,7 +531,7 @@ Mithilfe der Zeit kann die RTC (RealTimeClock) des Boards einmalig auf die GPS-Z
   \label{fig:appScreenshots}
 \end{figure}
 
-Da bei der ersten Messung schon das Abfahren des relativ kleinen Göttinger Kiessees in einem regelmäßigen Raster nicht leicht war, haben wir eine App für das Smartphone erstellt.
+Da bei der ersten Messung schon das Abfahren des relativ kleinen Göttinger Kiessees in einem regelmäßigen Raster nicht leicht war, erstellten wir eine App für ein Smartphone.
 Das GPS-Modul des Smartphones liefert die aktuelle Position und stellt sie auf einer Karte dar.
 Nun gibt es zwei Möglichkeiten:
 \begin{itemize}
@@ -564,7 +565,7 @@ Nutzt man das GPS zur Positionsbestimmung, muss stattdessen gleichzeitig die akt
 Ist nun die Messung gestartet, so wird die Sonde langsam ins Wasser gelassen.
 Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde nur mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
 Erreicht die Sonde den Boden, so muss die Messung beendet werden, da sich sonst gegebenenfalls Schlamm um die Sensoren legt.
-Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gezogen werden um die doppelte Anzahl an Messwerten für die jeweilige Tiefe zu bekommen.
+Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gezogen werden, um die doppelte Anzahl an Messwerten für die jeweilige Tiefe zu bekommen.
 
 Erreicht die Sonde in diesem Fall wieder die Oberfläche, so wird die Messung beendet.
 Dies ist notwendig, da der Lichtsensor an der Oberfläche durch die Sonneneinstrahlung eine zu hohe Spannung liefert und so den ADC übersteuert.
