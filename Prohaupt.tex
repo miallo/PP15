@@ -210,7 +210,7 @@ Möchte man also die Tiefe $d$ des Drucksensors bestimmen, so berechnet sich die
 \subsection{Schallausbreitung}
 
 \subsubsection{Abstandsgesetz und Intensität}
-
+\label{sec:abs}
 %Motivation:
 Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, dann sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, ähnlich verhalten wie die Gesetze einer punktförmigen Schallquelle.
 
@@ -283,7 +283,7 @@ Es verbleiben dann noch drei mögliche anregbare Vibrationsmoden, die sich ihrer
 
 Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen an.
 Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor.
-Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorptionspektren zu untersuchen.
+Weil diese Zustände aber nun beliebig kompliziert werden können, muss man spektroskopische Versuche durchführen, um die Absorptionspektren zu untersuchen.
 
 In Grafik \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
 Dies entspricht gerade dem sichtbaren Bereich.
@@ -377,12 +377,12 @@ Dieses sendet einen Laserstrahl in eine bestimmte Richtung aus und misst, sobald
 Daraus bestimmt es die Entfernung.
 Die Richtung wird durch die Stellung des beweglichen Kopfes ermittelt.
 Dafür wird beim Einschalten eine Referenzrichtung eingestellt, anhand derer die Abweichung bestimmt wird.
-Das Gerät kann nun die relative Position zu dem eigenen Standort in verschiedenen Darstellungsweisen ausgeben: Zylinderkoordinaten und Kartesische Koordinaten.
+Das Gerät kann nun die relative Position zu dem eigenen Standort in verschiedenen Darstellungsweisen ausgeben: Zylinderkoordinaten und kartesische Koordinaten.
 
 Der Laser wird von einem Retroreflektor an einer Messstange reflektiert, welche mit an Bord genommen wird.
 Ein Retroreflektor ist eine Anordnung von drei Spiegeln, welche jeweils im $90^\circ$-Winkel zueinander stehen.
 Jeder einfallende Strahl wird so in die Herkunftsrichtung zurückgelenkt.\\
-Als zweite Mögliche Ortsbestimmung wird das GPS System verwendet, dass durch Triangulation von Signalen einiger Satelliten die Position bestimmt.
+Als zweite mögliche Ortsbestimmung wird das GPS System verwendet, dass durch Triangulation von Signalen einiger Satelliten die Position bestimmt.
 Diese Methode ist vergleichsweise ungenau mit einer Genauigkeit von $\pm5\si{\meter}$, aber im Vergleich zur Größe von Seen immer noch genau genug.
 Die Implementierung dieser Methode wird im Kapitel \ref{sec:durchpos} weiter beschrieben.
 
@@ -846,7 +846,7 @@ Dies erscheint sinnvoll, denn entscheidend für die angezeigte Amplitude ist, we
 Diese wiederum entsprechen Druckschwankungen.
 
 Die eingezeichneten Fehlerbalken ergeben sich nur aus der statistischen Standardabweichung da diese die abgeschätzten Fehler von 0.1\% Amplitude zu klein sind. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
-Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (vgl. Theorie). 
+Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (siehe Abschnitt \ref{sec:abs}). 
 
 
 \section{Diskussion}
