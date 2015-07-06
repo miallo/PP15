@@ -703,7 +703,7 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 In Grafik \ref{fig:temp_nor_Roh} sind alle Temperaturmessungen der Messung in Northeim aufgetragen.
 Man erkennt deutlich mehrere Linien.
 Um dies zu beheben und die richtigen Daten zu verwenden, müssen sie gefiltert werden.
-Dabei werden immer von 40 Werten nach dem folgenden Algorithmus zu einem Temperaturwert zusammengefasst: 
+Dabei werden immer 40 Werte nach dem folgenden Algorithmus zu einem Temperaturwert zusammengefasst: 
 Zuerst wird der Median bestimmt; nun werden nur noch Werte unterhalb dessen betrachtet, der Median ist also $T_\text{max}$. 
 Außerdem schließt man Ausreißer nach unten aus, indem der untere Quartilwert$-3\si{\celsius}$ als $T_\text{min}$ verwendet wird.
 Von den verbleibenden Werten wird der Mittelwert genommen.
@@ -716,7 +716,7 @@ Dieses Verfahren wird in Abb. \ref{fig:tempAlg} verdeutlicht.
    \hfill
    \subfigure[Beispiel 2\label{fig:tempV1}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/tempAlg2.tex}}}
-	\caption{Algorithmus zum Filtern der Temperaturdaten.}
+	\caption{Algorithmus zum Filtern der Temperaturdaten. Es sind in beiden Plots die Sprünge, sowie die Korrekturen in der Temperatur gut zu erkennen.}
 	\label{fig:tempAlg}
 \end{figure}
 
@@ -743,14 +743,14 @@ Tiefe [m] & Temperaturabnahme [$\frac{^\circ C}{\text m}$] & Temperaturintervall
 \begin{figure}[!h]
 \centering
 \input{Northeim/temp.tex}
-\caption{Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit.}
+\caption{Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit. Die ersten Messwerte bei 0\si{\meter} ergeben sich beim Eintauchen der Sonde und sind deswegen nicht beachtet.}
 \label{fig:temp_nor}
 \end{figure}
 
 
-Da wir auf der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
+Da wir in der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
 Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.
-Vergleicht man jeweils die beiden Temperaturkurven in Abb. \ref{fig:tempV1} und \ref{fig:tempV3}, erkennt am keine großen Temperaturdifferenzen.
+Vergleicht man jeweils die beiden Temperaturkurven in Abb. \ref{fig:tempV1} und \ref{fig:tempV3}, erkennt man keine großen Temperaturdifferenzen.
 Die Messfehler scheinen zu überwiegen.
 In Abb. \ref{fig:tempV2} ist jedoch die später aufgenommene Kurve deutlich unter der anderen.
 Dies kann verschiedene Gründe haben: Zum einen kann dies ein Fehler des obigen Filteralgorithmus sein, zum anderen könnte es auf Messfehler zurückzuführen sein, denn eine so starke Abkühlung scheint nicht plausibel.
@@ -774,6 +774,7 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 	\caption{Messpunkte, die wir zweimal besucht haben, und deren Temperaturkurven.}
 	\label{fig:tempNort2}
 \end{figure}
+
 
 \subsection{Licht}
 
