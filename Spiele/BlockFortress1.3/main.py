@@ -147,33 +147,6 @@ class Game(object):
     def is_int(self, txt):
         try:
             int(txt)
-            return True
-        except ValueError:
-            return False
-            
-    def run(self):
-        self.play_music()
-        self.total_time_passed = 0
-        fps_limit = 60
-        if android:
-            fps_limit = 40
-        while True: #main game loop
-            if android:
-                if android.check_pause():
-                    self.pause()
-                    #self.pause_music()
-                    self.save()
-                    print "Block Fortress progress saved!"
-                    self.stop_music()
-                    android.wait_for_resume()
-                    self.pause(resume=True)
-                    self.play_music()
-                    #self.pause_music(resume=True)
-            time_passed = self.clock_getter().tick(fps_limit) / 1000.0
-            # If too long has passed between two frames, lie and tell the game it's still at more than 21 FPS (0.046 seconds since last frame)
-            # (either the game must have suspended for some reason, in which case we don't want it to "jump forward" suddenly -
-            # or the game is running on too weak hardware (single core < 1GHz android phones for example), in which case we'd rather have the game be slow than messing up collision detection)
-            if time_passed > 0.046:
                 time_passed = 0.046
                 #continue
             self.total_time_passed += time_passed
@@ -378,26 +351,6 @@ class Game(object):
     def is_time_distortion_field_active(self):
         return self.time_distortion_field_active
     
-    def double_damage(self):
-        for ball in self.balls:
-            ball.damage = 2
-            ball.image_getter = ResourceCapsule(self.resource_manager, "image_large_ball.png")
-    
-    def level_complete(self):
-        self.waiting_for_level = True
-        self.collect_all_score()
-        if self.level < self.available_levels:
-            pygame.time.set_timer(self.WAIT_NEW_LEVEL, 1800)
-            self.text_messages.append(widgets.TextMessage(self.screen_getter(), "Level Complete!", Vector(self.screen_getter().get_width() / 2, self.screen_getter().get_height() / 2), duration=1800, size=32, initialdelay=800))
-        else:
-            if android:
-                self.text_messages.append(widgets.TextMessage(self.screen_getter(), "Congratulations! You beat all " + str(self.available_levels) + " levels. Play again? Y/n", Vector(self.screen_getter().get_width() / 2, self.screen_getter().get_height() / 2 - 120), duration=9999999, size=24, initialdelay=9999990))
-                android.show_keyboard()
-            else:
-                self.text_messages.append(widgets.TextMessage(self.screen_getter(), "Congratulations! You beat all " + str(self.available_levels) + " levels. Play again? Y/n", Vector(self.screen_getter().get_width() / 2, self.screen_getter().get_height() / 2), duration=9999999, size=24, initialdelay=9999990))
-            self.add_to_highscore()
-            self.game_over = True
-    
     def dropped_balls(self):
         self.erase_rect(self.screen_getter(), Rect((168, 88, self.livesfont_getter().size(str(self.lives))[0], self.livesfont_getter().size(str(self.lives))[1])))
         self.lives -= 1
@@ -536,31 +489,6 @@ class Menu(object):
             self.resume_text.rect.top += 20
             self.main_text_widgets.append(self.resume_text)
 
-        self.new_game_text = widgets.TextWidget(newTitle, colour=self.WHITE, size=44, highlight_increase=3, event=self.NEW_GAME_CLICK, font_filename='audiowide.ttf', bold=False)
-        self.new_game_text.rect.center = self.screen.get_rect().center
-        self.new_game_text.rect.top -= 55
-        self.main_text_widgets.append(self.new_game_text)
-
-
-        self.help_text = widgets.TextWidget("Help", colour=self.WHITE, size=44, highlight_increase=3, event=self.HELP_CLICK, font_filename='audiowide.ttf', bold=False)
-        self.help_text.rect.center = self.screen.get_rect().center
-        self.help_text.rect.top += 20 + offset
-        self.main_text_widgets.append(self.help_text)
-
-        self.help_text = widgets.TextWidget("Highscores", colour=self.WHITE, size=44, highlight_increase=3, event=self.HIGHSCORES_CLICK, font_filename='audiowide.ttf', bold=False)
-        self.help_text.rect.center = self.screen.get_rect().center
-        self.help_text.rect.top += 95 + offset
-        self.main_text_widgets.append(self.help_text)
-
-        self.exit_text = widgets.TextWidget("Exit Game", colour=self.WHITE, size=44, highlight_increase=3, event=self.EXIT_CLICK, font_filename='audiowide.ttf', bold=False)
-        self.exit_text.rect.center = self.screen.get_rect().center
-        self.exit_text.rect.top += 170 + offset
-        self.main_text_widgets.append(self.exit_text)
-        self.loop()
-
-    def help(self):
-        self.state = "Help"
-        helpstring = "Press SPACE (or left click) to put the ball into motion.\n\nMove the paddle with your mouse to keep the ball in play!\n\nThe ball will go left if it hits the left side of the paddle, and so on.\n\nEliminate all blocks to advance to the next level.\n\nEarn more score through combo-streaks, that is, hit as many bricks as possible without touching the paddle.\n\nWhite blocks are indestructible\n\nYou can pause and resume with ESC"
         menufont = load_font('audiowide.ttf', 21)
         menurect = Rect(270,35,810,630)
         self.draw_bg(self.screen.get_rect())
@@ -687,33 +615,7 @@ class Menu(object):
                         self.quit()
                 elif self.state == "Help":
                     if (event.type == pygame.ACTIVEEVENT):
-                        if (event.gain == 1):
-                            for text in self.help_text_widgets:
-                                text.dirty = True
-                            self.draw()
-                        elif (event.state == 2):
-                            #We are hidden so wait for the next event
-                            pygame.event.post(pygame.event.wait())
-                    elif (event.type == pygame.MOUSEMOTION):
-                        for text in self.help_text_widgets:
-                            orig = text.highlight
-                            orig_rect = text.rect
-                            text.highlight = text.rect.collidepoint(event.pos)
-                            if orig != text.highlight:
-                                for t in self.help_text_widgets:
-                                    t.dirty = True
-                                self.draw_bg(rect=orig_rect) #Redraw background if highlight state changes
-                    elif (event.type == pygame.MOUSEBUTTONDOWN):
-                        for text in self.help_text_widgets:
-                            text.on_mouse_button_down(event)
-                    elif (event.type == pygame.MOUSEBUTTONUP):
-                        for text in self.help_text_widgets:
-                            text.on_mouse_button_up(event)
-                    elif (event.type == self.BACK_CLICK):
-                        self.main()
-                elif self.state == "Highscore":
-                    if (event.type == pygame.ACTIVEEVENT):
-                        if (event.gain == 1):
+                        if (event.gain =
                             for text in self.highscore_text_widgets:
                                 text.dirty = True
                             self.draw()
@@ -735,35 +637,7 @@ class Menu(object):
                     elif (event.type == pygame.MOUSEBUTTONUP):
                         for text in self.highscore_text_widgets:
                             text.on_mouse_button_up(event)
-                    elif (event.type == self.BACK_CLICK):
-                        self.main()
-            self.draw()
-
-    def draw(self):
-        """Draw everything"""
-        for text in self.main_text_widgets:
-            text.draw(self.screen)
-        for text in self.help_text_widgets:
-            text.draw(self.screen)
-        for text in self.highscore_text_widgets:
-            text.draw(self.screen)
-        pygame.display.update()
-
-    def run_game(self):
-        self.game = Game(self.screen)
-        self.game.run()
-        del self
-    
-    def load_game(self, fileName=SAVE_FILE_NAME):
-        if not saveFileExists(fileName):
-            self.main()
-            return
-        shouldRemoveSaveFile = False
-        loadFile = open(fileName, 'rb')
-        try:
-            self.game = pickle.load(loadFile)
-        except:
-            shouldRemoveSaveFile = True
+                    elif (event.type == self.BACK_CLICK)
         finally:
             loadFile.close()
         if shouldRemoveSaveFile:
