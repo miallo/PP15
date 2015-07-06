@@ -319,7 +319,7 @@ Diese Eigenschaft ist für das Echolot wichtig. Eine gute Einführung in das The
 
 
 \subsection{Schichtung eines Sees}
-
+\label{sec:Schichtung}
 Man unterscheidet drei Tiefenschichten eines Sees.
 Diese haben alle verschiedene physikalische, chemische, sowie biologische Eigenschaften.
 Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden. 
@@ -415,18 +415,19 @@ Durch Umstellen erhält man eine Formel für die Temperatur in Grad Celsius
 	\caption{Kennwerte des Widerstandsthermometers.}
 	\label{tab:Pt1000}
 \end{table}
+\newpage
 \section{Durchführung}
 \label{sec:durchfuehrung}
 
 \subsection{Aufbau des Datenloggers}
 Der Datenlogger ist speziell für diese Aufgabe entworfen und gebaut.
-Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infoneon$^\copyright$ mit einem 32bit Mikrocontroller.
+Die Basis für diesen ist das XMC4500 RelaxKit von der Firma Infineon$^\copyright$ mit einem 32bit Mikrocontroller.
 Dieser wurde mithilfe der Software Dave$^\copyright$ von der gleichen Firma programmiert.
-Die Bedienung erfolgt über ein Interface aus drei Tastern und eine LCD Display.
-Das Display dient nicht nur der Steuerung, sondern zeigt auch im Sekundentakt die Momentanen Messwerte an.
+Die Bedienung erfolgt über ein Interface aus drei Tastern und ein LCD Display.
+Das Display dient nicht nur der Steuerung, sondern zeigt auch im Sekundentakt die momentanen Messwerte an.
 Zur Bestimmung der am Controller anliegenden Spannung wird ein integrierter Analog Digital Converter (ADC) verwendet.
 Dieser berechnet die Spannung über ein iteratives Verfahren, in dem er die anliegende Spannung mit einer Referenzspannung vergleicht.
-Die Referenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht je nachdem, ob die zu messende Spannung kleiner oder größer ist.
+Die Referenzspannung wird bei jedem Schritt halbiert oder um die Hälfte erhöht -- je nachdem, ob die zu messende Spannung kleiner oder größer ist.
 Der ADC hat eine Auflösung von 12bit, wie im Datenblatt \cite[7]{XMCRelaxkit} zu lesen ist, somit hat das Verfahren auch 12 Schritte.
 Die Referenzspannung liegt bei 3.3\si{\volt}, welche vom Board intern bereitgestellt wird.
 Diese Spannung ist auch die Maximalspannung, die an einen Pin des Mikrocontrollers angelegt werden darf, ohne ihn zu zerstören.
@@ -435,13 +436,12 @@ Somit kann die Spannung aus dem ausgegebenen ADCWert über die Bereichsbreite be
 \begin{align}
 	U=\text{ADCWert}\cdot B~.\label{eq:ADCwert}
 \end{align}
-Die Daten werden in Form einer ASCII Datei auf einer SD-Karte gespeichert um sie später am Computer leichter in einem Plotprogramm bearbeiten zu können.
+Die Daten werden in Form einer ASCII Datei auf einer SD-Karte gespeichert, um sie später am Computer leichter in einem Plotprogramm bearbeiten zu können.
 Dies sorgt aber für ein größeres Datenaufkommen.
 Jede Datei trägt, zur besseren Identifikation, den aktuellen Monat, Tag, Stunde und Minute als Namen (MMDDhhmm.dat).
-In der Datei wird die Zeit in Millisekunden, die ADCWerte von Temperatur, Photodiode und Druck, sowie die berechneten Werte der Temperatur, Intensität, Druck und Tiefe berechnet aus dem aktuellen Luftdruck eingetragen.
+In der Datei wird folgendes eingetragen: die Zeit in Millisekunden, die ADCWerte von Temperatur, Photodiode und Druck, sowie die berechneten Werte der Temperatur, Intensität, Druck und Tiefe, letztere berechnet aus dem aktuellen Luftdruck.
 Der aktuelle Luftdruck kann über das Einstellungsmenü direkt am Logger geändert werden.\\
-Die Zeit wird anhand der aktuellen Zeit und jedem weiteren Zeitschritt bestimmt.
-Das Programm kann von 10 bis zu maximal 500 Werten pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden können.
+Das Programm kann mit einer Datenrate zwischen 10 und 500 Werte pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden kann.
 Der Zeitschritt wird abhängig von der Aufnahmefrequenz berechnet und eingetragen.\\
 Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert werden.
 Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
@@ -451,32 +451,30 @@ In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt
 
 \subsubsection{Temperaturmessung}
 Für die Messung der Temperatur wird mit einem Pt1000 Temperaturwiderstand gearbeitet.
-Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
+Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf, da er sich sonst erwärmt.
 Aus diesem Grund muss die am Pt1000 abfallende Spannung noch verstärkt werden.
-Dies geschieht mithilfe eines nicht-invertierenden Verstärkers wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
-Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigte Beschaltung eine Verstärkungsfaktor von 11.
-Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereiche des ADCs liegt.\\
-Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehendem Widerstandsnetzwerk leitet sich die Formel
+Dies geschieht mithilfe eines nichtinvertierenden Verstärkers, wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
+Mit der Formel \eqref{eq:verst} ergibt sich aus der in der Abbildung \ref{fig:PT1000Schaltung} gezeigten Beschaltung ein Verstärkungsfaktor von 11.
+Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereich des ADCs liegt.\\
+Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehenden Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
 	R_\text{Pt1000}=\frac{R_1\cdot U_\text{ADC}}{3.3\si{\volt}-U_\text{ADC}}
 \end{align}
 ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
-Zur anschließenden Berechnung der Temperatur aus den gemessenen Widerständen wird die Formel \eqref{eq:temperapt1000} verwendet.\\
-Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschichtet.
-Dieser sollte nur die Reaktionszeit beeinflussen.
+Zur anschließenden Berechnung der Temperatur aus dem gemessenen Widerstand wird die Formel \eqref{eq:temperapt1000} verwendet.\\
+Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Klebstofffilm  beschichtet, welcher nur die Reaktionszeit beeinflussen sollte.
 
 \subsubsection{Lichtmessung}
 Für die Lichtmessung wird eine Photodiode als intensitätsabhängige Stromquelle verwendet.
 Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
-Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine Messbare Spannung zu wandeln.
-Da in den See nicht viel Licht eintritt, wird die sich ergebene Spannung noch über einen nicht-invertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 Verstärkt.
+Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine messbare Spannung zu wandeln.
+Da das Licht nicht tief in den See eintreten kann, wird die sich ergebende Spannung noch über einen nichtinvertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
-Um die Absorption in verschiedenen Spektren zu Messen hat die Messsonde eine Blaue und eine Infrarote LED
-mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
+Um die Absorption in verschiedenen Spektren zu messen, hat die Messsonde eine blaue und eine infrarote LED mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
 Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
-Um die LEDs von dem Umgebungslicht zu unterscheiden werden diese gepulst, sie werden im bestimmten Zyklen ein und aus geschaltet.
-Die Frequenz mit der die LEDs nacheinander ein und aus geschaltet werden heißt Umschaltfrequenz und ist von 0\si{\hertz} bis 20\si{\hertz} durchschaltbar.
-Im Programm werden die Linien von den jeweiligen LEDs und den Phasen ohne LED-Betrieb getrennt gespeichert.
+Um die LEDs von dem Umgebungslicht zu unterscheiden, werden diese gepulst, sie werden in einem bestimmten Zyklen ein und aus geschaltet.
+Die Frequenz, mit der die LEDs nacheinander ein und aus geschaltet werden, die sogenannte Umschaltfrequenz, ist von 0\si{\hertz} bis 20\si{\hertz} durchschaltbar.
+Im Programm werden die Daten mit der jeweils angeschalteten LED und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
 \subsubsection{Druckmessung}
 \label{sec:durchdruck}
@@ -494,45 +492,44 @@ Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wir
 \subsubsection{Echolotmessung}
 Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
 Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschallbereich.
-Der Sendekristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maximalspannung zu erhöhen wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.
-Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf den Senderkristall gegeben.\\
+Der Sendekristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt. Um diese Maximalspannung zu erhöhen, wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.
+Um die Tiefe zu messen, muss ein klar definiertes Signal ausgesendet werden.
+Hierzu werden 20 Schwingungen auf den Senderkristall gegeben.\\
 Das Empfängerkristall wird über einen Verstärker direkt an den ADC angeschlossen.
 Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
 Die Entfernung wird nach dem Gesetzen aus dem Kapitel \ref{sec:theschallgeschw} berechnet.
-Zur Bestimmung der Bodenbeschaffenheit wird zudem das ganze ausgesendete Signal aufgezeichnet und anschließend analysiert.
+Zur Bestimmung der Bodenbeschaffenheit soll zudem das ganze ausgesendete Signal aufgezeichnet und anschließend analysiert werden.
 
 \subsection{Positionsbestimmung via GPS und Geodimeter}
 \label{sec:durchpos}
 Die Bestimmung der Position wird zum einen mithilfe eines Geodimeters durchgeführt.
 Dieses berechnet, wie im Kapitel\ref{sec:theoort} beschrieben, die Position durch eine genaue Berechnung der Entfernung und des Winkels mithilfe eines Lasers und einem Retroreflektor.
-Diese Messmethode ist sehr genau, benötigt aber zwei Teams, eines das an Land das Geodimeter bedient, sowie die Koordinaten notiert und eines, dass auf dem Boot den Retroreflektor positioniert.\\
-Als Alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten an die letzte Stelle der Messdatei schreibt.
+Diese Messmethode ist sehr genau, benötigt aber zwei Teams: Eines, das an Land das Geodimeter bedient, sowie die Koordinaten notiert und Eines, das auf dem Boot den Retroreflektor positioniert.\\
+Als Alternative hierzu wird ein GPS in den Datenlogger implementiert, welches bei jeder Messung die aktuellen globalen Koordinaten in die letzte Stelle der Messdatei schreibt.
 Hierzu wird ein GPS von Garmin$^{\copyright}$ verwendet, welches in der Geophysik vorhanden war.
-Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die $\pm6\si{\volt}$ auf TTL Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
-Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
+Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pegelkonverters die ausgegebenen $\pm6\si{\volt}$ auf TTL-Signale mit einem maximalen Pegel von 3.3\si{\volt} und einem minimalen Pegel von 0\si{\volt} konvertiert.
+Dies geschieht über 5 Dioden und einen Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
 Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
 Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomuhrzeit als ASCII Text jede Sekunde an den Logger.
-Mithilfe der Zeit kann die RTC (Realtimeclock) des Boards einmalig auf die GPS-Zeit eingestellt werden.
-
-\subsection{Messdurchführung}
-
-Zur Vermessung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte sinnvoll einzuschränken und sich eine Rasterung zu überlegen.
-Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden müssen.
-Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
-Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führe.
-
-Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält, den Messstab für das Geodimeter hochhält und ausrichtet.
-Wird die Einzelmessung der App gleichzeitig mit dem Datenlogger gestartet, so wird zu den GPS-Daten der App gleich der Dateiname der Messreihe gespeichert.
-Ist nun die Messung gestartet, so wird die Sonde langsam ins Wasser gelassen.
-Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde nur mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
-Erreicht die Sonde den Boden, so muss die Messung beendet werden, da sich sonst gegebenenfalls Schlamm um die Sensoren legt.
-Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gezogen werden um die doppelte Anzahl an Messwerten für die jeweilige Tiefe zu bekommen.
-
-Erreicht die Sonde in diesem Fall wieder die Oberfläche, so wird die Messung beendet.
-Dies ist notwendig, da der Lichtsensor an der Oberfläche durch die Sonneneinstrahlung eine zu hohe Spannung liefert und so den ADC übersteuert.
+Mithilfe der Zeit kann die RTC (RealTimeClock) des Boards einmalig auf die GPS-Zeit eingestellt werden.
 
 \subsection{Smartphone-App}
 \label{sec:app}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Einzelne Datenpunkte an einer Stelle des Sees.\label{fig:appDetail}]
+  {\includegraphics[width=0.32\textwidth]{Fotos/AppSeeDetail}}
+  \hfill
+  \subfigure[Übersicht über alle aufgenommenen Messpunkte in der App.\label{fig:appGesamt}]
+  {\includegraphics[width=0.32\textwidth]{Fotos/AppSeeKomplett}}
+  \hfill
+  \subfigure[Auswahl der zu versendenden Datei.\label{fig:appTabelle}]
+  {\includegraphics[width=0.32\textwidth]{Fotos/AppVersenden}}
+  \caption{Screenshots der App.}
+  \label{fig:appScreenshots}
+\end{figure}
+
 Da bei der ersten Messung schon das Abfahren des relativ kleinen Göttinger Kiessees in einem regelmäßigen Raster nicht leicht war, haben wir eine App für das Smartphone erstellt.
 Das GPS-Modul des Smartphones liefert die aktuelle Position und stellt sie auf einer Karte dar.
 Nun gibt es zwei Möglichkeiten:
@@ -555,19 +552,22 @@ Tippt man nun auf eine der Zeilen, so wird eine Mail erstellt, die schon voreing
 Diese kann nun bequem mit einem Tippen versandt werden.
 
 
-\begin{figure}[h]
-  \centering
-  \subfigure[Einzelne Datenpunkte an einer Stelle des Sees.\label{fig:appDetail}]
-  {\includegraphics[width=0.32\textwidth]{Fotos/AppSeeDetail}}
-  \hfill
-  \subfigure[Übersicht über alle aufgenommenen Messpunkte in der App.\label{fig:appGesamt}]
-  {\includegraphics[width=0.32\textwidth]{Fotos/AppSeeKomplett}}
-  \hfill
-  \subfigure[Auswahl der zu versendenden Datei.\label{fig:appTabelle}]
-  {\includegraphics[width=0.32\textwidth]{Fotos/AppVersenden}}
-  \caption{Screenshots der App.}
-  \label{fig:appScreenshots}
-\end{figure}
+\subsection{Messdurchführung}
+
+Zur Vermessung eines Sees ist es notwendig, zunächst den Bereich, den man vermessen möchte, sinnvoll einzuschränken und sich eine Rasterung zu überlegen.
+Dabei ist zu bedenken, dass für jeden Messpunkt ca. 3-5min eingerechnet werden müssen.
+Auch müssen die Positionen, sofern sie mit dem Geodimeter ermittelt werden sollen, alle von einem Punkt am Ufer aus sichtbar sein.
+Man könnte zwar das Geodimeter umstellen, jedoch würde dies zu einer enorm vergrößerten Unsicherheit des Ortes führen.
+
+Die eigentliche Messung besteht darin, dass der Ruderer an einer Stelle anhält, den Messstab für das Geodimeter hochhält und ausrichtet.
+Nutzt man das GPS zur Positionsbestimmung, muss stattdessen gleichzeitig die aktuelle Position mit der selbstgeschriebenen App markiert werden und der Datenlogger gestartet werden, damit zu den GPS-Daten der App gleich der Dateiname der Messreihe gespeichert wird.
+Ist nun die Messung gestartet, so wird die Sonde langsam ins Wasser gelassen.
+Um eine signifikante Menge an Datenpunkten für alle Tiefen zu bekommen, darf man die Sonde nur mit einer Sinkgeschwindigkeit von höchstens 10cm/s herunterlassen.
+Erreicht die Sonde den Boden, so muss die Messung beendet werden, da sich sonst gegebenenfalls Schlamm um die Sensoren legt.
+Kommt das Gewicht nicht auf dem Boden an, so kann die Sonde wieder nach oben gezogen werden um die doppelte Anzahl an Messwerten für die jeweilige Tiefe zu bekommen.
+
+Erreicht die Sonde in diesem Fall wieder die Oberfläche, so wird die Messung beendet.
+Dies ist notwendig, da der Lichtsensor an der Oberfläche durch die Sonneneinstrahlung eine zu hohe Spannung liefert und so den ADC übersteuert.
 
 
 \section{Auswertung}
@@ -599,6 +599,8 @@ Dies ist schlecht, da man somit manchmal überhaupt keine richtigen Daten hat, d
 \end{figure}
 
 In Abb. \ref{fig:tiefeGoe} sind die Tiefen an den jeweiligen Messpunkten am Göttinger Kiessee aufgetragen.
+Die von GPS ausgegebenen Lattitude und Longitude Daten werden mithilfe einer Kugel vom Radius $R=40000\si{\kilo\meter}$ auf Oberflächenkoordinaten umgerechnet.
+Desweiteren werden die Koordinaten anhand eines Referenzpunktes auf Länge und Breite des Sees zurückgerechnet.
 Diese wurden mit dem Geodimeter bestimmt und die gestrichelten Linien verbinden die Messpunkte miteinander.
 Dabei ist zu erkennen, dass die Fahrt kein regelmäßiges Muster verfolgt.
 %so kovariant gewesen wurde Quantenzahl davon Torpedoabschussrampe achso der Sinn geht hier gegen Null...
@@ -768,7 +770,9 @@ Zuerst wird der Median bestimmt; nun werden nur noch Werte unterhalb dessen betr
 Außerdem schließt man Ausreißer nach unten aus, indem der untere Quartilwert$-3\si{\celsius}$ als $T_\text{min}$ verwendet wird.
 Von den verbleibenden Werten wird der Mittelwert genommen.
 Dieses Verfahren wird in Abb. \ref{fig:tempAlg} verdeutlicht.
-Das Resultat des Filtervorgangs ist in Abb. \ref{fig:temp_nor} zu sehen.\\
+Das Resultat des Filtervorgangs ist in Abb. \ref{fig:temp_nor} zu sehen.
+Betrachtet man den Tiefenbereich ab von etwa 0\si{\meter} bis 6\si{\meter}, so kann man die in Kapitel \ref{sec:Schichtung} beschriebene Schicht Epilimnion erkennen.
+Ab 6\si{\meter} erkennt man einen weiteren Übergang, der dann in eine weitere Schicht, in die Thermonokline überführt.\\
 Wieder wurden alle Daten in einen Plot eingezeichnet, denn der See schien  im Rahmen der Messfehler homogen.
 Man erkennt drei verschiedene Bereiche: $0.2-1.5\,$m, $1.5-5.9\,$m und $5.9-7.5\,$m.
 Die gefittete Kurve besteht aus drei linearen Fits, welche in den einzelnen Bereichen durchgeführt werden.
@@ -952,7 +956,11 @@ Dieser ist für Ströme von bis zu 350mA ausgelegt.
 Augenscheinlich haben da die etwa 30\si{\milli\ampere}, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
 Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen nicht zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
 Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und führte trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
-Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
+Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.\\
+Was sich aus den Daten besonders gut zeigt ist die Schichtunge des Sees in der Temperatur.
+Besonders gut sichtbar ist der zweite Übergang in die tiefere Schicht.
+Dies ist ein Glücksfall, da eigentlich, nach Kapitel \ref{sec:Schichtung}, die Schicht erst bei etwa 10\si{\meter} beginnen sollte.
+Somit war unser Kabel gerade lang genug um in den Übergang diese Schicht eindringen zu können.
 
 \subsection{Absorption von Licht}
 Bei der Messung der Absorption stellte sich sehr schnell heraus, dass die Daten stark verrauscht sind, besonders an der Oberfläche des Wassers.
