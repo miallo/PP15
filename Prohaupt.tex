@@ -631,7 +631,8 @@ Daher ist das Befahren dort verboten.
 
 \begin{figure}[!h]
 	\centering
-	\input{Northeim/karte}
+	%\resizebox{\linewidth}{!}{\input{Northeim/tiefe}}
+	\input{Northeim/tiefe}
 	\caption{Messpunkte auf dem Northeimer See.}
 	\label{fig:GPSNort}
 \end{figure}
@@ -656,7 +657,7 @@ An den anderen Punkten war es tiefer als unser Kabel hergab, also tiefer als 7 M
 \begin{figure}[!htb]
 	\centering
 	\input{GoeKiessee/tiefeGoe.tex}
-	\caption{Göttinger Kiessee: Tiefe}
+	\caption{Göttinger Kiessee: Tiefe.}
 	\label{fig:tiefeGoe}
 \end{figure}
 
@@ -671,10 +672,11 @@ In Abb. \ref{fig:temp_goe} sind alle von uns aufgenommenen Temperaturen bis $40\
 Darüber\-hinaus waren noch einige Werte bei bis zu $140\,\si{\celsius}$, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
 Ebenfalls ist dort ein linearer Fit über die Werte, welche im Wasser aufgenommen wurden und sich unterhalb von $24\,\si{\celsius}$ befinden.
 Von diesen nehmen wir nämlich an, dass sie richtig sind und dort der Temperaturwiderstand mit der richtigen Spannung von $3.3\,$V betrieben wird.
-Die Gerade hat die Form $T(z)=21.185\si{\celsius}-0.430\si{\celsius\per\meter}\cdot z$.
-An ihr kann man den allgemeinen Trend erkennen, dass es pro Meter etwa $0.43\si{\celsius}$ kälter wird.
+Die Gerade hat die Form $T(z)=(21.2\pm 0.7)\si{\celsius}-(0.43\pm 0.05)\si{\celsius\per\meter}\cdot z$.
+An ihr kann man den allgemeinen Trend erkennen, dass es pro Meter etwa $0.4\si{\celsius}$ bis  $0.5\si{\celsius}$  kälter wird.
 Die Messwerte schwanken jedoch um diese Gerade um bis zu $2\si{\celsius}$.
-Sie stammen jedoch auch von mehreren Messreihen, also von unterschiedlichen Orten und zu verschiedenen Zeiten.
+Sie stammen aber auch von mehreren Messreihen, also von unterschiedlichen Orten und zu verschiedenen Zeiten.
+So sind die angegebenen Fehler keine Fehlerwerte aus einem linearen Fit, sondern resultieren aus verschiedenen Einschränkungen des akzeptierten Wertebereichs, denn die Korrelation der Daten ist auf Grund der starken Streuung nicht besonders gut.
 Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und der vergleichsweise geringen Zeitspanne nicht möglich.
 
 \begin{figure}[h]
@@ -683,6 +685,18 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 \caption{Temperaturverlauf am Göttinger Kiessee mit fast allen aufgenommenen Werten. Einige Werte, welche offensichtlich durch Wackelkontakte zu Stande kommen (bis zu $140^\circ$C) wurden zwecks Übersichtlichkeit ausgeblendet.}
 \label{fig:temp_goe}
 \end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\subfigure[Temperatur gegen Tiefe. \label{fig:tempGoeBsp1}]
+   {\resizebox{0.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp.tex}}}
+   \hfill
+   \subfigure[Temperatur gegen Zeit.\label{fig:tempGoeBsp2}]
+   {\resizebox{.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp2.tex}}}
+	\caption{Göttingen: Zwei beispielhafte Verläufe der Temperatur.}
+	\label{fig:tempGoeBsp}
+\end{figure}
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{TempSchlamm}
@@ -696,7 +710,7 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 \begin{figure}[!htb]
 	\centering
 	\input{Northeim/temp_roh.tex}
-	\caption{Rohdaten der Temperaturmessung}
+	\caption{Rohdaten der Temperaturmessung.}
 	\label{fig:temp_nor_Roh}
 \end{figure}
 
@@ -724,7 +738,7 @@ Das Resultat des Filtervorgangs ist in Abb. \ref{fig:temp_nor} zu sehen.
 Wieder wurden alle Daten in einen Plot eingezeichnet, denn der See schien  im Rahmen der Messfehler homogen.
 Man erkennt drei verschiedene Bereiche: $0.2-1.5\,$m, $1.5-5.9\,$m und $5.9-7.5\,$m.
 Die gefittete Kurve besteht aus drei linearen Fits, welche in den einzelnen Bereichen durchgeführt werden.
-Es ergeben sich die Werte aus Tabelle \ref{tab:tempTabNor}
+Es ergeben sich die Werte aus Tabelle \ref{tab:tempTabNor}.
 
 \begin{table}[!htb]
 \centering
@@ -750,9 +764,11 @@ Tiefe [m] & Temperaturabnahme [$\frac{^\circ C}{\text m}$] & Temperaturintervall
 
 Da wir in der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
 Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.
-Vergleicht man jeweils die beiden Temperaturkurven in Abb. \ref{fig:tempV1} und \ref{fig:tempV3}, erkennt man keine großen Temperaturdifferenzen.
+Vergleicht man jeweils die beiden Temperaturkurven in Abb. \ref{fig:tempV1} bis \ref{fig:tempV3}, erkennt man keine großen Temperaturdifferenzen.
 Die Messfehler scheinen zu überwiegen.
-In Abb. \ref{fig:tempV2} ist jedoch die später aufgenommene Kurve deutlich unter der anderen.
+Eventuell kann man in der Abb.\ref{fig:tempV3} erkennen, dass sich die Seeoberfläche leicht erwärmt hat
+Für eine genauere Analyse hätte man jedoch über einen längeren Zeitraum messen müssen.
+In Abb. \ref{fig:tempV2} ist die später aufgenommene Kurve etwa $0.5\si\celsius$ unter der anderen.
 Dies kann verschiedene Gründe haben: Zum einen kann dies ein Fehler des obigen Filteralgorithmus sein, zum anderen könnte es auf Messfehler zurückzuführen sein, denn eine so starke Abkühlung scheint nicht plausibel.
 Wir erwarten nämlich eine Erwärmung, da an diesem Tag die Sonne gut gescheint hat.
 Auffällig ist auch, dass die zweite Messreihe etwa 1.5 Meter kürzer ist, der See in dieser Region also steil abzufallen scheint.
@@ -760,51 +776,63 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 
 \begin{figure}[!htb]
 	\centering
-	\subfigure[Karte \label{fig:GPSNortZweimal}]
+	\subfigure[Karte. \label{fig:GPSNortZweimal}]
    {\resizebox{0.49\linewidth}{!}{\input{Northeim/karte2.tex}}}
    \hfill
-   \subfigure[Verlauf 1\label{fig:tempV1}]
+   \subfigure[Verlauf 1.\label{fig:tempV1}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/tempV1.tex}}}
    \hfill
-   \subfigure[Verlauf 2\label{fig:tempV2}]
+   \subfigure[Verlauf 2.\label{fig:tempV2}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/tempV2.tex}}}
    \hfill
-   \subfigure[Verlauf 3\label{fig:tempV3}]
+   \subfigure[Verlauf 3.\label{fig:tempV3}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/tempV3.tex}}}
-	\caption{Messpunkte, die wir zweimal besucht haben, und deren Temperaturkurven.}
+	\caption{Messpunkte (in a), die wir zweimal besucht haben, und deren Temperaturkurven.}
 	\label{fig:tempNort2}
 \end{figure}
 
 
 \subsection{Licht}
 
+\begin{figure}[!htb]
+	\centering
+	\input{GoeKiessee/lichtGoe.tex}
+	\caption{Göttingen Lichtabsorbtion: alle Messdaten (logarithmisch).}
+	\label{fig:lichtGoe}
+\end{figure}
+
 \begin{figure}[!h]
 	\centering
-	\subfigure[Northeim Lichtabsorbtion: alle Messdaten (logarithmisch) \label{fig:lichtabs}]
-   {\resizebox{0.49\linewidth}{!}{\input{Northeim/licht.tex}}}
+	\subfigure[Northeim Lichtabsorbtion: alle Messdaten (logarithmisch). \label{fig:lichtabs}]
+   {\resizebox{0.7\linewidth}{!}{\input{Northeim/licht.tex}}}
    \hfill
-   \subfigure[gute Korrelation\label{fig:l1}]
+   \subfigure[Einzelne Verläufe: Gute Korrelation.\label{fig:l1}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/l1.tex}}}
    \hfill
-   \subfigure[schlechte Korrelation\label{fig:l2}]
+   \subfigure[Einzelne Verläufe: Schlechte Korrelation.\label{fig:l2}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/l2.tex}}}
    \hfill
-   \subfigure[Unterschied Sonnenlicht+LED zu Sonnenlicht (logarithmisch) \label{fig:led}]
-   {\resizebox{.49\linewidth}{!}{\input{Northeim/led.tex}}}
-	\caption{Northeim: Lichtabsorption und Streuung}
+	\caption{Northeim: Lichtabsorption.}
 	\label{fig:lichtNort}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
+	\caption{Unterschied Sonnenlicht+LED zu Sonnenlicht (logarithmisch)}
+	\label{fig:led}]
 \end{figure}
 
 
 \subsection{Gemessenes Abstandsgesetz}
-Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir die Abstandsabhängigkeit der Schallintensität näher untersucht. 
+Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir nur die Abstandsabhängigkeit der Schallintensität näher untersucht. 
 Dies wurde zunächst mit der Motivation durchgeführt eine mit der vorgegebenen Sendeleistung maximale Reichweite zu ermitteln. Als klar wurde, dass diese nicht ausreichen wird haben wir
 die Abnahme der Amplitude weiter untersucht.
 
 Zu diesem Zweck haben wir Sender und Empfänger parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
-ein Oszilloskop verwendet.
+ein Oszilloskop als Empfänger verwendet.
 
-Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
+Wir haben hierfür drei Messreihen durchgeführt und anschließend wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
 
 \begin{figure}[h]
 	\centering
@@ -813,13 +841,11 @@ Wir haben hierfür drei Messreihen durchgeführt, dann wurde für jede Entfernun
 	\label{fig:schall}
 \end{figure}
 
-Zudem wurde eine $\chi^2$ Anpassung an die berechneten Mittelwerte durchgeführt, wobei hier die in der Theorie vorgestellte $\frac{1}{d}$ - Abhängigkeit angenommen wurde.
-Es wurde hier also angenommen, dass die mit dem Oszilloskop gemessene Amplitude sich wie die Abstandsabhängigkeit des Schalldrucks verhält.
+Zudem wurde eine $\chi^2$ Anpassung an die berechneten Mittelwerte durchgeführt, wobei hier die in der Theorie vorgestellte $\frac{1}{d}$ - Abhängigkeit angenommen wurde, sprich die mit dem Oszilloskop gemessene Amplitude sich wie die Abstandsabhängigkeit des Schalldrucks verhält.
 Dies erscheint sinnvoll, denn entscheidend für die angezeigte Amplitude ist, welche Beschleunigungen auf den Empfänger wirken.
 Diese wiederum entsprechen Druckschwankungen.
 
-
-Da die eingezeichneten Fehlerbalken sich nur aus der statistischen Standardabweichung berechnen muss davon ausgehen werden, dass die Messung eigentlich noch ungenauer bezüglich der Amplitude waren. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
+Die eingezeichneten Fehlerbalken ergeben sich nur aus der statistischen Standardabweichung da diese die abgeschätzten Fehler von 0.1\% Amplitude zu klein sind. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
 Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (vgl. Theorie). 
 
 

@@ -12,8 +12,11 @@ set cblabel '$z$ [m]'
 
 set key bottom right
 
+set xrange [-400:1000]
+set yrange [-1600:200]
 set zrange [*:-0.5]
-set grid
+
+set xtics 250
 
 la(x)=x*(40000/360)
 lo(x,y)=la(x)*sin(pi/2-pi/180*y)
