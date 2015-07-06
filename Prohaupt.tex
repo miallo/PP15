@@ -677,7 +677,18 @@ An ihr kann man den allgemeinen Trend erkennen, dass es pro Meter etwa $0.4\si{\
 Die Messwerte schwanken jedoch um diese Gerade um bis zu $2\si{\celsius}$.
 Sie stammen aber auch von mehreren Messreihen, also von unterschiedlichen Orten und zu verschiedenen Zeiten.
 So sind die angegebenen Fehler keine Fehlerwerte aus einem linearen Fit, sondern resultieren aus verschiedenen Einschränkungen des akzeptierten Wertebereichs, denn die Korrelation der Daten ist auf Grund der starken Streuung nicht besonders gut.
-Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und der vergleichsweise geringen Zeitspanne nicht möglich.
+Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und der vergleichsweise geringen Zeitspanne nicht möglich.\\
+In den Abbildung \ref{fig:tempGoeBsp1} ist noch einmal zu sehen, dass die Temperatur sich Zeitlich extremstark ändert.
+Diese Daten sind nicht auszuwerten, da sich der See in der angegebenen Zeit nicht in der Temperatur verdoppelt hat.
+Es ist in diesen Daten kein Muster zu erkennen, dass sich eindeutig einem bestimmten Fehler zuordnen lässt, wie im nächsten Kapitel es der Fall war.\\
+In der Abbildung \ref{fig:tempGoeBsp2} ist nocheinmal der gleiche Datensatz Datensatz von 15:14 Uhr, wie in der Abbildung \ref{fig:tempGoeBsp1} zu sehen.
+Dieser Plot zeigt, dass sich die zwei linien, die man gegen die Tiefe aufgetragen erkennent, durch einen Sprung zustanden kommen, der gegen die Zeit ausgetragen zu erkennen ist.
+Dieser Sprung verdeutlicht den Wackelkontackt, der oben bereits angemerkt wurde.
+Somit sind auch diese Daten nicht auswertbar, da man nicht sagen kann welche von beiden die richtige Linie für die Temperatur im See ist.\\
+Die Abbildung \ref{fig:tempSchlamm} zeigt, einen Temperaturverlauf gegen die Tiefe aufgetragen.
+In diesem Plot ergeben sich zwei Linien, die einen stetigen Übergang in einer bestimtem Tiefe besitzen.
+Bei dieser Messung traf die Sonden auf dem Boden auf und sammelte Schlamm an.
+Die Temperatur verläuft von oben nach unten, da der Schlamm unten im See deutlich kühler ist, als das umgebene Wasser.
 
 \begin{figure}[h]
 \centering
@@ -688,21 +699,22 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 
 \begin{figure}[!h]
 	\centering
-	\subfigure[Temperatur gegen Tiefe. \label{fig:tempGoeBsp1}]
+	\subfigure[Temperaturverlauf von zwei ausgesuchten Datensätzen in Göttingen gegen Tiefe. \label{fig:tempGoeBsp1}]
    {\resizebox{0.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp.tex}}}
    \hfill
-   \subfigure[Temperatur gegen Zeit.\label{fig:tempGoeBsp2}]
+   \subfigure[Temperaturverlauf von einer ausgewählten Messreihe in Göttingen gegen Zeit.\label{fig:tempGoeBsp2}]
    {\resizebox{.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp2.tex}}}
-	\caption{Göttingen: Zwei beispielhafte Verläufe der Temperatur.}
+	\caption{Aus der Messreihe in Göttingen wurden zwei beispielhafte Verläufe der Temperatur gegen Zeit und Tiefe aufgetragen.}
 	\label{fig:tempGoeBsp}
 \end{figure}
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{TempSchlamm}
-	\caption{Einfluss von Schlamm auf dem Temperatursensor. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen. (Messung Göttinger Kiessee).}
+	\caption{Bei der Messung in Göttingen wird der Einfluss von Schlamm auf dem Temperatursensor gezeigt. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen. Es ist zu dem der Stätige Übergang zwischen den beiden Linien bei fester Tiefe zu sehen.}
 	\label{fig:tempSchlamm}
 \end{figure}
+
 
 
 \subsubsection{Northeim}
@@ -793,7 +805,7 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 Bei den Daten der Photodiode zeigte sich in den Messdaten zu einen ein starkes Schwanken auf dem ersten Meter und zu anderen ein abnehmendes Verhalten.
 Dennoch werden die Daten nicht gefiltert, da hier wieder der See als homogen angenommen wird, können alle Datenpunkte verwendet werden.
 Bei der Auswertung werden alle Daten logarithmisch aufgetragen, da dies aufgrund der Gleichung \ref{eq:absorblicht} zu erwarten war. 
-Es soll sich ein linearer Zusammenhang zeigen, der proportional zum Absorbtionskoeffizienten ist.
+Es soll sich ein linearer Zusammenhang zeigen, der proportional zum Absorptionskoeffizienten ist.
 Um über den ganzen See zu mitteln, werden alle Messdaten aus allen Messreihen in einen Graphik gebracht und eine Grenzgerade eingefügt.
 Diese liegt von Oben an den Messwerten an, um die Übersichtlichkeit zu gewähren.
 Die Intensität $I$ ist in unserem Fall proportional zur Photospannung $U_\text{Photo}$.
@@ -819,7 +831,7 @@ Somit sollten auch die Messwerte besser korrelieren.
 Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorption stärker von der des Wassers abhängen.
 \begin{figure}[!h]
 	\centering
-	\subfigure[Alle Messwerte der Lichtabsorbtion in Northeim logarithmisch aufgetragen. Zu dem ist wieder die Grenzgerade eingetragen. \label{fig:lichtabs}]
+	\subfigure[Alle Messwerte der Lichtabsorption in Northeim logarithmisch aufgetragen. Zu dem ist wieder die Grenzgerade eingetragen. \label{fig:lichtabs}]
    {\resizebox{0.7\linewidth}{!}{\input{Northeim/licht.tex}}}
    \hfill
    \subfigure[Einzelne Messugen mit guter Korrelation.\label{fig:l1}]
@@ -855,7 +867,7 @@ Des Weiteren ist die, wie oben beschriebene Streuungen auf den ersten Metern imm
 Da die Werte konstant gegen die Tiefe sind berechnen wir den Mittelwert aus den jeweiligen Intensitäten.
 Für die blaue LED ergibt sich eine mittlere Intensität von $I_\text{blau}=(3.1\pm2.7)\si{\volt}$ und für infrarote eine mittlere Intensität von $I_\text{IR}=(5.9\pm3.7)\si{\volt}$.
 Die größer der Fehler von bis zu 88\% ergeben sich aus den starken Streuungen der Messwerte.
-Die Fehler bilden sich jeweils aus der Standardtabweichung.
+Die Fehler bilden sich jeweils aus der Standardabweichung.
 Die Infrarote LED hat somit eine etwa doppelt so hohe Intensität, wie die Blaue LED.
 
 \subsection{Gemessenes Abstandsgesetz}
@@ -871,7 +883,7 @@ Wir haben hierfür drei Messreihen durchgeführt und anschließend wurde für je
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{schall.pdf}
-	\caption{Relative Amplitude wurde aufgetragen gegen den Abstand $d$. Zudem wurde eine $\chi^2$ Anpassung an die Messdaten durchgeführt.}
+	\caption{Relative Amplitude des Echolotes wurde aufgetragen gegen den Abstand $d$. Zudem wurde eine $\chi^2$ Anpassung an die Messdaten durchgeführt.}
 	\label{fig:schall}
 \end{figure}
 
@@ -880,7 +892,8 @@ Dies erscheint sinnvoll, denn entscheidend für die angezeigte Amplitude ist, we
 Diese wiederum entsprechen Druckschwankungen.
 
 Die eingezeichneten Fehlerbalken ergeben sich nur aus der statistischen Standardabweichung da diese die abgeschätzten Fehler von 0.1\% Amplitude zu klein sind. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
-Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (siehe Abschnitt \ref{sec:abs}). 
+Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2.5\si{\centi\meter} auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40\si{\centi\meter} ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (siehe Abschnitt \ref{sec:abs}). 
+
 
 
 \section{Diskussion}
@@ -1035,7 +1048,7 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Fotos/LEDSchaltung.png}
-\caption{Ersatzschaltbild der LEDs für die Messung der Absorbtion. Die Spannung wird vom Board bereitgestellt. Auf dem Board werden die LEDs durch bipolare Transistoren geschaltet und über den selben Widerstand versorgt, da sie nie zur selben Zeit eingeschaltet sind.}
+\caption{Ersatzschaltbild der LEDs für die Messung der Absorption. Die Spannung wird vom Board bereitgestellt. Auf dem Board werden die LEDs durch bipolare Transistoren geschaltet und über den selben Widerstand versorgt, da sie nie zur selben Zeit eingeschaltet sind.}
 \label{fig:LEDSchaltung}
 \end{figure}
 \begin{figure}[!h]
