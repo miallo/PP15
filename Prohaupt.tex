@@ -710,7 +710,7 @@ Auch diese Daten sind nicht auszuwerten, da die Schlammtemperatur aus fast allen
 	\label{fig:tempGoeBsp}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{TempSchlamm}
 	\caption{Bei der Messung in Göttingen wird der Einfluss von Schlamm auf dem Temperatursensor gezeigt. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen. Es ist zu dem der Stätige Übergang zwischen den beiden Linien bei fester Tiefe zu sehen.}
@@ -723,9 +723,13 @@ Auch diese Daten sind nicht auszuwerten, da die Schlammtemperatur aus fast allen
 \label{sec:austempnortheim}
 \begin{figure}[!htb]
 	\centering
-	\input{Northeim/temp_roh.tex}
-	\caption{Rohdaten der Temperaturmessung in Northeim.}
-	\label{fig:temp_nor_Roh}
+	\subfigure[Rohdaten der Temperaturmessung. \label{fig:temp_nor_Roh}]
+	{\resizebox{0.39\textwidth}{!}{\input{Northeim/temp_roh.tex}}}
+	\hfill
+	\subfigure[Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit. Die ersten Messwerte bei 0\si{\meter} ergeben sich beim Eintauchen der Sonde und sind deswegen nicht beachtet.\label{fig:temp_nor}]
+	{\resizebox{0.59\textwidth}{!}{\input{Northeim/temp.tex}}}
+	\caption{Temperaturmessung Northeim.}
+	\label{fig:temp_Nord}
 \end{figure}
 
 In Grafik \ref{fig:temp_nor_Roh} sind alle Temperaturmessungen der Messung in Northeim aufgetragen.
@@ -766,14 +770,6 @@ Tiefe [m] & Temperaturabnahme [$\frac{^\circ C}{\text m}$] & Temperaturintervall
 \caption{Temperaturkoeffizienten aus dem Fit von Abb. \ref{fig:temp_nor}.}
 \label{tab:tempTabNor}
 \end{table}
-
-
-\begin{figure}[!h]
-\centering
-\input{Northeim/temp.tex}
-\caption{Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit. Die ersten Messwerte bei 0\si{\meter} ergeben sich beim Eintauchen der Sonde und sind deswegen nicht beachtet.}
-\label{fig:temp_nor}
-\end{figure}
 
 
 Da wir in der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
@@ -821,20 +817,20 @@ Somit haben alle Intensität die Einheit Volt.
 \begin{figure}[!htb]
 	\centering
 	\input{GoeKiessee/lichtGoe.tex}
-	\caption{Alle gemessenen Intensitätwerte aus Göttingen logarithmisch aufgetragen. Desweiteren ist die Grenzgerade, welche die mittlere Intesitätsabnahme darstellt, eingetragen.}
+	\caption{Alle gemessenen Intensitätwerte aus Göttingen logarithmisch aufgetragen. Des Weiteren ist die Grenzgerade, welche die mittlere Intensitätsabnahme darstellt, eingetragen.}
 	\label{fig:lichtGoe}
 \end{figure}
-Bei den Göttigen Messungen, zeigte sich, dass der See mit vielen Schwebeteilchen durchzogen war, somit der Absorptionskoeffizient nicht nur rein vom Wasser abhängt.
-Wie oben geschrieben wurde alle aufgennomenen Messwerte der Absorption gegen die Tiefe aufgetragen.
+Bei den Göttingen Messungen, zeigte sich, dass der See mit vielen Schwebeteilchen durchzogen war, somit der Absorptionskoeffizient nicht nur rein vom Wasser abhängt.
+Wie oben geschrieben wurde alle aufgenommenen Messwerte der Absorption gegen die Tiefe aufgetragen.
 Dies ist für Göttingen in der Abbildung \ref{fig:lichtGoe} zu sehen.
-Dadurch, dass alle Messwerte aufgetragen sind, ergibt sich ein linearer Zusammenhang, der proportinal zum Mittelwert der gemessenen Absorption ist.
-Die linearer Regression ergebiet den Steigungskoeffizienten $a=(-3.3\pm0.3)\si{\per\meter}$.
+Dadurch, dass alle Messwerte aufgetragen sind, ergibt sich ein linearer Zusammenhang, der proportional zum Mittelwert der gemessenen Absorption ist.
+Die linearer Regression ergibt den Steigungskoeffizienten $a=(-3.3\pm0.3)\si{\per\meter}$.
 Bei der Messung wurde mit einem Offset von $3.31\si{\milli\volt}$ gerechnet, da die Photodiode hier einen nicht verschwindenden Dunkelstrom hat.
 
 \subsubsection{Northeimer Kiessee}
-Bei der Messung in Northeim konnte in gößeren Tiefen gemessen werden, als in Göttingen.
+Bei der Messung in Northeim konnte in größeren Tiefen gemessen werden, als in Göttingen.
 Somit sollten auch die Messwerte besser korrelieren.
-Desweiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorption stärker von der des Wassers abhängen.
+Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorption stärker von der des Wassers abhängen.
 \begin{figure}[!h]
 	\centering
 	\subfigure[Alle Messwerte der Lichtabsorption in Northeim logarithmisch aufgetragen. Zu dem ist wieder die Grenzgerade eingetragen. \label{fig:lichtabs}]
@@ -846,19 +842,19 @@ Desweiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göt
    \subfigure[Einzelne Messungen mit schlechte Korrelation.\label{fig:l2}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/l2.tex}}}
    \hfill
-	\caption{Ergebnisse der Absorptionsmessung in Northeim. Es sind die Ergebnisse der Grenzgeraden und einige Koralletionen aufgetragen.}
+	\caption{Ergebnisse der Absorptionsmessung in Northeim. Es sind die Ergebnisse der Grenzgeraden und einige Korrelationen aufgetragen.}
 	\label{fig:lichtNort}
 \end{figure}
-In Abbildung \ref{fig:lichtabs} sind wieder alle aufgennomenen Messwerte der Intensität gegen die Tiefe aufgetragen.
+In Abbildung \ref{fig:lichtabs} sind wieder alle aufgenommenen Messwerte der Intensität gegen die Tiefe aufgetragen.
 $a=0.40\pm0.02$.
 Ebenfalls ist wieder eine linearer Regression durchgeführt worden, die den Mittelwert der Absorption zeigt, da der See wieder als homogen angenommen wird.\\%Ergebnisse
-In den Abbildungen \ref{fig:l1} und \ref{fig:l2} sind jeweils eine gute und eine schlechte einzelregression zu sehen.
-Es ist gut zu erkennen, dass an einigen Stellen die Photiode homogen beschienen wird und somit durchgehend die Absorption vom Wasser bestimmt werden konnte.
+In den Abbildungen \ref{fig:l1} und \ref{fig:l2} sind jeweils gute und schlechte Korrelationen zu sehen.
+Es ist gut zu erkennen, dass an einigen Stellen die Photodiode homogen beschienen wird und somit durchgehend die Absorption vom Wasser bestimmt werden konnte.
 Die zeigt sich auch in den Korrelationskoeffizienten, die alle zwischen $r=0.93$ und $r=0.96$ liegen.
 Die linearen Konstanten sind zwar alle etwas unterschiedliche, von $a=-0.773\pm0.004$ bis zu $-0.524\pm0.004$.
 Mittelt man aber über alle Messwerte ergibt sich auf die Steigung der Geraden, wie im Gesamtplot \ref{fig:lichtabs} gezeigt.
-In der schlechten Messung ist die linearer Auswertung fast nicht Möglich, da die Messwerte sehr stark schwanken.
-Die Korrelationskoeffzienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.\\
+In der schlechten Messung ist die linearer Auswertung fast nicht möglich, da die Messwerte sehr stark schwanken.
+Die Korrelationskoeffizienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.\\
 \begin{figure}[!htb]
 	\centering
 	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
@@ -869,7 +865,7 @@ In der Abbildung \ref{fig:led} sind die gemessenen Intensitäten der LEDs gegen 
 Hierzu wurden jeweils die Intensitäten bei abgeschalteten LEDs von den jeweiligen Werten bei angeschalteten LEDs subtrahiert.
 Dies soll zu dem das Rauschen der Sonnenintensität reduzieren.%diesen Punkt kann an gut diskutieren
 Das Ergebnis zeigt eine Konstante, die aber für die beiden LEDs verschieden sind.
-Desweiteren ist die, wie oben beschriebene Streuungen auf den ersten Metern immer noch gut zu erkennen.
+Des Weiteren ist die, wie oben beschriebene Streuungen auf den ersten Metern immer noch gut zu erkennen.
 Da die Werte konstant gegen die Tiefe sind berechnen wir den Mittelwert aus den jeweiligen Intensitäten.
 Für die blaue LED ergibt sich eine mittlere Intensität von $I_\text{blau}=(3.1\pm2.7)\si{\volt}$ und für infrarote eine mittlere Intensität von $I_\text{IR}=(5.9\pm3.7)\si{\volt}$.
 Die größer der Fehler von bis zu 88\% ergeben sich aus den starken Streuungen der Messwerte.
