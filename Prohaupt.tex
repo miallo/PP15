@@ -592,11 +592,18 @@ Dies ist schlecht, da man somit manchmal überhaupt keine richtigen Daten hat, d
 
 \subsection{Ortsbestimmung}
 \label{sec:ausort}
+\begin{figure}[!htb]
+	\centering
+	\input{GoeKiessee/tiefeGoe.tex}
+	\caption{Tiefe in Göttingen gegen die Ortsmesspunkte als Farbkarte aufgetragen.}
+	\label{fig:tiefeGoe}
+\end{figure}
+
 \begin{figure}[!h]
-\centering
-\input{GoeKiessee/GPSvsGeo.tex}
-\caption{Position des Bootes laut GPS-Signal verglichen mit den Geodimeter Messorten in Göttingen.}
-\label{fig:GPSGoe}
+	\centering
+	\resizebox{0.85\textwidth}{!}{\input{GoeKiessee/GPSvsGeo.tex}}
+	\caption{Position des Bootes laut GPS-Signal verglichen mit den Geodimeter Messorten in Göttingen.}
+	\label{fig:GPSGoe}
 \end{figure}
 
 In Abb. \ref{fig:tiefeGoe} sind die Tiefen an den jeweiligen Messpunkten am Göttinger Kiessee aufgetragen.
@@ -624,7 +631,6 @@ Dies ist vielleicht auch zu erwarten, da beide ähnliche Signale bekamen.
 Der GPS-Logger zeigte die Genauigkeit auf dem Display an, welche fast immer 3m betrug.
 Diese hohe Genauigkeit, welche sich unter "`Normalbedingungen"' nur selten erreichen lässt, wird dadurch erklärt, dass wir auf einer weiten Fläche ohne große Hindernisse waren.
 Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren konnte.
-
 In Abb. \ref{fig:GPSNort} kann man erkennen, dass wir in Northeim mit der Unterstützung der Smart\-phone-App wesentlich besser gefahren sind.
 Dass wir die östliche Seite des Sees nicht befahren haben, liegt daran, dass dort noch aktiv Kies abgebaut wird.
 Daher ist das Befahren dort verboten.
@@ -632,12 +638,7 @@ Daher ist das Befahren dort verboten.
 
 \subsection{Druck \& Tiefe}
 \label{sec:ausdruck}
-\begin{figure}[!htb]
-	\centering
-	\input{GoeKiessee/tiefeGoe.tex}
-	\caption{Tiefe in Göttingen gegen die Ortsmesspunkte als Farbkarte aufgetragen.}
-	\label{fig:tiefeGoe}
-\end{figure}
+
 Laut Datenblatt und wie im Kapitel \ref{sec:durchdruck} beschrieben, sollte die Spannung der Druckmessbrücke linear mit dem Druck steigen und pro Bar ein Volt größer werden.
 Allerdings bemerkten wir schon während der Messung, dass die vom Datenlogger angezeigten Werte nicht ganz mit den von uns vorgenommenen Markierungen am Kabel im 1m Abstand übereinzustimmen schienen.
 So ließen wir die Sensoren laut Kabel bis in eine Tiefe von ca. $7.5\,$m hinab.
@@ -664,28 +665,24 @@ Dies sorgt dafür, dass die Werte aus Northeim in der Auswertung verlässlicher 
 Näheres dazu in den jeweiligen Unterkapiteln.
 
 \subsubsection{Göttingen}
-\begin{figure}[h]
-\centering
-\input{GoeKiessee/temp_goe.tex}
-\caption{Temperaturverlauf am Göttinger Kiessee mit fast allen aufgenommenen Werten. Einige Werte, welche offensichtlich durch Wackelkontakte zu Stande kommen (bis zu $140^\circ$C) wurden zwecks Übersichtlichkeit ausgeblendet.}
-\label{fig:temp_goe}
-\end{figure}
+
 \begin{figure}[!h]
 	\centering
+	\subfigure[Temperaturverlauf am Göttinger Kiessee mit fast allen aufgenommenen Werten. Einige Werte, welche offensichtlich durch Wackelkontakte zu Stande kommen (bis zu $140^\circ$C) wurden zwecks Übersichtlichkeit ausgeblendet\label{fig:temp_goe}]
+   {\resizebox{0.49\linewidth}{!}{\input{GoeKiessee/temp_goe.tex}}}
+   \hfill
+   \subfigure[Bei der Messung in Göttingen wird der Einfluss von Schlamm auf dem Temperatursensor gezeigt. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen. Es ist zu dem der stetige Übergang zwischen den beiden Linien bei fester Tiefe zu sehen.\label{fig:tempSchlamm}]
+   {\includegraphics[width=0.49\linewidth]{TempSchlamm}}
+   \hfill   
 	\subfigure[Temperaturverlauf von zwei ausgesuchten Datensätzen in Göttingen gegen Tiefe. \label{fig:tempGoeBsp1}]
    {\resizebox{0.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp.tex}}}
    \hfill
    \subfigure[Temperaturverlauf von einer ausgewählten Messreihe in Göttingen gegen Zeit.\label{fig:tempGoeBsp2}]
-   {\resizebox{.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp2.tex}}}
-	\caption{Aus der Messreihe in Göttingen wurden zwei beispielhafte Verläufe der Temperatur gegen Zeit und Tiefe aufgetragen.}
-	\label{fig:tempGoeBsp}
+   {\resizebox{.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp2.tex}}}   
+	\caption{Temperatur des Göttinger Kiessees: alle Werte, der Einfluss von Schlamm und zwei beispielhafte Verläufe der Temperatur gegen Zeit und Tiefe.}
+	\label{fig:tempGoe}
 \end{figure}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\linewidth]{TempSchlamm}
-	\caption{Bei der Messung in Göttingen wird der Einfluss von Schlamm auf dem Temperatursensor gezeigt. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen. Es ist zu dem der stetige Übergang zwischen den beiden Linien bei fester Tiefe zu sehen.}
-	\label{fig:tempSchlamm}
-\end{figure}
+
 In Abb. \ref{fig:temp_goe} sind alle von uns aufgenommenen Temperaturen bis $40\,\si{\celsius}$ aufgetragen.
 Darüber hinaus waren noch einige Werte bei bis zu $140\,\si{\celsius}$, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
 Ebenfalls ist dort ein linearer Fit über die Werte, welche im Wasser aufgenommen wurden und sich unterhalb von $24\,\si{\celsius}$ befinden.
@@ -716,10 +713,10 @@ Auch diese Daten sind nicht auszuwerten, da die Schlammtemperatur aus fast allen
 \begin{figure}[!htb]
 	\centering
 	\subfigure[Rohdaten der Temperaturmessung. \label{fig:temp_nor_Roh}]
-	{\resizebox{0.39\textwidth}{!}{\input{Northeim/temp_roh.tex}}}
+	{\resizebox{0.34\textwidth}{!}{\input{Northeim/temp_roh.tex}}}
 	\hfill
 	\subfigure[Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit. Die ersten Messwerte bei 0\si{\meter} ergeben sich beim Eintauchen der Sonde und sind deswegen nicht beachtet.\label{fig:temp_nor}]
-	{\resizebox{0.59\textwidth}{!}{\input{Northeim/temp.tex}}}
+	{\resizebox{0.65\textwidth}{!}{\input{Northeim/temp.tex}}}
 	\caption{Temperaturmessung in Northeim mit allen Messdaten und den bereinigten.}
 	\label{fig:temp_Nord}
 \end{figure}
@@ -760,13 +757,13 @@ Außerdem schließt man Ausreißer nach unten aus, indem der untere Quartilwert$
 Von den verbleibenden Werten wird der Mittelwert genommen.
 Dieses Verfahren wird in Abb. \ref{fig:tempAlg} verdeutlicht.
 Das Resultat des Filtervorgangs ist in Abb. \ref{fig:temp_nor} zu sehen.
-Betrachtet man den Tiefenbereich ab von etwa 0\si{\meter} bis 6\si{\meter}, so kann man die in Kapitel \ref{sec:Schichtung} beschriebene Schicht Epilimnion erkennen.
-Ab 6\si{\meter} erkennt man einen weiteren Übergang, der dann in eine weitere Schicht, in die Thermonokline überführt.\\
 Wieder wurden alle Daten in einen Plot eingezeichnet, denn der See schien  im Rahmen der Messfehler homogen.
 Man erkennt drei verschiedene Bereiche: $0.2-1.5\,$m, $1.5-5.9\,$m und $5.9-7.5\,$m.
 Die gefittete Kurve besteht aus drei linearen Fits, welche in den einzelnen Bereichen durchgeführt werden.
-Es ergeben sich die Werte aus Tabelle \ref{tab:tempTabNor}.
-\begin{table}[!htb]
+Es ergeben sich die Werte aus Tabelle \ref{tab:tempTabNor}.Betrachtet man den Tiefenbereich von etwa 0\si{\meter} bis 6\si{\meter}, so kann man die in Kapitel \ref{sec:Schichtung} beschriebene Schicht Epilimnion erkennen.
+Ab 6\si{\meter} erkennt man einen weiteren Übergang, der dann in eine weitere Schicht, in die Thermonokline überführt.\\
+
+\begin{table}[!h]
 \centering
 \begin{tabular}{|c||c|c|}
 \hline
@@ -791,7 +788,23 @@ Auffällig ist auch, dass die zweite Messreihe etwa 1.5 Meter kürzer ist, der S
 Diese Veränderung zu messen, wäre sicherlich auch interessant.
 
 \subsection{Licht}
-
+\begin{figure}[!h]
+	\centering
+	\subfigure[Alle gemessenen Intensitätswerte aus Göttingen logarithmisch aufgetragen. Des Weiteren ist die Grenzgerade, welche die mittlere Intensitätsabnahme darstellt, eingetragen. \label{fig:lichtGoe}]
+   {\resizebox{0.49\linewidth}{!}{\input{GoeKiessee/lichtGoe.tex}}}
+   \hfill	
+	\subfigure[Alle Messwerte der Lichtabsorption in Northeim logarithmisch aufgetragen. Zu dem ist wieder die Grenzgerade eingetragen. \label{fig:lichtabs}]
+   {\resizebox{0.49\linewidth}{!}{\input{Northeim/licht.tex}}}
+   \hfill
+   \subfigure[Northeim: Einzelne Messungen mit guter Korrelation.\label{fig:l1}]
+   {\resizebox{.49\linewidth}{!}{\input{Northeim/l1.tex}}}
+   \hfill
+   \subfigure[Northeim: Einzelne Messungen mit schlechte Korrelation.\label{fig:l2}]
+   {\resizebox{.49\linewidth}{!}{\input{Northeim/l2.tex}}}
+   \hfill
+	\caption{Ergebnisse der Absorptionsmessung. Es sind die Ergebnisse der Grenzgeraden und einige Verläufe aufgetragen.}
+	\label{fig:lichtNort}
+\end{figure}
 Bei der Photodiode zeigte sich in den Messdaten zum einen ein starkes Schwanken auf dem ersten Meter und zu anderen ein abnehmendes Verhalten.
 Dennoch werden die Daten nicht gefiltert. Da hier wieder der See als homogen angenommen wird, können alle Datenpunkte verwendet werden.
 Bei der Auswertung werden alle Daten logarithmisch aufgetragen, da dies aufgrund der Gleichung \ref{eq:absorblicht} zu erwarten war. 
@@ -802,12 +815,6 @@ Die Intensität $I$ ist in unserem Fall proportional zur Photospannung $U_\text{
 Somit haben alle Intensität die Einheit Volt.
 
 \subsubsection{Göttinger Kiessee}
-\begin{figure}[!htb]
-	\centering
-	\input{GoeKiessee/lichtGoe.tex}
-	\caption{Alle gemessenen Intensitätswerte aus Göttingen logarithmisch aufgetragen. Des Weiteren ist die Grenzgerade, welche die mittlere Intensitätsabnahme darstellt, eingetragen.}
-	\label{fig:lichtGoe}
-\end{figure}
 Bei den Göttinger Messungen, zeigte sich, dass der See mit vielen Schwebeteilchen durchzogen war, somit der Absorptionskoeffizient nicht nur rein vom Wasser abhängt.
 Wie oben geschrieben wurden alle aufgenommenen Messwerte der Absorption gegen die Tiefe aufgetragen.
 Dies ist für Göttingen in der Abbildung \ref{fig:lichtGoe} zu sehen.
@@ -818,26 +825,7 @@ Dies liegt im Sonnenspektrum, ist aber durch unsere Literaturwerte nicht näher 
 Bei der Messung wurde mit einem Offset von $3.31\si{\milli\volt}$ gerechnet, da die Photodiode hier einen nicht verschwindenden Dunkelstrom hat.
 
 \subsubsection{Northeimer Kiessee}
-\begin{figure}[!h]
-	\centering
-	\subfigure[Alle Messwerte der Lichtabsorption in Northeim logarithmisch aufgetragen. Zu dem ist wieder die Grenzgerade eingetragen. \label{fig:lichtabs}]
-   {\resizebox{0.7\linewidth}{!}{\input{Northeim/licht.tex}}}
-   \hfill
-   \subfigure[Einzelne Messungen mit guter Korrelation.\label{fig:l1}]
-   {\resizebox{.49\linewidth}{!}{\input{Northeim/l1.tex}}}
-   \hfill
-   \subfigure[Einzelne Messungen mit schlechte Korrelation.\label{fig:l2}]
-   {\resizebox{.49\linewidth}{!}{\input{Northeim/l2.tex}}}
-   \hfill
-	\caption{Ergebnisse der Absorptionsmessung in Northeim. Es sind die Ergebnisse der Grenzgeraden und einige Korrelationen aufgetragen.}
-	\label{fig:lichtNort}
-\end{figure}
-\begin{figure}[!htb]
-	\centering
-	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
-	\caption{Intensität der einzelnen LEDs (Infrarot und Blau) in Differenz zur Sonnenintensität aufgetragen für die Northeimer Messung.}
-	\label{fig:led}
-\end{figure}
+
 Bei der Messung in Northeim konnte in größeren Tiefen gemessen werden, als in Göttingen.
 Somit sollten auch die Messwerte besser korrelieren.
 Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorption stärker von der des Wassers abhängen.
@@ -855,6 +843,14 @@ Dies ist verwunderlich, da wir von den Daten guter Korrelationen erwarten, dass 
 In der schlechten Messung ist die linearer Auswertung fast nicht möglich, da die Messwerte sehr stark schwanken.
 Die Korrelationskoeffizienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.
 Bei der zweiten Kurve (grün) lässt sich wahrscheinlich eine Drehung der Sonde beobachten.\\
+
+\begin{figure}[!htb]
+	\centering
+	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
+	\caption{Intensität der einzelnen LEDs (Infrarot und Blau) in Differenz zur Sonnenintensität aufgetragen für die Northeimer Messung.}
+	\label{fig:led}
+\end{figure}
+
 In der Abbildung \ref{fig:led} sind die gemessenen Intensitätsunterschiede zwischen an- und ausgeschalteten LEDs gegen die Tiefe aufgetragen.
 Dies soll zudem den Einfluss der Sonnenintensität reduzieren.
 Das Ergebnis zeigt etwa eine Konstante für jede der beiden LEDs.
@@ -946,7 +942,7 @@ Dies machte ein sonnst notwendiges Sortieren der Dateien nach Ort und Zeit unnö
 \label{sec:DiskTemp}
 \begin{figure}[h]
 	\centering
-	\input{Northeim/tempSprung.tex}
+	\resizebox{0.7\textwidth}{!}{\input{Northeim/tempSprung.tex}}
 	\caption{Vergrößerte Darstellung einer Temperaturkurve. Es ist gut das Rippling in den einzelnen Blöcken und die Verschiebung der Blöcke zu sehen.}
 	\label{fig:tempSprung}
 \end{figure}
