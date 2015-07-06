@@ -932,6 +932,12 @@ Dies machte ein sonnst notwendiges Sortieren der Dateien nach Ort und Zeit unnö
 
 \subsection{Temperatur}
 \label{sec:DiskTemp}
+\begin{figure}[h]
+	\centering
+	\input{Northeim/tempSprung.tex}
+	\caption{Vergrößerte Darstellung einer Temperaturkurve. Es ist gut das Rippling in den einzelnen Blöcken und die Verschiebung der Blöcke zu sehen.}
+	\label{fig:tempSprung}
+\end{figure}
 Bei der zweiten Messung zeigte sich in den Daten, wie im Kapitel \ref{sec:austempnortheim} beschrieben, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
 Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:tempSprung} zu erkennen, dass jeweils ungefähr 10 Messwerte auf einem niedrigen, dann auf einem mittleren, erneut auf einem niedrigen und dann wieder auf einem hohen Niveau liegen.
 Dies entspricht der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
@@ -941,13 +947,6 @@ Augenscheinlich haben da die etwa 30\si{\milli\ampere}, welche die LEDs benötig
 Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen nicht zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
 Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und führte trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
 Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
-
-\begin{figure}[h]
-	\centering
-	\input{Northeim/tempSprung.tex}
-	\caption{Vergrößerte Darstellung einer Temperaturkurve. Es ist gut das Rippling in den einzelnen Blöcken und die Verschiebung der Blöcke zu sehen.}
-	\label{fig:tempSprung}
-\end{figure}
 
 \subsection{Absorption von Licht}
 Bei der Messung der Absorption stellte sich sehr schnell heraus, dass die Daten stark verrauscht sind, besonders an der Oberfläche des Wassers.
