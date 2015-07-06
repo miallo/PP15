@@ -810,9 +810,6 @@ Die linearer Regression ergibt den Steigungskoeffizienten $a=(-3.3\pm0.3)\si{\pe
 Bei der Messung wurde mit einem Offset von $3.31\si{\milli\volt}$ gerechnet, da die Photodiode hier einen nicht verschwindenden Dunkelstrom hat.
 
 \subsubsection{Northeimer Kiessee}
-Bei der Messung in Northeim konnte in größeren Tiefen gemessen werden, als in Göttingen.
-Somit sollten auch die Messwerte besser korrelieren.
-Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorption stärker von der des Wassers abhängen.
 \begin{figure}[!h]
 	\centering
 	\subfigure[Alle Messwerte der Lichtabsorption in Northeim logarithmisch aufgetragen. Zu dem ist wieder die Grenzgerade eingetragen. \label{fig:lichtabs}]
@@ -827,6 +824,15 @@ Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Gö
 	\caption{Ergebnisse der Absorptionsmessung in Northeim. Es sind die Ergebnisse der Grenzgeraden und einige Korrelationen aufgetragen.}
 	\label{fig:lichtNort}
 \end{figure}
+\begin{figure}[!htb]
+	\centering
+	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
+	\caption{Intensität der einzelnen LEDs (Infrarot und Blau) in Differenz zur Sonnenintensität aufgetragen für die Northeimer Messung.}
+	\label{fig:led}
+\end{figure}
+Bei der Messung in Northeim konnte in größeren Tiefen gemessen werden, als in Göttingen.
+Somit sollten auch die Messwerte besser korrelieren.
+Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorption stärker von der des Wassers abhängen.
 In Abbildung \ref{fig:lichtabs} sind wieder alle aufgenommenen Messwerte der Intensität gegen die Tiefe aufgetragen.
 $a=0.40\pm0.02$.
 Ebenfalls ist wieder eine linearer Regression durchgeführt worden, die den Mittelwert der Absorption zeigt, da der See wieder als homogen angenommen wird.\\%Ergebnisse
@@ -837,12 +843,6 @@ Die linearen Konstanten sind zwar alle etwas unterschiedliche, von $a=-0.773\pm0
 Mittelt man aber über alle Messwerte ergibt sich auf die Steigung der Geraden, wie im Gesamtplot \ref{fig:lichtabs} gezeigt.
 In der schlechten Messung ist die linearer Auswertung fast nicht möglich, da die Messwerte sehr stark schwanken.
 Die Korrelationskoeffizienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.\\
-\begin{figure}[!htb]
-	\centering
-	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
-	\caption{Intensität der einzelnen LEDs (Infrarot und Blau) in Differenz zur Sonnenintensität aufgetragen für die Northeimer Messung.}
-	\label{fig:led}
-\end{figure}
 In der Abbildung \ref{fig:led} sind die gemessenen Intensitäten der LEDs gegen die Tiefe aufgetragen.
 Hierzu wurden jeweils die Intensitäten bei abgeschalteten LEDs von den jeweiligen Werten bei angeschalteten LEDs subtrahiert.
 Dies soll zu dem das Rauschen der Sonnenintensität reduzieren.%diesen Punkt kann an gut diskutieren
