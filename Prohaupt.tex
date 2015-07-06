@@ -706,7 +706,7 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 
 
 \subsubsection{Northeim}
-
+\label{sec:austempnortheim}
 \begin{figure}[!htb]
 	\centering
 	\input{Northeim/temp_roh.tex}
@@ -916,14 +916,14 @@ Dies machte ein sonnst notwendiges Sortieren der Dateien nach Ort und Zeit unnö
 
 \subsection{Temperatur}
 \label{sec:DiskTemp}
-Bei der zweiten Messung zeigte sich in den Daten, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
+Bei der zweiten Messung zeigte sich in den Daten, wie im Kapitel \ref{sec:austempnortheim} beschrieben, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
 Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:tempSprung} zu erkennen, dass jeweils ungefähr 10 Messwerte auf einem niedrigen, dann auf einem mittleren, erneut auf einem niedrigen und dann wieder auf einem hohen Niveau liegen.
 Dies entspricht der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
 Für beide Messungen benutzten wir den Micro-Controller als Spannungsquelle.
 Dieser ist für Ströme von bis zu 350mA ausgelegt.
-Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
-Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen noch zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
-Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
+Augenscheinlich haben da die etwa 30\si{\milli\ampere}, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
+Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen nicht zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
+Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und führte trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
 Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
 
 \begin{figure}[h]
