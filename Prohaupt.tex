@@ -953,39 +953,38 @@ Für beide Messungen benutzten wir den Micro-Controller als Spannungsquelle.
 Dieser ist für Ströme von bis zu 350mA ausgelegt.
 Augenscheinlich haben da die etwa 30\si{\milli\ampere}, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
 Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen nicht zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
-Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und führte trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
-Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.\\
-Was sich aus den Daten besonders gut zeigt ist die Schichtunge des Sees in der Temperatur.
+Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an, was trotz seiner Größe von $19.2\si{\kilo\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000 führte.\\
+Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% fehlerhaft sind und diese nur gefiltert werden mussten.\\
+Was sich aus den Daten besonders gut zeigt, ist die Schichtung des Sees in der Temperatur.
 Besonders gut sichtbar ist der zweite Übergang in die tiefere Schicht.
-Dies ist ein Glücksfall, da eigentlich, nach Kapitel \ref{sec:Schichtung}, die Schicht erst bei etwa 10\si{\meter} beginnen sollte.
-Somit war unser Kabel gerade lang genug um in den Übergang diese Schicht eindringen zu können.
+Dies ist ein Glücksfall, da nach Kapitel \ref{sec:Schichtung}, die Schicht (zumindest im September) erst bei etwa 10\si{\meter} beginnen sollte.
+Somit war unser Kabel gerade lang genug, um in den Übergang diese Schicht eindringen zu können.
 
 \subsection{Absorption von Licht}
 Bei der Messung der Absorption stellte sich sehr schnell heraus, dass die Daten stark verrauscht sind, besonders an der Oberfläche des Wassers.
-Dies liegt wahrscheinlich daran, dass durch die Bewegung der Wasseroberfläche das Sonnenlicht besser und schlechter Reflektiert wird.
-Um dieses hochfrequente Rauschen zu unterdrücken kann der Strom der Photodiode zusätzlich noch durch einen Tiefpassfilter geleitet werden.
+Dies liegt wahrscheinlich daran, dass durch die Bewegung der Wasseroberfläche das Sonnenlicht mal mehr und mal weniger reflektiert wird.
+Um dieses hochfrequente Rauschen zu unterdrücken, kann der Strom der Photodiode zusätzlich noch durch einen Tiefpassfilter geleitet werden.
 Hierzu müsste nur eine Drosselspule in Reihe mit der Photodiode und dem ADC geschaltet werden.
 Somit werden nur die niederfrequenten Änderungen des Photostroms aufgezeichnet.\\
-Des weiteren waren die beide LEDs zur Messung der Absorption in verschiedenen Spektren nicht nah genug an der Photodiode, um eine signifikante Änderung an den Werten zu führen, die nicht im Rauschen untergeht.
+Des Weiteren waren die beide LEDs zur Messung der Absorption in verschiedenen Spektralbereichen nicht nah genug an der Photodiode, um zu einer signifikante Änderung an den Werten zu führen, die nicht im Rauschen untergeht.
 Ebenfalls wurde bei der Wahl der Diode nicht darauf geachtet, dass diese eine unterschiedliche Aufnahmecharakteristik für die verwendeten Wellenlängen hat.
 Laut Datenblatt \cite[20]{PHOTODatenblatt} liegt der Unterschied in der Effizienz zwischen den beiden Wellenlängen bei 40\%, was sich auch in der Auswertung bemerkbar machte.\\
 Die Auswertung zeigte, dass die Ergebnisse der LED Auswertung trotz der Subtraktionsmethode noch stark rauschen.
 Dies zeigt sich in den großen Fehlern von bis zu 88\% in der Standartabweichung.
-Des weiteren sind die mittleren Intensitäten der einzelnen LEDs auch sehr klein, da sie nur in 1\% des Messbereiches liegen.\\
-Desweiteren war der Göttingen Kiessee, wie die Messwerte zeigen, mit sehr vielen Schwebstoffen durchsetzt.
-Im Vergleich zu der Absorbtionsmessung in Northeim ist zudem auch die Steigung der Grenzgeraden im eine Größenordnung Steiler.
-Dies festigt das Argument, da trotz der geringen Tiefe des Göttinger Kissees die Intensität rapide abnimmt.
+Des Weiteren sind die mittleren Intensitäten der einzelnen LEDs auch sehr klein, da sie nur in 1\% des Messbereiches liegen.\\
+Außerdem war der Göttingen Kiessee, wie die Messwerte zeigen, mit sehr vielen Schwebstoffen durchsetzt.
+Im Vergleich zu der Absorbtionsmessung in Northeim ist zudem auch die Steigung der Grenzgeraden um eine Größenordnung steiler.
 
 \subsection{Echolot}
 Die Idee des Echolots konnte nicht vollständig umgesetzt werden, da das Signal nicht stark genug war, um bis in eine Tiefe von etwa 6\si{\meter} einzudringen und reflektiert zu werden.
-Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und dazu ist eine größere physische Ausdehnung des Kristalls nötig.
-Dies kann entweder durch das Verwenden von einer höheren Spannung am Sender oder durch das Verwenden einer H-Brücke getan werden.
-Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls führt.
+Um in diese Vordringen zu können, müsste ein höherer Schalldruck erzeugt werden und wozu eine größere physische Ausdehnung des Kristalls nötig wäre.
+Dies kann entweder durch das Verwenden einer höheren Spannung am Sender oder durch das Verwenden einer H-Brücke getan werden.
+Letztere erzeugt $\pm24\si{\volt}$, was zur doppelten physischen Ausdehnung des Kristalls führt.
 Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werden.
 Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden und dies zu einem hohen Leckstrom führt, der die Bauteile beschädigen kann.
-Des weiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
+Des Weiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
 Wir haben dennoch ein paar Testdaten aufnehmen und auswerten können.
-Dieser Teil des Projektes ist auch für weitere Praktika interessant, da diese Methode kommerziell häufig eingesetzt wird und auch in der Wissenschaft zur Bodenanalyse verwendet werden kann.
+Dieser Teil des Projektes ist gegebenenfalls auch für zukünftige Praktika interessant, da diese Methode kommerziell häufig eingesetzt wird und auch in der Wissenschaft zur Bodenanalyse verwendet werden kann.
 Die Probleme, die gelöst werden müssen, sind die Spannungsversorgung und ein funktionsfähiger Filteralgorithmus zur Rauschreduktion.
 
 \subsection{Messprobleme und verworfene Ideen}
@@ -997,8 +996,8 @@ Dies verwarfen wir jedoch auch sehr schnell, da die Fernsteuertechnik einen gro�
 Auch hätten wir Probleme bekommen, falls sich zum Beispiel die Sensoren in Wasserpflanzen verfangen.
 
 So entschieden wir uns für die simplere Umsetzung, ein Ruderboot zu nehmen und die Stromversorgung, sowie die Datenverarbeitung im Boot zu betreiben und nur die Sensoren an den Kabeln herunter zu lassen.
-Dies sollte zunächst mithilfe eines Datenloggers der Goephysik arbeiten, dieser nimmt allerdings nur alle 2\si{\second} einen Wert auf.
-Dies ist für unsere kleinen Messdauern zu wenig und hätte zu sehr langen Messungen geführt.
+Diese wollten wir zunächst mithilfe eines Datenloggers der Goephysik auslesen, allerdings nimmt dieser nur alle 2\si{\second} einen Wert auf.
+Dies ist für unsere kleinen Messdauern zu wenig und hätte zu sehr langen Messungen geführt, um eine signifikante Datenmenge zu erhalten.
 Gelöst wurde das Problem mit dem Bau eines eigenen Datenloggers, mit dem wir dann 100 Messwerte pro Sekunden aufnehmen und diese auch gleich betrachten konnten.
 
 
