@@ -894,15 +894,9 @@ Für den ADC wurde die Interne Referenzspannung des Controllers verwendet.
 Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht, das sogenannte Rippling, somit auch die ADC Werte.
 Dies hat eine Größenordnung von etwa 5\si{\milli\volt}, sprich 1\% der Maximalspannung und ist in allen Datensätzen zu sehen.\\
 Um diesen Fehler zu beheben bzw. zu verringern ist es nötig eine konstante Referenzspannung zu verwenden.
-<<<<<<< HEAD
-Das Board hat dafür einen nach außen geführten Pin für die Referenzspannung.
+Das Board hat einen nach außen geführten Pin für die Referenzspannung.
 Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen und das Rippling zu vermindern, oder eine eigene lastfreie Spannungsquelle zu bauen.
 Zu den muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte Rauschen zu unterdrücken.
-=======
-Das Board hat einen nach außen geführten Pin für die Referenzspannung.
-Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen und das rippling zu vermindern, oder eine eigene lastfreie Spannungsquelle zu bauen.
-Zu dem muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte hochfrequente Rauschen zu unterdrücken.
->>>>>>> a4e582e7e3c4a4d3c8da999b0126401006a0087a
 Mit dieses Methoden könnte das Rippling auf etwa 0.1\% der Maximalspannung gedrückt werden.
 
 \subsection{Druck}
