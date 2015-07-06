@@ -595,6 +595,19 @@ Dies ist schlecht, da man somit manchmal überhaupt keine richtigen Daten hat, d
 
 \subsection{Ortsbestimmung}
 \label{sec:ausort}
+\begin{figure}[!h]
+\centering
+\input{GoeKiessee/GPSvsGeo.tex}
+\caption{Position des Bootes laut GPS-Signal verglichen mit den Geodimeter Messorten in Göttingen.}
+\label{fig:GPSGoe}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\input{Northeim/tiefe}
+	\caption{Messpunkte auf dem Northeimer See.}
+	\label{fig:GPSNort}
+\end{figure}
 Unsere Befürchtung, dass das GPS-Signal zu ungenau ist, stellte sich als falsch heraus.
 Wir nutzten bei der zweiten Messung gleichzeitig einen GPS-Logger und die selbstgeschriebene Handy-App.
 Durch Vergleich der beiden Messdaten erkennt man, dass sie sehr gut miteinander übereinstimmen.
@@ -617,29 +630,15 @@ In Abb. \ref{fig:GPSNort} kann man erkennen, dass wir in Northeim mit der Unters
 Dass wir die östliche Seite des Sees nicht befahren haben, liegt daran, dass dort noch aktiv Kies abgebaut wird.
 Daher ist das Befahren dort verboten.
 
-%\begin{figure}[!h]
-%\centering
-%\input{goekiessee/kartegoe.tex}
-%\caption{positionen der messungen am 10.6.2015 auf dem göttinger kiessee gemessen mit dem geodimeter.}
-%\label{fig:einzelgpsgoe}
-%\end{figure}
-\begin{figure}[!h]
-\centering
-\input{GoeKiessee/GPSvsGeo.tex}
-\caption{Position des Bootes laut GPS-Signal verglichen mit den Geodimeter Messorten in Göttingen.}
-\label{fig:GPSGoe}
-\end{figure}
-
-\begin{figure}[!h]
-	\centering
-	%\resizebox{\linewidth}{!}{\input{Northeim/tiefe}}
-	\input{Northeim/tiefe}
-	\caption{Messpunkte auf dem Northeimer See.}
-	\label{fig:GPSNort}
-\end{figure}
 
 \subsection{Druck \& Tiefe}
 \label{sec:ausdruck}
+\begin{figure}[!htb]
+	\centering
+	\input{GoeKiessee/tiefeGoe.tex}
+	\caption{Göttinger Kiessee: Tiefe.}
+	\label{fig:tiefeGoe}
+\end{figure}
 Laut Datenblatt und, wie im Kapitel \ref{sec:durchdruck} beschrieben, sollte der Spannungsverlauf der Druckmessbrücke linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
 Allerdings bemerkten wir schon während der Messung, dass die vom Datenlogger angezeigten Werte nicht ganz mit den von uns vorgenommenen Markierungen am Kabel im 1m Abstand übereinzustimmen schienen.
 So ließen wir die Sensoren laut Kabel bis in eine Tiefe von ca. 7.5m hinab.
@@ -654,14 +653,6 @@ In Abbildung \ref{fig:tiefeGoe} ist die maximale Tiefe der einzelnen Messdaten a
 Man erkennt, dass der See am nördlichen Ende scheinbar mit etwa 2.2 Meter am tiefsten ist und nach Süden leicht flacher wird.
 Für den Northeimer See ist es nicht sinnvoll, eine solche Karte zu erstellen, da die Sonde nur in Ufernähe Bodenkontakt hatte.
 An den anderen Punkten war es tiefer als unser Kabel hergab, also tiefer als 7 Meter.
-
-\begin{figure}[!htb]
-	\centering
-	\input{GoeKiessee/tiefeGoe.tex}
-	\caption{Göttinger Kiessee: Tiefe.}
-	\label{fig:tiefeGoe}
-\end{figure}
-
 Die Druckkurven besaßen eine Breite (und in sofern ein Fehlerintervall) von ca. 15cm.
 Für die Temperaturwerte der Northeimer Messung mussten wir die Daten bearbeiten.
 Da wir aufgrund der springenden Temperatur die Daten in 40er Blöcke unterteilt haben, nahmen wir von den Tiefendaten den Mittelwert.
@@ -669,6 +660,28 @@ Da wir aufgrund der springenden Temperatur die Daten in 40er Blöcke unterteilt 
 
 \subsection{Temperatur}
 \subsubsection{Göttingen}
+\begin{figure}[h]
+\centering
+\input{GoeKiessee/temp_goe.tex}
+\caption{Temperaturverlauf am Göttinger Kiessee mit fast allen aufgenommenen Werten. Einige Werte, welche offensichtlich durch Wackelkontakte zu Stande kommen (bis zu $140^\circ$C) wurden zwecks Übersichtlichkeit ausgeblendet.}
+\label{fig:temp_goe}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\subfigure[Temperaturverlauf von zwei ausgesuchten Datensätzen in Göttingen gegen Tiefe. \label{fig:tempGoeBsp1}]
+   {\resizebox{0.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp.tex}}}
+   \hfill
+   \subfigure[Temperaturverlauf von einer ausgewählten Messreihe in Göttingen gegen Zeit.\label{fig:tempGoeBsp2}]
+   {\resizebox{.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp2.tex}}}
+	\caption{Aus der Messreihe in Göttingen wurden zwei beispielhafte Verläufe der Temperatur gegen Zeit und Tiefe aufgetragen.}
+	\label{fig:tempGoeBsp}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{TempSchlamm}
+	\caption{Bei der Messung in Göttingen wird der Einfluss von Schlamm auf dem Temperatursensor gezeigt. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen. Es ist zu dem der Stätige Übergang zwischen den beiden Linien bei fester Tiefe zu sehen.}
+	\label{fig:tempSchlamm}
+\end{figure}
 In Abb. \ref{fig:temp_goe} sind alle von uns aufgenommenen Temperaturen bis $40\,\si{\celsius}$ aufgetragen.
 Darüber\-hinaus waren noch einige Werte bei bis zu $140\,\si{\celsius}$, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
 Ebenfalls ist dort ein linearer Fit über die Werte, welche im Wasser aufgenommen wurden und sich unterhalb von $24\,\si{\celsius}$ befinden.
@@ -693,30 +706,6 @@ Bei dieser Messung traf die Sonden auf dem Boden auf und sammelte Schlamm an, we
 Die Temperatur verläuft von oben nach unten, da der Schlamm unten im See deutlich kühler ist, als das umgebene Wasser.
 Auch diese Daten sind nicht auszuwerten, da die Schlammtemperatur aus fast allen Datensätzen gefiltert werden muss.
 
-\begin{figure}[h]
-\centering
-\input{GoeKiessee/temp_goe.tex}
-\caption{Temperaturverlauf am Göttinger Kiessee mit fast allen aufgenommenen Werten. Einige Werte, welche offensichtlich durch Wackelkontakte zu Stande kommen (bis zu $140^\circ$C) wurden zwecks Übersichtlichkeit ausgeblendet.}
-\label{fig:temp_goe}
-\end{figure}
-
-\begin{figure}[!h]
-	\centering
-	\subfigure[Temperaturverlauf von zwei ausgesuchten Datensätzen in Göttingen gegen Tiefe. \label{fig:tempGoeBsp1}]
-   {\resizebox{0.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp.tex}}}
-   \hfill
-   \subfigure[Temperaturverlauf von einer ausgewählten Messreihe in Göttingen gegen Zeit.\label{fig:tempGoeBsp2}]
-   {\resizebox{.49\linewidth}{!}{\input{GoeKiessee/temp_goe_bsp2.tex}}}
-	\caption{Aus der Messreihe in Göttingen wurden zwei beispielhafte Verläufe der Temperatur gegen Zeit und Tiefe aufgetragen.}
-	\label{fig:tempGoeBsp}
-\end{figure}
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\linewidth]{TempSchlamm}
-	\caption{Bei der Messung in Göttingen wird der Einfluss von Schlamm auf dem Temperatursensor gezeigt. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen. Es ist zu dem der Stätige Übergang zwischen den beiden Linien bei fester Tiefe zu sehen.}
-	\label{fig:tempSchlamm}
-\end{figure}
 
 
 
@@ -732,16 +721,6 @@ Auch diese Daten sind nicht auszuwerten, da die Schlammtemperatur aus fast allen
 	\caption{Temperaturmessung Northeim.}
 	\label{fig:temp_Nord}
 \end{figure}
-
-In Grafik \ref{fig:temp_nor_Roh} sind alle Temperaturmessungen der Messung in Northeim aufgetragen.
-Man erkennt deutlich mehrere Linien.
-Um dies zu beheben und die richtigen Daten zu verwenden, müssen sie gefiltert werden.
-Dabei werden immer 40 Werte nach dem folgenden Algorithmus zu einem Temperaturwert zusammengefasst: 
-Zuerst wird der Median bestimmt; nun werden nur noch Werte unterhalb dessen betrachtet, der Median ist also $T_\text{max}$. 
-Außerdem schließt man Ausreißer nach unten aus, indem der untere Quartilwert$-3\si{\celsius}$ als $T_\text{min}$ verwendet wird.
-Von den verbleibenden Werten wird der Mittelwert genommen.
-Dieses Verfahren wird in Abb. \ref{fig:tempAlg} verdeutlicht.
-
 \begin{figure}[!h]
 	\centering
 	\subfigure[Beispiel 1 \label{fig:tempAlg1l}]
@@ -752,13 +731,6 @@ Dieses Verfahren wird in Abb. \ref{fig:tempAlg} verdeutlicht.
 	\caption{Algorithmus zum Filtern der Temperaturdaten. Es sind in beiden Plots die Sprünge, sowie die Korrekturen in der Temperatur gut zu erkennen.}
 	\label{fig:tempAlg}
 \end{figure}
-
-Das Resultat des Filtervorgangs ist in Abb. \ref{fig:temp_nor} zu sehen.
-Wieder wurden alle Daten in einen Plot eingezeichnet, denn der See schien  im Rahmen der Messfehler homogen.
-Man erkennt drei verschiedene Bereiche: $0.2-1.5\,$m, $1.5-5.9\,$m und $5.9-7.5\,$m.
-Die gefittete Kurve besteht aus drei linearen Fits, welche in den einzelnen Bereichen durchgeführt werden.
-Es ergeben sich die Werte aus Tabelle \ref{tab:tempTabNor}.
-
 \begin{table}[!htb]
 \centering
 \begin{tabular}{|c||c|c|}
@@ -771,20 +743,6 @@ Tiefe [m] & Temperaturabnahme [$\frac{^\circ C}{\text m}$] & Temperaturintervall
 \caption{Temperaturkoeffizienten aus dem Fit von Abb. \ref{fig:temp_nor}.}
 \label{tab:tempTabNor}
 \end{table}
-
-
-Da wir in der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
-Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.
-Vergleicht man jeweils die beiden Temperaturkurven in Abb. \ref{fig:tempV1} bis \ref{fig:tempV3}, erkennt man keine großen Temperaturdifferenzen.
-Die Messfehler scheinen zu überwiegen.
-Eventuell kann man in der Abb.\ref{fig:tempV3} erkennen, dass sich die Seeoberfläche leicht erwärmt hat.
-Für eine genauere Analyse hätte man jedoch über einen längeren Zeitraum messen müssen.
-In Abb. \ref{fig:tempV2} ist die später aufgenommene Kurve etwa $0.5\si\celsius$ unter der anderen.
-Dies kann verschiedene Gründe haben: Zum einen kann dies ein Fehler des obigen Filteralgorithmus sein, zum anderen könnte es auf Messfehler zurückzuführen sein, denn eine so starke Abkühlung scheint nicht plausibel.
-Wir erwarten nämlich eine Erwärmung, da an diesem Tag die Sonne stark gescheint hat.
-Auffällig ist auch, dass die zweite Messreihe etwa 1.5 Meter kürzer ist, der See in dieser Region also steil abzufallen scheint, da die beiden Messpunkte nur etwa 15 Meter entfernt sind.
-Diese Veränderung zu messen, wäre sicherlich auch interessant.
-
 \begin{figure}[!htb]
 	\centering
 	\subfigure[Karte. \label{fig:GPSNortZweimal}]
@@ -802,6 +760,30 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 	\label{fig:tempNort2}
 \end{figure}
 
+In Grafik \ref{fig:temp_nor_Roh} sind alle Temperaturmessungen der Messung in Northeim aufgetragen.
+Man erkennt deutlich mehrere Linien.
+Um dies zu beheben und die richtigen Daten zu verwenden, müssen sie gefiltert werden.
+Dabei werden immer 40 Werte nach dem folgenden Algorithmus zu einem Temperaturwert zusammengefasst: 
+Zuerst wird der Median bestimmt; nun werden nur noch Werte unterhalb dessen betrachtet, der Median ist also $T_\text{max}$. 
+Außerdem schließt man Ausreißer nach unten aus, indem der untere Quartilwert$-3\si{\celsius}$ als $T_\text{min}$ verwendet wird.
+Von den verbleibenden Werten wird der Mittelwert genommen.
+Dieses Verfahren wird in Abb. \ref{fig:tempAlg} verdeutlicht.
+Das Resultat des Filtervorgangs ist in Abb. \ref{fig:temp_nor} zu sehen.\\
+Wieder wurden alle Daten in einen Plot eingezeichnet, denn der See schien  im Rahmen der Messfehler homogen.
+Man erkennt drei verschiedene Bereiche: $0.2-1.5\,$m, $1.5-5.9\,$m und $5.9-7.5\,$m.
+Die gefittete Kurve besteht aus drei linearen Fits, welche in den einzelnen Bereichen durchgeführt werden.
+Es ergeben sich die Werte aus Tabelle \ref{tab:tempTabNor}.
+Da wir in der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
+Diese sind in der Karte \ref{fig:GPSNortZweimal} eingezeichnet.\\
+Vergleicht man jeweils die beiden Temperaturkurven in Abb. \ref{fig:tempV1} bis \ref{fig:tempV3}, erkennt man keine großen Temperaturdifferenzen.
+Die Messfehler scheinen zu überwiegen.
+Eventuell kann man in der Abb.\ref{fig:tempV3} erkennen, dass sich die Seeoberfläche leicht erwärmt hat.
+Für eine genauere Analyse hätte man jedoch über einen längeren Zeitraum messen müssen.
+In Abb. \ref{fig:tempV2} ist die später aufgenommene Kurve etwa $0.5\si\celsius$ unter der anderen.
+Dies kann verschiedene Gründe haben: Zum einen kann dies ein Fehler des obigen Filteralgorithmus sein, zum anderen könnte es auf Messfehler zurückzuführen sein, denn eine so starke Abkühlung scheint nicht plausibel.
+Wir erwarten nämlich eine Erwärmung, da an diesem Tag die Sonne stark gescheint hat.
+Auffällig ist auch, dass die zweite Messreihe etwa 1.5 Meter kürzer ist, der See in dieser Region also steil abzufallen scheint, da die beiden Messpunkte nur etwa 15 Meter entfernt sind.
+Diese Veränderung zu messen, wäre sicherlich auch interessant.
 
 \subsection{Licht}
 
@@ -829,9 +811,6 @@ Die linearer Regression ergibt den Steigungskoeffizienten $a=(-3.3\pm0.3)\si{\pe
 Bei der Messung wurde mit einem Offset von $3.31\si{\milli\volt}$ gerechnet, da die Photodiode hier einen nicht verschwindenden Dunkelstrom hat.
 
 \subsubsection{Northeimer Kiessee}
-Bei der Messung in Northeim konnte in größeren Tiefen gemessen werden, als in Göttingen.
-Somit sollten auch die Messwerte besser korrelieren.
-Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorption stärker von der des Wassers abhängen.
 \begin{figure}[!h]
 	\centering
 	\subfigure[Alle Messwerte der Lichtabsorption in Northeim logarithmisch aufgetragen. Zu dem ist wieder die Grenzgerade eingetragen. \label{fig:lichtabs}]
@@ -846,9 +825,18 @@ Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Gö
 	\caption{Ergebnisse der Absorptionsmessung in Northeim. Es sind die Ergebnisse der Grenzgeraden und einige Korrelationen aufgetragen.}
 	\label{fig:lichtNort}
 \end{figure}
+\begin{figure}[!htb]
+	\centering
+	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
+	\caption{Intensität der einzelnen LEDs (Infrarot und Blau) in Differenz zur Sonnenintensität aufgetragen für die Northeimer Messung.}
+	\label{fig:led}
+\end{figure}
+Bei der Messung in Northeim konnte in größeren Tiefen gemessen werden, als in Göttingen.
+Somit sollten auch die Messwerte besser korrelieren.
+Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorption stärker von der des Wassers abhängen.
 In Abbildung \ref{fig:lichtabs} sind wieder alle aufgenommenen Messwerte der Intensität gegen die Tiefe aufgetragen.
 $a=0.40\pm0.02$.
-Ebenfalls ist wieder eine linearer Regression durchgeführt worden, die den Mittelwert der Absorption zeigt, da der See wieder als homogen angenommen wird.\\%Ergebnisse
+Ebenfalls ist wieder eine linearer Regression durchgeführt worden, die den Mittelwert der Absorption zeigt, da der See wieder als homogen angenommen wird.\\
 In den Abbildungen \ref{fig:l1} und \ref{fig:l2} sind jeweils gute und schlechte Korrelationen zu sehen.
 Es ist gut zu erkennen, dass an einigen Stellen die Photodiode homogen beschienen wird und somit durchgehend die Absorption vom Wasser bestimmt werden konnte.
 Die zeigt sich auch in den Korrelationskoeffizienten, die alle zwischen $r=0.93$ und $r=0.96$ liegen.
@@ -856,15 +844,9 @@ Die linearen Konstanten sind zwar alle etwas unterschiedliche, von $a=-0.773\pm0
 Mittelt man aber über alle Messwerte ergibt sich auf die Steigung der Geraden, wie im Gesamtplot \ref{fig:lichtabs} gezeigt.
 In der schlechten Messung ist die linearer Auswertung fast nicht möglich, da die Messwerte sehr stark schwanken.
 Die Korrelationskoeffizienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.\\
-\begin{figure}[!htb]
-	\centering
-	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
-	\caption{Intensität der einzelnen LEDs (Infrarot und Blau) in Differenz zur Sonnenintensität aufgetragen für die Northeimer Messung.}
-	\label{fig:led}
-\end{figure}
 In der Abbildung \ref{fig:led} sind die gemessenen Intensitäten der LEDs gegen die Tiefe aufgetragen.
 Hierzu wurden jeweils die Intensitäten bei abgeschalteten LEDs von den jeweiligen Werten bei angeschalteten LEDs subtrahiert.
-Dies soll zu dem das Rauschen der Sonnenintensität reduzieren.%diesen Punkt kann an gut diskutieren
+Dies soll zu dem das Rauschen der Sonnenintensität reduzieren.
 Das Ergebnis zeigt eine Konstante, die aber für die beiden LEDs verschieden sind.
 Des Weiteren ist die, wie oben beschriebene Streuungen auf den ersten Metern immer noch gut zu erkennen.
 Da die Werte konstant gegen die Tiefe sind berechnen wir den Mittelwert aus den jeweiligen Intensitäten.
@@ -874,6 +856,12 @@ Die Fehler bilden sich jeweils aus der Standardabweichung.
 Die infrarote LED hat somit eine etwa doppelt so hohe Intensität, wie die blaue LED.
 
 \subsection{Gemessenes Abstandsgesetz}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{schall.pdf}
+	\caption{Relative Amplitude des Echolotes wurde aufgetragen gegen den Abstand $d$. Zudem wurde eine $\chi^2$ Anpassung an die Messdaten durchgeführt.}
+	\label{fig:schall}
+\end{figure}
 Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir nur die Abstandsabhängigkeit der Schallintensität näher untersucht. 
 Dies wurde zunächst mit der Motivation durchgeführt eine mit der vorgegebenen Sendeleistung maximale Reichweite zu ermitteln. Als klar wurde, dass diese nicht ausreichen wird haben wir
 die Abnahme der Amplitude weiter untersucht.
@@ -883,20 +871,12 @@ ein Oszilloskop als Empfänger verwendet.
 
 Wir haben hierfür drei Messreihen durchgeführt und anschließend wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{schall.pdf}
-	\caption{Relative Amplitude des Echolotes wurde aufgetragen gegen den Abstand $d$. Zudem wurde eine $\chi^2$ Anpassung an die Messdaten durchgeführt.}
-	\label{fig:schall}
-\end{figure}
-
 Zudem wurde eine $\chi^2$ Anpassung an die berechneten Mittelwerte durchgeführt, wobei hier die in der Theorie vorgestellte $\frac{1}{d}$ - Abhängigkeit angenommen wurde, sprich die mit dem Oszilloskop gemessene Amplitude sich wie die Abstandsabhängigkeit des Schalldrucks verhält.
 Dies erscheint sinnvoll, denn entscheidend für die angezeigte Amplitude ist, welche Beschleunigungen auf den Empfänger wirken.
 Diese wiederum entsprechen Druckschwankungen.
 
 Die eingezeichneten Fehlerbalken ergeben sich nur aus der statistischen Standardabweichung da diese die abgeschätzten Fehler von 0.1\% Amplitude zu klein sind. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
 Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2.5\si{\centi\meter} auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40\si{\centi\meter} ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (siehe Abschnitt \ref{sec:abs}). 
-
 
 
 \section{Diskussion}
@@ -953,6 +933,12 @@ Dies machte ein sonnst notwendiges Sortieren der Dateien nach Ort und Zeit unnö
 
 \subsection{Temperatur}
 \label{sec:DiskTemp}
+\begin{figure}[h]
+	\centering
+	\input{Northeim/tempSprung.tex}
+	\caption{Vergrößerte Darstellung einer Temperaturkurve. Es ist gut das Rippling in den einzelnen Blöcken und die Verschiebung der Blöcke zu sehen.}
+	\label{fig:tempSprung}
+\end{figure}
 Bei der zweiten Messung zeigte sich in den Daten, wie im Kapitel \ref{sec:austempnortheim} beschrieben, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
 Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:tempSprung} zu erkennen, dass jeweils ungefähr 10 Messwerte auf einem niedrigen, dann auf einem mittleren, erneut auf einem niedrigen und dann wieder auf einem hohen Niveau liegen.
 Dies entspricht der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
@@ -962,13 +948,6 @@ Augenscheinlich haben da die etwa 30\si{\milli\ampere}, welche die LEDs benötig
 Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen nicht zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
 Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und führte trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
 Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
-
-\begin{figure}[h]
-	\centering
-	\input{Northeim/tempSprung.tex}
-	\caption{Vergrößerte Darstellung einer Temperaturkurve. Es ist gut das Rippling in den einzelnen Blöcken und die Verschiebung der Blöcke zu sehen.}
-	\label{fig:tempSprung}
-\end{figure}
 
 \subsection{Absorption von Licht}
 Bei der Messung der Absorption stellte sich sehr schnell heraus, dass die Daten stark verrauscht sind, besonders an der Oberfläche des Wassers.
@@ -1024,8 +1003,6 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 
 \newpage
 \printbibliography[heading=bibintoc]
-%\bibliography{literatur}
-%\bibliographystyle{babalpha}
 \newpage
 
 
