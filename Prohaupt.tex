@@ -259,7 +259,7 @@ Setzt man Licht als eine ebene Welle an so ergibt sich bei Ausbreitung in einem 
 Es beschreibt, dass die Intensität $I$ des Lichts exponentiell bei zunehmender Stecke abfällt.
 Für den Anteil der noch vorhandenen Intensität $\frac{I}{I_0}$ gilt dann
 \begin{align}
- \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)~.
+ \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)~.\label{eq:absorblicht}
 \end{align}
 Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Dieser hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab
 \begin{align}
@@ -706,7 +706,7 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 
 
 \subsubsection{Northeim}
-
+\label{sec:austempnortheim}
 \begin{figure}[!htb]
 	\centering
 	\input{Northeim/temp_roh.tex}
@@ -794,13 +794,31 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 
 \subsection{Licht}
 
+Bei den Daten der Photodiode zeigte sich in den Messdaten zu einen ein starkes Schwanken auf dem ersten Meter und zu anderen ein abnehmendes Verhalten.
+Dennoch werden die Daten nicht gefiltert, da hier wieder der See als homogen angenommen wird, können alle Datenpunkte verwendet werden.
+Bei der Auswertung werden alle Daten logarithmisch aufgetragen, da dies aufgrund der Gleichung \ref{eq:absorblicht} zu erwarten war. 
+Es soll sich ein linearer Zusammenhang zeigen, der proportional zum Absorbtionskoeffizienten ist.
+Die Intenität $I$ ist in unserem Fall proportional zur Photospannung $U_\text{Photo}$.
+Somit haben alle Intensität die Einheit Volt.
+
+\subsubsection{Göttingen Kiessee}
 \begin{figure}[!htb]
 	\centering
 	\input{GoeKiessee/lichtGoe.tex}
 	\caption{Göttingen Lichtabsorbtion: alle Messdaten (logarithmisch).}
 	\label{fig:lichtGoe}
 \end{figure}
+Bei den Göttigen Messungen, zeigte sich, dass der See mit vielen Schwebeteilchen durchzogen war, somit der Absorbtionskoeffizient nicht nur rein vom Wasser abhängt.
+Wie oben geschrieben wurde alle aufgennomenen Messwerte der Absorbtion gegen die Tiefe aufgetragen.
+Dies ist für Göttingen in der Abbildung \ref{fig:lichtGoe} zu sehen.
+Dadurch, dass alle Messwerte aufgetragen sind, ergibt sich ein linearer Zusammenhang, der proportinal zum Mittelwert der gemessenen Absorbtion ist.
+Die linearer Regression ergebiet die Koeffizienten %Koeffizienten einfuegen
+.
 
+\subsubsection{Northeimer Kiessee}
+Bei der Messung in Northeim konnte in gößeren Tiefen gemessen werden, als in Göttingen.
+Somit sollten auch die Messwerte besser korrelieren.
+Desweiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorbtion stärker von der des Wassers abhängen.
 \begin{figure}[!h]
 	\centering
 	\subfigure[Northeim Lichtabsorbtion: alle Messdaten (logarithmisch). \label{fig:lichtabs}]
@@ -815,6 +833,11 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 	\caption{Northeim: Lichtabsorption.}
 	\label{fig:lichtNort}
 \end{figure}
+In Abbildung \ref{fig:lichtabs} sind wieder alle aufgennomenen Messwerte der Intensität gegen die Tiefe aufgetragen.
+Ebenfalls ist wieder eine linearer Regression durchgeführt worden, die den Mittelwert der Absorbtion zeigt, da der See wieder als homogen angenommen wird.\\%Ergebnisse
+In den Abbildungen \ref{fig:l1} und \ref{fig:l2} sind jeweils eine gute und eine schlechte einzelregression zu sehen.
+Es ist gut zu erkennen, dass an einigen Stellen die Photiode homogen beschienen wird und somit durchgehend die Absorbtion vom Wasser bestimmt werden konnte.
+In der schelchten Messung ist die linearer Auswertung fast nicht Möglich, da die Messwerte sehr stark schwanken.
 
 \begin{figure}[!htb]
 	\centering
@@ -858,20 +881,20 @@ Für den ADC wurde die Interne Referenzspannung des Controllers verwendet.
 Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht, das sogenannte rippling, somit auch die ADC Werte.
 Dies hat eine Größenordnung von etwa 5\si{\milli\volt}, sprich 1\% der Maximalspannung und ist in allen Datensätzen zu sehen.\\
 Um diesen Fehler zu beheben bzw. zu verringern ist es nötig eine konstante Referenzspannung zu verwenden.
-Das Board hat dafür einen nach außen geführten Pin für die Referenzspannung.
+Das Board hat einen nach außen geführten Pin für die Referenzspannung.
 Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen und das rippling zu vermindern, oder eine eigene lastfreie Spannungsquelle zu bauen.
-Zu den muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte Rauschen zu unterdrücken.
+Zu dem muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte hochfrequente Rauschen zu unterdrücken.
 Mit dieses Methoden könnte das Rippling auf etwa 0.1\% der Maximalspannung gedrückt werden.
 
 \subsection{Druck}
 Zunächst kauften wir einen Drucksensor, der keine Eichkurve hatte.
 Er bestand aus zwei leitenden Lagen und je größer der auf ihn ausgeübte Druck gewesen wäre, desto größer ist die Kontaktfläche und damit desto kleiner ist der Widerstand.
 Allerdings ist ein kleines Loch in der Kammer, damit die Luft entweichen kann.
-Da durch dieses Wasser hineinlaufen könnte, welches einen Kurzschluss verursachte, konnten wir diesen Sensor nicht verwenden.
+Da durch dieses Wasser hineinlaufen könnte, welches einen Kurzschluss verursacht, konnten wir diesen Sensor nicht verwenden.
 
 Daraufhin bekamen wir einen Sensor der Geophysik.
 Dieser wird über eine externe Schaltung betrieben und wurde deshalb nicht von den Spannungsschwankungen des Boards direkt beeinflusst.
-Der größte Fehler bei der Kopplung von Druckplatine und Datenlogger bestand noch in der Testphase daran, dass nicht, wie im Kapitel \ref{sec:durchdruck} aufgeführt, die Massen der beiden Platinen gekoppelt waren, obwohl eine eigenständige Leitung für das Massesignal verwendet wurde.
+Der größte Fehler bei der Kopplung von Druckplatine und Datenlogger bestand noch in der Testphase darin, dass nicht, wie im Kapitel \ref{sec:durchdruck} aufgeführt, die Massen der beiden Platinen gekoppelt waren, obwohl eine eigenständige Leitung für das Massesignal verwendet wurde.
 Fehlerhaft war hier nicht die Verbindung der Platinen, sondern die boardinterne Masseverteilung.
 Anscheinend waren die veschiedenen Massepin nicht alle miteinander verbunden.
 Dies kann an einer fehlerhaften Lötstelle oder einer fehlerhaften Leitung liegen.
@@ -888,15 +911,17 @@ Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und da
 Dies kann entweder durch das Verwenden von einer höheren Spannung am Sender oder durch das Verwenden einer H-Brücke getan werden.
 Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls führt.
 Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werden.
-Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden.
+Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden und dies zu einem hohen Leckstrom führt, der die Bauteile beschädigen kann.
 Desweiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
 Wir haben dennoch ein paar Testdaten aufnehmen und auswerten können.
 %hie noch das Ergebnis der Auswertung diskutieren.
+Dieser Teil des Projektes ist auch für weitere Praktika interessant, da diese Methode kommerziell häufig eingesetzt wird und auch in der Wissenschaft zur Bodenanalyse verwendet werden kann.
+Die Probleme, die gelöst werden müssen, sind die Spannungsverorgung und ein funktionsfähiger Filteralgorythmuss zur Rauschreduktion.
 
 \subsection{Ortsbestimmung}
 Bei der ersten Messung haben wir den Ort mit einem Geodimeter bestimmt.
 Problematisch war hierbei, dass das Boot mit dem Reflektor relativ stark geschwankt hat.
-Dies führte gerade bei Messungen, wo das Boot relativ dicht am Geodimeter war dazu, dass die Aufnahme der Position schwer war.
+Dies führte gerade bei Messungen, wo das Boot dicht am Geodimeter war dazu, dass die Aufnahme der Position erschwert wurde.
 An einer Stelle konnten wir den Messstab in über 5 min nicht ruhig genug halten, so dass wir schließlich die Position nicht aufnahmen.
 Generell war es ein Problem, dass wir nur zwei Leute auf dem Boot hatten: einen Ruderer, der während der Messung den Stab hochgehalten hat und einen, der sich um die Sonde kümmerte.
 Dies führte dazu, dass häufig der für den Retroreflektor zuständige diesen zu schräg hielt, so dass die Spiegelfläche nicht sichtbar war.
@@ -914,14 +939,14 @@ Dies machte ein sonnst notwendiges Sortieren der Dateien nach Ort und Zeit unnö
 
 \subsection{Temperatur}
 \label{sec:DiskTemp}
-Bei der zweiten Messung zeigte sich in den Daten, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
+Bei der zweiten Messung zeigte sich in den Daten, wie im Kapitel \ref{sec:austempnortheim} beschrieben, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
 Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:tempSprung} zu erkennen, dass jeweils ungefähr 10 Messwerte auf einem niedrigen, dann auf einem mittleren, erneut auf einem niedrigen und dann wieder auf einem hohen Niveau liegen.
 Dies entspricht der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
 Für beide Messungen benutzten wir den Micro-Controller als Spannungsquelle.
 Dieser ist für Ströme von bis zu 350mA ausgelegt.
-Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
-Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen noch zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
-Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
+Augenscheinlich haben da die etwa 30\si{\milli\ampere}, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
+Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen nicht zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
+Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und führte trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
 Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
 
 \begin{figure}[h]
@@ -945,7 +970,7 @@ Laut Datenblatt \cite[20]{PHOTODatenblatt} liegt der Unterschied in der Effizien
 \subsection{Messprobleme und verworfene Ideen}
 Unsere erste Idee war die, ein ferngesteuertes U-Boot zu bauen, was die Sensoren an Bord hat und ansatzweise autonom den See abrastert.
 Dies stellte sich jedoch sehr schnell als nicht durchführbar heraus, da es keine geeigneten Modellbauten gab und da die komplette Technik mit Stromversorgung unter Wasser luftdicht sein müsste.
-Zu dem war der Bau eines eigenen Modells zu Zeitaufwändig für die vorhandene.
+Zu dem war der Bau eines eigenen Modells zu Zeitaufwändig für die vorhandene Zeit.
 Daher kamen wir auf die Idee, eine ferngesteuerte Plattform zu bauen, welche die Sonden mit einer Winde ferngesteuert herunterlässt.
 Dies verwarfen wir jedoch auch sehr schnell, da die Fernsteuertechnik einen großen Teil unserer Arbeit ausgemacht hätte, was wissenschaftlich wenig interessant ist.
 Auch hätten wir Probleme bekommen, falls sich zum Beispiel die Sensoren in Wasserpflanzen verfangen.
@@ -963,7 +988,7 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 		Die Leitfähigkeit alleine ist kein Maß für den Salzgehalt, der auch noch von anderen Größen maßgeblich beeinflusst wird.
 		So konnten wir den Sensor, welchen Jan bereits besorgt hatte, nicht einsetzen.
 	\item \textit{pH-Wert}: Der pH-Wert wäre auch eine interessante Messgröße gewesen.
-		Allerdings wäre zur Kalibration mindestens eine Pufferlösung notwendig gewesen.
+		Allerdings wäre zur Kalibrierung mindestens eine Pufferlösung notwendig gewesen.
 		Ausschlaggebend war, dass wir zu den preislich akzeptablen Sensoren keine vernünftigen Datenkurven finden konnten, da diese augenscheinlich nur für fertige Geräte ausgelegt sind.
 \end{itemize}
 
