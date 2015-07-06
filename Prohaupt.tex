@@ -441,7 +441,7 @@ Dies sorgt aber für ein größeres Datenaufkommen.
 Jede Datei trägt, zur besseren Identifikation, den aktuellen Monat, Tag, Stunde und Minute als Namen (MMDDhhmm.dat).
 In der Datei wird folgendes eingetragen: die Zeit in Millisekunden, die ADCWerte von Temperatur, Photodiode und Druck, sowie die berechneten Werte der Temperatur, Intensität, Druck und Tiefe, letztere berechnet aus dem aktuellen Luftdruck.
 Der aktuelle Luftdruck kann über das Einstellungsmenü direkt am Logger geändert werden.\\
-Das Programm kann von 10 bis zu maximal 500 Werten pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden können.
+Das Programm kann mit einer Datenrate zwischen 10 und 500 Werte pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden kann.
 Der Zeitschritt wird abhängig von der Aufnahmefrequenz berechnet und eingetragen.\\
 Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert werden.
 Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
@@ -451,10 +451,10 @@ In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt
 
 \subsubsection{Temperaturmessung}
 Für die Messung der Temperatur wird mit einem Pt1000 Temperaturwiderstand gearbeitet.
-Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
+Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf, da er sich sonst erwärmt.
 Aus diesem Grund muss die am Pt1000 abfallende Spannung noch verstärkt werden.
-Dies geschieht mithilfe eines nicht-invertierenden Verstärkers, wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
-Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigten Beschaltung ein Verstärkungsfaktor von 11.
+Dies geschieht mithilfe eines nichtinvertierenden Verstärkers, wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
+Mit der Formel \eqref{eq:verst} ergibt sich aus der in der Abbildung \ref{fig:PT1000Schaltung} gezeigten Beschaltung ein Verstärkungsfaktor von 11.
 Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereich des ADCs liegt.\\
 Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehenden Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
@@ -462,19 +462,17 @@ Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehenden Widerstandsnetzwe
 \end{align}
 ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
 Zur anschließenden Berechnung der Temperatur aus dem gemessenen Widerstand wird die Formel \eqref{eq:temperapt1000} verwendet.\\
-Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschichtet.
-Dieser sollte nur die Reaktionszeit beeinflussen.
+Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Klebstofffilm  beschichtet, welcher nur die Reaktionszeit beeinflussen sollte.
 
 \subsubsection{Lichtmessung}
 Für die Lichtmessung wird eine Photodiode als intensitätsabhängige Stromquelle verwendet.
 Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
 Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine messbare Spannung zu wandeln.
-Da in den See nicht viel Licht eintritt, wird die sich ergebende Spannung noch über einen nicht-invertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 verstärkt.
+Da das Licht nicht tief in den See eintreten kann, wird die sich ergebende Spannung noch über einen nichtinvertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
-Um die Absorption in verschiedenen Spektren zu messen hat die Messsonde eine blaue und eine infrarote LED
-mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
+Um die Absorption in verschiedenen Spektren zu messen, hat die Messsonde eine blaue und eine infrarote LED mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
 Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
-Um die LEDs von dem Umgebungslicht zu unterscheiden werden diese gepulst, sie werden in einem bestimmten Zyklen ein und aus geschaltet.
+Um die LEDs von dem Umgebungslicht zu unterscheiden, werden diese gepulst, sie werden in einem bestimmten Zyklen ein und aus geschaltet.
 Die Frequenz, mit der die LEDs nacheinander ein und aus geschaltet werden, die sogenannte Umschaltfrequenz, ist von 0\si{\hertz} bis 20\si{\hertz} durchschaltbar.
 Im Programm werden die Daten mit der jeweils angeschalteten LED und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
