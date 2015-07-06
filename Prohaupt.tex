@@ -798,6 +798,8 @@ Bei den Daten der Photodiode zeigte sich in den Messdaten zu einen ein starkes S
 Dennoch werden die Daten nicht gefiltert, da hier wieder der See als homogen angenommen wird, können alle Datenpunkte verwendet werden.
 Bei der Auswertung werden alle Daten logarithmisch aufgetragen, da dies aufgrund der Gleichung \ref{eq:absorblicht} zu erwarten war. 
 Es soll sich ein linearer Zusammenhang zeigen, der proportional zum Absorbtionskoeffizienten ist.
+Um über den ganzen See zu mitteln, werden alle Messdaten aus allen Messreihen in einen Graphik gebracht und eine Grenzgerade eingefügt.
+Diese liegt von Oben an den Messwerten an, um die Übersichtlichkeit zu gewähren.
 Die Intenität $I$ ist in unserem Fall proportional zur Photospannung $U_\text{Photo}$.
 Somit haben alle Intensität die Einheit Volt.
 
@@ -841,16 +843,14 @@ Die zeigt sich auch in den Korrelationskoeffizienten, die alle zwischen $r=0.93$
 Die linearen Konstanten sind zwar alle etwas unterschiedliche, von $a=-0.773\pm0.004$ bis zu $-0.524\pm0.004$.
 Mittelt man aber über alle Messwerte ergibt sich auf die Steigung der Geraden, wie im Gesamtplot \ref{fig:lichtabs} gezeigt.
 In der schlechten Messung ist die linearer Auswertung fast nicht Möglich, da die Messwerte sehr stark schwanken.
-Die Korrelationskoeffzienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.
-
-
+Die Korrelationskoeffzienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.\\
 \begin{figure}[!htb]
 	\centering
 	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
 	\caption{Unterschied Sonnenlicht+LED zu Sonnenlicht (logarithmisch)}
 	\label{fig:led}]
 \end{figure}
-
+In der Abbildung \ref{fig:led} sind die gemessenen Intensitäten der LEDs 
 
 \subsection{Gemessenes Abstandsgesetz}
 Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir nur die Abstandsabhängigkeit der Schallintensität näher untersucht. 
