@@ -189,13 +189,13 @@ Wir wollen in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorp
 Die Tiefe der Sensoren bestimmen wir mit Hilfe einer Drucksonde, während wir die Tiefe des Sees mit einem selbst gebauten Echolots bestimmen wollen.
 Die Position des Bootes auf dem See wird mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.\\
 Die Messung soll am Seeburger See durchgeführt werden, da dieser ein natürlicher See ist und somit verschiedene Tiefen besitzt.
-Als Alternative haben wir einmal den Göttinger Kiessee und einmal in Northeim den Großen See, diese sind aber von Menschen erstellte Seen.\\
+Als Alternative haben wir einmal den Göttinger Kiessee und einmal in Northeim den Großen See vermessen, diese sind aber von Menschen geschaffene Seen.\\
 Dieser Versuch soll zeigen, dass zum einen die Temperatur geschichtet und die Absorption von Wasser konstant für alle Tiefen ist.
 
 
 \section{Theorie}
 \label{sec:theorie}
-\subsection{Schweredruck}
+\subsection{Druck}
 
 Für eine Flüssigkeitssäule mit einer Höhe $h$ gilt das Pascal'sche Gesetz für den Druck
 \begin{align}
@@ -212,7 +212,7 @@ Möchte man also die Tiefe $d$ des Drucksensors bestimmen, so berechnet sich die
 \subsubsection{Abstandsgesetz und Intensität}
 \label{sec:abs}
 %Motivation:
-Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, dann sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, ähnlich verhalten wie die Gesetze einer punktförmigen Schallquelle.
+Wenn Reflexion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, dann sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, ähnlich verhalten wie die Gesetze einer punktförmigen Schallquelle.
 
 Der Grund dafür ist, dass die genutzten Entfernungen zwischen Sender und Empfänger vielfach größer sind als die Größe des schwingenden Kristalls. 
 In einem homogenem Medium verteilt sich dann die ausgesendete Energie der Welle in drei Dimensionen gleichmäßig im Abstand $r$ über eine Kugelfläche $A$.
@@ -302,15 +302,14 @@ Näheres ist unter dieser Quelle zu finden \cite{abs}.
 \label{sec:teoverstaerker}
 Dabei handelt es sich von der Grundschaltung her um einen Operationsverstärker.
 Diese finden sehr viel Anwendung in allen möglichen Bereichen, zum Beispiel der Mess- und Regelungstechnik. 
-Allgemeine Eigenschaften dieser Bauteile sind, eine sehr große Verstärkung von Eingangsignalen, sowie ein hoher Eingangs und dazu vergleichsweise geringer Ausgangswiderstand.
+Allgemeine Eigenschaften dieser Bauteile sind, eine sehr große Verstärkung von Eingangssignalen, sowie ein hoher Eingangs und dazu vergleichsweise geringer Ausgangswiderstand.
 Das allgemeine Verstärkersymbol ist ein Dreieck in es werden darin auch die beiden
 Eingänge mit + und - gekennzeichnet.
 Der - Eingang wird als invertierender Eingang und 
 der + Eingang als nicht invertierender Eingang bezeichnet.
 Das eigentliche Bauteil des Verstärkers ist sehr komplex und es lohnt sich nicht hier 
 weiter darauf einzugehen.
-Entscheidend ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten 
-nichtinvertierenden Verstärkers. 
+Entscheidend ist hier nur die Formel für den Verstärkungsfaktor $v$ für den verwendeten nichtinvertierenden Verstärkers. 
 Für diese gilt
 \begin{align}
  v = 1 + \frac{R_2}{R_1}~.\label{eq:verst}
@@ -335,7 +334,7 @@ Diese werden durch Wind oder im geringen Maße durch Sonneneinstrahlung erzeugt.
 Das Klima ist daher ein entscheidender Faktor für die Dicke dieser Schicht.
 Diffusiver Wärmetransport hingegen ist ein sehr langsamer Prozess, so vergeht zum Beispiel etwa ein Monat für das Bilden einer etwa 1 m dicken Schicht vergleichsweise wärmeren Wassers.
 Ab einer Tiefe von circa 10 m führt dies insgesamt zur Entstehung eines größeren Temperaturgradienten im Sommer und zur Entstehung der mittleren Schicht (Thermonokline).
-Dabei handelt es sich um eine recht dünne Übergangschicht.
+Dabei handelt es sich um eine recht dünne Übergangsschicht.
 Diese trennt die obere Schicht von größeren Tiefen. 
 \newline
 
@@ -415,7 +414,7 @@ Durch Umstellen erhält man eine Formel für die Temperatur in Grad Celsius
 		B   & $-5.775 \cdot 10^{-7} ~ \si{\celsius^{-2}}$\\
 		\hline
 	\end{tabular}
-	\caption{Kennwerte des Widerstandsthermometers}
+	\caption{Kennwerte des Widerstandsthermometers.}
 	\label{tab:Pt1000}
 \end{table}
 \section{Durchführung}
@@ -445,7 +444,7 @@ In der Datei wird die Zeit in Millisekunden, die ADCWerte von Temperatur, Photod
 Der aktuelle Luftdruck kann über das Einstellungsmenü direkt am Logger geändert werden.\\
 Die Zeit wird anhand der aktuellen Zeit und jedem weiteren Zeitschritt bestimmt.
 Das Programm kann von 10 bis zu maximal 500 Werten pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden können.
-Der Zeitschritt wird abhängig von der Wertfrequenz berechnet und eingetragen.\\
+Der Zeitschritt wird abhängig von der Aufnahmefrequenz berechnet und eingetragen.\\
 Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert werden.
 Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
 Die Spannungen werden von jedem Sensor über ein geschirmtes Kabel übertragen.
@@ -515,7 +514,7 @@ Dieses besitzt eine RS232 Schnittstelle, welche mithilfe eines selbstgebauten Pe
 Dies geschieht über 5 Dioden und einem Pulldownwiderstand, um eine kleine Last zu erzeugen, die das Signal nicht verzerrt.
 Anschließend werden die Daten vom Mikrocontroller über eine UART Schnittstelle bei einer Baudrate von 9600$~$Baud eingelesen.
 Das GPS sendet die aktuellen Koordinaten mit der aktuellen Atomuhrzeit als ASCII Text jede Sekunde an den Logger.
-Mithilfe der Zeit kann die RTC (Realtimeclock) des Boardes einmalig auf die GPS-Zeit eingestellt werden.
+Mithilfe der Zeit kann die RTC (Realtimeclock) des Boards einmalig auf die GPS-Zeit eingestellt werden.
 
 \subsection{Messdurchführung}
 
@@ -635,7 +634,7 @@ Daher ist das Befahren dort verboten.
 \begin{figure}[!htb]
 	\centering
 	\input{GoeKiessee/tiefeGoe.tex}
-	\caption{Ortsmesspunkte in Göttingen gegen die Tiefe als Farbkarte aufgetragen.}
+	\caption{Tiefe in Göttingen gegen die Ortsmesspunkte als Farbkarte aufgetragen.}
 	\label{fig:tiefeGoe}
 \end{figure}
 Laut Datenblatt und, wie im Kapitel \ref{sec:durchdruck} beschrieben, sollte der Spannungsverlauf der Druckmessbrücke linear mit dem Druck steigen und pro Bar ein Volt hinzubekommen.
@@ -645,7 +644,7 @@ Allerdings ging die tiefste Messung laut aufgezeichneten Werten unter dieser Vor
 Da jedoch eine 8m Wassersäule schon einen beachtlichen Druck ausübt, konnten wir keine Referenzmessung zur Eichung machen, so dass wir uns entschlossen haben, einen linearen Korrekturfaktor von 1.1 einzuführen, um dem jede vermeintliche Tiefe gestreckt wird.
 Dieser Faktor ergibt sich aus den in Northeim gemessenen Tiefen und Druckdaten.
 Unter dieser Annahme erhielten wir Werte, die mit den Beobachtungen übereinstimmten.
-Die Linearität der Korrektur scheint in sofern angebracht, als dass wir uns bei vielen Messungen Mühe gegeben haben, die Sonde von Hand möglichst gleichmäßig herabzulassen.
+Die Linearität der Korrektur scheint in sofern angebracht, als dass wir uns bei vielen Messungen Mühe gaben, die Sonde von Hand möglichst gleichmäßig herabzulassen.
 Die aufgenommenen Druckkurven waren auch annähernd linear.
 
 In Abbildung \ref{fig:tiefeGoe} ist die maximale Tiefe der einzelnen Messdaten an den jeweiligen Messpunkten dargestellt.
@@ -658,7 +657,7 @@ Da wir aufgrund der springenden Temperatur die Daten in 40er Blöcke unterteilt 
 
 
 \subsection{Temperatur}
-Bei der Temperaturmessung ergaben sich die meißten Fehler und müssen am stärktsten gefiltert werden.
+Bei der Temperaturmessung ergaben sich die meisten Fehler und müssen am stärksten gefiltert werden.
 Aus diesem Grund sind alle Fehler statistische Fehler, da unseren angenommenen Fehler von $\sigma_\text{Temperatur}=0.1\si{\celsius}$ zu klein sind.
 Durch die Veränderung der LEDfrequenz, wie oben geschrieben trat der Fehler mit der quantisierten Linienaufspaltung deutlich stärker auf.
 Dies sorgt dafür, dass die Werte aus Northeim in der Auswertung verlässlicher sind, da sie leichter gefiltert werden können.
@@ -688,7 +687,7 @@ Näheres dazu in den jeweiligen Unterkapiteln.
 	\label{fig:tempSchlamm}
 \end{figure}
 In Abb. \ref{fig:temp_goe} sind alle von uns aufgenommenen Temperaturen bis $40\,\si{\celsius}$ aufgetragen.
-Dar\"uber hinaus waren noch einige Werte bei bis zu $140\,\si{\celsius}$, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
+Darüber hinaus waren noch einige Werte bei bis zu $140\,\si{\celsius}$, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
 Ebenfalls ist dort ein linearer Fit über die Werte, welche im Wasser aufgenommen wurden und sich unterhalb von $24\,\si{\celsius}$ befinden.
 Von diesen nehmen wir nämlich an, dass sie richtig sind und dort der Temperaturwiderstand mit der richtigen Spannung von $3.3\,$V betrieben wird.
 Die Gerade hat die Form $T(z)=(21.2\pm 0.7)\si{\celsius}-(0.43\pm 0.05)\si{\celsius\per\meter}\cdot z$.
