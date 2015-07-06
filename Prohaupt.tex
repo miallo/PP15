@@ -259,7 +259,7 @@ Setzt man Licht als eine ebene Welle an so ergibt sich bei Ausbreitung in einem 
 Es beschreibt, dass die Intensität $I$ des Lichts exponentiell bei zunehmender Stecke abfällt.
 Für den Anteil der noch vorhandenen Intensität $\frac{I}{I_0}$ gilt dann
 \begin{align}
- \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)~.
+ \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)~.\label{eq:absorblicht}
 \end{align}
 Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Dieser hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab
 \begin{align}
@@ -794,12 +794,22 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 
 \subsection{Licht}
 
+Bei den Daten der Photodiode zeigte sich in den Messdaten zu einen ein starkes Schwanken auf dem ersten Meter und zu anderen ein abnehmendes Verhalten.
+Dennoch werden die Daten nicht gefiltert, da hier wieder der See als homogen angenommen wird, können alle Datenpunkte verwendet werden.
+Bei der Auswertung werden alle Daten logarithmisch aufgetragen, da dies aufgrund der Gleichung \ref{eq:absorblicht} zu erwarten war. 
+Es soll sich ein linearer Zusammenhang zeigen, der proportional zum Absorbtionskoeffizienten ist.
+
+
+\subsubsection{Göttingen Kiessee}
 \begin{figure}[!htb]
 	\centering
 	\input{GoeKiessee/lichtGoe.tex}
 	\caption{Göttingen Lichtabsorbtion: alle Messdaten (logarithmisch).}
 	\label{fig:lichtGoe}
 \end{figure}
+Bei den Göttigen Messungen, zeigte sich, dass der See mit vielen Schwebeteilchen durchzogen war, somit der Absorbtionskoeffizient nicht nur rein vom Wasser abhängt.
+
+\subsubsection{Northeimer Kiessee}
 
 \begin{figure}[!h]
 	\centering
