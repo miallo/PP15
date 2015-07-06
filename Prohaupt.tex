@@ -898,10 +898,10 @@ Es wird also sehr deutlich, dass für die geplanten Versuche die Sendeleistung n
 Für den ADC wurde die interne Referenzspannung des Controllers verwendet.
 Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht, das sogenannte Rippling, somit auch die ADC Werte.
 Dies hat eine Größenordnung von etwa 5\si{\milli\volt}, sprich 1\% der Maximalspannung und ist in allen Datensätzen zu sehen.\\
-Um diesen Fehler zu beheben bzw. zu verringern ist es nötig eine konstante Referenzspannung zu verwenden.
+Um diesen Fehler zu beheben bzw. zu verringern, ist es nötig eine konstante Referenzspannung zu verwenden.
 Das Board hat einen nach außen geführten Pin für die Referenzspannung.
-Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen und das Rippling zu vermindern, oder eine eigene lastfreie Spannungsquelle zu bauen.
-Zu dem muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden, um das durch die Elektronik induzierte Rauschen zu unterdrücken.
+Nun ist es entweder nötig, die 3.3\si{\volt} des Boards zu nehmen und das Rippling zu vermindern, oder eine eigene lastfreie Spannungsquelle zu bauen.
+Zudem muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden, um das durch die Elektronik induzierte Rauschen zu unterdrücken.
 Mit dieses Methoden könnte das Rippling auf etwa 0.1\% der Maximalspannung gedrückt werden.
 
 \subsection{Druck}
@@ -916,7 +916,7 @@ Der größte Fehler bei der Kopplung von Druckplatine und Datenlogger bestand no
 Fehlerhaft war hier nicht die Verbindung der Platinen, sondern die boardinterne Masseverteilung.
 Anscheinend waren die verschiedenen Massepins nicht alle miteinander verbunden.
 Dies kann an einer fehlerhaften Lötstelle oder einer fehlerhaften Leitung liegen.
-In unserem Fall wurde des Problem behoben, in dem wir alle Masse zudem extern noch ein weiteres Mal gekoppelt haben.\\
+In unserem Fall wurde des Problem behoben, indem wir alle Masse zudem extern noch ein weiteres Mal gekoppelt haben.\\
 Allerdings wirkte das Rippling der ADCwerte, wie in Kapitel \ref{sec:diskreffADC} beschrieben, sich auch auf die Auswertung des Drucks aus.
 Des Weiteren zeigte sich in der Auswertung, dass die Steigung des Druck unterschätzt wurde.
 Die Tiefe war um fast 10\% zu klein.
@@ -938,7 +938,7 @@ Außerdem behindert am Northeimer See eine Insel ein Großteil des Blickfelds, s
 Es stellte sich bei den Messungen heraus, dass die Genauigkeit des Geodimeters keine Rolle spielte, da das Boot von Wind und Strömung während der Messung sehr stark abgetrieben wurde und somit mit einem Fehler von etwa $\pm5\si{\meter}$ gerechnet werden muss.
 Daher setzten wir bei der zweiten Messung unsere erste Idee um, die Position über GPS zu erfassen, welche wir wegen der vermeintlich schlechten Auflösung von 5-10m verwarfen.
 Somit sind beide Methoden gleich gut und bei der Messung, wie im Kapitel \ref{sec:ausort} bereits dargestellt, stellte sich zu dem heraus, dass das GPS von Garmin$^\copyright$ eine Genauigkeit von bis zu $\pm3\si{\meter}$ hatte.
-Die ist eine Verbesserung von 40\% in Bezug auf die vorher Möglichen $\pm5\si{\meter}$.
+Die ist eine Verbesserung von 40\% in Bezug auf die vorherigen Möglichen $\pm5\si{\meter}$.
 Zu dem waren nun die Position in der selben Datei gespeichert, wie die Messdaten auch.
 Dies machte ein sonnst notwendiges Sortieren der Dateien nach Ort und Zeit unnötig.
 
