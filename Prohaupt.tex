@@ -186,7 +186,7 @@ Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments 
 \label{sec:einleitung}
 Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
 Wir wollen in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Licht-Wellenlängen messen.
-Die Tiefe der Sensoren bestimmen wir mit Hilfe einer Drucksonde, während wir die Tiefe des Sees mit einem selbstgebauten Echolots bestimmen wollen.
+Die Tiefe der Sensoren bestimmen wir mit Hilfe einer Drucksonde, während wir die Tiefe des Sees mit einem selbst gebauten Echolots bestimmen wollen.
 Die Position des Bootes auf dem See wird mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.\\
 Die Messung soll am Seeburger See durchgeführt werden, da dieser ein natürlicher See ist und somit verschiedene Tiefen besitzt.
 Als Alternative haben wir einmal den Göttinger Kiessee und einmal in Northeim den Großen See, diese sind aber von Menschen erstellte Seen.\\
@@ -284,17 +284,17 @@ Es verbleiben dann noch drei mögliche anregbare Vibrationsmoden, die sich ihrer
 
 Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen an.
 Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor.
-Weil diese Zustände aber nun beliebig kompliziert werden können, muss man spektroskopische Versuche durchführen, um die Absorptionspektren zu untersuchen.
+Weil diese Zustände aber nun beliebig kompliziert werden können, muss man spektroskopische Versuche durchführen, um die Absorptionsspektren zu untersuchen.
 
 In Grafik \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
 Dies entspricht gerade dem sichtbaren Bereich.
-Näheres ist unter dieser Qelle zu finden \cite{abs}.
+Näheres ist unter dieser Quelle zu finden \cite{abs}.
 
 %https://www.osapublishing.org/ao/abstract.cfm?uri=ao-36-33-8710#articleTables
 \begin{figure}[h]
 	\centering
 	\input{Theorie/abs.tex}
-	\caption{Absorptionsspektrum (380-700nm) von reinem Wasser. Daten aus einer spektroskopischen Untersuchung (1997). Nach: \cite{speck}}
+	\caption{Absorptionsspektrum (380-700 $\si{\nano \metre}$) von reinem Wasser. Daten aus einer spektroskopischen Untersuchung (1997). Nach: \cite{speck}}
 	\label{fig:abs}
 \end{figure}
 
@@ -359,7 +359,7 @@ Aufgrund der beinahe konstanten Temperatur im obersten sowie untersten Bereich k
 Insbesondere erkennt man den starken Temperaturgradienten im Metalimnion, das hier zwischen 8 und 15 m liegt. 
 Näheres dazu findet man in der Quelle \cite{schicht}.
 Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine Länge von circa 8 m.
-Es ist also zu erwarten, dass wir beim Vermessenen eines tiefen Sees grade an die Grenze des Epilimnions stoßen.
+Es ist also zu erwarten, dass wir beim Vermessenen eines tiefen Sees gerade an die Grenze des Epilimnions stoßen.
 
 
 \begin{figure}[h]
@@ -497,8 +497,8 @@ Somit ist die Druckmessung vollkommen von den anderen Messungen getrennt und wir
 \subsubsection{Echolotmessung}
 Mithilfe von zwei Piezokristallen wird eine Echolotmessung realisiert.
 Die Kristalle haben eine Resonanzfrequenz von 40\si{\kilo\hertz} und liegen somit im Ultraschallbereich.
-Das Senderkristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maximalspannung zu erhöhen wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.
-Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf das Senderkristall gegeben.\\
+Der Sendekristall wird mithilfe von PWM (Puls Width Modulation) mit einem Signal von maximal +3.3\si{\volt} versorgt, um diese Maximalspannung zu erhöhen wird das Kristall über ein MOSFET-Transistor an +24\si{\volt} betrieben.
+Um die Tiefe zu Messen, muss ein klar definiertes Signal ausgesendet werden, hierzu werden 20 Schwingungen auf den Senderkristall gegeben.\\
 Das Empfängerkristall wird über einen Verstärker direkt an den ADC angeschlossen.
 Für die Messung der Tiefe wird die Laufzeit der Wellen vom Aussenden bis zum Empfangen gemessen und daraus die Entfernung berechnet.
 Die Entfernung wird nach dem Gesetzen aus dem Kapitel \ref{sec:theschallgeschw} berechnet.
@@ -578,7 +578,7 @@ Diese kann nun bequem mit einem Tippen versandt werden.
 
 Unser eigentlicher Plan sah vor, den Seeburger See zu vermessen.
 Dieser ist bis zu 4.2 Meter tief\footnote{\url{www.nlwkn.niedersachsen.de/download/58239/Seeburger\_See.pdf}, S.7}.
-Dementsprechend wählten wir unsere Kabellängen auf maxiamal 8\si{\meter}.
+Dementsprechend wählten wir unsere Kabellängen auf maximal 8\si{\meter}.
 Da dieser See jedoch auf Grund von Granatenfunden aus dem 2. Weltkrieg vom 25.05. bis zum 26.06.15 gesperrt war, mussten wir auf die andere Seen in der Region ausweichen.\\
 So haben wir am 10. Juni von 12 bis 15 Uhr am Göttinger Kiessee unsere ersten Messdaten aufgenommen.
 Da dieser viel kleiner und nur maximal 2.2 Meter tief ist, erwarteten wir nicht, dort auf interessante Phänomene zu stoßen.
@@ -600,12 +600,22 @@ Dies ist schlecht, da man somit manchmal überhaupt keine richtigen Daten hat, d
 \caption{Position des Bootes laut GPS-Signal verglichen mit den Geodimeter Messorten in Göttingen.}
 \label{fig:GPSGoe}
 \end{figure}
+
+In Abb. \ref{fig:tiefeGoe} sind die Tiefen an den jeweiligen Messpunkten am Göttinger Kiessee aufgetragen.
+Diese wurden mit dem Geodimeter bestimmt und die gestrichelten Linien verbinden die Messpunkte miteinander.
+Dabei ist zu erkennen, dass die Fahrt kein regelmäßiges Muster verfolgt.
+%so kovariant gewesen wurde Quantenzahl davon Torpedoabschussrampe achso der Sinn geht hier gegen Null...
+Als Vergleich sind die Daten, die wir mit einer kommerziellen App aufgenommen haben, in Abb. \ref{fig:GPSGoe} aufgetragen.
+Diese wurden durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
+Es ist zu erkennen, dass wir kein regelmäßiges Raster abgefahren sind.
+
 \begin{figure}[!h]
 	\centering
 	\input{Northeim/tiefe}
 	\caption{Die Messpunkte auf dem Northeimer See mit den Tiefen als Farbkarte.}
 	\label{fig:GPSNort}
 \end{figure}
+
 Unsere Befürchtung, dass das GPS-Signal zu ungenau ist, stellte sich als falsch heraus.
 Wir nutzten bei der zweiten Messung gleichzeitig einen GPS-Logger und die selbstgeschriebene Handy-App.
 Durch Vergleich der beiden Messdaten erkennt man, dass sie sehr gut miteinander übereinstimmen.
@@ -614,15 +624,6 @@ Dies ist vielleicht auch zu erwarten, da beide ähnliche Signale bekamen.
 Der GPS-Logger zeigte die Genauigkeit auf dem Display an, welche fast immer 3m betrug.
 Diese hohe Genauigkeit, welche sich unter "`Normalbedingungen"' nur selten erreichen lässt, wird dadurch erklärt, dass wir auf einer weiten Fläche ohne große Hindernisse waren.
 Somit gab es nichts, was die Signale der Satelliten reflektieren oder blockieren konnte.
-
-
-In Abb. \ref{fig:tiefeGoe} sind die Tiefen an den jeweiligen Messpunkten am Göttinger Kiessee aufgetragen.
-Diese wurden mit dem Geodimeter bestimmt und die gestrichelten Linien verbinden die Messpunkte miteinander.
-Dabei ist zu erkennen, dass die Fahrt kein regelmäßiges Muster verfolgt.
-so kovariant gewesen wurde Quantenzahl davon Torpedoabschussrampe achso der Sinn geht hier gegen Null...
-Als Vergleich sind die Daten, die wir mit einer kommerziellen App aufgenommen haben, in Abb. \ref{fig:GPSGoe} aufgetragen.
-Diese wurden durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
-Es ist zu erkennen, dass wir kein regelmäßiges Raster abgefahren sind.
 
 In Abb. \ref{fig:GPSNort} kann man erkennen, dass wir in Northeim mit der Unterstützung der Smart\-phone-App wesentlich besser gefahren sind.
 Dass wir die östliche Seite des Sees nicht befahren haben, liegt daran, dass dort noch aktiv Kies abgebaut wird.
@@ -649,8 +650,13 @@ Die aufgenommenen Druckkurven waren auch annähernd linear.
 
 In Abbildung \ref{fig:tiefeGoe} ist die maximale Tiefe der einzelnen Messdaten an den jeweiligen Messpunkten dargestellt.
 Man erkennt, dass der See am nördlichen Ende scheinbar mit etwa 2.2 Meter am tiefsten ist und nach Süden leicht flacher wird.
+<<<<<<< HEAD
+Für den Northeimer See ist es nicht sinnvoll, eine solche Karte zu erstellen, da die Sonde nur in Ufernähe Bodenkontakt hatte.
+An den anderen Punkten war es tiefer als unser Kabel es herab, also tiefer als 7 Meter.
+=======
 Für den Northeimer See ist eine solche Karte in der Abbildung \ref{fig:GPSNort} zu sehen, allerdings wurde nur an einigen Punkten der Boden erreicht.
 An den anderen Punkten war es tiefer als unser Kabel hergab, also tiefer als 7 Meter.
+>>>>>>> a379dd75ef4c32d86ea1a0a567dd6049b10ee441
 Die Druckkurven besaßen eine Breite (und in sofern ein Fehlerintervall) von ca. 15cm.
 Für die Temperaturwerte der Northeimer Messung mussten wir die Daten bearbeiten.
 Da wir aufgrund der springenden Temperatur die Daten in 40er Blöcke unterteilt haben, nahmen wir von den Tiefendaten den Mittelwert.
@@ -683,11 +689,11 @@ Näheres dazu in den jeweiligen Unterkapiteln.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{TempSchlamm}
-	\caption{Bei der Messung in Göttingen wird der Einfluss von Schlamm auf dem Temperatursensor gezeigt. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen. Es ist zu dem der Stätige Übergang zwischen den beiden Linien bei fester Tiefe zu sehen.}
+	\caption{Bei der Messung in Göttingen wird der Einfluss von Schlamm auf dem Temperatursensor gezeigt. Die obere Kurve entstand beim hinunterlassen, die untere beim hochziehen. Es ist zu dem der stetige Übergang zwischen den beiden Linien bei fester Tiefe zu sehen.}
 	\label{fig:tempSchlamm}
 \end{figure}
 In Abb. \ref{fig:temp_goe} sind alle von uns aufgenommenen Temperaturen bis $40\,\si{\celsius}$ aufgetragen.
-Darüber\-hinaus waren noch einige Werte bei bis zu $140\,\si{\celsius}$, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
+Dar\"uber hinaus waren noch einige Werte bei bis zu $140\,\si{\celsius}$, welche jedoch augenscheinlich durch einen Wackelkontakt in der Stromversorgung zustande kamen.
 Ebenfalls ist dort ein linearer Fit über die Werte, welche im Wasser aufgenommen wurden und sich unterhalb von $24\,\si{\celsius}$ befinden.
 Von diesen nehmen wir nämlich an, dass sie richtig sind und dort der Temperaturwiderstand mit der richtigen Spannung von $3.3\,$V betrieben wird.
 Die Gerade hat die Form $T(z)=(21.2\pm 0.7)\si{\celsius}-(0.43\pm 0.05)\si{\celsius\per\meter}\cdot z$.
@@ -783,7 +789,7 @@ Eventuell kann man in der Abb.\ref{fig:tempV3} erkennen, dass sich die Seeoberfl
 Für eine genauere Analyse hätte man jedoch über einen längeren Zeitraum messen müssen.
 In Abb. \ref{fig:tempV2} ist die später aufgenommene Kurve etwa $0.5\si\celsius$ unter der anderen.
 Dies kann verschiedene Gründe haben: Zum einen kann dies ein Fehler des obigen Filteralgorithmus sein, zum anderen könnte es auf Messfehler zurückzuführen sein, denn eine so starke Abkühlung scheint nicht plausibel.
-Wir erwarten nämlich eine Erwärmung, da an diesem Tag die Sonne stark gescheint hat.
+Wir erwarten nämlich eine Erwärmung, da an diesem Tag die Sonne stark geschienen hat.
 Auffällig ist auch, dass die zweite Messreihe etwa 1.5 Meter kürzer ist, der See in dieser Region also steil abzufallen scheint, da die beiden Messpunkte nur etwa 15 Meter entfernt sind.
 Diese Veränderung zu messen, wäre sicherlich auch interessant.
 
@@ -802,7 +808,7 @@ Somit haben alle Intensität die Einheit Volt.
 \begin{figure}[!htb]
 	\centering
 	\input{GoeKiessee/lichtGoe.tex}
-	\caption{Alle gemessenen Intensitätwerte aus Göttingen logarithmisch aufgetragen. Des Weiteren ist die Grenzgerade, welche die mittlere Intensitätsabnahme darstellt, eingetragen.}
+	\caption{Alle gemessenen Intensitätswerte aus Göttingen logarithmisch aufgetragen. Des Weiteren ist die Grenzgerade, welche die mittlere Intensitätsabnahme darstellt, eingetragen.}
 	\label{fig:lichtGoe}
 \end{figure}
 Bei den Göttingen Messungen, zeigte sich, dass der See mit vielen Schwebeteilchen durchzogen war, somit der Absorptionskoeffizient nicht nur rein vom Wasser abhängt.
@@ -819,7 +825,7 @@ Bei der Messung wurde mit einem Offset von $3.31\si{\milli\volt}$ gerechnet, da 
 	\subfigure[Alle Messwerte der Lichtabsorption in Northeim logarithmisch aufgetragen. Zu dem ist wieder die Grenzgerade eingetragen. \label{fig:lichtabs}]
    {\resizebox{0.7\linewidth}{!}{\input{Northeim/licht.tex}}}
    \hfill
-   \subfigure[Einzelne Messugen mit guter Korrelation.\label{fig:l1}]
+   \subfigure[Einzelne Messungen mit guter Korrelation.\label{fig:l1}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/l1.tex}}}
    \hfill
    \subfigure[Einzelne Messungen mit schlechte Korrelation.\label{fig:l2}]
@@ -906,7 +912,7 @@ Daraufhin bekamen wir einen Sensor der Geophysik.
 Dieser wird über eine externe Schaltung betrieben und wurde deshalb nicht von den Spannungsschwankungen des Boards direkt beeinflusst.
 Der größte Fehler bei der Kopplung von Druckplatine und Datenlogger bestand noch in der Testphase darin, dass nicht, wie im Kapitel \ref{sec:durchdruck} aufgeführt, die Massen der beiden Platinen gekoppelt waren, obwohl eine eigenständige Leitung für das Massesignal verwendet wurde.
 Fehlerhaft war hier nicht die Verbindung der Platinen, sondern die boardinterne Masseverteilung.
-Anscheinend waren die veschiedenen Massepins nicht alle miteinander verbunden.
+Anscheinend waren die verschiedenen Massepins nicht alle miteinander verbunden.
 Dies kann an einer fehlerhaften Lötstelle oder einer fehlerhaften Leitung liegen.
 In unserem Fall wurde des Problem behoben, in dem wir alle Masse zudem extern noch ein weiteres Mal gekoppelt haben.\\
 Allerdings wirkte das Rippling der ADCwerte, wie in Kapitel \ref{sec:diskreffADC} beschrieben, sich auch auf die Auswertung des Drucks aus.
@@ -958,12 +964,12 @@ Dies liegt wahrscheinlich daran, dass durch die Bewegung der Wasseroberfläche d
 Um dieses hochfrequente Rauschen zu unterdrücken kann der Strom der Photodiode zusätzlich noch durch einen Tiefpassfilter geleitet werden.
 Hierzu müsste nur eine Drosselspule in Reihe mit der Photodiode und dem ADC geschaltet werden.
 Somit werden nur die niederfrequenten Änderungen des Photostroms aufgezeichnet.\\
-Desweiteren waren die beide LEDs zur Messung der Absorption in verschiedenen Spektren nicht nah genug an der Photodiode, um eine signifikate Änderung an den Werten zu führen, die nicht im Rauschen untergeht.
+Des weiteren waren die beide LEDs zur Messung der Absorption in verschiedenen Spektren nicht nah genug an der Photodiode, um eine signifikante Änderung an den Werten zu führen, die nicht im Rauschen untergeht.
 Ebenfalls wurde bei der Wahl der Diode nicht darauf geachtet, dass diese eine unterschiedliche Aufnahmecharakteristik für die verwendeten Wellenlängen hat.
 Laut Datenblatt \cite[20]{PHOTODatenblatt} liegt der Unterschied in der Effizienz zwischen den beiden Wellenlängen bei 40\%, was sich auch in der Auswertung bemerkbar machte.\\
-Die Auswertung zeigte, dass die Ergebnisse der LED Auswertung trotz der Subtraktionsmethode noch stark Rausht.
+Die Auswertung zeigte, dass die Ergebnisse der LED Auswertung trotz der Subtraktionsmethode noch stark rauschen.
 Dies zeigt sich in den großen Fehlern von bis zu 88\% in der Standartabweichung.
-Desweiteren sind die mittleren Intensitäten der einzelnen LEDs auch sehr klein, da sie nur in 1\% des Messbereiches liegen.
+Des weiteren sind die mittleren Intensitäten der einzelnen LEDs auch sehr klein, da sie nur in 1\% des Messbereiches liegen.
 
 \subsection{Echolot}
 Die Idee des Echolots konnte nicht vollständig umgesetzt werden, da das Signal nicht stark genug war, um bis in eine Tiefe von etwa 6\si{\meter} einzudringen und reflektiert zu werden.
@@ -972,10 +978,10 @@ Dies kann entweder durch das Verwenden von einer höheren Spannung am Sender ode
 Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls führt.
 Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werden.
 Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden und dies zu einem hohen Leckstrom führt, der die Bauteile beschädigen kann.
-Desweiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
+Des weiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
 Wir haben dennoch ein paar Testdaten aufnehmen und auswerten können.
 Dieser Teil des Projektes ist auch für weitere Praktika interessant, da diese Methode kommerziell häufig eingesetzt wird und auch in der Wissenschaft zur Bodenanalyse verwendet werden kann.
-Die Probleme, die gelöst werden müssen, sind die Spannungsverorgung und ein funktionsfähiger Filteralgorythmuss zur Rauschreduktion.
+Die Probleme, die gelöst werden müssen, sind die Spannungsversorgung und ein funktionsfähiger Filteralgorithmus zur Rauschreduktion.
 
 \subsection{Messprobleme und verworfene Ideen}
 Unsere erste Idee war die, ein ferngesteuertes U-Boot zu bauen, was die Sensoren an Bord hat und ansatzweise autonom den See abrastert.
@@ -1017,13 +1023,13 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\textwidth]{Fotos/PT1000Schaltung.png}
-\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschltung. Die Spannungsversorgung, genau wie die Masseanbindung wird vom Board geregelt.}
+\caption{Beschaltung des Pt1000 Temperaturwiderstandes mit Vorwiderstand und Verstärkerschaltung. Die Spannungsversorgung, genau wie die Masseanbindung wird vom Board geregelt.}
 \label{fig:PT1000Schaltung}
 \end{figure}
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\textwidth]{Fotos/PhotodiodeSchaltung.png}
-\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerachaltung. Die Photodiode dient als Stromquelle und der Widerstand dient als Übersetzung in eine Spannung. Um die wenigen Millivolt detektierbar zu machen, wird ein Verstärker, wie beim Temperaturwiderstand verwerdet.}
+\caption{Beschaltung der Photodiode mit Widerstand und Verstärkerschaltung. Die Photodiode dient als Stromquelle und der Widerstand dient als Übersetzung in eine Spannung. Um die wenigen Millivolt detektierbar zu machen, wird ein Verstärker, wie beim Temperaturwiderstand verwendet.}
 \label{fig:PhotodiodeSchaltung}
 \end{figure}
 \begin{figure}[!h]
