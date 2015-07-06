@@ -319,7 +319,7 @@ Diese Eigenschaft ist für das Echolot wichtig. Eine gute Einführung in das The
 
 
 \subsection{Schichtung eines Sees}
-
+\label{sec:Schichtung}
 Man unterscheidet drei Tiefenschichten eines Sees.
 Diese haben alle verschiedene physikalische, chemische, sowie biologische Eigenschaften.
 Die Grenzen zwischen diesen Schichten sind kontinuierlich und oftmals schwer zu unterscheiden. 
@@ -441,7 +441,7 @@ Dies sorgt aber für ein größeres Datenaufkommen.
 Jede Datei trägt, zur besseren Identifikation, den aktuellen Monat, Tag, Stunde und Minute als Namen (MMDDhhmm.dat).
 In der Datei wird folgendes eingetragen: die Zeit in Millisekunden, die ADCWerte von Temperatur, Photodiode und Druck, sowie die berechneten Werte der Temperatur, Intensität, Druck und Tiefe, letztere berechnet aus dem aktuellen Luftdruck.
 Der aktuelle Luftdruck kann über das Einstellungsmenü direkt am Logger geändert werden.\\
-Das Programm kann von 10 bis zu maximal 500 Werten pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden können.
+Das Programm kann mit einer Datenrate zwischen 10 und 500 Werte pro Sekunde aufnehmen, welche in den Einstellungen während der Laufzeit geändert werden kann.
 Der Zeitschritt wird abhängig von der Aufnahmefrequenz berechnet und eingetragen.\\
 Für die Sensoren werden verschiedene Schaltungen verwendet, die im Folgenden näher erläutert werden.
 Bei allen Schaltungen ist zu beachten, dass in allen Fällen die Massen gekoppelt sind.
@@ -451,10 +451,10 @@ In dem Kabel sind zu dem noch alle Aderpaare gegen die anderen Paare abgeschirmt
 
 \subsubsection{Temperaturmessung}
 Für die Messung der Temperatur wird mit einem Pt1000 Temperaturwiderstand gearbeitet.
-Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf.
+Dieser benötigt eine spezielle Beschaltung, da durch ihn nur ein geringer Strom fließen darf, da er sich sonst erwärmt.
 Aus diesem Grund muss die am Pt1000 abfallende Spannung noch verstärkt werden.
-Dies geschieht mithilfe eines nicht-invertierenden Verstärkers, wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
-Mit der Formel \eqref{eq:verst} ergibt sich bei der in der Abbildung \ref{fig:PT1000Schaltung} gezeigten Beschaltung ein Verstärkungsfaktor von 11.
+Dies geschieht mithilfe eines nichtinvertierenden Verstärkers, wie im Kapitel \ref{sec:teoverstaerker} beschrieben.
+Mit der Formel \eqref{eq:verst} ergibt sich aus der in der Abbildung \ref{fig:PT1000Schaltung} gezeigten Beschaltung ein Verstärkungsfaktor von 11.
 Dieser Wert verstärkt somit die etwa 200\si{\milli\volt} auf etwa 2\si{\volt}, was gut im Messbereich des ADCs liegt.\\
 Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehenden Widerstandsnetzwerk leitet sich die Formel
 \begin{align}
@@ -462,19 +462,17 @@ Aus dem in der Abbildung \ref{fig:PT1000Schaltung} zu sehenden Widerstandsnetzwe
 \end{align}
 ab, wobei $U_\text{ADC}$ die Spannung ist, welche mit der Formel \eqref{eq:ADCwert} aus dem ADCWert berechnet wird.
 Zur anschließenden Berechnung der Temperatur aus dem gemessenen Widerstand wird die Formel \eqref{eq:temperapt1000} verwendet.\\
-Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Film Klebstoff beschichtet.
-Dieser sollte nur die Reaktionszeit beeinflussen.
+Der Sensor ist zwecks Wasserdichtigkeit mit einem dünnen Klebstofffilm  beschichtet, welcher nur die Reaktionszeit beeinflussen sollte.
 
 \subsubsection{Lichtmessung}
 Für die Lichtmessung wird eine Photodiode als intensitätsabhängige Stromquelle verwendet.
 Die Schaltung ist in der Abbildung \ref{fig:PhotodiodeSchaltung} zu sehen.
 Der Stromkreis besteht aus der Photodiode als Stromquelle und einem Widerstand, um den Strom in eine messbare Spannung zu wandeln.
-Da in den See nicht viel Licht eintritt, wird die sich ergebende Spannung noch über einen nicht-invertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 verstärkt.
+Da das Licht nicht tief in den See eintreten kann, wird die sich ergebende Spannung noch über einen nichtinvertierenden Verstärker nach der Gleichung \ref{eq:verst} mit einem Faktor 11 verstärkt.
 Die Spannung wird dann wieder mit der Gleichung \eqref{eq:ADCwert} berechnet.\\
-Um die Absorption in verschiedenen Spektren zu messen hat die Messsonde eine blaue und eine infrarote LED
-mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
+Um die Absorption in verschiedenen Spektren zu messen, hat die Messsonde eine blaue und eine infrarote LED mit mittleren Wellenlängen von $\lambda_\text{Blau}=460\si{\nano\meter}$ \cite[2]{BLAUDatenblatt} und $\lambda_\text{IR}=940\si{\nano\meter}$ \cite[4]{IRDatenblatt}.
 Die LEDs werden ebenfalls von der boardinternen Spannungsquelle versorgt und wie in der Abbildung \ref{fig:LEDSchaltung} zu sehen mit entsprechenden Vorwiderständen beschaltet.
-Um die LEDs von dem Umgebungslicht zu unterscheiden werden diese gepulst, sie werden in einem bestimmten Zyklen ein und aus geschaltet.
+Um die LEDs von dem Umgebungslicht zu unterscheiden, werden diese gepulst, sie werden in einem bestimmten Zyklen ein und aus geschaltet.
 Die Frequenz, mit der die LEDs nacheinander ein und aus geschaltet werden, die sogenannte Umschaltfrequenz, ist von 0\si{\hertz} bis 20\si{\hertz} durchschaltbar.
 Im Programm werden die Daten mit der jeweils angeschalteten LED und den Phasen ohne LED-Betrieb getrennt gespeichert.
 
@@ -601,7 +599,9 @@ Dies ist schlecht, da man somit manchmal überhaupt keine richtigen Daten hat, d
 \end{figure}
 
 In Abb. \ref{fig:tiefeGoe} sind die Tiefen an den jeweiligen Messpunkten am Göttinger Kiessee aufgetragen.
-Letztere wurden mit dem Geodimeter bestimmt und die gestrichelten Linien verbinden die Messpunkte miteinander.
+Die von GPS ausgegebenen Lattitude und Longitude Daten werden mithilfe einer Kugel vom Radius $R=40000\si{\kilo\meter}$ auf Oberflächenkoordinaten umgerechnet.
+Desweiteren werden die Koordinaten anhand eines Referenzpunktes auf Länge und Breite des Sees zurückgerechnet.
+Diese wurden mit dem Geodimeter bestimmt und die gestrichelten Linien verbinden die Messpunkte miteinander.
 Dabei ist zu erkennen, dass die Fahrt kein regelmäßiges Muster verfolgt.
 %so kovariant gewesen wurde Quantenzahl davon Torpedoabschussrampe achso der Sinn geht hier gegen Null...
 Als Vergleich mit GPS-Signalen sind die Daten, die wir mit einer kommerziellen App aufgenommen haben, in Abb. \ref{fig:GPSGoe} aufgetragen.
@@ -758,7 +758,9 @@ Zuerst wird der Median bestimmt; nun werden nur noch Werte unterhalb dessen betr
 Außerdem schließt man Ausreißer nach unten aus, indem der untere Quartilwert$-3\si{\celsius}$ als $T_\text{min}$ verwendet wird.
 Von den verbleibenden Werten wird der Mittelwert genommen.
 Dieses Verfahren wird in Abb. \ref{fig:tempAlg} verdeutlicht.
-Das Resultat des Filtervorgangs ist in Abb. \ref{fig:temp_nor} zu sehen.\\
+Das Resultat des Filtervorgangs ist in Abb. \ref{fig:temp_nor} zu sehen.
+Betrachtet man den Tiefenbereich ab von etwa 0\si{\meter} bis 6\si{\meter}, so kann man die in Kapitel \ref{sec:Schichtung} beschriebene Schicht Epilimnion erkennen.
+Ab 6\si{\meter} erkennt man einen weiteren Übergang, der dann in eine weitere Schicht, in die Thermonokline überführt.\\
 Wieder wurden alle Daten in einen Plot eingezeichnet, denn der See schien  im Rahmen der Messfehler homogen.
 Man erkennt drei verschiedene Bereiche: $0.2-1.5\,$m, $1.5-5.9\,$m und $5.9-7.5\,$m.
 Die gefittete Kurve besteht aus drei linearen Fits, welche in den einzelnen Bereichen durchgeführt werden.
@@ -954,7 +956,11 @@ Dieser ist für Ströme von bis zu 350mA ausgelegt.
 Augenscheinlich haben da die etwa 30\si{\milli\ampere}, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
 Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen nicht zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
 Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und führte trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
-Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
+Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.\\
+Was sich aus den Daten besonders gut zeigt ist die Schichtunge des Sees in der Temperatur.
+Besonders gut sichtbar ist der zweite Übergang in die tiefere Schicht.
+Dies ist ein Glücksfall, da eigentlich, nach Kapitel \ref{sec:Schichtung}, die Schicht erst bei etwa 10\si{\meter} beginnen sollte.
+Somit war unser Kabel gerade lang genug um in den Übergang diese Schicht eindringen zu können.
 
 \subsection{Absorption von Licht}
 Bei der Messung der Absorption stellte sich sehr schnell heraus, dass die Daten stark verrauscht sind, besonders an der Oberfläche des Wassers.
