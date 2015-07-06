@@ -728,7 +728,7 @@ Auch diese Daten sind nicht auszuwerten, da die Schlammtemperatur aus fast allen
 	\subfigure[Beispiel 1 \label{fig:tempAlg1l}]
    {\resizebox{0.49\linewidth}{!}{\input{Northeim/tempAlg1.tex}}}
    \hfill
-   \subfigure[Beispiel 2\label{fig:tempV1}]
+   \subfigure[Beispiel 2\label{fig:tempAlg2}]
    {\resizebox{.49\linewidth}{!}{\input{Northeim/tempAlg2.tex}}}
 	\caption{Algorithmus zum Filtern der Temperaturdaten. Es sind in beiden Plots die Sprünge, sowie die Korrekturen in der Temperatur gut zu erkennen.}
 	\label{fig:tempAlg}
@@ -793,26 +793,26 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 \subsection{Licht}
 
 Bei der Photodiode zeigte sich in den Messdaten zum einen ein starkes Schwanken auf dem ersten Meter und zu anderen ein abnehmendes Verhalten.
-Dennoch werden die Daten nicht gefiltert, da hier wieder der See als homogen angenommen wird, können alle Datenpunkte verwendet werden.
+Dennoch werden die Daten nicht gefiltert. Da hier wieder der See als homogen angenommen wird, können alle Datenpunkte verwendet werden.
 Bei der Auswertung werden alle Daten logarithmisch aufgetragen, da dies aufgrund der Gleichung \ref{eq:absorblicht} zu erwarten war. 
-Es soll sich ein linearer Zusammenhang zeigen, der proportional zum Absorptionskoeffizienten ist.
-Um über den ganzen See zu mitteln, werden alle Messdaten aus allen Messreihen in einen Graphik gebracht und eine Grenzgerade eingefügt.
-Diese liegt von Oben an den Messwerten an, um die Übersichtlichkeit zu gewähren.
+Es sollte sich ein linearer Zusammenhang mit dem Negativen des Absorptionskoeffizienten als Steigung zeigen.
+Um über den ganzen See zu mitteln, werden alle Messdaten aus allen Messreihen in einer Graphik aufgetragen und eine Grenzgerade eingefügt.
+Diese liegt von oben an den Messwerten an, da man mit dem Boot, der Sonde, etc. nur Schatten machen kann, es also in der jeweiligen Tiefe nicht heller sein kann, als dort maximal gemessen wurde.
 Die Intensität $I$ ist in unserem Fall proportional zur Photospannung $U_\text{Photo}$.
 Somit haben alle Intensität die Einheit Volt.
 
-\subsubsection{Göttingen Kiessee}
+\subsubsection{Göttinger Kiessee}
 \begin{figure}[!htb]
 	\centering
 	\input{GoeKiessee/lichtGoe.tex}
 	\caption{Alle gemessenen Intensitätswerte aus Göttingen logarithmisch aufgetragen. Des Weiteren ist die Grenzgerade, welche die mittlere Intensitätsabnahme darstellt, eingetragen.}
 	\label{fig:lichtGoe}
 \end{figure}
-Bei den Göttingen Messungen, zeigte sich, dass der See mit vielen Schwebeteilchen durchzogen war, somit der Absorptionskoeffizient nicht nur rein vom Wasser abhängt.
-Wie oben geschrieben wurde alle aufgenommenen Messwerte der Absorption gegen die Tiefe aufgetragen.
+Bei den Göttinger Messungen, zeigte sich, dass der See mit vielen Schwebeteilchen durchzogen war, somit der Absorptionskoeffizient nicht nur rein vom Wasser abhängt.
+Wie oben geschrieben wurden alle aufgenommenen Messwerte der Absorption gegen die Tiefe aufgetragen.
 Dies ist für Göttingen in der Abbildung \ref{fig:lichtGoe} zu sehen.
 Dadurch, dass alle Messwerte aufgetragen sind, ergibt sich ein linearer Zusammenhang, der proportional zum Mittelwert der gemessenen Absorption ist.
-Die Grenzgerade ergibt den Steigungskoeffizienten $a=(-3.3\pm0.3)\si{\per\meter}$.
+Die Grenzgerade hat die Steigung $a=(-3.3\pm0.3)\si{\per\meter}$.
 Vergleicht man diesen mit der Theorie aus Kapitel \ref{sec:absorblicht}, so entpricht dies einer Wellenlänge von $\lambda_\text{Göttingen}>750\si{\nano\meter}$.
 Dies liegt im Sonnenspektrum, ist aber durch unsere Literaturwerte nicht näher bestimmt.
 Bei der Messung wurde mit einem Offset von $3.31\si{\milli\volt}$ gerechnet, da die Photodiode hier einen nicht verschwindenden Dunkelstrom hat.
@@ -843,27 +843,27 @@ Somit sollten auch die Messwerte besser korrelieren.
 Des Weiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorption stärker von der des Wassers abhängen.
 In Abbildung \ref{fig:lichtabs} sind wieder alle aufgenommenen Messwerte der Intensität gegen die Tiefe aufgetragen.
 Ebenfalls ist wieder eine Grenzgerade eingezeichnet worden, die den Mittelwert der Absorption zeigt, da der See wieder als homogen angenommen wird.
-Es ergibt sich ein Steigungskoeffizient von $a=0.40\pm0.02$.
+Es ergibt sich eine Steigung von $a=0.40\pm0.02$.
 Vergleicht man diese wieder mit der Theorie vom Kapitel \ref{sec:absorblicht}, so ergibt sich eine Wellenlänge von etwa $\lambda_\text{Northeim}=660\si{\nano\meter}$.
-Diese liegt wieder im Sonnenspektrum und vergleicht man dies mit dem relativen Sesitivität aus dem Datenblatt \cite[20]{PHOTODatenblatt}, so erkennt man, das bei dieser Wellenlänge die Sesitivität bei etwa 80\% lag.
-Dies deutet daraufhin, dass bei einem solchen Wellenlängenbereich davon, dass der See recht wenig Schwebstoffe an den gemessenen Punkten beinhaltet.\\
-In den Abbildungen \ref{fig:l1} und \ref{fig:l2} sind jeweils gute und schlechte Korrelationen zu sehen.
+Diese liegt wieder im Sonnenspektrum und vergleicht man dies mit der relativen Sensitivität aus dem Datenblatt \cite[20]{PHOTODatenblatt}, so erkennt man, dass sie bei dieser Wellenlänge bei etwa 80\% liegt.
+Dies deutet daraufhin, dass der See bei einem solchen Wellenlängenbereich recht wenige Schwebstoffe an den gemessenen Messpunkten beinhaltet.\\
+In den Abbildungen \ref{fig:l1} und \ref{fig:l2} sind jeweils einzelne Messreihen guter und schlechter Korrelationen zu sehen.
 Es ist gut zu erkennen, dass an einigen Stellen die Photodiode homogen beschienen wird und somit durchgehend die Absorption vom Wasser bestimmt werden konnte.
 Die zeigt sich auch in den Korrelationskoeffizienten, die alle zwischen $r=0.93$ und $r=0.96$ liegen.
-Die linearen Konstanten sind zwar alle etwas unterschiedliche, von $a=-0.773\pm0.004$ bis zu $-0.524\pm0.004$.
-Mittelt man aber über alle Messwerte ergibt sich auf die Steigung der Geraden, wie im Gesamtplot \ref{fig:lichtabs} gezeigt.
+Die linearen Konstanten sind alle etwas unterschiedliche, hier von $a=-0.773\pm0.004$ bis zu $-0.524\pm0.004$, und weichen somit um bis zu $95\%$ von der Steigung der Grenzgeraden ab.
+Dies ist verwunderlich, da wir von den Daten guter Korrelationen erwarten, dass sie den Absorptionskoeffizient am besten darstellen sollten.
 In der schlechten Messung ist die linearer Auswertung fast nicht möglich, da die Messwerte sehr stark schwanken.
-Die Korrelationskoeffizienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.\\
-In der Abbildung \ref{fig:led} sind die gemessenen Intensitäten der LEDs gegen die Tiefe aufgetragen.
-Hierzu wurden jeweils die Intensitäten bei abgeschalteten LEDs von den jeweiligen Werten bei angeschalteten LEDs subtrahiert.
-Dies soll zu dem das Rauschen der Sonnenintensität reduzieren.
-Das Ergebnis zeigt eine Konstante, die aber für die beiden LEDs verschieden sind.
-Des Weiteren ist die, wie oben beschriebene Streuungen auf den ersten Metern immer noch gut zu erkennen.
+Die Korrelationskoeffizienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.
+Bei der zweiten Kurve (grün) lässt sich wahrscheinlich eine Drehung der Sonde beobachten.\\
+In der Abbildung \ref{fig:led} sind die gemessenen Intensitätsunterschiede zwischen an- und ausgeschalteten LEDs gegen die Tiefe aufgetragen.
+Dies soll zudem den Einfluss der Sonnenintensität reduzieren.
+Das Ergebnis zeigt etwa eine Konstante für jede der beiden LEDs.
+Des Weiteren sind die -- wie oben beschriebenen -- Streuungen auf den ersten Metern immer noch gut zu erkennen.
 Da die Werte konstant gegen die Tiefe sind berechnen wir den Mittelwert aus den jeweiligen Intensitäten.
-Für die blaue LED ergibt sich eine mittlere Intensität von $I_\text{blau}=(3.1\pm2.7)\si{\milli\volt}$ und für infrarote eine mittlere Intensität von $I_\text{IR}=(5.9\pm3.7)\si{\milli\volt}$.
-Die Größe der Fehler von bis zu 88\%  ergeben sich aus den starken Streuungen der Messwerte.
-Die Fehler bilden sich jeweils aus der Standardabweichung.
-Die infrarote LED hat somit eine etwa doppelt so hohe Intensität, wie die blaue LED.
+Für die blaue LED ergibt sich eine mittlere Intensität von $I_\text{blau}\propto(3.1\pm2.7)\si{\milli\volt}$ und für infrarote eine mittlere Intensität von $I_\text{IR}\propto(5.9\pm3.7)\si{\milli\volt}$.
+Die Größe der Fehler (aus der Standardabweichung) von bis zu 88\%  ergeben sich aus den starken Streuungen der Messwerte.
+Die infrarote LED wird von der Photodiode also als doppelt so hell wahrgenommen als die blaue.
+Dies ist wahrscheinlich durch die höhere Sensitivität der Photodiode auf dem roten bis infraroten Bereich zu erklären.
 
 \subsection{Gemessenes Abstandsgesetz}
 \begin{figure}[h]
