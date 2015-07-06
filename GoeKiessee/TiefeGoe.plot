@@ -1,7 +1,9 @@
 reset
-set terminal epslatex color
+set terminal epslatex color size 15cm,8cm
 set output 'tiefeGoe.tex'
 
+set bmargin 0.0
+set tmargin 0.0
 
 set size ratio -1
 

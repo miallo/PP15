@@ -186,7 +186,7 @@ Auch hat er uns zu den Messstellen gefahren, was aufgrund des vielen Equipments 
 \label{sec:einleitung}
 Dieser Versuch beschäftigt sich mit der Schichtung von Seen.
 Wir wollen in verschiedenen Tiefen die Temperatur, die Helligkeit und die Absorption von zwei Licht-Wellenlängen messen.
-Die Tiefe der Sensoren bestimmen wir mit Hilfe einer Drucksonde, während wir die Tiefe des Sees mit einem selbstgebauten Echolote bestimmen wollen.
+Die Tiefe der Sensoren bestimmen wir mit Hilfe einer Drucksonde, während wir die Tiefe des Sees mit einem selbstgebauten Echolots bestimmen wollen.
 Die Position des Bootes auf dem See wird mit einem Geodimeter (die Geräte, welche im Straßenbau zur Entfernungsmessung verwendet werden) und mittels GPS aufgezeichnet.\\
 Die Messung soll am Seeburger See durchgeführt werden, da dieser ein natürlicher See ist und somit verschiedene Tiefen besitzt.
 Als Alternative haben wir einmal den Göttinger Kiessee und einmal in Northeim den Großen See, diese sind aber von Menschen erstellte Seen.\\
@@ -283,7 +283,11 @@ Es verbleiben dann noch drei mögliche anregbare Vibrationsmoden, die sich ihrer
 
 Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen an.
 Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor.
+<<<<<<< HEAD
+Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorptionsspektren zu untersuchen.
+=======
 Weil diese Zustände aber nun beliebig kompliziert werden können, muss man spektroskopische Versuche durchführen, um die Absorptionspektren zu untersuchen.
+>>>>>>> a4e582e7e3c4a4d3c8da999b0126401006a0087a
 
 In Grafik \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
 Dies entspricht gerade dem sichtbaren Bereich.
@@ -610,7 +614,7 @@ Diese wurden mit dem Geodimeter bestimmt und die gestrichelten Linien verbinden 
 Dabei ist zu erkennen, dass die Fahrt
 Als Vergleich sind die Daten, die wir mit einer kommerziellen App aufgenommen haben, in Abb. \ref{fig:GPSGoe} aufgetragen.
 Diese wurden durchgehend aufgezeichnet, jedoch kann man an den Umkehrpunkten erkennen, dass die Positionen ungefähr übereinstimmen.
-Es ist zu erkennen, dass wir kein regelmäßges Raster abgefahren sind.
+Es ist zu erkennen, dass wir kein regelmäßiges Raster abgefahren sind.
 
 In Abb. \ref{fig:GPSNort} kann man erkennen, dass wir in Northeim mit der Unterstützung der Smart\-phone-App wesentlich besser gefahren sind.
 Dass wir die östliche Seite des Sees nicht befahren haben, liegt daran, dass dort noch aktiv Kies abgebaut wird.
@@ -848,8 +852,8 @@ Die Korrelationskoeffzienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.
 \begin{figure}[!htb]
 	\centering
 	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
-	\caption{Unterschied Sonnenlicht+LED zu Sonnenlicht (logarithmisch)}
-	\label{fig:led}]
+	\caption{Unterschied Sonnenlicht+LED zu Sonnenlicht}
+	\label{fig:led}
 \end{figure}
 In der Abbildung \ref{fig:led} sind die gemessenen Intensitäten der LEDs gegen die Tiefe aufgetragen.
 Hierzu wurden jeweils die Intensitäten bei abgeschalteten LEDs von den jeweiligen Werten bei angeschalteten LEDs subtrahiert.
@@ -865,7 +869,7 @@ Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle t
 Dies wurde zunächst mit der Motivation durchgeführt eine mit der vorgegebenen Sendeleistung maximale Reichweite zu ermitteln. Als klar wurde, dass diese nicht ausreichen wird haben wir
 die Abnahme der Amplitude weiter untersucht.
 
-Zu diesem Zweck haben wir Sender und Empfänger parallel zueinander ausgerichet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
+Zu diesem Zweck haben wir Sender und Empfänger parallel zueinander ausgerichtet und den Abstand mit einer Skala gemessen. Um dann die Amplitude bei einer bestimmten Entfernung abzulesen, haben wir ein
 ein Oszilloskop als Empfänger verwendet.
 
 Wir haben hierfür drei Messreihen durchgeführt und anschließend wurde für jede Entfernung der Mittelwert mit Standardabweichung berechnet. In Grafik \ref{fig:schall} ist das Messergebnis zu sehen, wobei wir die relative Amplitude $\frac{A}{A_0}$ berechnet haben.
@@ -891,12 +895,18 @@ Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter
 \subsection{Referenzspannung des ADC}
 \label{sec:diskreffADC}
 Für den ADC wurde die Interne Referenzspannung des Controllers verwendet.
-Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht, das sogenannte rippling, somit auch die ADC Werte.
+Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht, das sogenannte Rippling, somit auch die ADC Werte.
 Dies hat eine Größenordnung von etwa 5\si{\milli\volt}, sprich 1\% der Maximalspannung und ist in allen Datensätzen zu sehen.\\
 Um diesen Fehler zu beheben bzw. zu verringern ist es nötig eine konstante Referenzspannung zu verwenden.
+<<<<<<< HEAD
+Das Board hat dafür einen nach außen geführten Pin für die Referenzspannung.
+Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen und das Rippling zu vermindern, oder eine eigene lastfreie Spannungsquelle zu bauen.
+Zu den muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte Rauschen zu unterdrücken.
+=======
 Das Board hat einen nach außen geführten Pin für die Referenzspannung.
 Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen und das rippling zu vermindern, oder eine eigene lastfreie Spannungsquelle zu bauen.
 Zu dem muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte hochfrequente Rauschen zu unterdrücken.
+>>>>>>> a4e582e7e3c4a4d3c8da999b0126401006a0087a
 Mit dieses Methoden könnte das Rippling auf etwa 0.1\% der Maximalspannung gedrückt werden.
 
 \subsection{Druck}
@@ -909,11 +919,11 @@ Daraufhin bekamen wir einen Sensor der Geophysik.
 Dieser wird über eine externe Schaltung betrieben und wurde deshalb nicht von den Spannungsschwankungen des Boards direkt beeinflusst.
 Der größte Fehler bei der Kopplung von Druckplatine und Datenlogger bestand noch in der Testphase darin, dass nicht, wie im Kapitel \ref{sec:durchdruck} aufgeführt, die Massen der beiden Platinen gekoppelt waren, obwohl eine eigenständige Leitung für das Massesignal verwendet wurde.
 Fehlerhaft war hier nicht die Verbindung der Platinen, sondern die boardinterne Masseverteilung.
-Anscheinend waren die veschiedenen Massepin nicht alle miteinander verbunden.
+Anscheinend waren die veschiedenen Massepins nicht alle miteinander verbunden.
 Dies kann an einer fehlerhaften Lötstelle oder einer fehlerhaften Leitung liegen.
 In unserem Fall wurde des Problem behoben, in dem wir alle Masse zudem extern noch ein weiteres Mal gekoppelt haben.\\
 Allerdings wirkte das Rippling der ADCwerte, wie in Kapitel \ref{sec:diskreffADC} beschrieben, sich auch auf die Auswertung des Drucks aus.
-Desweiteren zeigte sich in der Auswertung, dass die Steigung des Druck unterschätzt wurde.
+Des Weiteren zeigte sich in der Auswertung, dass die Steigung des Druck unterschätzt wurde.
 Die Tiefe war um fast 10\% zu klein.
 Aus diesem Grund haben wir den Korrekturfaktor von 1.1 verwendet.
 Mit diesem Faktor sind die Tiefenwerte, wie im Kapitel \ref{sec:ausdruck} beschrieben, mit den über die Markierungen am Kabel vergleichbar gewesen.
@@ -924,8 +934,13 @@ Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und da
 Dies kann entweder durch das Verwenden von einer höheren Spannung am Sender oder durch das Verwenden einer H-Brücke getan werden.
 Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls führt.
 Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werden.
+<<<<<<< HEAD
+Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden.
+Des Weiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
+=======
 Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden und dies zu einem hohen Leckstrom führt, der die Bauteile beschädigen kann.
 Desweiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
+>>>>>>> a4e582e7e3c4a4d3c8da999b0126401006a0087a
 Wir haben dennoch ein paar Testdaten aufnehmen und auswerten können.
 %hie noch das Ergebnis der Auswertung diskutieren.
 Dieser Teil des Projektes ist auch für weitere Praktika interessant, da diese Methode kommerziell häufig eingesetzt wird und auch in der Wissenschaft zur Bodenanalyse verwendet werden kann.
@@ -975,7 +990,7 @@ Dies liegt wahrscheinlich daran, dass durch die Bewegung der Wasseroberfläche d
 Um dieses hochfrequente Rauschen zu unterdrücken kann der Strom der Photodiode zusätzlich noch durch einen Tiefpassfilter geleitet werden.
 Hierzu müsste nur eine Drosselspule in Reihe mit der Photodiode und dem ADC geschaltet werden.
 Somit werden nur die niederfrequenten Änderungen des Photostroms aufgezeichnet.\\
-Desweiteren waren die beide LEDs zur Messung der Absorbtion in verschiedenen Spektren nicht nah genug an der Photodiode, um eine signifikate Änderung an den Werten zu führen, die nicht im Rauschen untergeht.
+Desweiteren waren die beide LEDs zur Messung der Absorption in verschiedenen Spektren nicht nah genug an der Photodiode, um eine signifikate Änderung an den Werten zu führen, die nicht im Rauschen untergeht.
 Ebenfalls wurde bei der Wahl der Diode nicht darauf geachtet, dass diese eine unterschiedliche Aufnahmecharakteristik für die verwendeten Wellenlängen hat.
 Laut Datenblatt \cite[20]{PHOTODatenblatt} liegt der Unterschied in der Effizienz zwischen den beiden Wellenlängen bei 40\%, was sich auch in der Auswertung bemerkbar machte. %refferez auf Datenblatt
 

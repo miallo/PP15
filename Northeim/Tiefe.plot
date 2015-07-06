@@ -1,7 +1,9 @@
 reset
-set terminal epslatex color
+set terminal epslatex color size 10cm,11.5cm
 set output 'tiefe.tex'
 
+set bmargin 0
+set tmargin 0
 
 set size ratio -1
 
