@@ -709,9 +709,13 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 \label{sec:austempnortheim}
 \begin{figure}[!htb]
 	\centering
-	\input{Northeim/temp_roh.tex}
-	\caption{Rohdaten der Temperaturmessung in Northeim.}
-	\label{fig:temp_nor_Roh}
+	\subfigure[Rohdaten der Temperaturmessung. \label{fig:temp_nor_Roh}]
+	{\resizebox{0.39\textwidth}{!}{\input{Northeim/temp_roh.tex}}}
+	\hfill
+	\subfigure[Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit. Die ersten Messwerte bei 0\si{\meter} ergeben sich beim Eintauchen der Sonde und sind deswegen nicht beachtet.\label{fig:temp_nor}]
+	{\resizebox{0.59\textwidth}{!}{\input{Northeim/temp.tex}}}
+	\caption{Temperaturmessung Northeim.}
+	\label{fig:temp_Nord}
 \end{figure}
 
 In Grafik \ref{fig:temp_nor_Roh} sind alle Temperaturmessungen der Messung in Northeim aufgetragen.
@@ -752,14 +756,6 @@ Tiefe [m] & Temperaturabnahme [$\frac{^\circ C}{\text m}$] & Temperaturintervall
 \caption{Temperaturkoeffizienten aus dem Fit von Abb. \ref{fig:temp_nor}.}
 \label{tab:tempTabNor}
 \end{table}
-
-
-\begin{figure}[!h]
-\centering
-\input{Northeim/temp.tex}
-\caption{Temperaturverlauf aller Messungen des Northeimer Sees aufgetragen gegen die Tiefe mit einem abschnittsweise linearen Fit. Die ersten Messwerte bei 0\si{\meter} ergeben sich beim Eintauchen der Sonde und sind deswegen nicht beachtet.}
-\label{fig:temp_nor}
-\end{figure}
 
 
 Da wir in der App die vorherigen Messpositionen auf einer Karte sehen konnten, haben wir drei Positionen noch ein zweites Mal besucht, um vergleichen zu können, wie sich der See mit der Zeit erwärmt.
