@@ -210,7 +210,7 @@ Möchte man also die Tiefe $d$ des Drucksensors bestimmen, so berechnet sich die
 \subsection{Schallausbreitung}
 
 \subsubsection{Abstandsgesetz und Intensität}
-
+\label{sec:abs}
 %Motivation:
 Wenn Reflektion und die Mitbewegung des Mediums (Wasser) vernachlässigt werden, dann sollten sich die Abhängigkeiten bei der Ausbreitung des Schalls vom Piezokristall, ähnlich verhalten wie die Gesetze einer punktförmigen Schallquelle.
 
@@ -218,9 +218,9 @@ Der Grund dafür ist, dass die genutzten Entfernungen zwischen Sender und Empfä
 In einem homogenem Medium verteilt sich dann die ausgesendete Energie der Welle in drei Dimensionen gleichmäßig im Abstand $r$ über eine Kugelfläche $A$.
 Wird nun mit $\left<P\right>$ die mittlere vom Sender abgestrahlte Leistung 
 bezeichnet, dann ist zu erwarten, dass die Intensität des Signals sich antiproportional zu $r^2$ verhält, also $I \propto \frac{1}{r^2}$.
-Der Schalldruck $P$ hingegen nimmt antiproportional zur Entfernung ab
+Der Schalldruck $p$ hingegen nimmt antiproportional zur Entfernung ab
 \begin{align}
- P \propto \frac{1}{r}~.
+ p \propto \frac{1}{r}~.
 \end{align}
 Wenn nun $v$ die Ausbreitungsgeschwindigkeit im homogenen Medium und $\left<w\right>$ die mittlere Energiedichte bezeichnet, dann kann die mittlere Leistung auch geschrieben werden als $\left<P\right>  = \left<w\right> A v$.
 Hieraus ergibt sich direkt für die Intensität $I = \left<w\right> v$.
@@ -229,9 +229,9 @@ proportional zum Quadrat der Amplitude $A$ und der Kreisfrequenz $\omega$ ist $\
 Mit $\rho$ wurde hier wie üblich die Dichte des Mediums bezeichnet.
 Insgesamt erhält man also
 \begin{align}
- I = \frac{1}{2} \rho \omega^2 A^2 = \frac{1}{2} \frac{P_{max}^2}{\rho v}~.
+ I = \frac{1}{2} \rho \omega^2 A^2 = \frac{1}{2} \frac{p_{max}^2}{\rho v}~.
 \end{align}
-Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zusammenhang zwischen der maximalen Druckamplitude $P_{max}$ und der Amplitude der Schallwelle gegeben ist durch $P_{max} = \rho \omega v A~. $
+Es wurde verwendet, dass man speziell für Schallwellen zeigen kann, dass der Zusammenhang zwischen der maximalen Druckamplitude $p_{max}$ und der Amplitude der Schallwelle gegeben ist durch $p_{max} = \rho \omega v A~. $
 Als Ergebnis lässt sich festhalten, dass die Intensität der Schallwelle proportional ist zum Quadrat der Druckamplitude. Genaueres zu diesen Themen ist im Tipler \cite[S.598]{tipler} zu finden.
 
 \subsubsection{Schallgeschwindigkeit}
@@ -240,9 +240,9 @@ Für Schallwellen kann man in Fluiden, wie Wasser oder Luft folgende Gleichung f
 \begin{align}
  v = \sqrt{  \frac{K}{\rho}  }~.
 \end{align}
-Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderungen
+Wie oben bezeichnet $\rho$ die Massendichte. Mit $K$ wurde hier das sog. Kompressiblitätsmodul bezeichnet. Dieses ist definiert als das Verhältnis der relativen Druck und Volumenänderung
 \begin{align}
- K := - V \frac{d p}{d V}  = - \frac{d P}{d V / V }~.
+ K := - V \frac{d p}{d V} ~.
 \end{align}
 Das negative Vorzeichen entsteht dadurch, dass bei einem Zuwachs des Drucks das Volumen abnimmt. Damit wäre also $dV$ negativ, jedoch muss K größer null bleiben, damit die Wurzel reell bleibt.
 
@@ -259,7 +259,7 @@ Setzt man Licht als eine ebene Welle an so ergibt sich bei Ausbreitung in einem 
 Es beschreibt, dass die Intensität $I$ des Lichts exponentiell bei zunehmender Stecke abfällt.
 Für den Anteil der noch vorhandenen Intensität $\frac{I}{I_0}$ gilt dann
 \begin{align}
- \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)~.
+ \frac{I}{I_0}  =  \exp(- \alpha  \Delta z)~.\label{eq:absorblicht}
 \end{align}
 Die im Exponent auftauchende Größe $\alpha$ wird auch als Absorptionskoeffizient bezeichnet. Dieser hängt sowohl vom Medium als auch von der Wellenlänge $\lambda$ ab
 \begin{align}
@@ -283,7 +283,11 @@ Es verbleiben dann noch drei mögliche anregbare Vibrationsmoden, die sich ihrer
 
 Infrarotstrahlung regt nun gerade eine Kombination von zwei Vibrationszuständen an.
 Im allgemeinen Fall liegen aber insbesondere im sichtbaren Spektrum Energiebänder vor.
+<<<<<<< HEAD
 Weil diese Zustände aber nun beliebig kompliziert werden können, muss man auf makroskopischer Ebene spektroskopische Versuche durchführen, um die Absorptionsspektren zu untersuchen.
+=======
+Weil diese Zustände aber nun beliebig kompliziert werden können, muss man spektroskopische Versuche durchführen, um die Absorptionspektren zu untersuchen.
+>>>>>>> a4e582e7e3c4a4d3c8da999b0126401006a0087a
 
 In Grafik \ref{fig:abs} ist hierzu der Absorptionskoeffizient von reinem Wasser in einem Wellenlängenbereich von 380 bis 700 nm dargestellt.
 Dies entspricht gerade dem sichtbaren Bereich.
@@ -339,7 +343,7 @@ Diese trennt die obere Schicht von größeren Tiefen.
 \newline
 
 %http://www.wiley-vch.de/books/sample/3527321314_c01.pdf
-Das Epilimnion ist klarerweise im Sommer die wärmste und besitzt den größten pH wert, da es hier zu Kontakt mit der Atmosphäre kommt.
+Das Epilimnion ist im Sommer die wärmste Schicht und besitzt den größten pH-Wert, da es hier zu Kontakt mit der Atmosphäre kommt.
 In Folge dessen lösen sich Gase wie Kohlenstoffdioxid, sodass beispielsweise Kohlensäure entsteht.
 Außerdem besitzt diese Schicht auch den größten Sauerstoffgehalt.
 Hier sind auch die meisten phototrophen Planktonarten zu finden, da es ist der hellste Bereich des Sees ist.
@@ -356,9 +360,10 @@ Aus diesem Grund ist eine (Temperatur-) Schichtung bei permanent gefrorenen Gew�
 In Grafik \ref{fig:schichtung} sind zur Veranschaulichung der Leitwert C, die Temperatur T und das Sauerstoffgehaltsprofil des Arendsee (Sachsen Anhalt, Messung im September) dargestellt. 
 Aufgrund der beinahe konstanten Temperatur im obersten sowie untersten Bereich kann man hier die drei oben geschilderten Schichten gut von einander trennen.
 Insbesondere erkennt man den starken Temperaturgradienten im Metalimnion, das hier zwischen 8 und 15 m liegt. 
+Näheres dazu findet man in der Quelle \cite{schicht}.
 Das Kabel, welches in unserem Experiment den Logger mit der Sonde verbindet hat eine Länge von circa 8 m.
 Es ist also zu erwarten, dass wir beim Vermessenen eines tiefen Sees grade an die Grenze des Epilimnions stoßen.
-Nähers unter dieser Quelle \cite{schicht} zu finden.
+
 
 \begin{figure}[h]
 	\centering
@@ -376,12 +381,12 @@ Dieses sendet einen Laserstrahl in eine bestimmte Richtung aus und misst, sobald
 Daraus bestimmt es die Entfernung.
 Die Richtung wird durch die Stellung des beweglichen Kopfes ermittelt.
 Dafür wird beim Einschalten eine Referenzrichtung eingestellt, anhand derer die Abweichung bestimmt wird.
-Das Gerät kann nun die relative Position zu dem eigenen Standort in verschiedenen Darstellungsweisen ausgeben: Zylinderkoordinaten und Kartesische Koordinaten.
+Das Gerät kann nun die relative Position zu dem eigenen Standort in verschiedenen Darstellungsweisen ausgeben: Zylinderkoordinaten und kartesische Koordinaten.
 
 Der Laser wird von einem Retroreflektor an einer Messstange reflektiert, welche mit an Bord genommen wird.
 Ein Retroreflektor ist eine Anordnung von drei Spiegeln, welche jeweils im $90^\circ$-Winkel zueinander stehen.
 Jeder einfallende Strahl wird so in die Herkunftsrichtung zurückgelenkt.\\
-Als zweite Mögliche Ortsbestimmung wird das GPS System verwendet, dass durch Triangulation von Signalen einiger Satelliten die Position bestimmt.
+Als zweite mögliche Ortsbestimmung wird das GPS System verwendet, dass durch Triangulation von Signalen einiger Satelliten die Position bestimmt.
 Diese Methode ist vergleichsweise ungenau mit einer Genauigkeit von $\pm5\si{\meter}$, aber im Vergleich zur Größe von Seen immer noch genau genug.
 Die Implementierung dieser Methode wird im Kapitel \ref{sec:durchpos} weiter beschrieben.
 
@@ -705,7 +710,7 @@ Eine genauere Auswertung ist auf Grund der wenigen brauchbaren Messreihen und de
 
 
 \subsubsection{Northeim}
-
+\label{sec:austempnortheim}
 \begin{figure}[!htb]
 	\centering
 	\input{Northeim/temp_roh.tex}
@@ -793,13 +798,33 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 
 \subsection{Licht}
 
+Bei den Daten der Photodiode zeigte sich in den Messdaten zu einen ein starkes Schwanken auf dem ersten Meter und zu anderen ein abnehmendes Verhalten.
+Dennoch werden die Daten nicht gefiltert, da hier wieder der See als homogen angenommen wird, können alle Datenpunkte verwendet werden.
+Bei der Auswertung werden alle Daten logarithmisch aufgetragen, da dies aufgrund der Gleichung \ref{eq:absorblicht} zu erwarten war. 
+Es soll sich ein linearer Zusammenhang zeigen, der proportional zum Absorbtionskoeffizienten ist.
+Um über den ganzen See zu mitteln, werden alle Messdaten aus allen Messreihen in einen Graphik gebracht und eine Grenzgerade eingefügt.
+Diese liegt von Oben an den Messwerten an, um die Übersichtlichkeit zu gewähren.
+Die Intenität $I$ ist in unserem Fall proportional zur Photospannung $U_\text{Photo}$.
+Somit haben alle Intensität die Einheit Volt.
+
+\subsubsection{Göttingen Kiessee}
 \begin{figure}[!htb]
 	\centering
 	\input{GoeKiessee/lichtGoe.tex}
 	\caption{Göttingen Lichtabsorbtion: alle Messdaten (logarithmisch).}
 	\label{fig:lichtGoe}
 \end{figure}
+Bei den Göttigen Messungen, zeigte sich, dass der See mit vielen Schwebeteilchen durchzogen war, somit der Absorbtionskoeffizient nicht nur rein vom Wasser abhängt.
+Wie oben geschrieben wurde alle aufgennomenen Messwerte der Absorbtion gegen die Tiefe aufgetragen.
+Dies ist für Göttingen in der Abbildung \ref{fig:lichtGoe} zu sehen.
+Dadurch, dass alle Messwerte aufgetragen sind, ergibt sich ein linearer Zusammenhang, der proportinal zum Mittelwert der gemessenen Absorbtion ist.
+Die linearer Regression ergebiet den Steigungskoeffizienten $a=(-3.3\pm0.3)\si{\per\meter}$.
+Bei der Messung wurde mit einem Offset von $3.31\si{\milli\volt}$ gerechnet, da die Photodiode hier einen nicht verschwindenden Dunkelstrom hat.
 
+\subsubsection{Northeimer Kiessee}
+Bei der Messung in Northeim konnte in gößeren Tiefen gemessen werden, als in Göttingen.
+Somit sollten auch die Messwerte besser korrelieren.
+Desweiteren haben wir bemerkt, dass der See deutlich klarer war, als der in Göttingen, somit sollte die Absorbtion stärker von der des Wassers abhängen.
 \begin{figure}[!h]
 	\centering
 	\subfigure[Northeim Lichtabsorbtion: alle Messdaten (logarithmisch). \label{fig:lichtabs}]
@@ -814,14 +839,30 @@ Diese Veränderung zu messen, wäre sicherlich auch interessant.
 	\caption{Northeim: Lichtabsorption.}
 	\label{fig:lichtNort}
 \end{figure}
-
+In Abbildung \ref{fig:lichtabs} sind wieder alle aufgennomenen Messwerte der Intensität gegen die Tiefe aufgetragen.
+$a=0.40\pm0.02$.
+Ebenfalls ist wieder eine linearer Regression durchgeführt worden, die den Mittelwert der Absorbtion zeigt, da der See wieder als homogen angenommen wird.\\%Ergebnisse
+In den Abbildungen \ref{fig:l1} und \ref{fig:l2} sind jeweils eine gute und eine schlechte einzelregression zu sehen.
+Es ist gut zu erkennen, dass an einigen Stellen die Photiode homogen beschienen wird und somit durchgehend die Absorbtion vom Wasser bestimmt werden konnte.
+Die zeigt sich auch in den Korrelationskoeffizienten, die alle zwischen $r=0.93$ und $r=0.96$ liegen.
+Die linearen Konstanten sind zwar alle etwas unterschiedliche, von $a=-0.773\pm0.004$ bis zu $-0.524\pm0.004$.
+Mittelt man aber über alle Messwerte ergibt sich auf die Steigung der Geraden, wie im Gesamtplot \ref{fig:lichtabs} gezeigt.
+In der schlechten Messung ist die linearer Auswertung fast nicht Möglich, da die Messwerte sehr stark schwanken.
+Die Korrelationskoeffzienten bestätigen dieses, da sie mit $r=-0.59$ und $r=-0.05$ sehr schlecht sind.\\
 \begin{figure}[!htb]
 	\centering
 	\resizebox{0.7\linewidth}{!}{\input{Northeim/led.tex}}
 	\caption{Unterschied Sonnenlicht+LED zu Sonnenlicht}
 	\label{fig:led}
 \end{figure}
-
+In der Abbildung \ref{fig:led} sind die gemessenen Intensitäten der LEDs gegen die Tiefe aufgetragen.
+Hierzu wurden jeweils die Intensitäten bei abgeschalteten LEDs von den jeweiligen Werten bei angeschalteten LEDs subtrahiert.
+Das Ergebnis zeigt eine Konstante, die aber für die beien LEDs verschieden sind.
+Desweiteren ist die, wie oben beschriebene Streuungen auf den ersten Metern gut zu erkennen.
+Da die Werte konstant gegen die Tiefe sind berechnen wir den Mittelwert aus den jeweiligen Intensitäten.
+Für die Blaue LED ergibt sich eine mittlere Intensität von $I_\text{\blau}=(3.1\pm2.7)\si{\volt}$ und für Inrarote eine mittlere Intensität von $I_\text{IR}=(5.9\pm3.7)\si{\volt}$.
+Die Fehler bilden sich jeweils aus der Standardtabweichung.
+Die Infrarote LED hat somit eine höhere Intensität von.
 
 \subsection{Gemessenes Abstandsgesetz}
 Da nun die Sendeleistung nicht ausreichte, um die Anordnung der Piezokristalle tatsächlich als Echolot zu verwenden haben wir nur die Abstandsabhängigkeit der Schallintensität näher untersucht. 
@@ -845,7 +886,7 @@ Dies erscheint sinnvoll, denn entscheidend für die angezeigte Amplitude ist, we
 Diese wiederum entsprechen Druckschwankungen.
 
 Die eingezeichneten Fehlerbalken ergeben sich nur aus der statistischen Standardabweichung da diese die abgeschätzten Fehler von 0.1\% Amplitude zu klein sind. Diese Abhängigkeit war auch hier recht gut gegeben, wie man in dem Plot erkennen kann. 
-Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (vgl. Theorie). 
+Man kann gut sehen, dass die Amplitude nach gerade einmal circa 2,5 cm auf unter die Hälfte abgefallen ist. Bei einer Entfernung von 40 cm ist dann nur noch gut 5 $\%$ vorhanden. Es wird also sehr deutlich, dass die Sendeleistung nicht ausreichen würde für die geplanten Versuche, denn innerhalb eines homogenen Mediums liegt stets eine $\frac{1}{d}$ -Abhängigkeit vor (siehe Abschnitt \ref{sec:abs}). 
 
 
 \section{Diskussion}
@@ -857,20 +898,26 @@ Für den ADC wurde die Interne Referenzspannung des Controllers verwendet.
 Diese ist aber durch den normalen Betrieb des Controllers ein klein wenig verrauscht, das sogenannte Rippling, somit auch die ADC Werte.
 Dies hat eine Größenordnung von etwa 5\si{\milli\volt}, sprich 1\% der Maximalspannung und ist in allen Datensätzen zu sehen.\\
 Um diesen Fehler zu beheben bzw. zu verringern ist es nötig eine konstante Referenzspannung zu verwenden.
+<<<<<<< HEAD
 Das Board hat dafür einen nach außen geführten Pin für die Referenzspannung.
 Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen und das Rippling zu vermindern, oder eine eigene lastfreie Spannungsquelle zu bauen.
 Zu den muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte Rauschen zu unterdrücken.
+=======
+Das Board hat einen nach außen geführten Pin für die Referenzspannung.
+Nun ist es nötig entweder die 3.3\si{\volt} des Boards zu nehmen und das rippling zu vermindern, oder eine eigene lastfreie Spannungsquelle zu bauen.
+Zu dem muss ein Tiefpassfilter mithilfe einer Drosselspule in Reihe geschaltet werden um das durch die Elektronik induzierte hochfrequente Rauschen zu unterdrücken.
+>>>>>>> a4e582e7e3c4a4d3c8da999b0126401006a0087a
 Mit dieses Methoden könnte das Rippling auf etwa 0.1\% der Maximalspannung gedrückt werden.
 
 \subsection{Druck}
 Zunächst kauften wir einen Drucksensor, der keine Eichkurve hatte.
 Er bestand aus zwei leitenden Lagen und je größer der auf ihn ausgeübte Druck gewesen wäre, desto größer ist die Kontaktfläche und damit desto kleiner ist der Widerstand.
 Allerdings ist ein kleines Loch in der Kammer, damit die Luft entweichen kann.
-Da durch dieses Wasser hineinlaufen könnte, welches einen Kurzschluss verursachte, konnten wir diesen Sensor nicht verwenden.
+Da durch dieses Wasser hineinlaufen könnte, welches einen Kurzschluss verursacht, konnten wir diesen Sensor nicht verwenden.
 
 Daraufhin bekamen wir einen Sensor der Geophysik.
 Dieser wird über eine externe Schaltung betrieben und wurde deshalb nicht von den Spannungsschwankungen des Boards direkt beeinflusst.
-Der größte Fehler bei der Kopplung von Druckplatine und Datenlogger bestand noch in der Testphase daran, dass nicht, wie im Kapitel \ref{sec:durchdruck} aufgeführt, die Massen der beiden Platinen gekoppelt waren, obwohl eine eigenständige Leitung für das Massesignal verwendet wurde.
+Der größte Fehler bei der Kopplung von Druckplatine und Datenlogger bestand noch in der Testphase darin, dass nicht, wie im Kapitel \ref{sec:durchdruck} aufgeführt, die Massen der beiden Platinen gekoppelt waren, obwohl eine eigenständige Leitung für das Massesignal verwendet wurde.
 Fehlerhaft war hier nicht die Verbindung der Platinen, sondern die boardinterne Masseverteilung.
 Anscheinend waren die veschiedenen Massepins nicht alle miteinander verbunden.
 Dies kann an einer fehlerhaften Lötstelle oder einer fehlerhaften Leitung liegen.
@@ -887,15 +934,22 @@ Um in diese Vordringen zu können müsste mehr Schalldruck erzeugt werden und da
 Dies kann entweder durch das Verwenden von einer höheren Spannung am Sender oder durch das Verwenden einer H-Brücke getan werden.
 Letzteres sorgt für das Verwenden von $\pm24\si{\volt}$, welches zur doppelten physischen Ausdehnung des Kristalls führt.
 Dies kann weiterhin verstärkt werden, in dem bis zu 48\si{\volt} angelegt werden.
+<<<<<<< HEAD
 Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden.
 Des Weiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
+=======
+Der Nachteil der H-Brücke ist, dass bei jedem Umschalten die Schaltung kurzgeschlossen wird, was unterbunden werden muss, da die MOSFET-Transistoren mit einer Frequenz von 40\si{\kilo\hertz} versorgt werden und dies zu einem hohen Leckstrom führt, der die Bauteile beschädigen kann.
+Desweiteren erhitzen sich die Bauteile bei diesen Spannungen schnell und es müssen Kühlkörper oder eine aktive Kühlung verwendet werden.\\
+>>>>>>> a4e582e7e3c4a4d3c8da999b0126401006a0087a
 Wir haben dennoch ein paar Testdaten aufnehmen und auswerten können.
 %hie noch das Ergebnis der Auswertung diskutieren.
+Dieser Teil des Projektes ist auch für weitere Praktika interessant, da diese Methode kommerziell häufig eingesetzt wird und auch in der Wissenschaft zur Bodenanalyse verwendet werden kann.
+Die Probleme, die gelöst werden müssen, sind die Spannungsverorgung und ein funktionsfähiger Filteralgorythmuss zur Rauschreduktion.
 
 \subsection{Ortsbestimmung}
 Bei der ersten Messung haben wir den Ort mit einem Geodimeter bestimmt.
 Problematisch war hierbei, dass das Boot mit dem Reflektor relativ stark geschwankt hat.
-Dies führte gerade bei Messungen, wo das Boot relativ dicht am Geodimeter war dazu, dass die Aufnahme der Position schwer war.
+Dies führte gerade bei Messungen, wo das Boot dicht am Geodimeter war dazu, dass die Aufnahme der Position erschwert wurde.
 An einer Stelle konnten wir den Messstab in über 5 min nicht ruhig genug halten, so dass wir schließlich die Position nicht aufnahmen.
 Generell war es ein Problem, dass wir nur zwei Leute auf dem Boot hatten: einen Ruderer, der während der Messung den Stab hochgehalten hat und einen, der sich um die Sonde kümmerte.
 Dies führte dazu, dass häufig der für den Retroreflektor zuständige diesen zu schräg hielt, so dass die Spiegelfläche nicht sichtbar war.
@@ -913,14 +967,14 @@ Dies machte ein sonnst notwendiges Sortieren der Dateien nach Ort und Zeit unnö
 
 \subsection{Temperatur}
 \label{sec:DiskTemp}
-Bei der zweiten Messung zeigte sich in den Daten, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
+Bei der zweiten Messung zeigte sich in den Daten, wie im Kapitel \ref{sec:austempnortheim} beschrieben, dass die Werte der Temperatur augenscheinlich gleichzeitig drei verschiedene Werte annehmen.
 Bei genauerer Betrachtung der Messwerte fällt jedoch auf, wie in Abb. \ref{fig:tempSprung} zu erkennen, dass jeweils ungefähr 10 Messwerte auf einem niedrigen, dann auf einem mittleren, erneut auf einem niedrigen und dann wieder auf einem hohen Niveau liegen.
 Dies entspricht der Frequenz, mit der wir die LEDs geschaltet haben (keine LED, blaue LED, keine LED, IR-LED).
 Für beide Messungen benutzten wir den Micro-Controller als Spannungsquelle.
 Dieser ist für Ströme von bis zu 350mA ausgelegt.
-Augenscheinlich haben da die 50mA, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
-Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen noch zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
-Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
+Augenscheinlich haben da die etwa 30\si{\milli\ampere}, welche die LEDs benötigten, die Stromzufuhr des Pt1000 so stark beeinflusst, dass die aufgenommenen Messwerte Temperatursprünge von bis zu $4\si{\celsius}$ aufweisen, was bei angenommenen $21\si{\celsius}$ zu einem Fehler von 20\% führt.
+Dies liegt vermutlich daran, dass der boardinterne Spannungsregler mit dem schnelle Spannungsschwankungen nicht zurecht kam und einige Zeit gebraucht hat, um den Spannungswert zu regeln.
+Somit lagen verschiedene Spannungen am Vorwiderstand des Pt1000 an und führte trotz seiner Größe von $19200\si{\ohm}$ zu stark spürbaren Stromschwankungen am Pt1000.\\
 Glücklicherweise sind die Daten so verteilt, dass nur etwa 50\% Fehlerhaft sind und diese nur gefiltert werden mussten.
 
 \begin{figure}[h]
@@ -944,7 +998,7 @@ Laut Datenblatt \cite[20]{PHOTODatenblatt} liegt der Unterschied in der Effizien
 \subsection{Messprobleme und verworfene Ideen}
 Unsere erste Idee war die, ein ferngesteuertes U-Boot zu bauen, was die Sensoren an Bord hat und ansatzweise autonom den See abrastert.
 Dies stellte sich jedoch sehr schnell als nicht durchführbar heraus, da es keine geeigneten Modellbauten gab und da die komplette Technik mit Stromversorgung unter Wasser luftdicht sein müsste.
-Zu dem war der Bau eines eigenen Modells zu Zeitaufwändig für die vorhandene.
+Zu dem war der Bau eines eigenen Modells zu Zeitaufwändig für die vorhandene Zeit.
 Daher kamen wir auf die Idee, eine ferngesteuerte Plattform zu bauen, welche die Sonden mit einer Winde ferngesteuert herunterlässt.
 Dies verwarfen wir jedoch auch sehr schnell, da die Fernsteuertechnik einen großen Teil unserer Arbeit ausgemacht hätte, was wissenschaftlich wenig interessant ist.
 Auch hätten wir Probleme bekommen, falls sich zum Beispiel die Sensoren in Wasserpflanzen verfangen.
@@ -962,7 +1016,7 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 		Die Leitfähigkeit alleine ist kein Maß für den Salzgehalt, der auch noch von anderen Größen maßgeblich beeinflusst wird.
 		So konnten wir den Sensor, welchen Jan bereits besorgt hatte, nicht einsetzen.
 	\item \textit{pH-Wert}: Der pH-Wert wäre auch eine interessante Messgröße gewesen.
-		Allerdings wäre zur Kalibration mindestens eine Pufferlösung notwendig gewesen.
+		Allerdings wäre zur Kalibrierung mindestens eine Pufferlösung notwendig gewesen.
 		Ausschlaggebend war, dass wir zu den preislich akzeptablen Sensoren keine vernünftigen Datenkurven finden konnten, da diese augenscheinlich nur für fertige Geräte ausgelegt sind.
 \end{itemize}
 
@@ -1017,7 +1071,7 @@ Wir hatten zunächst noch vor, weitere Sensoren zu verwenden:
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=10cm]{nicht.png}
+	\includegraphics[width=0.6\textwidth]{nicht.png}
 	\caption{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Noninverting_Amplifier.svg/2000px-Noninverting_Amplifier.svg.png}}
 	\label{fig:nicht}
 \end{figure}
